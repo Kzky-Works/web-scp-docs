@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description"
-    content="SCP Docs — SCP財団系資料を読むための非公式ネイティブファンビューア。読書状態の保持、評価、書庫、横断検索、プレミアム機能の概要。" />
+    content="SCP Docs — 非公式 SCP リーダー。現行は iOS 向けネイティブ。単一 Web ラッパではなく各 OS の UI に沿う方針（将来の Android もネイティブを想定）。読書状態・書庫・検索の概要。" />
   <meta name="theme-color" content="#F7F6F0" />
   <title>SCP Docs — Foundation Archive</title>
   <link rel="stylesheet" href="assets/styles.css" />
@@ -38,7 +38,7 @@
             SCP Docs は、<strong>インターネット・オープンの SCP 関連資料</strong>（各 Wikidot サイト等で公開されている記事）を、ネイティブの操作感で読むことを目的とした<strong>非公式のファンメイド・ビューア</strong>です。公式サイトにログインすることなく、リスト閲覧・ジャンプ・検索から記事までをひとつの「端末側のワークスペース」にまとめます。
           </p>
           <div class="pill-row" aria-hidden="false">
-            <span class="code-chip">SwiftUI</span>
+            <span class="code-chip">プラットフォームネイティブ UI（iOS 現行）</span>
             <span class="code-chip">読書状態の自動保存</span>
             <span class="code-chip">複数支部ハブ対応</span>
             <span class="code-chip">広告またはプレミアム</span>
@@ -49,15 +49,20 @@
       <!-- PHILOSOPHY -->
       <section aria-labelledby="phil-title" style="margin-top:38px;">
         <p class="section-label">Design rationale</p>
-        <h2 id="phil-title" class="section-title-lg">原生アプリであり続けるということ</h2>
+        <h2 id="phil-title" class="section-title-lg">ネイティブで各プラットフォームに寄り添う</h2>
         <div class="card">
           <p>
-            SCP Docs はクロスプラットフォームランタイムによるラッパではなく、<strong>iOS にネイティブ実装されています。</strong>
-            メイン UI はすべて SwiftUI ベースであり、スクロール、ナビゲーション、ハプティクス、アクセシビリティ優先順位など、利用者が Apple プラットフォームで期待する挙動に寄せた設計を目標としています。記事本文は Web で公開されているドキュメントをそのまま再配布するものではなく、ユーザーが自分の選択で閲覧先 URL を開いた結果として表示されます。
+            SCP Docs は、<strong>単一の Web ランタイムで包んだ汎用ラッパ</strong>ではなく、各 OS が提供する<strong>ネイティブな UI レイヤ</strong>を採ります。<strong>現行リリースは iOS 向け</strong>で、メイン UI は SwiftUI を含む Apple のフレームワークで構築されています。スクロール、ナビゲーション、ハプティクス、アクセシビリティなど、利用者が<strong>そのプラットフォーム</strong>で期待する挙動に寄せることを目標としています。
           </p>
-          <ul class="ft-list">
+          <p>
+            <strong>将来、Android 向けクライアント</strong>を用意する場合にも、<strong>同様に OS ネイティブの UI とライフサイクルに沿った実装</strong>を採ることを想定しています（Kotlin／Jetpack Compose 等、時点の推奨スタックに追従）。
+          </p>
+          <p class="ft-muted" style="margin-bottom:0;">
+            記事本文は Web で公開されているドキュメントをそのまま再配布するものではなく、ユーザーが自分の選択で閲覧先 URL を開いた結果として表示されます。
+          </p>
+          <ul class="ft-list" style="margin-top:16px;">
             <li><strong>Fan project</strong> — SCP 財団または Wikidot, Inc. 等の運営主体とは<strong>提携・提携宣伝しない</strong>独立した愛好者によるアプリです（詳しくはページ末尾のディスクレーマー）</li>
-            <li><strong>MVVM と将来のポート性</strong> — 状態とドメインロジックは View と分離された ViewModels / repositories に載せ、アプリ側の UI 状態は Observation ベースです</li>
+            <li><strong>MVVM とポート性</strong> — ドメインロジックとデータ取得は View と分離した ViewModels／repositories に載せます。<strong>iOS では</strong> UI 状態は Observation 等のフレームワークに沿って管理し、<strong>他プラットフォームでは</strong>その OS の推奨パターンに合わせます。</li>
           </ul>
         </div>
       </section>
