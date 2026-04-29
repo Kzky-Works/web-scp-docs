@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SCP Docs</title>
+
+<style>
+:root {
+  --bg: #0b0b0b;
+  --card: #111;
+  --border: #222;
+  --text: #eaeaea;
+  --sub: #9a9a9a;
+  --accent: #ff9500;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Layout */
+.container {
+  max-width: 820px;
+  margin: auto;
+  padding: 24px;
+}
+
+/* Hero */
+.hero {
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0 32px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.tagline {
+  color: var(--sub);
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Section */
+.section {
+  margin-top: 48px;
+}
+
+.section h2 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* Feature list */
+.feature {
+  margin-bottom: 12px;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Footer */
+.footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--sub);
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="logo">SCP Docs</div>
+  <div class="tagline">Secure • Contain • Protect</div>
+</div>
+
+<!-- About -->
+<div class="section">
+  <h2>About</h2>
+  <div class="card">
+    SCP Docs は、SCP財団のコンテンツを快適に閲覧・管理するための非公式リーダーアプリです。
+  </div>
+</div>
+
+<!-- Features -->
+<div class="section">
+  <h2>Features</h2>
+  <div class="card">
+    <div class="feature">・SCP記事の高速閲覧</div>
+    <div class="feature">・読書履歴と進捗管理</div>
+    <div class="feature">・評価・分析機能</div>
+    <div class="feature">・タグ / カテゴリ探索</div>
+  </div>
+</div>
+
+<!-- Support -->
+<div class="section">
+  <h2>Support</h2>
+  <div class="card">
+    不具合報告・お問い合わせは以下までご連絡ください。<br><br>
+    <a href="mailto:your@email.com">your@email.com</a>
+  </div>
+</div>
+
+<!-- Privacy -->
+<div class="section">
+  <h2>Privacy Policy</h2>
+  <div class="card">
+    本アプリでは、ユーザー体験向上のために最小限のデータを収集する場合があります。<br><br>
+
+    ・収集する情報：利用状況、クラッシュログ<br>
+    ・利用目的：アプリ改善のため<br><br>
+
+    個人を特定する情報は収集しません。<br><br>
+
+    本ポリシーは必要に応じて変更されることがあります。
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  © 2026 SCP Docs<br>
+  This is an unofficial fan application and is not affiliated with the SCP Foundation.
+</div>
+
+</div>
+</body>
+</html>
