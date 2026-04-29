@@ -1,210 +1,197 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SCP Docs | Foundation Archive</title>
-
-<style>
-:root {
-  --bg: #0a0a0a;
-  --panel: #111;
-  --line: #2a2a2a;
-  --text: #eaeaea;
-  --sub: #8a8a8a;
-  --accent: #c70000;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-}
-
-/* Layout */
-.container {
-  max-width: 860px;
-  margin: auto;
-  padding: 24px;
-}
-
-/* HEADER */
-.header {
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 16px;
-}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: var(--sub);
-}
-
-.classified {
-  color: var(--accent);
-  letter-spacing: 1px;
-}
-
-.title {
-  font-size: 26px;
-  font-weight: 600;
-  margin-top: 12px;
-}
-
-.subtitle {
-  font-size: 12px;
-  color: var(--sub);
-  margin-top: 4px;
-}
-
-/* SECTION */
-.section {
-  margin-top: 40px;
-}
-
-.section-title {
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: var(--sub);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 6px;
-  margin-bottom: 12px;
-}
-
-/* CARD */
-.card {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  padding: 16px;
-  position: relative;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--accent);
-}
-
-/* CODE STYLE */
-.code {
-  font-family: ui-monospace, SFMono-Regular, Menlo;
-  font-size: 13px;
-  color: var(--sub);
-}
-
-/* LIST */
-.list-item {
-  margin-bottom: 8px;
-}
-
-/* SUPPORT */
-.mail {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-/* FOOTER */
-.footer {
-  margin-top: 60px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  font-size: 12px;
-  color: var(--sub);
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description"
+    content="SCP Docs — SCP財団系資料を読むための非公式ネイティブファンビューア。読書状態の保持、評価、書庫、横断検索、プレミアム機能の概要。" />
+  <meta name="theme-color" content="#F7F6F0" />
+  <title>SCP Docs — Foundation Archive</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
 <body>
-<div class="container">
+  <div class="layout-wide">
+    <header class="terminal-header">
+      <div class="terminal-header-inner">
+        <div>
+          <div class="brand-line">File: SCP-DOCS-APP / Level 2 clearance</div>
+          <h1 class="brand-title">SCP Docs</h1>
+        </div>
+        <nav class="nav" aria-label="主要ナビゲーション">
+          <a href="index.html" aria-current="page">トップ</a>
+          <a href="privacy.html">プライバシー</a>
+          <a href="support.html">サポート</a>
+          <a href="terms.html">利用規約</a>
+        </nav>
+      </div>
+    </header>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-top">
-    <div>FILE: SCP-DOCS-APP</div>
-    <div class="classified">LEVEL 2 CLEARANCE REQUIRED</div>
+    <main class="main-pad">
+      <!-- HERO -->
+      <section aria-labelledby="hero-title">
+        <p class="section-label">Overview</p>
+        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
+        <div class="card-invert">
+          <p class="lede">
+            SCP Docs は、<strong>インターネット・オープンの SCP 関連資料</strong>（各 Wikidot サイト等で公開されている記事）を、ネイティブの操作感で読むことを目的とした<strong>非公式のファンメイド・ビューア</strong>です。公式サイトにログインすることなく、リスト閲覧・ジャンプ・検索から記事までをひとつの「端末側のワークスペース」にまとめます。
+          </p>
+          <div class="pill-row" aria-hidden="false">
+            <span class="code-chip">SwiftUI</span>
+            <span class="code-chip">読書状態の自動保存</span>
+            <span class="code-chip">複数支部ハブ対応</span>
+            <span class="code-chip">広告またはプレミアム</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHILOSOPHY -->
+      <section aria-labelledby="phil-title" style="margin-top:38px;">
+        <p class="section-label">Design rationale</p>
+        <h2 id="phil-title" class="section-title-lg">原生アプリであり続けるということ</h2>
+        <div class="card">
+          <p>
+            SCP Docs はクロスプラットフォームランタイムによるラッパではなく、<strong>iOS にネイティブ実装されています。</strong>
+            メイン UI はすべて SwiftUI ベースであり、スクロール、ナビゲーション、ハプティクス、アクセシビリティ優先順位など、利用者が Apple プラットフォームで期待する挙動に寄せた設計を目標としています。記事本文は Web で公開されているドキュメントをそのまま再配布するものではなく、ユーザーが自分の選択で閲覧先 URL を開いた結果として表示されます。
+          </p>
+          <ul class="ft-list">
+            <li><strong>Fan project</strong> — SCP 財団または Wikidot, Inc. 等の運営主体とは<strong>提携・提携宣伝しない</strong>独立した愛好者によるアプリです（詳しくはページ末尾のディスクレーマー）</li>
+            <li><strong>MVVM と将来のポート性</strong> — 状態とドメインロジックは View と分離された ViewModels / repositories に載せ、アプリ側の UI 状態は Observation ベースです</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- UI STRUCTURE -->
+      <section aria-labelledby="tabs-title" style="margin-top:38px;">
+        <p class="section-label">App shell</p>
+        <h2 id="tabs-title" class="section-title-lg">四点タブで構成される一本道のワークスペース</h2>
+        <p class="ft-muted">
+          メインウィンドウは標準タブ構成です。広告またはプレミアム状態に応じて、タブ下端にバナー表示領域が出るレイアウトです。
+        </p>
+        <div class="grid-2">
+          <div class="card">
+            <dl class="dl-flat">
+              <dt>ホーム Home</dt>
+              <dd>支部コンテキストでのダッシュボード、カテゴリタイル、アーカイヴ入口、イベント・ジャンパー等への導線を集約。ランダム表示や SCP 指定ジャンプにも対応するエントリが配置されます。</dd>
+              <dt>書庫 Library</dt>
+              <dd>
+                「お気に入り」「履歴」および、物語／カノン／ジャーク／団体資料など<strong>静的に束ねられたカテゴリからの一覧経路</strong>があります。リストに既読・アクセント（高評価）表示が載る一覧も含みます。
+              </dd>
+              <dt>検索 Search</dt>
+              <dd>
+                メタ情報が同期されたリストを横断し、クエリおよびタグ・オブジェクトクラス等との組み合わせで読みたい紙面へ辿れる画面です。<strong>高度なクロス・アーカイヴ検索</strong>等はプレミアム側の機能としてゲートされています。</dd>
+              <dt>設定 Settings</dt>
+              <dd>
+                アプリ全体の<strong>インタフェース言語</strong>、外観、記事表示の細部、コンテンツ系リモート一覧の同期、購読（サブスク）と広告に関する説明、個人データのクリア、法務リンク（本サイト）などを集約します。</dd>
+            </dl>
+          </div>
+          <div class="card">
+            <p class="section-label" style="margin-top:0;">Reading surface</p>
+            <p>
+              記事閲覧は <strong>アプリ内ブラウザ（WebKit）</strong>上で行われ、ビューアとしてのリーダー制御（テーマ整合のための注入スクリプト、フォント倍率、オフラインスナップショット等）が重ねられます。これにより、Wiki 側のナビゲーションを抑えたリーディング体験を狙っています。
+            </p>
+            <p class="ft-muted" style="margin-bottom:0;">
+              画面端の「モダン・ブルータリズム」配色（クリームベースの平面、ヘアライン境界）でホームと記事周辺の見た目を揃えています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BRANCHES -->
+      <section aria-labelledby="branch-title" style="margin-top:38px;">
+        <p class="section-label">Content scope</p>
+        <h2 id="branch-title" class="section-title-lg">支部とカタログ</h2>
+        <div class="card">
+          <p>
+            ホームの文脈では、少なくとも<strong>日本支部（JP）・英語圏（EN）・国際ハブ（INT）</strong>に相当する入口が用意され、それぞれに連なるアーカイヴやポータルへ遷移できます。カタログ JSON はリモート（例: GitHub 上の配信物）から取得し、端末にキャッシュしたうえで一覧と検索に供します。
+          </p>
+          <ul class="ft-list">
+            <li><strong>日本支部アーカイヴ</strong> — シリーズと番号レンジに沿った報告書リスト、タイトル解決のためのメタデータ同期等</li>
+            <li><strong>マルチフォーム資料</strong> — Tales / GoI / Canon / Joke など、マニフェスト駆動の一覧と更新（配信スキーマに沿った取得）</li>
+            <li><strong>タグマップ</strong> — 日本支部向けのタグ・オブジェクトクラス補助データの同期（ネットワーク利用時）</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- READING STATE -->
+      <section aria-labelledby="read-title" style="margin-top:38px;">
+        <p class="section-label">Engagement</p>
+        <h2 id="read-title" class="section-title-lg">読書状態と個人の書庫</h2>
+        <div class="grid-2">
+          <div class="card">
+            <p>
+              各記事 URL をキーに、<strong>スクロール進捗</strong>（十分に末尾へ到達したか）、<strong>星評価</strong>、<strong>お気に入り／後で読む</strong>、<strong>履歴</strong>が端末内に保持されます。これにより「続きから読む」や高評価一覧のような派生 UI が可能になります。
+            </p>
+            <p class="ft-muted">
+              一部のメモや職員ダッシュボード向けの記録は SwiftData 等の永続ストアに載る場合があります。いずれも<strong>利用者が端末上で操作した結果</strong>に基づくものです。
+            </p>
+          </div>
+          <div class="card">
+            <p>
+              プレミアムに該当する<strong>オフライン保存</strong>や一部の高度な検索・メモの解放は、サブスクリプションまたは限定のリワード広告による一時付与で合成されます。無料利用時は一覧件数に上限が掛かる等の制御が入る場合があります。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MONETIZATION -->
+      <section aria-labelledby="mono-title" style="margin-top:38px;">
+        <p class="section-label">Monetization</p>
+        <h2 id="mono-title" class="section-title-lg">収益化の形</h2>
+        <div class="card">
+          <p>
+            本アプリは <strong>Google AdMob</strong> によるバナー・ネイティブ枠・リワード（インタースティシャル型）を使用する場合があります。あわせて <strong>App Store の自動更新サブスクリプション</strong>でプレミアム機能を購入できます。購入・解約の当事者は Apple のシステムです。
+          </p>
+          <p class="ft-muted" style="margin-bottom:0;">
+            データの扱いの詳細は <a href="privacy.html">プライバシーポリシー</a> を、不具合・問い合わせは <a href="support.html">サポート</a> を参照してください。
+          </p>
+        </div>
+      </section>
+
+      <!-- REQUIREMENTS -->
+      <section aria-labelledby="req-title" style="margin-top:38px;">
+        <p class="section-label">Requirements</p>
+        <h2 id="req-title" class="section-title-lg">動作環境</h2>
+        <div class="card-flat">
+          <ul class="ft-list">
+            <li><strong>対応 OS</strong> — iOS 26 以降を対象としたビルドです（以降の App Store 要件・Xcode 設定に追従します）</li>
+            <li><strong>ネットワーク</strong> — カタログ取得・本文のオンライン閲覧・広告の配信に通信が必要です。オフライン保存はプレミアム条件を満たした場合に限ります</li>
+            <li><strong>アカウント</strong> — アプリ利用に SCP Foundation / Wikidot のアカウントは不要です</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="margin-top:40px;">
+        <p class="section-label">Legal</p>
+        <div class="card">
+          <p>
+            本アプリは<strong>非公式のファン作品</strong>です。SCP 関連の二次創作やレポーティングの取り扱いは、各コンテンツのライセンスとコミュニティ規範に従います。アプリ内から Creative Commons BY-SA 3.0 の解説にもリンクがあります。
+          </p>
+          <div class="pill-row">
+            <a class="pill" href="privacy.html">Privacy</a>
+            <a class="pill" href="privacy-en.html">Privacy (EN)</a>
+            <a class="pill" href="support.html">Support</a>
+            <a class="pill" href="terms.html">Terms</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <strong>SCP Docs</strong><br />
+          非公式ファンビューア — コンテンツの著作権は各作者およびライセンス帰属に従います。
+        </div>
+        <div>
+          Contact: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
+          <span class="ft-muted">Last updated 2026-04-29</span>
+        </div>
+      </div>
+    </footer>
   </div>
-
-  <div class="title">SCP Docs</div>
-  <div class="subtitle">Secure • Contain • Protect</div>
-</div>
-
-<!-- ABOUT -->
-<div class="section">
-  <div class="section-title">[ OVERVIEW ]</div>
-  <div class="card">
-    SCP Docs は、SCP財団関連資料を閲覧・管理するための非公式モバイルアプリケーションです。<br><br>
-    当アプリは公開されている資料をもとに構築されています。
-  </div>
-</div>
-
-<!-- FEATURES -->
-<div class="section">
-  <div class="section-title">[ FUNCTIONAL CAPABILITIES ]</div>
-  <div class="card">
-    <div class="list-item">- SCP文書の高速閲覧</div>
-    <div class="list-item">- 読書進捗トラッキング</div>
-    <div class="list-item">- 評価・記録機能</div>
-    <div class="list-item">- タグ / カテゴリ検索</div>
-  </div>
-</div>
-
-<!-- SUPPORT -->
-<div class="section">
-  <div class="section-title">[ SUPPORT CHANNEL ]</div>
-  <div class="card">
-    問題の報告・問い合わせは以下へ送信してください。<br><br>
-    <a class="mail" href="mailto:scpdocs_admin@proton.me">your@email.com</a>
-  </div>
-</div>
-
-<!-- PRIVACY -->
-<div class="section">
-  <div class="section-title">[ DATA HANDLING POLICY ]</div>
-  <div class="card">
-    <div class="code">LOG TYPE: LOCAL + NETWORK + ADS (NO SERVER ACCOUNT)</div><br>
-
-    当アプリは、次の情報を取り扱う場合があります。<br><br>
-
-    <strong>端末内に保存される情報</strong><br>
-    ・閲覧履歴、評価、お気に入り／後で読む、読書再開のための進捗、メモ等（本アプリ機能の提供のため）<br><br>
-
-    <strong>通信が発生する処理</strong><br>
-    ・記事一覧・カタログ等データの取得<br>
-    ・アプリ内表示のため、第三者が運営するウェブサイト（記事本文）へのアクセス<br>
-    ・App Store を通じたサブスクリプションの購入・更新に伴う処理（Apple が購入情報を管理）<br>
-    ・Google AdMob による広告表示（バナー・ネイティブ・リワード等）。広告配信の過程で、広告識別子等が Google およびそのパートナーに送信されることがあります<br><br>
-
-    <strong>診断・改善</strong><br>
-    ・アプリの安定性・改善のため、OS や App Store の仕組みを通じて提供されるクラッシュレポート等が配信元に届く場合があります（本アプリに独自のクラッシュ収集 SDK を組み込んでいない場合もあります）<br><br>
-
-    当アプリは、運営者がユーザーを特定するためのアカウント登録や、氏名・住所等の取得を行うものではありません。一方で、広告・課金・外部サイト閲覧・OS／配信元の仕組みにより、各事業者のポリシーに従い情報が取得・送信される場合があります。詳細は本ページのプライバシーポリシー全文をご参照ください。
-  </div>
-</div>
-
-<!-- DISCLAIMER -->
-<div class="section">
-  <div class="section-title">[ DISCLAIMER ]</div>
-  <div class="card">
-    This application is an unofficial fan project and is not affiliated with the SCP Foundation.<br><br>
-    All SCP content is licensed under Creative Commons.
-  </div>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  © 2026 SCP Docs Archive System
-</div>
-
-</div>
 </body>
+
 </html>
