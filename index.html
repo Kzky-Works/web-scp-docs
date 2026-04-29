@@ -2,17 +2,17 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SCP Docs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SCP Docs | Foundation Archive</title>
 
 <style>
 :root {
-  --bg: #0b0b0b;
-  --card: #111;
-  --border: #222;
+  --bg: #0a0a0a;
+  --panel: #111;
+  --line: #2a2a2a;
   --text: #eaeaea;
-  --sub: #9a9a9a;
-  --accent: #ff9500;
+  --sub: #8a8a8a;
+  --accent: #c70000;
 }
 
 * {
@@ -21,72 +21,105 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
 }
 
 /* Layout */
 .container {
-  max-width: 820px;
+  max-width: 860px;
   margin: auto;
   padding: 24px;
 }
 
-/* Hero */
-.hero {
-  border-bottom: 1px solid var(--border);
-  padding: 48px 0 32px;
+/* HEADER */
+.header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.tagline {
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
   color: var(--sub);
-  margin-top: 8px;
-  font-size: 14px;
 }
 
-/* Section */
+.classified {
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--sub);
+  margin-top: 4px;
+}
+
+/* SECTION */
 .section {
-  margin-top: 48px;
+  margin-top: 40px;
 }
 
-.section h2 {
-  font-size: 18px;
+.section-title {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--sub);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 6px;
   margin-bottom: 12px;
 }
 
+/* CARD */
 .card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
   padding: 16px;
+  position: relative;
 }
 
-/* Feature list */
-.feature {
-  margin-bottom: 12px;
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent);
 }
 
-/* Links */
-a {
+/* CODE STYLE */
+.code {
+  font-family: ui-monospace, SFMono-Regular, Menlo;
+  font-size: 13px;
+  color: var(--sub);
+}
+
+/* LIST */
+.list-item {
+  margin-bottom: 8px;
+}
+
+/* SUPPORT */
+.mail {
   color: var(--accent);
   text-decoration: none;
 }
 
-/* Footer */
+/* FOOTER */
 .footer {
-  margin-top: 64px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
+  margin-top: 60px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
   color: var(--sub);
-  font-size: 13px;
 }
 </style>
 </head>
@@ -94,59 +127,82 @@ a {
 <body>
 <div class="container">
 
-<!-- Hero -->
-<div class="hero">
-  <div class="logo">SCP Docs</div>
-  <div class="tagline">Secure • Contain • Protect</div>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div>FILE: SCP-DOCS-APP</div>
+    <div class="classified">LEVEL 2 CLEARANCE REQUIRED</div>
+  </div>
+
+  <div class="title">SCP Docs</div>
+  <div class="subtitle">Secure • Contain • Protect</div>
 </div>
 
-<!-- About -->
+<!-- ABOUT -->
 <div class="section">
-  <h2>About</h2>
+  <div class="section-title">[ OVERVIEW ]</div>
   <div class="card">
-    SCP Docs は、SCP財団のコンテンツを快適に閲覧・管理するための非公式リーダーアプリです。
+    SCP Docs は、SCP財団関連資料を閲覧・管理するための非公式モバイルアプリケーションです。<br><br>
+    当アプリは公開されている資料をもとに構築されています。
   </div>
 </div>
 
-<!-- Features -->
+<!-- FEATURES -->
 <div class="section">
-  <h2>Features</h2>
+  <div class="section-title">[ FUNCTIONAL CAPABILITIES ]</div>
   <div class="card">
-    <div class="feature">・SCP記事の高速閲覧</div>
-    <div class="feature">・読書履歴と進捗管理</div>
-    <div class="feature">・評価・分析機能</div>
-    <div class="feature">・タグ / カテゴリ探索</div>
+    <div class="list-item">- SCP文書の高速閲覧</div>
+    <div class="list-item">- 読書進捗トラッキング</div>
+    <div class="list-item">- 評価・記録機能</div>
+    <div class="list-item">- タグ / カテゴリ検索</div>
   </div>
 </div>
 
-<!-- Support -->
+<!-- SUPPORT -->
 <div class="section">
-  <h2>Support</h2>
+  <div class="section-title">[ SUPPORT CHANNEL ]</div>
   <div class="card">
-    不具合報告・お問い合わせは以下までご連絡ください。<br><br>
-    <a href="mailto:your@email.com">your@email.com</a>
+    問題の報告・問い合わせは以下へ送信してください。<br><br>
+    <a class="mail" href="mailto:scpdocs_admin@proton.me">your@email.com</a>
   </div>
 </div>
 
-<!-- Privacy -->
+<!-- PRIVACY -->
 <div class="section">
-  <h2>Privacy Policy</h2>
+  <div class="section-title">[ DATA HANDLING POLICY ]</div>
   <div class="card">
-    本アプリでは、ユーザー体験向上のために最小限のデータを収集する場合があります。<br><br>
+    <div class="code">LOG TYPE: LOCAL + NETWORK + ADS (NO SERVER ACCOUNT)</div><br>
 
-    ・収集する情報：利用状況、クラッシュログ<br>
-    ・利用目的：アプリ改善のため<br><br>
+    当アプリは、次の情報を取り扱う場合があります。<br><br>
 
-    個人を特定する情報は収集しません。<br><br>
+    <strong>端末内に保存される情報</strong><br>
+    ・閲覧履歴、評価、お気に入り／後で読む、読書再開のための進捗、メモ等（本アプリ機能の提供のため）<br><br>
 
-    本ポリシーは必要に応じて変更されることがあります。
+    <strong>通信が発生する処理</strong><br>
+    ・記事一覧・カタログ等データの取得<br>
+    ・アプリ内表示のため、第三者が運営するウェブサイト（記事本文）へのアクセス<br>
+    ・App Store を通じたサブスクリプションの購入・更新に伴う処理（Apple が購入情報を管理）<br>
+    ・Google AdMob による広告表示（バナー・ネイティブ・リワード等）。広告配信の過程で、広告識別子等が Google およびそのパートナーに送信されることがあります<br><br>
+
+    <strong>診断・改善</strong><br>
+    ・アプリの安定性・改善のため、OS や App Store の仕組みを通じて提供されるクラッシュレポート等が配信元に届く場合があります（本アプリに独自のクラッシュ収集 SDK を組み込んでいない場合もあります）<br><br>
+
+    当アプリは、運営者がユーザーを特定するためのアカウント登録や、氏名・住所等の取得を行うものではありません。一方で、広告・課金・外部サイト閲覧・OS／配信元の仕組みにより、各事業者のポリシーに従い情報が取得・送信される場合があります。詳細は本ページのプライバシーポリシー全文をご参照ください。
   </div>
 </div>
 
-<!-- Footer -->
+<!-- DISCLAIMER -->
+<div class="section">
+  <div class="section-title">[ DISCLAIMER ]</div>
+  <div class="card">
+    This application is an unofficial fan project and is not affiliated with the SCP Foundation.<br><br>
+    All SCP content is licensed under Creative Commons.
+  </div>
+</div>
+
+<!-- FOOTER -->
 <div class="footer">
-  © 2026 SCP Docs<br>
-  This is an unofficial fan application and is not affiliated with the SCP Foundation.
+  © 2026 SCP Docs Archive System
 </div>
 
 </div>
