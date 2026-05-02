@@ -11,6 +11,7 @@
 | プライバシー（英語） | `.../privacy-en.html` | グローバル向け補助 URL |
 | サポート | `.../support.html` | **サポート URL** |
 | 利用規約 | `.../terms.html` | 非公式性・CC・免責など |
+| Rating & Safety Policy | `.../rating-safety.html` | **ASC の年齢適合性URL（任意）** 候補 |
 
 ルートの **`.nojekyll`** は Jekyll を無効にし、`assets/` をそのまま配信するためです。
 
@@ -42,6 +43,7 @@ GitHub **Settings → Pages**: **Deploy from a branch** — **`main`** / **`/ (r
 | Privacy Policy URL | `https://kzky-works.github.io/web-scp-docs/privacy.html` または `privacy-en.html` |
 | Support URL | `.../support.html` |
 | Marketing URL（任意） | トップ |
+| 年齢適合性URL（任意） | `.../rating-safety.html` |
 | アプリのプライバシーに関する質問 | このサイト本文と実装を一致させる |
 
 ## アプリとの対応
