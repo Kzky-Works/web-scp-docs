@@ -5,9 +5,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description"
-    content="SCP Docs — 非公式 SCP リーダー。現行は iOS 向けネイティブ。単一 Web ラッパではなく各 OS の UI に沿う方針（将来の Android もネイティブを想定）。読書状態・書庫・検索の概要。" />
+    content="SCP Docs — 非公式 SCP リーダー。現行は iOS 向けネイティブのみ提供。単一 Web ラッパではなく OS ネイティブ UI に沿う方針。読書状態・書庫・検索の概要。" />
   <meta name="theme-color" content="#F7F6F0" />
   <title>SCP Docs — Foundation Archive</title>
+  <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SCP Docs" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta property="og:title" content="SCP Docs — Foundation Archive" />
+  <meta property="og:description" content="非公式 SCP リーダー（iOS）。読書状態・書庫・検索の概要、ネイティブ UI 方針、CC BY-SA 3.0 への帰属。" />
+  <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
+  <meta name="twitter:description" content="非公式 SCP リーダー（iOS）。読書状態・書庫・検索の概要、ネイティブ UI 方針、CC BY-SA 3.0 への帰属。" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -56,7 +66,7 @@
             SCP Docs は、<strong>単一の Web ランタイムで包んだ汎用ラッパ</strong>ではなく、各 OS が提供する<strong>ネイティブな UI レイヤ</strong>を採ります。<strong>現行リリースは iOS 向け</strong>で、メイン UI は SwiftUI を含む Apple のフレームワークで構築されています。スクロール、ナビゲーション、ハプティクス、アクセシビリティなど、利用者が<strong>そのプラットフォーム</strong>で期待する挙動に寄せることを目標としています。
           </p>
           <p>
-            <strong>将来、Android 向けクライアント</strong>を用意する場合にも、<strong>同様に OS ネイティブの UI とライフサイクルに沿った実装</strong>を採ることを想定しています（Kotlin／Jetpack Compose 等、時点の推奨スタックに追従）。
+            <strong>現時点で公式に提供しているクライアントは iOS 版のみ</strong>です。Android 版の予定・公開時期は未定で、ロードマップに載っていません。仮に将来着手する場合も、同じく OS ネイティブの UI とライフサイクルに沿う方針（Kotlin／Jetpack Compose 等の時点の推奨スタック）を予定しています。
           </p>
           <p class="ft-muted" style="margin-bottom:0;">
             記事本文は Web で公開されているドキュメントをそのまま再配布するものではなく、ユーザーが自分の選択で閲覧先 URL を開いた結果として表示されます。
@@ -161,7 +171,7 @@
         <h2 id="req-title" class="section-title-lg">動作環境</h2>
         <div class="card-flat">
           <ul class="ft-list">
-            <li><strong>対応 OS</strong> — iOS 26 以降を対象としたビルドです（以降の App Store 要件・Xcode 設定に追従します）</li>
+            <li><strong>対応 OS</strong> — iOS 17 以降を対象としたビルドです（以降の App Store 要件・Xcode 設定に追従します）</li>
             <li><strong>ネットワーク</strong> — カタログ取得・本文のオンライン閲覧・広告の配信に通信が必要です。オフライン保存はプレミアム条件を満たした場合に限ります</li>
             <li><strong>アカウント</strong> — アプリ利用に SCP Foundation / Wikidot のアカウントは不要です</li>
           </ul>
