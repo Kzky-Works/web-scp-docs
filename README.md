@@ -7,6 +7,7 @@
 | ページ | URL 例（Project Pages） | 用途 |
 |--------|-------------------------|------|
 | トップ | `https://kzky-works.github.io/web-scp-docs/` | **アプリ紹介**・ディスクレーマー・各ページへの導線。**Marketing URL（任意）** にもそのまま使える |
+| 機能紹介 | `.../features.html` | スクリーンショット付きの簡単な機能紹介 |
 | App Store | `https://apps.apple.com/jp/app/scp-docs/id6765882660` | 公開中の iOS アプリページ |
 | プライバシー（日本語） | `.../privacy.html` | **App Store Connect の Privacy Policy URL** 候補 |
 | プライバシー（英語） | `.../privacy-en.html` | グローバル向け補助 URL |
@@ -54,4 +55,4 @@ GitHub **Settings → Pages**: **Deploy from a branch** — **`main`** / **`/ (r
 
 ## 連絡先の変更
 
-`scpdocs_admin@proton.me` を変えるときは、各 HTML のフッターと `support.html` を置換後、`git push`。
+`scpdocs_admin@proton.me` または `@SCPdocs` を変えるときは、各 HTML のフッターと `support.html` を置換後、`git push`。
