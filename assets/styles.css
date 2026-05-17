@@ -109,13 +109,23 @@ a:not(.btn):not(.pill):hover {
   text-transform: uppercase;
 }
 
-.nav a {
+.terminal-header .nav a {
   text-decoration: none;
   padding: 6px 0;
 }
 
+.nav a.nav-store {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 9px;
+}
+
 .nav a:not([aria-current="page"]):hover {
   color: var(--accent);
+}
+
+.nav a.nav-store:hover {
+  border-color: var(--accent);
 }
 
 .nav a[aria-current="page"] {
@@ -174,6 +184,87 @@ a:not(.btn):not(.pill):hover {
 
 .card-invert a:hover {
   color: var(--accent);
+}
+
+.store-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(226, 224, 214, 0.22);
+}
+
+.store-cta-copy {
+  display: grid;
+  gap: 2px;
+  min-width: min(100%, 280px);
+}
+
+.store-cta-copy strong {
+  font-family: var(--font-mono);
+  font-size: clamp(15px, 2vw, 17px);
+  letter-spacing: 0.04em;
+}
+
+.store-cta-copy span:last-child {
+  color: #b9b6aa;
+  font-size: 13px;
+}
+
+.store-cta-kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b9b6aa;
+}
+
+.card-invert a.store-cta-link {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: min(100%, 190px);
+  min-height: 54px;
+  padding: 8px 14px;
+  border: 1px solid var(--invert-text);
+  border-radius: 8px;
+  background: var(--invert-text);
+  color: var(--invert-bg);
+  text-decoration: none;
+}
+
+.card-invert a.store-cta-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.store-cta-link-main {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.store-cta-link-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+@media (max-width: 520px) {
+  .store-cta {
+    align-items: stretch;
+  }
+
+  .card-invert a.store-cta-link {
+    width: 100%;
+    min-width: 0;
+  }
 }
 
 .code-chip {
