@@ -6,16 +6,27 @@
 
 | ページ | URL 例（Project Pages） | 用途 |
 |--------|-------------------------|------|
-| トップ | `https://kzky-works.github.io/web-scp-docs/` | **アプリ紹介**・ディスクレーマー・各ページへの導線。**Marketing URL（任意）** にもそのまま使える |
-| 機能紹介 | `.../features.html` | スクリーンショット付きの簡単な機能紹介 |
+| トップ（英語・既定） | `https://kzky-works.github.io/web-scp-docs/` | **アプリ紹介**・ディスクレーマー・各ページへの導線。**Marketing URL（任意）** にもそのまま使える |
+| トップ（日本語） | `.../index-ja.html` | 日本語版トップ |
+| 機能紹介（英語・既定） | `.../features.html` | スクリーンショット付きの簡単な機能紹介 |
+| 機能紹介（日本語） | `.../features-ja.html` | 日本語版機能紹介 |
 | App Store | `https://apps.apple.com/jp/app/scp-docs/id6765882660` | 公開中の iOS アプリページ |
 | プライバシー（日本語） | `.../privacy.html` | **App Store Connect の Privacy Policy URL** 候補 |
 | プライバシー（英語） | `.../privacy-en.html` | グローバル向け補助 URL |
-| サポート | `.../support.html` | **サポート URL** |
+| サポート（英語・既定） | `.../support.html` | **サポート URL** |
+| サポート（日本語） | `.../support-ja.html` | 日本語版サポート |
 | 利用規約 | `.../terms.html` | 非公式性・CC・免責など |
-| Rating & Safety Policy | `.../rating-safety.html` | **ASC の年齢適合性URL（任意）** 候補 |
+| 利用規約（英語） | `.../terms-en.html` | 英語版利用規約 |
+| Rating & Safety Policy（英語・既定） | `.../rating-safety.html` | **ASC の年齢適合性URL（任意）** 候補 |
+| Rating & Safety Policy（日本語） | `.../rating-safety-ja.html` | 日本語版安全方針 |
 
 ルートの **`.nojekyll`** は Jekyll を無効にし、`assets/` をそのまま配信するためです。
+
+## 言語構成
+
+- サイトの既定言語は英語。ルートの `index.html` と主要ナビは英語ページへ向ける。
+- 日本語版は `*-ja.html` に分ける。ただし `privacy.html` と `terms.html` はアプリ側リンクとの互換性のため日本語版として維持する。
+- すべての公開ページの共通ヘッダーに `.language-switch` を置き、英語・日本語を切り替えられるようにする。将来ほかの言語を追加するときは同じボタン列へリンクを足す。
 
 ## ワークフロー（このフォルダだけで完了）
 

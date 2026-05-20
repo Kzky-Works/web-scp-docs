@@ -83,6 +83,13 @@ a:not(.btn):not(.pill):hover {
   align-items: baseline;
 }
 
+.terminal-header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
 .brand-line {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -132,6 +139,53 @@ a:not(.btn):not(.pill):hover {
   color: var(--accent);
   border-bottom: 1px solid var(--accent);
   text-decoration: none;
+}
+
+.language-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.language-switch-label {
+  color: var(--muted);
+  margin-right: 2px;
+}
+
+.language-switch a {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.language-switch a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.language-switch a[aria-current="true"] {
+  background: rgba(220, 38, 38, 0.08);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .terminal-header-actions {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .language-switch {
+    justify-content: flex-start;
+  }
 }
 
 .main-pad {
