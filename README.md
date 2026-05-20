@@ -11,12 +11,12 @@
 | 機能紹介（英語・既定） | `.../features.html` | スクリーンショット付きの簡単な機能紹介 |
 | 機能紹介（日本語） | `.../features-ja.html` | 日本語版機能紹介 |
 | App Store | `https://apps.apple.com/jp/app/scp-docs/id6765882660` | 公開中の iOS アプリページ |
-| プライバシー（日本語） | `.../privacy.html` | **App Store Connect の Privacy Policy URL** 候補 |
-| プライバシー（英語） | `.../privacy-en.html` | グローバル向け補助 URL |
+| プライバシー（英語・既定） | `.../privacy.html` | **App Store Connect の Privacy Policy URL** 候補 |
+| プライバシー（日本語） | `.../privacy-ja.html` | 日本語版プライバシーポリシー |
 | サポート（英語・既定） | `.../support.html` | **サポート URL** |
 | サポート（日本語） | `.../support-ja.html` | 日本語版サポート |
-| 利用規約 | `.../terms.html` | 非公式性・CC・免責など |
-| 利用規約（英語） | `.../terms-en.html` | 英語版利用規約 |
+| 利用規約（英語・既定） | `.../terms.html` | 非公式性・CC・免責など |
+| 利用規約（日本語） | `.../terms-ja.html` | 日本語版利用規約 |
 | Rating & Safety Policy（英語・既定） | `.../rating-safety.html` | **ASC の年齢適合性URL（任意）** 候補 |
 | Rating & Safety Policy（日本語） | `.../rating-safety-ja.html` | 日本語版安全方針 |
 
@@ -25,7 +25,8 @@
 ## 言語構成
 
 - サイトの既定言語は英語。ルートの `index.html` と主要ナビは英語ページへ向ける。
-- 日本語版は `*-ja.html` に分ける。ただし `privacy.html` と `terms.html` はアプリ側リンクとの互換性のため日本語版として維持する。
+- 英語・既定ページは拡張子前の言語サフィックスなし、日本語版は `*-ja.html` に統一する。
+- 旧英語 URL の `privacy-en.html` / `terms-en.html` は外部リンク保護用のリダイレクトとしてだけ残す。
 - すべての公開ページの共通ヘッダーに `.language-switch` を置き、英語・日本語を切り替えられるようにする。将来ほかの言語を追加するときは同じボタン列へリンクを足す。
 
 ## ワークフロー（このフォルダだけで完了）
@@ -53,7 +54,7 @@ GitHub **Settings → Pages**: **Deploy from a branch** — **`main`** / **`/ (r
 
 | 項目 | 例 |
 |------|-----|
-| Privacy Policy URL | `https://kzky-works.github.io/web-scp-docs/privacy.html` または `privacy-en.html` |
+| Privacy Policy URL | `https://kzky-works.github.io/web-scp-docs/privacy.html` |
 | Support URL | `.../support.html` |
 | Marketing URL（任意） | トップ |
 | App Store URL | `https://apps.apple.com/jp/app/scp-docs/id6765882660` |
@@ -62,7 +63,7 @@ GitHub **Settings → Pages**: **Deploy from a branch** — **`main`** / **`/ (r
 
 ## アプリとの対応
 
-[`../../ScpDocs/ScpDocs/Sources/Core/Constants.swift`](../../ScpDocs/ScpDocs/Sources/Core/Constants.swift) の `AppLegalURLs`。プライバシー文言は **`HomeViewModel.resolvedPrivacyPolicyWebURL`** で `privacy.html` / `privacy-en.html` に切り替わります。
+[`../../ScpDocs/ScpDocs/Sources/Core/Constants.swift`](../../ScpDocs/ScpDocs/Sources/Core/Constants.swift) の `AppLegalURLs`。アプリ側も、英語・既定は `privacy.html` / `terms.html`、日本語は `privacy-ja.html` / `terms-ja.html` に合わせる。
 
 ## 連絡先の変更
 
