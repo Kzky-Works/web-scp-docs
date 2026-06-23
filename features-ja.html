@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="SCP Docs 機能紹介 — スクリーンショットで見るホーム、検索、書庫、読書状態の概要。" />
+  <meta name="description" content="SCP Docs のホーム、検索、書庫、リーダー、共有カード、保存検索、読書統計、同期機能をスクリーンショット付きで紹介します。" />
   <meta name="theme-color" content="#F7F6F0" />
   <title>機能紹介 — SCP Docs</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/features-ja.html" />
@@ -12,20 +12,23 @@
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/features-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/features-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/features-ru.html" />
+  <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/features-ko.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/features.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="SCP Docs" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:locale:alternate" content="ko_KR" />
   <meta property="og:title" content="機能紹介 — SCP Docs" />
-  <meta property="og:description" content="SCP Docs のホーム、検索、書庫、読書状態をスクリーンショット付きで紹介します。" />
+  <meta property="og:description" content="SCP Docs のホーム、検索、書庫、リーダー、共有カード、保存検索、読書統計、同期機能をスクリーンショット付きで紹介します。" />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/features-ja.html" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="機能紹介 — SCP Docs" />
-  <meta name="twitter:description" content="SCP Docs のホーム、検索、書庫、読書状態をスクリーンショット付きで紹介します。" />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta name="twitter:title" content="機能紹介 — SCP Docs" />
+  <meta name="twitter:description" content="SCP Docs のホーム、検索、書庫、リーダー、共有カード、保存検索、読書統計、同期機能をスクリーンショット付きで紹介します。" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -44,9 +47,10 @@
             <a href="features-ja.html" aria-current="true" lang="ja">日本語</a>
             <a href="features-fr.html" lang="fr">FR</a>
             <a href="features-ru.html" lang="ru">RU</a>
+            <a href="features-ko.html" lang="ko">한국어</a>
           </div>
-          <nav class="nav" aria-label="主要ナビゲーション">
-            <a href="index-ja.html">トップ</a>
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="index-ja.html">ホーム</a>
             <a href="features-ja.html" aria-current="page">機能</a>
             <a href="privacy-ja.html">プライバシー</a>
             <a href="support-ja.html">サポート</a>
@@ -59,24 +63,25 @@
       </div>
     </header>
 
+
     <main class="main-pad">
       <section aria-labelledby="feature-title">
         <p class="section-label">Feature Overview</p>
-        <h2 id="feature-title" class="section-title-lg">読みたい報告書へ、端末の中で戻ってこられる形に</h2>
+        <h2 id="feature-title" class="section-title-lg">読みたい報告書を見つけ、あとからきちんと戻る</h2>
         <div class="feature-hero">
           <div>
-            <p class="lede">
-              SCP Docs は、SCP 関連資料の入口、検索、読書状態をひとつのネイティブ UI にまとめる非公式ビューアです。ブラウザで長いページを追う時の小さな手間を減らし、読みかけの記事や気になった資料へ戻りやすくします。
-            </p>
+            <p class="lede">SCP Docs は、書庫の入口、検索、リーダー操作、個人の読書状態をひとつのネイティブ iOS アプリにまとめます。最近のアップデートで、読むだけでなく、見つける、保存する、聴く、共有する、記録するところまで扱える読書ワークスペースになりました。</p>
             <div class="pill-row">
               <span class="code-chip">Home</span>
               <span class="code-chip">Library</span>
               <span class="code-chip">Search</span>
-              <span class="code-chip">Reading state</span>
+              <span class="code-chip">Stats</span>
+              <span class="code-chip">Share cards</span>
             </div>
           </div>
           <figure class="screen-frame screen-frame-compact">
-            <img src="assets/images/home-showcase.png" alt="SCP Docs のホーム画面をライトモードとダークモードで並べたスクリーンショット" />
+            <img src="assets/images/home-showcase.png"
+              alt="SCP Docs home screen shown in light and dark appearances" />
           </figure>
         </div>
       </section>
@@ -86,12 +91,12 @@
         <h2 id="screens-title" class="section-title-lg">画面の雰囲気</h2>
         <div class="feature-shot-grid">
           <figure class="screen-frame">
-            <img src="assets/images/home-light.png" alt="SCP Docs のライトモードのホーム画面" />
-            <figcaption>ライトモードのホーム</figcaption>
+            <img src="assets/images/home-light.png" alt="ホーム（ライト）" />
+            <figcaption>ホーム（ライト）</figcaption>
           </figure>
           <figure class="screen-frame">
-            <img src="assets/images/home-dark.png" alt="SCP Docs のダークモードのホーム画面" />
-            <figcaption>ダークモードのホーム</figcaption>
+            <img src="assets/images/home-dark.png" alt="ホーム（ダーク）" />
+            <figcaption>ホーム（ダーク）</figcaption>
           </figure>
         </div>
       </section>
@@ -101,33 +106,51 @@
         <h2 id="points-title" class="section-title-lg">主な機能</h2>
         <div class="feature-grid">
           <div class="feature-card">
-            <p class="section-label">Home</p>
-            <h3>支部とカテゴリの入口</h3>
-            <p>日本支部、英語本家、フランス支部、ロシア支部、国際ハブなどの入口をまとめ、SCP、Tales、Canon、GoI、Joke などへ移動できます。ランダム記事への導線も置いています。</p>
+            <p class="section-label">Branches</p>
+            <h3>英語・日本語・フランス語・ロシア語の書庫</h3>
+            <p>支部を切り替えると、ホーム、検索、一覧、記事リンク先、アプリ言語が切り替わり、それぞれの書庫をその文脈で読めます。</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Directories</p>
+            <h3>整理された書庫ルート</h3>
+            <p>SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、ガイド類へ移動できます。</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Search</p>
-            <h3>条件を重ねる検索</h3>
-            <p>タイトルやメタ情報、タグ、オブジェクトクラスなどを組み合わせて、広いアーカイヴから読みたい記事を探しやすくします。</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Library</p>
-            <h3>読み返しのための書庫</h3>
-            <p>お気に入り、履歴、後で読む、評価など、端末内に残る読書状態をもとに記事へ戻れる場所を用意します。</p>
+            <h3>無料の高速検索とプレミアム絞り込み</h3>
+            <p>SCP番号で即オープンし、タイトル、タグ、オブジェクトクラスで検索できます。プレミアムでは対象文書、メモ、読書状態、公式評価、長さ、保存検索まで扱えます。</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Reader</p>
-            <h3>記事に集中する表示</h3>
-            <p>アプリ内ブラウザ上で記事を開き、テーマや文字まわりを整えながら、本文を読みやすい状態に近づけます。</p>
+            <h3>集中できる記事ビュー</h3>
+            <p>文字設定、落ち着いたテーマ、改善したダークモード、トップへ戻る操作、オフライン保存、特殊レイアウト記事の再現性を備えます。</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Library</p>
+            <h3>戻ってくるための場所</h3>
+            <p>閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、続きから読むデータを端末内で整理します。</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Share</p>
+            <h3>カードで共有</h3>
+            <p>記事や選んだリストを、X などで共有しやすいカード画像にできます。テンプレートとコメントにも対応します。</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Premium</p>
+            <h3>統計、読み上げ、オフライン</h3>
+            <p>読書統計、読み上げ、メモ編集、保存上限拡張、広告非表示、オフライン保存が長い読書を支えます。</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Sync</p>
+            <h3>iCloudで個人の整理を同期</h3>
+            <p>利用可能な場合、読書状態、メモ、保存検索、ブックマークフォルダを自分の iCloud Drive 経由で同期できます。保存検索は新着一致を端末上で通知できます。</p>
           </div>
         </div>
       </section>
 
       <section style="margin-top:40px;">
         <div class="card-flat">
-          <p style="margin-top:0;">
-            本アプリは SCP 財団および各支部の公式アプリではありません。コンテンツの正本、権利関係、ライセンス表記は各公開サイトに従います。
-          </p>
+          <p style="margin-top:0;">SCP Docs は SCP Foundation や Wikidot の公式アプリではありません。元ページ、著者表示、ライセンス表記は各提供元サイトが正本です。</p>
           <div class="pill-row">
             <a class="pill" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
               rel="noopener noreferrer">App Store</a>
@@ -141,12 +164,12 @@
     <footer class="site-footer">
       <div class="site-footer-inner">
         <div>
-          <strong>SCP Docs</strong> — Features
+          <strong>SCP Docs</strong> — 機能
         </div>
         <div>
-          Contact: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
+          連絡先: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
           X: <a href="https://x.com/SCPdocs" target="_blank" rel="noopener noreferrer">@SCPdocs</a><br />
-          <span class="ft-muted"><a href="index-ja.html">トップへ</a></span>
+          <span class="ft-muted"><a href="index-ja.html">ホームへ戻る</a></span>
         </div>
       </div>
     </footer>

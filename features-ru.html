@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Возможности SCP Docs — краткий обзор Главной, Поиска, Библиотеки и состояния чтения." />
+  <meta name="description" content="Обзор SCP Docs со скриншотами: Главная по филиалам, обновлённый поиск, Библиотека, ридер, карточки для публикации, сохранённые поиски, статистика и синхронизация." />
   <meta name="theme-color" content="#F7F6F0" />
   <title>Возможности — SCP Docs</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/features-ru.html" />
@@ -12,20 +12,23 @@
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/features-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/features-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/features-ru.html" />
+  <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/features-ko.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/features.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="SCP Docs" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="ja_JP" />
   <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="ko_KR" />
   <meta property="og:title" content="Возможности — SCP Docs" />
-  <meta property="og:description" content="Обзор SCP Docs со скриншотами: Главная, Поиск, Библиотека и состояние чтения." />
+  <meta property="og:description" content="Обзор SCP Docs со скриншотами: Главная по филиалам, обновлённый поиск, Библиотека, ридер, карточки для публикации, сохранённые поиски, статистика и синхронизация." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/features-ru.html" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Возможности — SCP Docs" />
-  <meta name="twitter:description" content="Обзор SCP Docs со скриншотами: Главная, Поиск, Библиотека и состояние чтения." />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta name="twitter:title" content="Возможности — SCP Docs" />
+  <meta name="twitter:description" content="Обзор SCP Docs со скриншотами: Главная по филиалам, обновлённый поиск, Библиотека, ридер, карточки для публикации, сохранённые поиски, статистика и синхронизация." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -44,8 +47,9 @@
             <a href="features-ja.html" lang="ja">日本語</a>
             <a href="features-fr.html" lang="fr">FR</a>
             <a href="features-ru.html" aria-current="true" lang="ru">RU</a>
+            <a href="features-ko.html" lang="ko">한국어</a>
           </div>
-          <nav class="nav" aria-label="Основная навигация">
+          <nav class="nav" aria-label="Primary navigation">
             <a href="index-ru.html">Главная</a>
             <a href="features-ru.html" aria-current="page">Возможности</a>
             <a href="privacy-ru.html">Конфиденциальность</a>
@@ -59,27 +63,25 @@
       </div>
     </header>
 
+
     <main class="main-pad">
       <section aria-labelledby="feature-title">
         <p class="section-label">Feature Overview</p>
-        <h2 id="feature-title" class="section-title-lg">Находите отчеты и действительно возвращайтесь к ним</h2>
+        <h2 id="feature-title" class="section-title-lg">Находите отчёт и действительно возвращайтесь к нему</h2>
         <div class="feature-hero">
           <div>
-            <p class="lede">
-              SCP Docs объединяет точки входа, поиск и личное состояние чтения для материалов SCP в одном нативном
-              iOS-ридере. Он создан для моментов после открытия: сохранить отчет, вернуться к недочитанной странице
-              и перемещаться по большому архиву, не теряя контекст.
-            </p>
+            <p class="lede">SCP Docs объединяет входы в архивы, поиск, инструменты чтения и личное состояние чтения в одном нативном iOS-приложении. Последние версии превратили его в пространство для поиска, сохранения, прослушивания, публикации и отслеживания прочитанного.</p>
             <div class="pill-row">
-              <span class="code-chip">Главная</span>
-              <span class="code-chip">Библиотека</span>
-              <span class="code-chip">Поиск</span>
-              <span class="code-chip">Состояние чтения</span>
+              <span class="code-chip">Home</span>
+              <span class="code-chip">Library</span>
+              <span class="code-chip">Search</span>
+              <span class="code-chip">Stats</span>
+              <span class="code-chip">Share cards</span>
             </div>
           </div>
           <figure class="screen-frame screen-frame-compact">
             <img src="assets/images/home-showcase.png"
-              alt="Главный экран SCP Docs в светлом и темном оформлении" />
+              alt="SCP Docs home screen shown in light and dark appearances" />
           </figure>
         </div>
       </section>
@@ -89,12 +91,12 @@
         <h2 id="screens-title" class="section-title-lg">Интерфейс одним взглядом</h2>
         <div class="feature-shot-grid">
           <figure class="screen-frame">
-            <img src="assets/images/home-light.png" alt="Главный экран SCP Docs в светлом режиме" />
-            <figcaption>Главная в светлом режиме</figcaption>
+            <img src="assets/images/home-light.png" alt="Главная в светлой теме" />
+            <figcaption>Главная в светлой теме</figcaption>
           </figure>
           <figure class="screen-frame">
-            <img src="assets/images/home-dark.png" alt="Главный экран SCP Docs в темном режиме" />
-            <figcaption>Главная в темном режиме</figcaption>
+            <img src="assets/images/home-dark.png" alt="Главная в тёмной теме" />
+            <figcaption>Главная в тёмной теме</figcaption>
           </figure>
         </div>
       </section>
@@ -104,34 +106,51 @@
         <h2 id="points-title" class="section-title-lg">Основные возможности</h2>
         <div class="feature-grid">
           <div class="feature-card">
-            <p class="section-label">Home</p>
-            <h3>Точки входа по филиалам и категориям</h3>
-            <p>Переходите к отчетам SCP, Tales, Canon, GoI, Joke и контекстам японского, английского, французского или русского филиала с одной стартовой поверхности.</p>
+            <p class="section-label">Branches</p>
+            <h3>Английский, японский, французский и русский архивы</h3>
+            <p>Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык приложения.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Directories</p>
+            <h3>Более понятные маршруты по архиву</h3>
+            <p>Просматривайте SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи, руководства и связанные списки.</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Search</p>
-            <h3>Многоуровневый поиск по архиву</h3>
-            <p>Ищите по синхронизированным метаданным каталогов: названиям, тегам, классам объектов, состоянию чтения и заметкам там, где они доступны.</p>
+            <h3>Быстрый бесплатный поиск и Premium-фильтры</h3>
+            <p>Открывайте по номеру SCP, ищите по названиям, тегам и классам объектов. Premium добавляет документы, заметки, статус чтения, официальный рейтинг, длину и сохранённые поиски.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Reader</p>
+            <h3>Сосредоточенный вид статьи</h3>
+            <p>Настройки типографики, спокойные темы, улучшенная тёмная тема, возврат наверх, офлайн-снимки и более точное отображение специальных страниц.</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Library</p>
             <h3>Место, куда можно вернуться</h3>
-            <p>Избранное, история, «прочитать позже» и личные оценки сохраняют ваш путь по архиву видимым на устройстве.</p>
+            <p>История, статус чтения, оценки, закладки, «прочитать позже», позиция прокрутки, заметки и продолжение чтения остаются организованными на устройстве.</p>
           </div>
           <div class="feature-card">
-            <p class="section-label">Reader</p>
-            <h3>Сфокусированный просмотр статьи</h3>
-            <p>Открывайте исходные страницы во встроенном ридере с типографическими настройками, обработкой темы и сохраненными снимками для подходящих материалов.</p>
+            <p class="section-label">Share</p>
+            <h3>Поделиться карточками</h3>
+            <p>Превратите статью или выбранный список в карточку для X и других социальных приложений, с шаблонами и необязательным комментарием.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Premium</p>
+            <h3>Статистика, озвучивание и офлайн</h3>
+            <p>Статистика чтения, синтез речи, редактирование заметок, расширенные лимиты, скрытие рекламы и офлайн-хранение.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Sync</p>
+            <h3>Личная организация через iCloud</h3>
+            <p>Когда доступно, состояние чтения, заметки, сохранённые поиски и папки закладок синхронизируются через ваш iCloud Drive. Сохранённые поиски могут уведомлять о новых совпадениях на устройстве.</p>
           </div>
         </div>
       </section>
 
       <section style="margin-top:40px;">
         <div class="card-flat">
-          <p style="margin-top:0;">
-            SCP Docs не является официальным приложением SCP Foundation или Wikidot. Исходные страницы, авторские
-            указания и лицензионные уведомления на каждом исходном сайте остаются авторитетными.
-          </p>
+          <p style="margin-top:0;">SCP Docs не является официальным приложением SCP Foundation или Wikidot. Исходные страницы, сведения об авторах и лицензии на исходных сайтах остаются основным источником.</p>
           <div class="pill-row">
             <a class="pill" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
               rel="noopener noreferrer">App Store</a>
@@ -148,9 +167,9 @@
           <strong>SCP Docs</strong> — Возможности
         </div>
         <div>
-          Contact: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
+          Контакт: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
           X: <a href="https://x.com/SCPdocs" target="_blank" rel="noopener noreferrer">@SCPdocs</a><br />
-          <span class="ft-muted"><a href="index-ru.html">Вернуться на главную</a></span>
+          <span class="ft-muted"><a href="index-ru.html">Назад на главную</a></span>
         </div>
       </div>
     </footer>

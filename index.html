@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description"
-    content="SCP Docs — an unofficial native iOS reader for SCP-related archives, reading state, library, and search." />
+  <meta name="description" content="SCP Docs is an unofficial native iOS reader for SCP Wiki archives, branch-aware search, reading state, saved searches, sharing, and premium reading tools." />
   <meta name="theme-color" content="#F7F6F0" />
   <title>SCP Docs — Foundation Archive</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/" />
@@ -13,6 +12,7 @@
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/index-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
+  <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -20,16 +20,15 @@
   <meta property="og:locale:alternate" content="ja_JP" />
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:locale:alternate" content="ko_KR" />
   <meta property="og:title" content="SCP Docs — Foundation Archive" />
-  <meta property="og:description"
-    content="An unofficial SCP reader for iOS with archive browsing, reading state, library views, and search." />
+  <meta property="og:description" content="SCP Docs is an unofficial native iOS reader for SCP Wiki archives, branch-aware search, reading state, saved searches, sharing, and premium reading tools." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
-  <meta name="twitter:description"
-    content="An unofficial SCP reader for iOS with archive browsing, reading state, library views, and search." />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
+  <meta name="twitter:description" content="SCP Docs is an unofficial native iOS reader for SCP Wiki archives, branch-aware search, reading state, saved searches, sharing, and premium reading tools." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -48,6 +47,7 @@
             <a href="index-ja.html" lang="ja">日本語</a>
             <a href="index-fr.html" lang="fr">FR</a>
             <a href="index-ru.html" lang="ru">RU</a>
+            <a href="index-ko.html" lang="ko">한국어</a>
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index.html" aria-current="page">Home</a>
@@ -63,28 +63,26 @@
       </div>
     </header>
 
+
     <main class="main-pad">
       <section aria-labelledby="hero-title">
         <p class="section-label">Overview</p>
         <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
         <div class="card-invert">
           <p class="lede">
-            SCP Docs is an <strong>unofficial fan-made reader</strong> for SCP-related materials published on the
-            open internet, including Wikidot-based sites. It collects archive entry points, reading state, library
-            views, and search into a native iOS workspace so you can return to reports you were reading without
-            rebuilding your trail in a browser.
+            SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native reading workspace for browsing archives, searching by branch, saving what matters, and returning to the reports you were reading.
           </p>
-          <div class="pill-row" aria-hidden="false">
-            <span class="code-chip">Native iOS UI</span>
+          <div class="pill-row">
+            <span class="code-chip">Native iOS reader</span>
+            <span class="code-chip">Four branch archives</span>
             <span class="code-chip">Reading state</span>
-            <span class="code-chip">Multi-branch archives</span>
-            <span class="code-chip">Available on App Store</span>
+            <span class="code-chip">Premium workspace tools</span>
           </div>
           <div class="store-cta" aria-label="SCP Docs App Store link">
             <div class="store-cta-copy">
               <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs for iPhone / iPad</strong>
-              <span>Built for iOS 17 and later. English, Japanese, French, and Russian UI support.</span>
+              <strong>SCP Docs for iPhone</strong>
+              <span>Built for iOS 17 and later. App UI currently supports English, Japanese, French, and Russian.</span>
             </div>
             <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
               rel="noopener noreferrer" aria-label="Open SCP Docs on the App Store">
@@ -99,60 +97,18 @@
         </figure>
       </section>
 
-      <section aria-labelledby="phil-title" style="margin-top:38px;">
-        <p class="section-label">Design rationale</p>
-        <h2 id="phil-title" class="section-title-lg">Native first, platform aware</h2>
-        <div class="card">
-          <p>
-            SCP Docs is not a generic web wrapper. The current release is a native iOS app built around Apple
-            frameworks, with SwiftUI-driven surfaces for navigation, archive lists, settings, and reading tools.
-            Scrolling, navigation, haptics, and accessibility are shaped to feel like part of the platform.
-          </p>
-          <p>
-            The officially distributed client is currently iOS only. There is no announced Android release date. If
-            another platform is considered in the future, the intent is to follow that platform's native UI and
-            lifecycle patterns rather than ship one shared shell everywhere.
-          </p>
-          <ul class="ft-list" style="margin-top:16px;">
-            <li><strong>Fan project</strong> — SCP Docs is independent from the SCP Foundation, Wikidot, Inc., and
-              the operators of referenced sites.</li>
-            <li><strong>Reader layer</strong> — article bodies are opened from their public source URLs through an
-              in-app WebKit reader; source sites and licenses remain authoritative.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="tabs-title" style="margin-top:38px;">
-        <p class="section-label">App shell</p>
-        <h2 id="tabs-title" class="section-title-lg">A four-tab workspace for reading</h2>
-        <p class="ft-muted">
-          The main app is organized around Home, Library, Search, and Settings, with reading state carried across the
-          archive surfaces.
-        </p>
+      <section aria-labelledby="workspace-title" style="margin-top:38px;">
+        <p class="section-label">Reading workspace</p>
+        <h2 id="workspace-title" class="section-title-lg">Browse, search, organize, and resume</h2>
         <div class="grid-2">
           <div class="card">
-            <dl class="dl-flat">
-              <dt>Home</dt>
-              <dd>Branch context, archive entry points, category tiles, random discovery, and direct jump tools.</dd>
-              <dt>Library</dt>
-              <dd>Favorites, history, read-later, ratings, and structured archive routes for Tales, GoI, Canon, Joke,
-                and related lists.</dd>
-              <dt>Search</dt>
-              <dd>Catalog search across synchronized metadata, including title, tags, object class, memo, and reading
-                state where available.</dd>
-              <dt>Settings</dt>
-              <dd>Interface language, appearance, reader behavior, catalog refresh, data controls, premium status,
-                and legal links.</dd>
-            </dl>
+            <p>
+              The app is organized around Home, Library, Search, and Settings. Home now focuses on continue-reading, quick search presets, random discovery, and cleaner directory routes for Stories, Tales, Canons, Series, Groups of Interest, guides, and related collections.
+            </p>
           </div>
           <div class="card">
-            <p class="section-label" style="margin-top:0;">Reading surface</p>
             <p>
-              Articles open in an in-app WebKit reader with reader controls layered around the source document:
-              theme treatment, typography options, navigation tools, and offline snapshots for saved items.
-            </p>
-            <p class="ft-muted" style="margin-bottom:0;">
-              The interface uses flat planes, hairline borders, and a restrained Foundation Terminal tone.
+              Reading history, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your route through the archive remains visible on device.
             </p>
           </div>
         </div>
@@ -160,36 +116,42 @@
 
       <section aria-labelledby="branch-title" style="margin-top:38px;">
         <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">Branches and catalogs</h2>
+        <h2 id="branch-title" class="section-title-lg">Four branches, one archive workflow</h2>
         <div class="card">
           <p>
-            SCP Docs provides entry points for the Japanese branch, the English SCP Wiki, the French Branch, the
-            Russian Branch, and international hub content where catalog data is available. Catalog manifests are
-            fetched from hosted JSON data, cached on device, and used for lists and search.
+            SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, and Russian branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.
           </p>
           <ul class="ft-list">
-            <li><strong>SCP reports</strong> — series-based report lists and metadata-assisted title resolution.</li>
-            <li><strong>Multi-form archives</strong> — Tales, GoI, Canon, Joke, and related manifest-driven lists.</li>
-            <li><strong>Tag maps</strong> — support data for tags and object-class-oriented discovery where available.</li>
+            <li><strong>Archive lists</strong> — SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related directories.</li>
+            <li><strong>Search</strong> — number and title search is free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches.</li>
+            <li><strong>Reader</strong> — cleaner typography, themes, scroll tools, better dark mode, and more faithful rendering for specially formatted source pages.</li>
           </ul>
         </div>
       </section>
 
-      <section aria-labelledby="read-title" style="margin-top:38px;">
-        <p class="section-label">Engagement</p>
-        <h2 id="read-title" class="section-title-lg">Reading state and personal library</h2>
+      <section aria-labelledby="premium-title" style="margin-top:38px;">
+        <p class="section-label">Premium</p>
+        <h2 id="premium-title" class="section-title-lg">Tools for deeper reading</h2>
         <div class="grid-2">
           <div class="card">
-            <p>
-              Each article URL can be associated with scroll progress, ratings, favorites, read-later status, and
-              history on your device. This powers return-to-reading flows and personal library views.
-            </p>
+            <dl class="dl-flat">
+              <dt>Reading stats</dt>
+              <dd>Reading time, catalog coverage, frequently read Object Classes and tags, rating trends, memo insights, backlog status, and logs by day, month, and year.</dd>
+              <dt>Saved searches</dt>
+              <dd>Save search conditions and receive on-device notifications when new matching catalog entries appear.</dd>
+              <dt>Bookmark folders</dt>
+              <dd>Organize saved articles into folders that can sync through your own iCloud Drive, along with memos and saved searches.</dd>
+            </dl>
           </div>
           <div class="card">
-            <p>
-              Premium features may expand the archive workflow with offline snapshots, broader search, memo features,
-              and higher save limits. See in-app descriptions and purchase screens for the current offer.
-            </p>
+            <dl class="dl-flat">
+              <dt>Listen and save</dt>
+              <dd>Text-to-speech reads article text aloud, and offline snapshots keep eligible saved articles available without a connection.</dd>
+              <dt>Share as cards</dt>
+              <dd>Turn an article or selected list into a styled share card for X and other social apps, with templates and optional comments.</dd>
+              <dt>Ads and limits</dt>
+              <dd>Premium hides ads, expands save limits, unlocks memo editing, and enables advanced search. A rewarded ad can grant temporary Premium access when available.</dd>
+            </dl>
           </div>
         </div>
       </section>
@@ -199,10 +161,9 @@
         <h2 id="req-title" class="section-title-lg">System requirements</h2>
         <div class="card-flat">
           <ul class="ft-list">
-            <li><strong>OS</strong> — built for iOS 17 and later.</li>
-            <li><strong>Network</strong> — required for catalog refresh, online article viewing, external pages, ads,
-              and purchases.</li>
-            <li><strong>Accounts</strong> — no SCP Foundation or Wikidot account is required to use the app.</li>
+            <li><strong>OS</strong> — iOS 17 or later.</li>
+            <li><strong>Network</strong> — required for catalog refresh, online article viewing, source-site content, ads, purchase checks, and app links.</li>
+            <li><strong>Accounts</strong> — no SCP Foundation or Wikidot account is required for reading in the app.</li>
           </ul>
         </div>
       </section>
@@ -211,9 +172,7 @@
         <p class="section-label">Legal</p>
         <div class="card">
           <p>
-            SCP Docs is an <strong>unofficial fan application</strong>. Source articles, copyright notices, and
-            licensing terms belong to their respective authors and source sites. SCP-related works are commonly
-            published under Creative Commons BY-SA 3.0, but the source page remains authoritative.
+            SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.
           </p>
           <div class="pill-row">
             <a class="pill" href="features.html">Features</a>
@@ -229,13 +188,12 @@
     <footer class="site-footer">
       <div class="site-footer-inner">
         <div>
-          <strong>SCP Docs</strong><br />
-          Unofficial fan reader. Content rights remain with each author and source license.
+          <strong>SCP Docs</strong> — Home
         </div>
         <div>
           Contact: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
           X: <a href="https://x.com/SCPdocs" target="_blank" rel="noopener noreferrer">@SCPdocs</a><br />
-          <span class="ft-muted">Last updated 2026-05-21</span>
+          <span class="ft-muted"><a href="index.html">Back to home</a></span>
         </div>
       </div>
     </footer>

@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description"
-    content="SCP Docs — 非公式 SCP リーダー。現行は iOS 向けネイティブのみ提供。App Store への導線、読書状態・書庫・検索の概要。" />
+  <meta name="description" content="SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。" />
   <meta name="theme-color" content="#F7F6F0" />
   <title>SCP Docs — Foundation Archive</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
@@ -13,6 +12,7 @@
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/index-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
+  <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -20,14 +20,15 @@
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:locale:alternate" content="ko_KR" />
   <meta property="og:title" content="SCP Docs — Foundation Archive" />
-  <meta property="og:description" content="非公式 SCP リーダー（iOS）。読書状態・書庫・検索の概要、ネイティブ UI 方針、CC BY-SA 3.0 への帰属。" />
+  <meta property="og:description" content="SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。" />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
-  <meta name="twitter:description" content="非公式 SCP リーダー（iOS）。App Store への導線、読書状態・書庫・検索の概要、ネイティブ UI 方針。" />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
+  <meta name="twitter:description" content="SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -46,9 +47,10 @@
             <a href="index-ja.html" aria-current="true" lang="ja">日本語</a>
             <a href="index-fr.html" lang="fr">FR</a>
             <a href="index-ru.html" lang="ru">RU</a>
+            <a href="index-ko.html" lang="ko">한국어</a>
           </div>
-          <nav class="nav" aria-label="主要ナビゲーション">
-            <a href="index-ja.html" aria-current="page">トップ</a>
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="index-ja.html" aria-current="page">ホーム</a>
             <a href="features-ja.html">機能</a>
             <a href="privacy-ja.html">プライバシー</a>
             <a href="support-ja.html">サポート</a>
@@ -61,155 +63,119 @@
       </div>
     </header>
 
+
     <main class="main-pad">
-      <!-- HERO -->
       <section aria-labelledby="hero-title">
         <p class="section-label">Overview</p>
         <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
         <div class="card-invert">
           <p class="lede">
-            SCP Docs は、<strong>インターネット・オープンの SCP 関連資料</strong>（各 Wikidot サイト等で公開されている記事）を、ネイティブの操作感で読むことを目的とした<strong>非公式のファンメイド・ビューア</strong>です。公式サイトにログインすることなく、リスト閲覧・ジャンプ・検索から記事までをひとつの「端末側のワークスペース」にまとめます。
+            SCP Docs は、SCP Wiki と各支部サイトの記事をより快適に読むための<strong>非公式ファンメイド iOS リーダー</strong>です。公開されている元ページを、書庫の閲覧、支部別検索、保存、読書記録、読みかけ復帰まで扱えるネイティブな読書ワークスペースにまとめます。
           </p>
-          <div class="pill-row" aria-hidden="false">
-            <span class="code-chip">プラットフォームネイティブ UI（iOS 現行）</span>
-            <span class="code-chip">読書状態の自動保存</span>
-            <span class="code-chip">複数支部ハブ対応</span>
-            <span class="code-chip">App Store 配信中</span>
+          <div class="pill-row">
+            <span class="code-chip">ネイティブ iOS リーダー</span>
+            <span class="code-chip">4支部対応</span>
+            <span class="code-chip">読書状態</span>
+            <span class="code-chip">プレミアム読書ツール</span>
           </div>
-          <div class="store-cta" aria-label="SCP docs の App Store リンク">
+          <div class="store-cta" aria-label="SCP Docs App Store link">
             <div class="store-cta-copy">
               <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP docs for iPhone / iPad</strong>
-              <span>iOS 17以降。日本語・英語・フランス語・ロシア語 UI に対応。</span>
+              <strong>SCP Docs for iPhone</strong>
+              <span>iOS 17以降に対応。アプリUIは現在、英語・日本語・フランス語・ロシア語に対応しています。</span>
             </div>
             <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="SCP docs を App Store で開く">
-              <span class="store-cta-link-main">App Storeで入手</span>
+              rel="noopener noreferrer" aria-label="App Store で SCP Docs を開く">
+              <span class="store-cta-link-main">App Store で見る</span>
               <span class="store-cta-link-sub">View on Apple</span>
             </a>
           </div>
         </div>
-        <figure class="hero-media" aria-label="SCP Docs アプリ画面プレビュー">
-          <img src="assets/images/home-showcase.png" alt="SCP Docs のホーム画面をライトモードとダークモードで並べたプレビュー" />
+        <figure class="hero-media" aria-label="SCP Docs app preview">
+          <img src="assets/images/home-showcase.png"
+            alt="SCP Docs のホーム画面プレビュー。ライト表示とダーク表示。" />
         </figure>
       </section>
 
-      <!-- PHILOSOPHY -->
-      <section aria-labelledby="phil-title" style="margin-top:38px;">
-        <p class="section-label">Design rationale</p>
-        <h2 id="phil-title" class="section-title-lg">ネイティブで各プラットフォームに寄り添う</h2>
+      <section aria-labelledby="workspace-title" style="margin-top:38px;">
+        <p class="section-label">Reading workspace</p>
+        <h2 id="workspace-title" class="section-title-lg">読む、探す、整理する、戻ってくる</h2>
+        <div class="grid-2">
+          <div class="card">
+            <p>
+              アプリはホーム、書庫、検索、設定を中心に構成されています。現在のホームは「続きから読む」、検索プリセット、ランダム発見、Stories / Tales / Canons / Series / GoI / ガイド類などへ進む整理されたディレクトリを備えます。
+            </p>
+          </div>
+          <div class="card">
+            <p>
+              閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、フォルダ、続きから読むデータを記事に結びつけて保存し、読んできた経路を端末内で見失いにくくします。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="branch-title" style="margin-top:38px;">
+        <p class="section-label">Content scope</p>
+        <h2 id="branch-title" class="section-title-lg">4支部をひとつの読書フローに</h2>
         <div class="card">
           <p>
-            SCP Docs は、<strong>単一の Web ランタイムで包んだ汎用ラッパ</strong>ではなく、各 OS が提供する<strong>ネイティブな UI レイヤ</strong>を採ります。<strong>現行リリースは iOS 向け</strong>で、メイン UI は SwiftUI を含む Apple のフレームワークで構築されています。スクロール、ナビゲーション、ハプティクス、アクセシビリティなど、利用者が<strong>そのプラットフォーム</strong>で期待する挙動に寄せることを目標としています。
+            英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。
           </p>
-          <p>
-            <strong>現時点で公式に提供しているクライアントは iOS 版のみ</strong>です。Android 版の予定・公開時期は未定で、ロードマップに載っていません。仮に将来着手する場合も、同じく OS ネイティブの UI とライフサイクルに沿う方針（Kotlin／Jetpack Compose 等の時点の推奨スタック）を予定しています。
-          </p>
-          <p class="ft-muted" style="margin-bottom:0;">
-            記事本文は Web で公開されているドキュメントをそのまま再配布するものではなく、ユーザーが自分の選択で閲覧先 URL を開いた結果として表示されます。
-          </p>
-          <ul class="ft-list" style="margin-top:16px;">
-            <li><strong>Fan project</strong> — SCP 財団または Wikidot, Inc. 等の運営主体とは<strong>提携・提携宣伝しない</strong>独立した愛好者によるアプリです（詳しくはページ末尾のディスクレーマー）</li>
-            <li><strong>MVVM とポート性</strong> — ドメインロジックとデータ取得は View と分離した ViewModels／repositories に載せます。<strong>iOS では</strong> UI 状態は Observation 等のフレームワークに沿って管理し、<strong>他プラットフォームでは</strong>その OS の推奨パターンに合わせます。</li>
+          <ul class="ft-list">
+            <li><strong>書庫リスト</strong> — SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、関連ディレクトリ。</li>
+            <li><strong>検索</strong> — 番号・タイトル検索は無料。プレミアムでは対象文書、タグ、オブジェクトクラス、メモ、読書状態、公式評価、長さ、保存検索まで組み合わせられます。</li>
+            <li><strong>リーダー</strong> — 文字組み、テーマ、スクロール操作、ダークモード、特殊レイアウト記事の再現性を見直した本文表示。</li>
           </ul>
         </div>
       </section>
 
-      <!-- UI STRUCTURE -->
-      <section aria-labelledby="tabs-title" style="margin-top:38px;">
-        <p class="section-label">App shell</p>
-        <h2 id="tabs-title" class="section-title-lg">四点タブで構成される一本道のワークスペース</h2>
-        <p class="ft-muted">
-          メインウィンドウは標準タブ構成です。ホーム、書庫、検索、設定を行き来しながら、読みたい資料へすぐ戻れるレイアウトです。
-        </p>
+      <section aria-labelledby="premium-title" style="margin-top:38px;">
+        <p class="section-label">Premium</p>
+        <h2 id="premium-title" class="section-title-lg">深く読むためのツール</h2>
         <div class="grid-2">
           <div class="card">
             <dl class="dl-flat">
-              <dt>ホーム Home</dt>
-              <dd>支部コンテキストでのダッシュボード、カテゴリタイル、アーカイヴ入口、イベント・ジャンパー等への導線を集約。ランダム表示や SCP 指定ジャンプにも対応するエントリが配置されます。</dd>
-              <dt>書庫 Library</dt>
-              <dd>
-                「お気に入り」「履歴」および、物語／カノン／ジャーク／団体資料など<strong>静的に束ねられたカテゴリからの一覧経路</strong>があります。リストに既読・アクセント（高評価）表示が載る一覧も含みます。
-              </dd>
-              <dt>検索 Search</dt>
-              <dd>
-                メタ情報が同期されたリストを横断し、クエリおよびタグ・オブジェクトクラス等との組み合わせで読みたい紙面へ辿れる画面です。条件を重ねながら、広いアーカイヴから目的の記事を探せます。</dd>
-              <dt>設定 Settings</dt>
-              <dd>
-                アプリ全体の<strong>インタフェース言語</strong>、外観、記事表示の細部、コンテンツ系リモート一覧の同期、個人データのクリア、法務リンク（本サイト）などを集約します。</dd>
+              <dt>読書統計</dt>
+              <dd>読書時間、カタログ読了率、よく読むオブジェクトクラスやタグ、評価傾向、メモ、積読、曜日・月・年ごとの記録を表示します。</dd>
+              <dt>保存した検索</dt>
+              <dd>検索条件を保存し、新しく一致する記事がカタログに現れたときに端末上の通知で知らせます。</dd>
+              <dt>ブックマークフォルダ</dt>
+              <dd>保存した記事をフォルダで整理し、メモや保存検索とともに自分の iCloud Drive 経由で同期できます。</dd>
             </dl>
           </div>
           <div class="card">
-            <p class="section-label" style="margin-top:0;">Reading surface</p>
-            <p>
-              記事閲覧は <strong>アプリ内ブラウザ（WebKit）</strong>上で行われ、ビューアとしてのリーダー制御（テーマ整合のための注入スクリプト、フォント倍率、オフラインスナップショット等）が重ねられます。これにより、Wiki 側のナビゲーションを抑えたリーディング体験を狙っています。
-            </p>
-            <p class="ft-muted" style="margin-bottom:0;">
-              画面端の「モダン・ブルータリズム」配色（クリームベースの平面、ヘアライン境界）でホームと記事周辺の見た目を揃えています。
-            </p>
+            <dl class="dl-flat">
+              <dt>聴く、保存する</dt>
+              <dd>読み上げ機能で本文を音声再生し、対象記事のオフライン保存で通信がない場面でも読み返せます。</dd>
+              <dt>カードで共有</dt>
+              <dd>記事や選んだリストを、X などで共有しやすいカード画像にできます。テンプレートとコメントにも対応します。</dd>
+              <dt>広告と上限</dt>
+              <dd>プレミアムでは広告非表示、保存上限拡張、メモ編集、高度な検索を利用できます。利用可能な場合はリワード広告で一時的にプレミアムを解放できます。</dd>
+            </dl>
           </div>
         </div>
       </section>
 
-      <!-- BRANCHES -->
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
-        <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">支部とカタログ</h2>
-        <div class="card">
-          <p>
-            ホームの文脈では、<strong>日本支部（JP）・英語本家（EN）・フランス支部（FR）・ロシア支部（RU）・国際ハブ（INT）</strong>に相当する入口が用意され、それぞれに連なるアーカイヴやポータルへ遷移できます。カタログ JSON はリモート（例: GitHub 上の配信物）から取得し、端末にキャッシュしたうえで一覧と検索に供します。
-          </p>
-          <ul class="ft-list">
-            <li><strong>日本支部アーカイヴ</strong> — シリーズと番号レンジに沿った報告書リスト、タイトル解決のためのメタデータ同期等</li>
-            <li><strong>マルチフォーム資料</strong> — Tales / GoI / Canon / Joke など、マニフェスト駆動の一覧と更新（配信スキーマに沿った取得）</li>
-            <li><strong>タグマップ</strong> — 日本支部向けのタグ・オブジェクトクラス補助データの同期（ネットワーク利用時）</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- READING STATE -->
-      <section aria-labelledby="read-title" style="margin-top:38px;">
-        <p class="section-label">Engagement</p>
-        <h2 id="read-title" class="section-title-lg">読書状態と個人の書庫</h2>
-        <div class="grid-2">
-          <div class="card">
-            <p>
-              各記事 URL をキーに、<strong>スクロール進捗</strong>（十分に末尾へ到達したか）、<strong>星評価</strong>、<strong>お気に入り／後で読む</strong>、<strong>履歴</strong>が端末内に保持されます。これにより「続きから読む」や高評価一覧のような派生 UI が可能になります。
-            </p>
-            <p class="ft-muted">
-              一部のメモや職員ダッシュボード向けの記録は SwiftData 等の永続ストアに載る場合があります。いずれも<strong>利用者が端末上で操作した結果</strong>に基づくものです。
-            </p>
-          </div>
-          <div class="card">
-            <p>
-              記事の整理や読み返しを助けるため、端末内の状態をもとに履歴・お気に入り・後で読む・メモなどの導線をまとめます。対応範囲はアプリ内の案内に従います。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- REQUIREMENTS -->
       <section aria-labelledby="req-title" style="margin-top:38px;">
         <p class="section-label">Requirements</p>
         <h2 id="req-title" class="section-title-lg">動作環境</h2>
         <div class="card-flat">
           <ul class="ft-list">
-            <li><strong>対応 OS</strong> — iOS 17 以降を対象としたビルドです（以降の App Store 要件・Xcode 設定に追従します）</li>
-            <li><strong>ネットワーク</strong> — カタログ取得・本文のオンライン閲覧・外部ページ表示に通信が必要です</li>
-            <li><strong>アカウント</strong> — アプリ利用に SCP Foundation / Wikidot のアカウントは不要です</li>
+            <li><strong>OS</strong> — iOS 17以降。</li>
+            <li><strong>通信</strong> — カタログ更新、オンライン記事表示、元サイトコンテンツ、広告、購入確認、外部リンクに必要です。</li>
+            <li><strong>アカウント</strong> — アプリで読むだけなら SCP Foundation や Wikidot のアカウントは不要です。</li>
           </ul>
         </div>
       </section>
 
-      <!-- CTA -->
       <section style="margin-top:40px;">
         <p class="section-label">Legal</p>
         <div class="card">
           <p>
-            本アプリは<strong>非公式のファン作品</strong>です。SCP 関連の二次創作やレポーティングの取り扱いは、各コンテンツのライセンスとコミュニティ規範に従います。アプリ内から Creative Commons BY-SA 3.0 の解説にもリンクがあります。
+            SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。
           </p>
           <div class="pill-row">
-            <a class="pill" href="features-ja.html">機能紹介</a>
+            <a class="pill" href="features-ja.html">機能</a>
             <a class="pill" href="privacy-ja.html">プライバシー</a>
             <a class="pill" href="support-ja.html">サポート</a>
             <a class="pill" href="terms-ja.html">利用規約</a>
@@ -222,13 +188,12 @@
     <footer class="site-footer">
       <div class="site-footer-inner">
         <div>
-          <strong>SCP Docs</strong><br />
-          非公式ファンビューア — コンテンツの著作権は各作者およびライセンス帰属に従います。
+          <strong>SCP Docs</strong> — ホーム
         </div>
         <div>
-          Contact: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
+          連絡先: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
           X: <a href="https://x.com/SCPdocs" target="_blank" rel="noopener noreferrer">@SCPdocs</a><br />
-          <span class="ft-muted">Last updated 2026-05-17</span>
+          <span class="ft-muted"><a href="index-ja.html">ホームへ戻る</a></span>
         </div>
       </div>
     </footer>
