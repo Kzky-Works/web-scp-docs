@@ -285,7 +285,7 @@ def layout(
 INDEX: dict[str, dict[str, str]] = {
     "en": {
         "title": "SCP Docs — Foundation Archive",
-        "description": "SCP Docs is an unofficial native iOS reader for SCP Wiki archives, branch-aware search, reading state, saved searches, sharing, and premium reading tools.",
+        "description": "SCP Docs is an unofficial native iOS reader for SCP Wiki archives with branch directories, guided archive browsing, Library organization, saved searches, sharing, and premium reading tools.",
         "body": r"""
     <main class="main-pad">
       <section aria-labelledby="hero-title">
@@ -293,12 +293,12 @@ INDEX: dict[str, dict[str, str]] = {
         <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
         <div class="card-invert">
           <p class="lede">
-            SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native reading workspace for browsing archives, searching by branch, saving what matters, and returning to the reports you were reading.
+            SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native archive workspace: browse branch directories, search by number or title, save important files, organize them in your Library, and return to the exact reports you were reading.
           </p>
           <div class="pill-row">
             <span class="code-chip">Native iOS reader</span>
-            <span class="code-chip">Four branch archives</span>
-            <span class="code-chip">Reading state</span>
+            <span class="code-chip">Archive directories</span>
+            <span class="code-chip">Personal Library</span>
             <span class="code-chip">Premium workspace tools</span>
           </div>
           <div class="store-cta" aria-label="SCP Docs App Store link">
@@ -322,16 +322,16 @@ INDEX: dict[str, dict[str, str]] = {
 
       <section aria-labelledby="workspace-title" style="margin-top:38px;">
         <p class="section-label">Reading workspace</p>
-        <h2 id="workspace-title" class="section-title-lg">Browse, search, organize, and resume</h2>
+        <h2 id="workspace-title" class="section-title-lg">Browse the archive, then keep your place</h2>
         <div class="grid-2">
           <div class="card">
             <p>
-              The app is organized around Home, Library, Search, and Settings. Home now focuses on continue-reading, quick search presets, random discovery, and cleaner directory routes for Stories, Tales, Canons, Series, Groups of Interest, guides, and related collections.
+              The app is organized around Home, Library, Search, and Settings. Home acts as the archive entry point, with continue-reading, quick search presets, random discovery, and directory routes for SCP reports, Tales, Canons, Canon series, Groups of Interest, guides, and related collections.
             </p>
           </div>
           <div class="card">
             <p>
-              Reading history, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your route through the archive remains visible on device.
+              Library turns browsing into a personal shelf. History, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your path through the archive remains visible on device.
             </p>
           </div>
         </div>
@@ -345,9 +345,10 @@ INDEX: dict[str, dict[str, str]] = {
             SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, and Russian branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.
           </p>
           <ul class="ft-list">
-            <li><strong>Archive lists</strong> — SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related directories.</li>
-            <li><strong>Search</strong> — number and title search is free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches.</li>
-            <li><strong>Reader</strong> — cleaner typography, themes, scroll tools, better dark mode, and more faithful rendering for specially formatted source pages.</li>
+            <li><strong>Archive lists</strong> — Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes.</li>
+            <li><strong>Search</strong> — Jump directly by number or title for free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches.</li>
+            <li><strong>Library</strong> — Save articles as bookmarks or read-later items, rate them, add memos, group favorites into folders, and resume from stored scroll positions.</li>
+            <li><strong>Reader</strong> — Cleaner typography, themes, scroll tools, better dark mode, and more faithful rendering for specially formatted source pages.</li>
           </ul>
         </div>
       </section>
@@ -914,7 +915,7 @@ INDEX: dict[str, dict[str, str]] = {
 FEATURES: dict[str, dict[str, str]] = {
     "en": {
         "title": "Features — SCP Docs",
-        "description": "A screenshot-led tour of SCP Docs: branch-aware Home, refreshed search, Library, reader tools, sharing, saved searches, reading stats, and sync.",
+        "description": "A screenshot-led tour of SCP Docs: archive directories, branch-aware Home, refreshed search, Library organization, reader tools, sharing, saved searches, reading stats, and sync.",
         "body": r"""
     <main class="main-pad">
       <section aria-labelledby="feature-title">
@@ -923,10 +924,11 @@ FEATURES: dict[str, dict[str, str]] = {
         <div class="feature-hero">
           <div>
             <p class="lede">
-              SCP Docs brings archive entry points, search, reader controls, and personal reading state into one native iOS app. Recent releases expanded it from a reader into a fuller workspace for discovering, saving, listening, sharing, and tracking what you read.
+              SCP Docs brings archive entry points, search, reader controls, and personal reading state into one native iOS app. It is designed for the full archive loop: find the next file, save what matters, organize it in Library, and resume without rebuilding your trail.
             </p>
             <div class="pill-row">
               <span class="code-chip">Home</span>
+              <span class="code-chip">Archive routes</span>
               <span class="code-chip">Library</span>
               <span class="code-chip">Search</span>
               <span class="code-chip">Stats</span>
@@ -955,6 +957,35 @@ FEATURES: dict[str, dict[str, str]] = {
         </div>
       </section>
 
+      <section aria-labelledby="archive-workflow-title" style="margin-top:38px;">
+        <p class="section-label">Archive & Library workflow</p>
+        <h2 id="archive-workflow-title" class="section-title-lg">From archive lists to a personal reading shelf</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Use Home as the archive map</h3>
+            <dl class="dl-flat">
+              <dt>Pick a branch</dt>
+              <dd>Choose English, Japanese, French, or Russian. Home, search, lists, article links, and the app language follow that branch context.</dd>
+              <dt>Start from directories</dt>
+              <dd>Browse SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists without needing the exact article number first.</dd>
+              <dt>Jump when you know the target</dt>
+              <dd>Use free number and title search for quick access. Premium advanced search adds tags, Object Class, document text, memos, read status, official score, length, and saved conditions.</dd>
+            </dl>
+          </div>
+          <div class="card">
+            <h3>Turn browsing into Library state</h3>
+            <dl class="dl-flat">
+              <dt>Save the article</dt>
+              <dd>Bookmark it, mark it read-later, rate it, or keep a memo so the report is no longer just another page in the archive.</dd>
+              <dt>Resume from context</dt>
+              <dd>History, continue-reading, read status, ratings, memos, and scroll position help you return to the same file or series after a break.</dd>
+              <dt>Organize for longer projects</dt>
+              <dd>Premium expands save limits, adds bookmark folders, supports memo editing, can sync Library state through your own iCloud Drive, and can store eligible articles for offline reading.</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
       <section aria-labelledby="points-title" style="margin-top:38px;">
         <p class="section-label">What it does</p>
         <h2 id="points-title" class="section-title-lg">Core features</h2>
@@ -962,12 +993,12 @@ FEATURES: dict[str, dict[str, str]] = {
           <div class="feature-card">
             <p class="section-label">Branches</p>
             <h3>English, Japanese, French, and Russian archives</h3>
-            <p>Switching branches changes Home, search, lists, article destinations, and app language so each archive feels like its own reading context.</p>
+            <p>Switching branches changes Home, search, lists, article destinations, and app language so each archive has its own reading context.</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Directories</p>
-            <h3>Cleaner archive routes</h3>
-            <p>Browse SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists.</p>
+            <h3>Cleaner archive routes before you know the number</h3>
+            <p>Move through SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists from organized entry points.</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Search</p>
@@ -981,8 +1012,8 @@ FEATURES: dict[str, dict[str, str]] = {
           </div>
           <div class="feature-card">
             <p class="section-label">Library</p>
-            <h3>A place to return</h3>
-            <p>History, read status, ratings, bookmarks, read-later, scroll position, memos, and resume-reading data stay organized on your device.</p>
+            <h3>A personal shelf for the archive</h3>
+            <p>History, read status, ratings, bookmarks, read-later, scroll position, memos, folders, and resume-reading data stay organized on your device.</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Share</p>
@@ -1414,7 +1445,7 @@ for code in ["ja", "fr", "ru", "ko"]:
 SUPPORT_TEXT = {
     "en": {
         "title": "Support — SCP Docs",
-        "description": "SCP Docs support: contact, requirements, supported branches, Premium features, offline reading, ads, iCloud sync, notifications, and source-site notes.",
+        "description": "SCP Docs support: contact, requirements, archive and Library workflow, supported branches, Premium features, offline reading, ads, iCloud sync, notifications, and source-site notes.",
         "heading": "Support",
         "contact_title": "Contact",
         "contact_copy": "Feature requests, display issues, catalog problems, and feedback are accepted by email when possible. Replies may take several days.",
@@ -1430,6 +1461,7 @@ SUPPORT_TEXT = {
         "faqs": [
             ("Do I need an account or login?", "No. SCP Docs is designed for browsing without a Wikidot account. Editing articles or posting comments follows each official source site's rules."),
             ("Which branches and languages are supported?", "The app currently supports the English main archive and the Japanese, French, and Russian branches. The app UI currently supports English, Japanese, French, and Russian. This website also provides Korean support pages for reference."),
+            ("How should I use the archive and Library?", "Start from Home, choose a branch, then browse directory routes such as SCP reports, Tales, Canons, GoI, Joke SCPs, SCP-EX, collections, recent articles, and guides. Use Search when you know a number, title, tag, or Object Class. When you find something useful, bookmark it, mark it read-later, rate it, add a memo, or place it in a folder so it stays available from Library and continue-reading."),
             ("Lists or titles look old / cannot be fetched", "Catalog data is downloaded online and cached on your device. Check your connection, then refresh catalogs from Settings or restart the app. Some source-site changes can require a later catalog update."),
             ("What is free, and what is Premium?", "Number and title search, reading, basic library features, history, ratings, bookmarks, and read-later are available for normal use. Premium adds ad removal, advanced search, memo editing, higher save limits, offline storage, reading stats, text-to-speech, saved-search alerts, and bookmark folders with iCloud sync."),
             ("I want to read offline", "Offline saving is a Premium feature. While Premium is active, eligible saved articles can keep a local HTML snapshot. If you are offline, only articles with saved copies can be displayed; images, external resources, unsaved articles, and catalog updates still require a network connection."),
