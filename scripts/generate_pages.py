@@ -143,6 +143,14 @@ def page_url(page: str, lang_code: str) -> str:
     return f"{BASE_URL}/{page_file(page, lang_code)}"
 
 
+def screenshot_path(lang_code: str, kind: str) -> str:
+    return f"assets/images/{kind}-{lang_code}.png"
+
+
+def screenshot_url(lang_code: str, kind: str) -> str:
+    return f"{BASE_URL}/{screenshot_path(lang_code, kind)}"
+
+
 def linked_versions(page: str, active_lang: str) -> str:
     links = []
     for code, lang in LANGS.items():
@@ -236,7 +244,11 @@ def layout(
     lang = LANGS[lang_code]
     image_tags = ""
     if image:
-        image_url = f"{BASE_URL}/assets/images/home-showcase.png"
+        image_url = (
+            screenshot_url(lang_code, "home")
+            if lang_code == "en"
+            else f"{BASE_URL}/assets/images/home-showcase.png"
+        )
         image_tags = f"""
   <meta property="og:image" content="{image_url}" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -305,7 +317,7 @@ INDEX: dict[str, dict[str, str]] = {
             <div class="store-cta-copy">
               <span class="store-cta-kicker">Available on the App Store</span>
               <strong>SCP Docs for iPhone</strong>
-              <span>Built for iOS 17 and later. App UI currently supports English, Japanese, French, and Russian.</span>
+              <span>Built for iOS 17 and later. App UI currently supports English, Japanese, French, Russian, and Korean.</span>
             </div>
             <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
               rel="noopener noreferrer" aria-label="Open SCP Docs on the App Store">
@@ -315,8 +327,8 @@ INDEX: dict[str, dict[str, str]] = {
           </div>
         </div>
         <figure class="hero-media" aria-label="SCP Docs app preview">
-          <img src="assets/images/home-showcase.png"
-            alt="Preview of the SCP Docs home screen in light and dark appearances" />
+          <img src="assets/images/home-en.png"
+            alt="English SCP Docs home screen with continue reading, archive routes, and search filters" />
         </figure>
       </section>
 
@@ -339,10 +351,10 @@ INDEX: dict[str, dict[str, str]] = {
 
       <section aria-labelledby="branch-title" style="margin-top:38px;">
         <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">Four branches, one archive workflow</h2>
+        <h2 id="branch-title" class="section-title-lg">Five branches, one archive workflow</h2>
         <div class="card">
           <p>
-            SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, and Russian branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.
+            SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, and Korean branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.
           </p>
           <ul class="ft-list">
             <li><strong>Archive lists</strong> — Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes.</li>
@@ -936,23 +948,31 @@ FEATURES: dict[str, dict[str, str]] = {
             </div>
           </div>
           <figure class="screen-frame screen-frame-compact">
-            <img src="assets/images/home-showcase.png"
-              alt="SCP Docs home screen shown in light and dark appearances" />
+            <img src="assets/images/home-en.png"
+              alt="English SCP Docs home screen showing continue reading, archive routes, and search filters" />
           </figure>
         </div>
       </section>
 
       <section aria-labelledby="screens-title" style="margin-top:38px;">
         <p class="section-label">Screenshots</p>
-        <h2 id="screens-title" class="section-title-lg">The interface at a glance</h2>
+        <h2 id="screens-title" class="section-title-lg">Screens that match the workflow</h2>
         <div class="feature-shot-grid">
           <figure class="screen-frame">
-            <img src="assets/images/home-light.png" alt="SCP Docs home screen in light mode" />
-            <figcaption>Home in light mode</figcaption>
+            <img src="assets/images/home-en.png" alt="Home screen with branch selection, continue reading, archive routes, and quick filters" />
+            <figcaption>Home: branch, archive routes, and continue reading</figcaption>
           </figure>
           <figure class="screen-frame">
-            <img src="assets/images/home-dark.png" alt="SCP Docs home screen in dark mode" />
-            <figcaption>Home in dark mode</figcaption>
+            <img src="assets/images/catalog-en.png" alt="SCP catalog list with article rows, series filters, and block filters" />
+            <figcaption>Catalog: browse articles before you know the number</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-en.png" alt="Library history screen with read status, ratings, bookmarks, quick actions, and sort controls" />
+            <figcaption>Library: history, ratings, bookmarks, and saved state</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-en.png" alt="Search screen with number, keyword, tag, site, type, Object Class, and advanced filters" />
+            <figcaption>Search: number, keyword, tag, and advanced filters</figcaption>
           </figure>
         </div>
       </section>
@@ -965,7 +985,7 @@ FEATURES: dict[str, dict[str, str]] = {
             <h3>Use Home as the archive map</h3>
             <dl class="dl-flat">
               <dt>Pick a branch</dt>
-              <dd>Choose English, Japanese, French, or Russian. Home, search, lists, article links, and the app language follow that branch context.</dd>
+              <dd>Choose English, Japanese, French, Russian, or Korean. Home, search, lists, article links, and the app language follow that branch context.</dd>
               <dt>Start from directories</dt>
               <dd>Browse SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists without needing the exact article number first.</dd>
               <dt>Jump when you know the target</dt>
@@ -986,13 +1006,30 @@ FEATURES: dict[str, dict[str, str]] = {
         </div>
       </section>
 
+      <section aria-labelledby="use-cases-title" style="margin-top:38px;">
+        <p class="section-label">Practical guide</p>
+        <h2 id="use-cases-title" class="section-title-lg">What to use when</h2>
+        <div class="card">
+          <dl class="dl-flat">
+            <dt>I want to browse without a specific article in mind</dt>
+            <dd>Start on Home, choose the branch, then open Archive routes such as SCP, SCP-INT, Stories, or Others. The catalog screen lets you move by series and block, with article rows showing titles, Object Class, tags, scores, and thumbnail previews where available.</dd>
+            <dt>I know the number, title, tag, or Object Class</dt>
+            <dd>Use Search. Number and title lookup are available for normal use, while Premium advanced filters help narrow by document group, branch, tags, official score, length, Object Class, reading state, and memos.</dd>
+            <dt>I found something I want to keep</dt>
+            <dd>Save it from the reader or Library as a bookmark, read-later item, rating, memo, or folder entry. Those signals make the article visible later from Library instead of relying on memory or browser history.</dd>
+            <dt>I stopped halfway through a series</dt>
+            <dd>Use Continue reading, Library history, stored scroll position, and read status to return to the same report or track what has already been handled.</dd>
+          </dl>
+        </div>
+      </section>
+
       <section aria-labelledby="points-title" style="margin-top:38px;">
         <p class="section-label">What it does</p>
         <h2 id="points-title" class="section-title-lg">Core features</h2>
         <div class="feature-grid">
           <div class="feature-card">
             <p class="section-label">Branches</p>
-            <h3>English, Japanese, French, and Russian archives</h3>
+            <h3>English, Japanese, French, Russian, and Korean archives</h3>
             <p>Switching branches changes Home, search, lists, article destinations, and app language so each archive has its own reading context.</p>
           </div>
           <div class="feature-card">
@@ -1460,7 +1497,7 @@ SUPPORT_TEXT = {
         "faq_title": "Frequently asked questions",
         "faqs": [
             ("Do I need an account or login?", "No. SCP Docs is designed for browsing without a Wikidot account. Editing articles or posting comments follows each official source site's rules."),
-            ("Which branches and languages are supported?", "The app currently supports the English main archive and the Japanese, French, and Russian branches. The app UI currently supports English, Japanese, French, and Russian. This website also provides Korean support pages for reference."),
+            ("Which branches and languages are supported?", "The app currently supports the English main archive and the Japanese, French, Russian, and Korean branches. The app UI currently supports English, Japanese, French, Russian, and Korean."),
             ("How should I use the archive and Library?", "Start from Home, choose a branch, then browse directory routes such as SCP reports, Tales, Canons, GoI, Joke SCPs, SCP-EX, collections, recent articles, and guides. Use Search when you know a number, title, tag, or Object Class. When you find something useful, bookmark it, mark it read-later, rate it, add a memo, or place it in a folder so it stays available from Library and continue-reading."),
             ("Lists or titles look old / cannot be fetched", "Catalog data is downloaded online and cached on your device. Check your connection, then refresh catalogs from Settings or restart the app. Some source-site changes can require a later catalog update."),
             ("What is free, and what is Premium?", "Number and title search, reading, basic library features, history, ratings, bookmarks, and read-later are available for normal use. Premium adds ad removal, advanced search, memo editing, higher save limits, offline storage, reading stats, text-to-speech, saved-search alerts, and bookmark folders with iCloud sync."),

@@ -207,6 +207,7 @@ a:not(.btn):not(.pill):hover {
   font-weight: 600;
   margin: 0 0 12px;
   letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
 }
 
 .card {
@@ -356,10 +357,17 @@ a:not(.btn):not(.pill):hover {
   gap: 14px;
 }
 
+.grid-2 > *,
+.feature-hero > *,
+.feature-grid > *,
+.feature-shot-grid > * {
+  min-width: 0;
+}
+
 .feature-hero {
   display: grid;
   gap: 18px;
-  align-items: center;
+  align-items: start;
 }
 
 .feature-grid,
@@ -406,6 +414,7 @@ a:not(.btn):not(.pill):hover {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.06em;
+  overflow-wrap: anywhere;
   padding: 10px 12px;
   text-transform: uppercase;
 }
