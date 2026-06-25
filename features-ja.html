@@ -24,9 +24,9 @@
   <meta property="og:title" content="機能紹介 — SCP Docs" />
   <meta property="og:description" content="SCP Docs のホーム、検索、書庫、リーダー、共有カード、保存検索、読書統計、同期機能をスクリーンショット付きで紹介します。" />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/features-ja.html" />
-  <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ja.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ja.png" />
   <meta name="twitter:title" content="機能紹介 — SCP Docs" />
   <meta name="twitter:description" content="SCP Docs のホーム、検索、書庫、リーダー、共有カード、保存検索、読書統計、同期機能をスクリーンショット付きで紹介します。" />
   <link rel="stylesheet" href="assets/styles.css" />
@@ -66,48 +66,102 @@
 
     <main class="main-pad">
       <section aria-labelledby="feature-title">
-        <p class="section-label">Feature Overview</p>
+        <p class="section-label">機能概要</p>
         <h2 id="feature-title" class="section-title-lg">読みたい報告書を見つけ、あとからきちんと戻る</h2>
         <div class="feature-hero">
           <div>
             <p class="lede">SCP Docs は、書庫の入口、検索、リーダー操作、個人の読書状態をひとつのネイティブ iOS アプリにまとめます。最近のアップデートで、読むだけでなく、見つける、保存する、聴く、共有する、記録するところまで扱える読書ワークスペースになりました。</p>
             <div class="pill-row">
-              <span class="code-chip">Home</span>
-              <span class="code-chip">Library</span>
-              <span class="code-chip">Search</span>
-              <span class="code-chip">Stats</span>
-              <span class="code-chip">Share cards</span>
+              <span class="code-chip">ホーム</span>
+              <span class="code-chip">書庫ルート</span>
+              <span class="code-chip">ライブラリ</span>
+              <span class="code-chip">検索</span>
+              <span class="code-chip">統計</span>
+              <span class="code-chip">共有カード</span>
             </div>
           </div>
           <figure class="screen-frame screen-frame-compact">
-            <img src="assets/images/home-showcase.png"
-              alt="SCP Docs home screen shown in light and dark appearances" />
+            <img src="assets/images/home-ja.png" alt="続きから読む、書庫ルート、検索フィルタを表示した日本語UIのホーム画面" />
           </figure>
         </div>
       </section>
 
       <section aria-labelledby="screens-title" style="margin-top:38px;">
-        <p class="section-label">Screenshots</p>
-        <h2 id="screens-title" class="section-title-lg">画面の雰囲気</h2>
+        <p class="section-label">スクリーンショット</p>
+        <h2 id="screens-title" class="section-title-lg">ワークフローに対応した画面</h2>
         <div class="feature-shot-grid">
           <figure class="screen-frame">
-            <img src="assets/images/home-light.png" alt="ホーム（ライト）" />
-            <figcaption>ホーム（ライト）</figcaption>
+            <img src="assets/images/home-ja.png" alt="支部選択、続きから読む、書庫ルート、クイックフィルタを表示したホーム画面" />
+            <figcaption>ホーム: 支部、書庫ルート、続きから読む</figcaption>
           </figure>
           <figure class="screen-frame">
-            <img src="assets/images/home-dark.png" alt="ホーム（ダーク）" />
-            <figcaption>ホーム（ダーク）</figcaption>
+            <img src="assets/images/catalog-ja.png" alt="シリーズと番号ブロックで記事を探せるSCPカタログ画面" />
+            <figcaption>カタログ: 番号を知らなくても一覧から探す</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-ja.png" alt="読書状態、評価、ブックマーク、保存状態を表示したライブラリ画面" />
+            <figcaption>ライブラリ: 履歴、評価、ブックマーク、保存状態</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-ja.png" alt="番号、キーワード、タグ、支部、種別、Object Class、高度な絞り込みを表示した検索画面" />
+            <figcaption>検索: 番号、キーワード、タグ、高度な絞り込み</figcaption>
           </figure>
         </div>
       </section>
 
+      <section aria-labelledby="archive-workflow-title" style="margin-top:38px;">
+        <p class="section-label">書庫とライブラリの流れ</p>
+        <h2 id="archive-workflow-title" class="section-title-lg">書庫リストから自分の読書棚へ</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>ホームを書庫の地図として使う</h3>
+            <dl class="dl-flat">
+              <dt>支部を選ぶ</dt>
+              <dd>英語、日本語、フランス語、ロシア語、韓国語を選択できます。ホーム、検索、一覧、記事リンク、アプリ言語がその支部の文脈に揃います。</dd>
+              <dt>ディレクトリから始める</dt>
+              <dd>SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、ガイド類を、番号を知らない状態から探せます。</dd>
+              <dt>分かっている時は検索へ</dt>
+              <dd>番号やタイトル検索は無料で使えます。プレミアムの高度な検索ではタグ、Object Class、本文、メモ、読書状態、公式評価、長さ、保存条件まで絞り込めます。</dd>
+            </dl>
+          </div>
+          <div class="card">
+            <h3>閲覧をライブラリ状態に変える</h3>
+            <dl class="dl-flat">
+              <dt>記事を保存する</dt>
+              <dd>ブックマーク、後で読む、評価、メモを使うと、記事がただのページではなく自分の読書棚に残ります。</dd>
+              <dt>文脈ごと再開する</dt>
+              <dd>履歴、続きから読む、読了状態、評価、メモ、スクロール位置から、同じ報告書やシリーズに戻れます。</dd>
+              <dt>長い読書を整理する</dt>
+              <dd>プレミアムでは保存上限拡張、ブックマークフォルダ、メモ編集、iCloud Drive同期、対象記事のオフライン保存を利用できます。</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="use-cases-title" style="margin-top:38px;">
+        <p class="section-label">使い分けガイド</p>
+        <h2 id="use-cases-title" class="section-title-lg">目的別に使う場所</h2>
+        <div class="card">
+          <dl class="dl-flat">
+            <dt>特定の記事を決めずに探したい</dt>
+            <dd>ホームで支部を選び、SCP、SCP-INT、Stories、Others などの書庫ルートを開きます。カタログ画面ではシリーズや番号ブロックで移動でき、タイトル、Object Class、タグ、スコア、サムネイルを見ながら探せます。</dd>
+            <dt>番号、タイトル、タグ、Object Class が分かっている</dt>
+            <dd>検索を使います。番号・タイトル検索は通常利用でき、プレミアムの高度な検索では文書種別、支部、タグ、公式評価、長さ、Object Class、読書状態、メモまで絞り込めます。</dd>
+            <dt>あとで読み返したい記事を見つけた</dt>
+            <dd>リーダーやライブラリからブックマーク、後で読む、評価、メモ、フォルダに保存します。後から記憶やブラウザ履歴に頼らずライブラリで見つけられます。</dd>
+            <dt>シリーズを途中で止めた</dt>
+            <dd>続きから読む、ライブラリ履歴、保存済みスクロール位置、読了状態を使うと、同じ報告書や進捗に戻れます。</dd>
+          </dl>
+        </div>
+      </section>
+
       <section aria-labelledby="points-title" style="margin-top:38px;">
-        <p class="section-label">What it does</p>
+        <p class="section-label">できること</p>
         <h2 id="points-title" class="section-title-lg">主な機能</h2>
         <div class="feature-grid">
           <div class="feature-card">
             <p class="section-label">Branches</p>
-            <h3>英語・日本語・フランス語・ロシア語の書庫</h3>
+            <h3>英語・日本語・フランス語・ロシア語・韓国語の書庫</h3>
             <p>支部を切り替えると、ホーム、検索、一覧、記事リンク先、アプリ言語が切り替わり、それぞれの書庫をその文脈で読めます。</p>
           </div>
           <div class="feature-card">

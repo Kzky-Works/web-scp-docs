@@ -24,9 +24,9 @@
   <meta property="og:title" content="기능 — SCP Docs" />
   <meta property="og:description" content="SCP Docs의 지부별 홈, 새 검색, 라이브러리, 리더 도구, 공유 카드, 저장 검색, 읽기 통계, 동기화 기능을 스크린샷과 함께 소개합니다." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/features-ko.html" />
-  <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ko.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-showcase.png" />
+  <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ko.png" />
   <meta name="twitter:title" content="기능 — SCP Docs" />
   <meta name="twitter:description" content="SCP Docs의 지부별 홈, 새 검색, 라이브러리, 리더 도구, 공유 카드, 저장 검색, 읽기 통계, 동기화 기능을 스크린샷과 함께 소개합니다." />
   <link rel="stylesheet" href="assets/styles.css" />
@@ -66,48 +66,102 @@
 
     <main class="main-pad">
       <section aria-labelledby="feature-title">
-        <p class="section-label">Feature Overview</p>
+        <p class="section-label">기능 개요</p>
         <h2 id="feature-title" class="section-title-lg">보고서를 찾고, 나중에 제대로 돌아오기</h2>
         <div class="feature-hero">
           <div>
             <p class="lede">SCP Docs는 아카이브 진입점, 검색, 리더 조작, 개인 읽기 상태를 하나의 네이티브 iOS 앱에 모읍니다. 최근 버전에서는 읽기뿐 아니라 발견, 저장, 듣기, 공유, 기록까지 다루는 작업 공간으로 확장되었습니다.</p>
             <div class="pill-row">
-              <span class="code-chip">Home</span>
-              <span class="code-chip">Library</span>
-              <span class="code-chip">Search</span>
-              <span class="code-chip">Stats</span>
-              <span class="code-chip">Share cards</span>
+              <span class="code-chip">홈</span>
+              <span class="code-chip">아카이브 경로</span>
+              <span class="code-chip">라이브러리</span>
+              <span class="code-chip">검색</span>
+              <span class="code-chip">통계</span>
+              <span class="code-chip">공유 카드</span>
             </div>
           </div>
           <figure class="screen-frame screen-frame-compact">
-            <img src="assets/images/home-showcase.png"
-              alt="SCP Docs home screen shown in light and dark appearances" />
+            <img src="assets/images/home-ko.png" alt="이어 읽기, 아카이브 경로, 검색 필터가 보이는 한국어 UI의 홈 화면" />
           </figure>
         </div>
       </section>
 
       <section aria-labelledby="screens-title" style="margin-top:38px;">
-        <p class="section-label">Screenshots</p>
-        <h2 id="screens-title" class="section-title-lg">화면 한눈에 보기</h2>
+        <p class="section-label">스크린샷</p>
+        <h2 id="screens-title" class="section-title-lg">흐름에 맞춘 화면</h2>
         <div class="feature-shot-grid">
           <figure class="screen-frame">
-            <img src="assets/images/home-light.png" alt="라이트 모드 홈" />
-            <figcaption>라이트 모드 홈</figcaption>
+            <img src="assets/images/home-ko.png" alt="지부 선택, 이어 읽기, 아카이브 경로, 빠른 필터가 보이는 홈 화면" />
+            <figcaption>홈: 지부, 아카이브 경로, 이어 읽기</figcaption>
           </figure>
           <figure class="screen-frame">
-            <img src="assets/images/home-dark.png" alt="다크 모드 홈" />
-            <figcaption>다크 모드 홈</figcaption>
+            <img src="assets/images/catalog-ko.png" alt="시리즈와 번호 블록으로 글을 찾는 SCP 카탈로그 화면" />
+            <figcaption>카탈로그: 번호를 몰라도 목록에서 탐색</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-ko.png" alt="읽기 상태, 평점, 북마크, 저장 상태를 보여 주는 라이브러리 화면" />
+            <figcaption>라이브러리: 기록, 평점, 북마크, 저장 상태</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-ko.png" alt="번호, 키워드, 태그, 지부, 종류, Object Class, 고급 필터가 보이는 검색 화면" />
+            <figcaption>검색: 번호, 키워드, 태그, 고급 필터</figcaption>
           </figure>
         </div>
       </section>
 
+      <section aria-labelledby="archive-workflow-title" style="margin-top:38px;">
+        <p class="section-label">아카이브와 라이브러리 흐름</p>
+        <h2 id="archive-workflow-title" class="section-title-lg">아카이브 목록에서 개인 읽기 선반으로</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>홈을 아카이브 지도로 사용하기</h3>
+            <dl class="dl-flat">
+              <dt>지부 선택</dt>
+              <dd>영어, 일본어, 프랑스어, 러시아어, 한국어를 선택할 수 있습니다. 홈, 검색, 목록, 글 링크, 앱 언어가 선택한 지부의 문맥에 맞춰집니다.</dd>
+              <dt>디렉터리에서 시작</dt>
+              <dd>SCP 글, Tales, Canons, Canon series, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 가이드류를 정확한 번호를 몰라도 탐색할 수 있습니다.</dd>
+              <dt>목표를 알 때는 검색</dt>
+              <dd>번호와 제목 검색은 무료로 사용할 수 있습니다. 프리미엄 고급 검색은 태그, Object Class, 본문, 메모, 읽기 상태, 공식 점수, 길이, 저장 조건까지 좁힐 수 있습니다.</dd>
+            </dl>
+          </div>
+          <div class="card">
+            <h3>탐색을 라이브러리 상태로 바꾸기</h3>
+            <dl class="dl-flat">
+              <dt>글 저장</dt>
+              <dd>북마크, 나중에 읽기, 평점, 메모를 사용하면 글이 단순한 페이지가 아니라 개인 읽기 선반에 남습니다.</dd>
+              <dt>문맥과 함께 이어 읽기</dt>
+              <dd>기록, 이어 읽기, 읽음 상태, 평점, 메모, 스크롤 위치로 같은 보고서나 시리즈에 다시 돌아갈 수 있습니다.</dd>
+              <dt>긴 읽기 정리</dt>
+              <dd>프리미엄에서는 저장 한도 확장, 북마크 폴더, 메모 편집, iCloud Drive 동기화, 대상 글 오프라인 저장을 사용할 수 있습니다.</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="use-cases-title" style="margin-top:38px;">
+        <p class="section-label">사용 가이드</p>
+        <h2 id="use-cases-title" class="section-title-lg">상황별로 사용할 곳</h2>
+        <div class="card">
+          <dl class="dl-flat">
+            <dt>특정 글을 정하지 않고 탐색하고 싶을 때</dt>
+            <dd>홈에서 지부를 선택하고 SCP, SCP-INT, Stories, Others 같은 아카이브 경로를 엽니다. 카탈로그 화면에서는 시리즈와 번호 블록으로 이동하면서 제목, Object Class, 태그, 점수, 썸네일을 보고 찾을 수 있습니다.</dd>
+            <dt>번호, 제목, 태그, Object Class를 알고 있을 때</dt>
+            <dd>검색을 사용합니다. 번호와 제목 검색은 일반적으로 사용할 수 있고, 프리미엄 고급 필터는 문서 종류, 지부, 태그, 공식 점수, 길이, Object Class, 읽기 상태, 메모까지 좁힙니다.</dd>
+            <dt>나중에 다시 읽고 싶은 글을 찾았을 때</dt>
+            <dd>리더나 라이브러리에서 북마크, 나중에 읽기, 평점, 메모, 폴더로 저장합니다. 나중에는 기억이나 브라우저 기록에 의존하지 않고 라이브러리에서 찾을 수 있습니다.</dd>
+            <dt>시리즈를 중간에 멈췄을 때</dt>
+            <dd>이어 읽기, 라이브러리 기록, 저장된 스크롤 위치, 읽음 상태를 사용해 같은 보고서나 진행 상황으로 돌아갈 수 있습니다.</dd>
+          </dl>
+        </div>
+      </section>
+
       <section aria-labelledby="points-title" style="margin-top:38px;">
-        <p class="section-label">What it does</p>
+        <p class="section-label">기능</p>
         <h2 id="points-title" class="section-title-lg">주요 기능</h2>
         <div class="feature-grid">
           <div class="feature-card">
             <p class="section-label">Branches</p>
-            <h3>영어, 일본어, 프랑스어, 러시아어 아카이브</h3>
+            <h3>영어, 일본어, 프랑스어, 러시아어, 한국어 아카이브</h3>
             <p>지부를 바꾸면 홈, 검색, 목록, 글 링크 대상, 앱 언어가 함께 바뀌어 각 아카이브의 문맥으로 읽을 수 있습니다.</p>
           </div>
           <div class="feature-card">
