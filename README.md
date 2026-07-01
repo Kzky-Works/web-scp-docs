@@ -69,7 +69,7 @@ git commit -m "docs: ..."
 git push origin main
 ```
 
-初回のみ: 親フォルダ `scp_docs/` で `git clone https://github.com/Kzky-Works/web-scp-docs.git web-scp-docs`（既にあれば不要）。
+初回のみ: wrapper `SCP-docs/` 直下で `git clone https://github.com/Kzky-Works/web-scp-docs.git web-scp-docs`（既にあれば不要）。
 
 GitHub **Settings → Pages**: **Deploy from a branch** — **`main`** / **`/ (root)`**。
 
