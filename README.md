@@ -11,32 +11,38 @@
 | トップ（フランス語） | `.../index-fr.html` | フランス語版トップ |
 | トップ（ロシア語） | `.../index-ru.html` | ロシア語版トップ |
 | トップ（韓国語） | `.../index-ko.html` | 韓国語版トップ |
+| トップ（スペイン語） | `.../index-es.html` | スペイン語版トップ |
 | 機能紹介（英語・既定） | `.../features.html` | スクリーンショット付きの簡単な機能紹介 |
 | 機能紹介（日本語） | `.../features-ja.html` | 日本語版機能紹介 |
 | 機能紹介（フランス語） | `.../features-fr.html` | フランス語版機能紹介 |
 | 機能紹介（ロシア語） | `.../features-ru.html` | ロシア語版機能紹介 |
 | 機能紹介（韓国語） | `.../features-ko.html` | 韓国語版機能紹介 |
+| 機能紹介（スペイン語） | `.../features-es.html` | スペイン語版機能紹介 |
 | App Store | `https://apps.apple.com/jp/app/scp-docs/id6765882660` | 公開中の iOS アプリページ |
 | プライバシー（英語・既定） | `.../privacy.html` | **App Store Connect の Privacy Policy URL** 候補 |
 | プライバシー（日本語） | `.../privacy-ja.html` | 日本語版プライバシーポリシー |
 | プライバシー（フランス語） | `.../privacy-fr.html` | フランス語版プライバシーポリシー |
 | プライバシー（ロシア語） | `.../privacy-ru.html` | ロシア語版プライバシーポリシー |
 | プライバシー（韓国語） | `.../privacy-ko.html` | 韓国語版プライバシーポリシー |
+| プライバシー（スペイン語） | `.../privacy-es.html` | スペイン語版プライバシーポリシー |
 | サポート（英語・既定） | `.../support.html` | **サポート URL** |
 | サポート（日本語） | `.../support-ja.html` | 日本語版サポート |
 | サポート（フランス語） | `.../support-fr.html` | フランス語版サポート |
 | サポート（ロシア語） | `.../support-ru.html` | ロシア語版サポート |
 | サポート（韓国語） | `.../support-ko.html` | 韓国語版サポート |
+| サポート（スペイン語） | `.../support-es.html` | スペイン語版サポート |
 | 利用規約（英語・既定） | `.../terms.html` | 非公式性・CC・免責など |
 | 利用規約（日本語） | `.../terms-ja.html` | 日本語版利用規約 |
 | 利用規約（フランス語） | `.../terms-fr.html` | フランス語版利用規約 |
 | 利用規約（ロシア語） | `.../terms-ru.html` | ロシア語版利用規約 |
 | 利用規約（韓国語） | `.../terms-ko.html` | 韓国語版利用規約 |
+| 利用規約（スペイン語） | `.../terms-es.html` | スペイン語版利用規約 |
 | Rating & Safety Policy（英語・既定） | `.../rating-safety.html` | **ASC の年齢適合性URL（任意）** 候補 |
 | Rating & Safety Policy（日本語） | `.../rating-safety-ja.html` | 日本語版安全方針 |
 | Rating & Safety Policy（フランス語） | `.../rating-safety-fr.html` | フランス語版安全方針 |
 | Rating & Safety Policy（ロシア語） | `.../rating-safety-ru.html` | ロシア語版安全方針 |
 | Rating & Safety Policy（韓国語） | `.../rating-safety-ko.html` | 韓国語版安全方針 |
+| Rating & Safety Policy（スペイン語） | `.../rating-safety-es.html` | スペイン語版安全方針 |
 
 ルートの **`.nojekyll`** は Jekyll を無効にし、`assets/` をそのまま配信するためです。
 
@@ -47,8 +53,9 @@
 - フランス語版は `*-fr.html` に統一する。
 - ロシア語版は `*-ru.html` に統一する。
 - 韓国語版は `*-ko.html` に統一する。
+- スペイン語版は `*-es.html` に統一する（サイトのみ。アプリUIは現時点でスペイン語非対応のため、スクリーンショットは英語版 `*-en.png` を流用する）。
 - 旧英語 URL の `privacy-en.html` / `terms-en.html` は外部リンク保護用のリダイレクトとしてだけ残す。
-- すべての公開ページの共通ヘッダーに `.language-switch` を置き、英語・日本語・フランス語・ロシア語・韓国語を切り替えられるようにする。
+- すべての公開ページの共通ヘッダーに `.language-switch` を置き、英語・日本語・フランス語・ロシア語・韓国語・スペイン語を切り替えられるようにする。
 
 ## ページ生成
 

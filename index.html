@@ -5,14 +5,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="SCP Docs is an unofficial native iOS reader for SCP Wiki archives with branch directories, guided archive browsing, Library organization, saved searches, sharing, and premium reading tools." />
-  <meta name="theme-color" content="#F7F6F0" />
-  <title>SCP Docs — Foundation Archive</title>
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
+  <title>SCP Docs — Foundation Archive Reader for iPhone</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/" />
   <link rel="alternate" hreflang="en" href="https://kzky-works.github.io/web-scp-docs/" />
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/index-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
   <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
+  <link rel="alternate" hreflang="es" href="https://kzky-works.github.io/web-scp-docs/index-es.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -21,13 +23,14 @@
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ru_RU" />
   <meta property="og:locale:alternate" content="ko_KR" />
-  <meta property="og:title" content="SCP Docs — Foundation Archive" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:title" content="SCP Docs — Foundation Archive Reader for iPhone" />
   <meta property="og:description" content="SCP Docs is an unofficial native iOS reader for SCP Wiki archives with branch directories, guided archive browsing, Library organization, saved searches, sharing, and premium reading tools." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-en.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-en.png" />
-  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
+  <meta name="twitter:title" content="SCP Docs — Foundation Archive Reader for iPhone" />
   <meta name="twitter:description" content="SCP Docs is an unofficial native iOS reader for SCP Wiki archives with branch directories, guided archive browsing, Library organization, saved searches, sharing, and premium reading tools." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -48,6 +51,7 @@
             <a href="index-fr.html" lang="fr">FR</a>
             <a href="index-ru.html" lang="ru">RU</a>
             <a href="index-ko.html" lang="ko">한국어</a>
+            <a href="index-es.html" lang="es">ES</a>
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index.html" aria-current="page">Home</a>
@@ -65,62 +69,82 @@
 
 
     <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native archive workspace: browse branch directories, search by number or title, save important files, organize them in your Library, and return to the exact reports you were reading.
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">Native iOS reader</span>
-            <span class="code-chip">Archive directories</span>
-            <span class="code-chip">Personal Library</span>
-            <span class="code-chip">Premium workspace tools</span>
-          </div>
-          <div class="store-cta" aria-label="SCP Docs App Store link">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs for iPhone</strong>
-              <span>Built for iOS 17 and later. App UI currently supports English, Japanese, French, Russian, and Korean.</span>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span class="blink">▮</span> ITEM #: SCP-DOCS-APP · OBJECT CLASS: <span class="accent">READER</span></p>
+            <h2 id="hero-title" class="hero-title">Secure.<br />Contain.<br /><span class="accent">Read.</span></h2>
+            <p class="hero-lede">SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native archive workspace: browse branch directories, search by number or title, save important files, organize them in your Library, and return to the exact reports you were reading.</p>
+            <div class="hero-cta">
+              <a class="btn-primary" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank" rel="noopener noreferrer">
+                <span class="btn-main">Get on the App Store</span>
+                <span class="btn-sub">iPhone · iOS 17+</span>
+              </a>
+              <a class="btn-ghost" href="features.html">
+                <span class="btn-main">Explore the features</span>
+                <span class="btn-sub">Field guide</span>
+              </a>
             </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="Open SCP Docs on the App Store">
-              <span class="store-cta-link-main">Get on the App Store</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
+            <ul class="hero-badges">
+              <li>Unofficial fan app</li>
+              <li>Free + Premium</li>
+              <li>Rated 13+</li>
+              <li>No account needed</li>
+            </ul>
           </div>
+          <figure class="hero-shot" aria-label="SCP Docs app preview">
+            <img src="assets/images/home-en.png" alt="English SCP Docs home screen with continue reading, archive routes, and search filters" />
+          </figure>
         </div>
-        <figure class="hero-media" aria-label="SCP Docs app preview">
-          <img src="assets/images/home-en.png"
-            alt="English SCP Docs home screen with continue reading, archive routes, and search filters" />
-        </figure>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="num">5</span><span class="lbl">archive branches</span></div>
+          <div class="hero-stat"><span class="num">10+</span><span class="lbl">directory routes</span></div>
+          <div class="hero-stat"><span class="num">0</span><span class="lbl">accounts required</span></div>
+          <div class="hero-stat"><span class="num">17+</span><span class="lbl">built for iOS</span></div>
+        </div>
       </section>
 
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
+      <section aria-labelledby="screens-title" style="margin-top:64px;">
+        <p class="section-label">Field screens</p>
+        <h2 id="screens-title" class="section-title-lg">Screens that match the workflow</h2>
+        <div class="feature-shot-grid">
+          <figure class="screen-frame">
+            <img src="assets/images/home-en.png" alt="Home screen with branch selection, continue reading, archive routes, and quick filters" loading="lazy" />
+            <figcaption>Home: branch, archive routes, and continue reading</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/catalog-en.png" alt="SCP catalog list with article rows, series filters, and block filters" loading="lazy" />
+            <figcaption>Catalog: browse articles before you know the number</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-en.png" alt="Library history screen with read status, ratings, bookmarks, quick actions, and sort controls" loading="lazy" />
+            <figcaption>Library: history, ratings, bookmarks, and saved state</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-en.png" alt="Search screen with number, keyword, tag, site, type, Object Class, and advanced filters" loading="lazy" />
+            <figcaption>Search: number, keyword, tag, and advanced filters</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="workspace-title" style="margin-top:56px;">
         <p class="section-label">Reading workspace</p>
         <h2 id="workspace-title" class="section-title-lg">Browse the archive, then keep your place</h2>
         <div class="grid-2">
           <div class="card">
-            <p>
-              The app is organized around Home, Library, Search, and Settings. Home acts as the archive entry point, with continue-reading, quick search presets, random discovery, and directory routes for SCP reports, Tales, Canons, Canon series, Groups of Interest, guides, and related collections.
-            </p>
+            <p style="margin:0;">The app is organized around Home, Library, Search, and Settings. Home acts as the archive entry point, with continue-reading, quick search presets, random discovery, and directory routes for SCP reports, Tales, Canons, Canon series, Groups of Interest, guides, and related collections.</p>
           </div>
           <div class="card">
-            <p>
-              Library turns browsing into a personal shelf. History, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your path through the archive remains visible on device.
-            </p>
+            <p style="margin:0;">Library turns browsing into a personal shelf. History, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your path through the archive remains visible on device.</p>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
+      <section aria-labelledby="branch-title" style="margin-top:56px;">
         <p class="section-label">Content scope</p>
         <h2 id="branch-title" class="section-title-lg">Five branches, one archive workflow</h2>
         <div class="card">
-          <p>
-            SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, and Korean branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.
-          </p>
+          <p style="margin-top:0;">SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, and Korean branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.</p>
           <ul class="ft-list">
             <li><strong>Archive lists</strong> — Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes.</li>
             <li><strong>Search</strong> — Jump directly by number or title for free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches.</li>
@@ -130,7 +154,7 @@
         </div>
       </section>
 
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
+      <section aria-labelledby="premium-title" style="margin-top:56px;">
         <p class="section-label">Premium</p>
         <h2 id="premium-title" class="section-title-lg">Tools for deeper reading</h2>
         <div class="grid-2">
@@ -157,7 +181,7 @@
         </div>
       </section>
 
-      <section aria-labelledby="req-title" style="margin-top:38px;">
+      <section aria-labelledby="req-title" style="margin-top:56px;">
         <p class="section-label">Requirements</p>
         <h2 id="req-title" class="section-title-lg">System requirements</h2>
         <div class="card-flat">
@@ -169,18 +193,29 @@
         </div>
       </section>
 
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.
-          </p>
+      <section aria-labelledby="cta-title" style="margin-top:56px;">
+        <p class="section-label">Deployment</p>
+        <h2 id="cta-title" class="section-title-lg">Open the archive</h2>
+        <div class="card-invert">
+          <p class="lede" style="margin-top:0;">SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.</p>
           <div class="pill-row">
             <a class="pill" href="features.html">Features</a>
             <a class="pill" href="privacy.html">Privacy</a>
             <a class="pill" href="support.html">Support</a>
             <a class="pill" href="terms.html">Terms</a>
-            <a class="pill" href="rating-safety.html">Rating &amp; Safety</a>
+            <a class="pill" href="rating-safety.html">Safety</a>
+          </div>
+          <div class="store-cta" aria-label="SCP Docs App Store link">
+            <div class="store-cta-copy">
+              <span class="store-cta-kicker">Available on the App Store</span>
+              <strong>SCP Docs for iPhone</strong>
+              <span>Built for iOS 17 and later. App UI currently supports English, Japanese, French, Russian, and Korean.</span>
+            </div>
+            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
+              rel="noopener noreferrer" aria-label="SCP Docs — App Store">
+              <span class="store-cta-link-main">Get on the App Store</span>
+              <span class="store-cta-link-sub">View on Apple</span>
+            </a>
           </div>
         </div>
       </section>

@@ -13,6 +13,16 @@ APP_STORE_URL = "https://apps.apple.com/jp/app/scp-docs/id6765882660"
 CONTACT_EMAIL = "scpdocs_admin@proton.me"
 X_URL = "https://x.com/SCPdocs"
 
+# Minimal "containment marker" favicon, URL-encoded inline SVG.
+FAVICON_SVG = (
+    "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E"
+    "%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E"
+    "%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E"
+    "%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E"
+    "%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E"
+    "%3C/svg%3E"
+)
+
 
 @dataclass(frozen=True)
 class Language:
@@ -124,6 +134,25 @@ LANGS: dict[str, Language] = {
         footer_back="홈으로 돌아가기",
         footer_contact="문의",
     ),
+    "es": Language(
+        code="es",
+        suffix="-es",
+        label="ES",
+        html_lang="es",
+        og_locale="es_ES",
+        switch_label="Idioma",
+        switch_aria="Selector de idioma",
+        nav={
+            "index": "Inicio",
+            "features": "Funciones",
+            "privacy": "Privacidad",
+            "support": "Soporte",
+            "terms": "Términos",
+            "rating-safety": "Seguridad",
+        },
+        footer_back="Volver al inicio",
+        footer_contact="Contacto",
+    ),
 }
 
 
@@ -144,7 +173,10 @@ def page_url(page: str, lang_code: str) -> str:
 
 
 def screenshot_path(lang_code: str, kind: str) -> str:
-    return f"assets/images/{kind}-{lang_code}.png"
+    # No Spanish screenshots exist yet; the app UI does not include Spanish,
+    # so Spanish pages show the English screens.
+    shot_lang = "en" if lang_code == "es" else lang_code
+    return f"assets/images/{kind}-{shot_lang}.png"
 
 
 def screenshot_url(lang_code: str, kind: str) -> str:
@@ -259,7 +291,8 @@ def layout(
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="{escape(description, quote=True)}" />
-  <meta name="theme-color" content="#F7F6F0" />
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,{FAVICON_SVG}" />
   <title>{escape(title)}</title>
   <link rel="canonical" href="{page_url(page, lang_code)}" />
 {head_alternates(page)}
@@ -290,806 +323,700 @@ def layout(
     return html
 
 
-INDEX: dict[str, dict[str, str]] = {
+INDEX_STRINGS: dict[str, dict[str, object]] = {
     "en": {
-        "title": "SCP Docs — Foundation Archive",
+        "title": "SCP Docs — Foundation Archive Reader for iPhone",
         "description": "SCP Docs is an unofficial native iOS reader for SCP Wiki archives with branch directories, guided archive browsing, Library organization, saved searches, sharing, and premium reading tools.",
-        "body": r"""
-    <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native archive workspace: browse branch directories, search by number or title, save important files, organize them in your Library, and return to the exact reports you were reading.
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">Native iOS reader</span>
-            <span class="code-chip">Archive directories</span>
-            <span class="code-chip">Personal Library</span>
-            <span class="code-chip">Premium workspace tools</span>
-          </div>
-          <div class="store-cta" aria-label="SCP Docs App Store link">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs for iPhone</strong>
-              <span>Built for iOS 17 and later. App UI currently supports English, Japanese, French, Russian, and Korean.</span>
-            </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="Open SCP Docs on the App Store">
-              <span class="store-cta-link-main">Get on the App Store</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
-          </div>
-        </div>
-        <figure class="hero-media" aria-label="SCP Docs app preview">
-          <img src="assets/images/home-en.png"
-            alt="English SCP Docs home screen with continue reading, archive routes, and search filters" />
-        </figure>
-      </section>
-
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
-        <p class="section-label">Reading workspace</p>
-        <h2 id="workspace-title" class="section-title-lg">Browse the archive, then keep your place</h2>
-        <div class="grid-2">
-          <div class="card">
-            <p>
-              The app is organized around Home, Library, Search, and Settings. Home acts as the archive entry point, with continue-reading, quick search presets, random discovery, and directory routes for SCP reports, Tales, Canons, Canon series, Groups of Interest, guides, and related collections.
-            </p>
-          </div>
-          <div class="card">
-            <p>
-              Library turns browsing into a personal shelf. History, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your path through the archive remains visible on device.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
-        <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">Five branches, one archive workflow</h2>
-        <div class="card">
-          <p>
-            SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, and Korean branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.
-          </p>
-          <ul class="ft-list">
-            <li><strong>Archive lists</strong> — Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes.</li>
-            <li><strong>Search</strong> — Jump directly by number or title for free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches.</li>
-            <li><strong>Library</strong> — Save articles as bookmarks or read-later items, rate them, add memos, group favorites into folders, and resume from stored scroll positions.</li>
-            <li><strong>Reader</strong> — Cleaner typography, themes, scroll tools, better dark mode, and more faithful rendering for specially formatted source pages.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
-        <p class="section-label">Premium</p>
-        <h2 id="premium-title" class="section-title-lg">Tools for deeper reading</h2>
-        <div class="grid-2">
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>Reading stats</dt>
-              <dd>Reading time, catalog coverage, frequently read Object Classes and tags, rating trends, memo insights, backlog status, and logs by day, month, and year.</dd>
-              <dt>Saved searches</dt>
-              <dd>Save search conditions and receive on-device notifications when new matching catalog entries appear.</dd>
-              <dt>Bookmark folders</dt>
-              <dd>Organize saved articles into folders that can sync through your own iCloud Drive, along with memos and saved searches.</dd>
-            </dl>
-          </div>
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>Listen and save</dt>
-              <dd>Text-to-speech reads article text aloud, and offline snapshots keep eligible saved articles available without a connection.</dd>
-              <dt>Share as cards</dt>
-              <dd>Turn an article or selected list into a styled share card for X and other social apps, with templates and optional comments.</dd>
-              <dt>Ads and limits</dt>
-              <dd>Premium hides ads, expands save limits, unlocks memo editing, and enables advanced search. A rewarded ad can grant temporary Premium access when available.</dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="req-title" style="margin-top:38px;">
-        <p class="section-label">Requirements</p>
-        <h2 id="req-title" class="section-title-lg">System requirements</h2>
-        <div class="card-flat">
-          <ul class="ft-list">
-            <li><strong>OS</strong> — iOS 17 or later.</li>
-            <li><strong>Network</strong> — required for catalog refresh, online article viewing, source-site content, ads, purchase checks, and app links.</li>
-            <li><strong>Accounts</strong> — no SCP Foundation or Wikidot account is required for reading in the app.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.
-          </p>
-          <div class="pill-row">
-            <a class="pill" href="features.html">Features</a>
-            <a class="pill" href="privacy.html">Privacy</a>
-            <a class="pill" href="support.html">Support</a>
-            <a class="pill" href="terms.html">Terms</a>
-            <a class="pill" href="rating-safety.html">Rating &amp; Safety</a>
-          </div>
-        </div>
-      </section>
-    </main>""",
+        "lede": "SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native archive workspace: browse branch directories, search by number or title, save important files, organize them in your Library, and return to the exact reports you were reading.",
+        "hero_alt": "English SCP Docs home screen with continue reading, archive routes, and search filters",
+        "cta_main": "Get on the App Store",
+        "cta_sub": "iPhone · iOS 17+",
+        "cta2_main": "Explore the features",
+        "cta2_sub": "Field guide",
+        "badges": ["Unofficial fan app", "Free + Premium", "Rated 13+", "No account needed"],
+        "stats": [
+            ("5", "archive branches"),
+            ("10+", "directory routes"),
+            ("0", "accounts required"),
+            ("17+", "built for iOS"),
+        ],
+        "screens_title": "Screens that match the workflow",
+        "screens": [
+            ("home", "Home screen with branch selection, continue reading, archive routes, and quick filters", "Home: branch, archive routes, and continue reading"),
+            ("catalog", "SCP catalog list with article rows, series filters, and block filters", "Catalog: browse articles before you know the number"),
+            ("library", "Library history screen with read status, ratings, bookmarks, quick actions, and sort controls", "Library: history, ratings, bookmarks, and saved state"),
+            ("search", "Search screen with number, keyword, tag, site, type, Object Class, and advanced filters", "Search: number, keyword, tag, and advanced filters"),
+        ],
+        "workspace_title": "Browse the archive, then keep your place",
+        "workspace_p1": "The app is organized around Home, Library, Search, and Settings. Home acts as the archive entry point, with continue-reading, quick search presets, random discovery, and directory routes for SCP reports, Tales, Canons, Canon series, Groups of Interest, guides, and related collections.",
+        "workspace_p2": "Library turns browsing into a personal shelf. History, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your path through the archive remains visible on device.",
+        "scope_title": "Five branches, one archive workflow",
+        "scope_p": "SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, and Korean branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.",
+        "scope_items": [
+            ("Archive lists", "Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes."),
+            ("Search", "Jump directly by number or title for free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches."),
+            ("Library", "Save articles as bookmarks or read-later items, rate them, add memos, group favorites into folders, and resume from stored scroll positions."),
+            ("Reader", "Cleaner typography, themes, scroll tools, better dark mode, and more faithful rendering for specially formatted source pages."),
+        ],
+        "premium_title": "Tools for deeper reading",
+        "premium_cols": [
+            [
+                ("Reading stats", "Reading time, catalog coverage, frequently read Object Classes and tags, rating trends, memo insights, backlog status, and logs by day, month, and year."),
+                ("Saved searches", "Save search conditions and receive on-device notifications when new matching catalog entries appear."),
+                ("Bookmark folders", "Organize saved articles into folders that can sync through your own iCloud Drive, along with memos and saved searches."),
+            ],
+            [
+                ("Listen and save", "Text-to-speech reads article text aloud, and offline snapshots keep eligible saved articles available without a connection."),
+                ("Share as cards", "Turn an article or selected list into a styled share card for X and other social apps, with templates and optional comments."),
+                ("Ads and limits", "Premium hides ads, expands save limits, unlocks memo editing, and enables advanced search. A rewarded ad can grant temporary Premium access when available."),
+            ],
+        ],
+        "req_title": "System requirements",
+        "req_items": [
+            ("OS", "iOS 17 or later."),
+            ("Network", "required for catalog refresh, online article viewing, source-site content, ads, purchase checks, and app links."),
+            ("Accounts", "no SCP Foundation or Wikidot account is required for reading in the app."),
+        ],
+        "cta_title": "Open the archive",
+        "legal_p": "SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.",
+        "store_name": "SCP Docs for iPhone",
+        "store_note": "Built for iOS 17 and later. App UI currently supports English, Japanese, French, Russian, and Korean.",
+        "store_main": "Get on the App Store",
     },
     "ja": {
-        "title": "SCP Docs — Foundation Archive",
+        "title": "SCP Docs — Foundation Archive Reader for iPhone",
         "description": "SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。",
-        "body": r"""
-    <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs は、SCP Wiki と各支部サイトの記事をより快適に読むための<strong>非公式ファンメイド iOS リーダー</strong>です。公開されている元ページを、書庫の閲覧、支部別検索、保存、読書記録、読みかけ復帰まで扱えるネイティブな読書ワークスペースにまとめます。
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">ネイティブ iOS リーダー</span>
-            <span class="code-chip">5支部対応</span>
-            <span class="code-chip">読書状態</span>
-            <span class="code-chip">プレミアム読書ツール</span>
-          </div>
-          <div class="store-cta" aria-label="SCP Docs App Store link">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs for iPhone</strong>
-              <span>iOS 17以降に対応。アプリUIは現在、英語・日本語・フランス語・ロシア語・韓国語に対応しています。</span>
-            </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="App Store で SCP Docs を開く">
-              <span class="store-cta-link-main">App Store で見る</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
-          </div>
-        </div>
-        <figure class="hero-media" aria-label="SCP Docs app preview">
-          <img src="assets/images/home-ja.png"
-            alt="続きから読む、書庫ルート、検索フィルタを表示した日本語UIのSCP Docsホーム画面" />
-        </figure>
-      </section>
-
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
-        <p class="section-label">Reading workspace</p>
-        <h2 id="workspace-title" class="section-title-lg">読む、探す、整理する、戻ってくる</h2>
-        <div class="grid-2">
-          <div class="card">
-            <p>
-              アプリはホーム、書庫、検索、設定を中心に構成されています。現在のホームは「続きから読む」、検索プリセット、ランダム発見、Stories / Tales / Canons / Series / GoI / ガイド類などへ進む整理されたディレクトリを備えます。
-            </p>
-          </div>
-          <div class="card">
-            <p>
-              閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、フォルダ、続きから読むデータを記事に結びつけて保存し、読んできた経路を端末内で見失いにくくします。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
-        <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">5支部をひとつの読書フローに</h2>
-        <div class="card">
-          <p>
-            英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。
-          </p>
-          <ul class="ft-list">
-            <li><strong>書庫リスト</strong> — SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、関連ディレクトリ。</li>
-            <li><strong>検索</strong> — 番号・タイトル検索は無料。プレミアムでは対象文書、タグ、オブジェクトクラス、メモ、読書状態、公式評価、長さ、保存検索まで組み合わせられます。</li>
-            <li><strong>書庫</strong> — ブックマーク、後で読む、評価、メモ、フォルダ、スクロール位置を記事に結びつけて、あとから戻れる状態にします。</li>
-            <li><strong>リーダー</strong> — 文字組み、テーマ、スクロール操作、ダークモード、特殊レイアウト記事の再現性を見直した本文表示。</li>
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
-        <p class="section-label">Premium</p>
-        <h2 id="premium-title" class="section-title-lg">深く読むためのツール</h2>
-        <div class="grid-2">
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>読書統計</dt>
-              <dd>読書時間、カタログ読了率、よく読むオブジェクトクラスやタグ、評価傾向、メモ、積読、曜日・月・年ごとの記録を表示します。</dd>
-              <dt>保存した検索</dt>
-              <dd>検索条件を保存し、新しく一致する記事がカタログに現れたときに端末上の通知で知らせます。</dd>
-              <dt>ブックマークフォルダ</dt>
-              <dd>保存した記事をフォルダで整理し、メモや保存検索とともに自分の iCloud Drive 経由で同期できます。</dd>
-            </dl>
-          </div>
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>聴く、保存する</dt>
-              <dd>読み上げ機能で本文を音声再生し、対象記事のオフライン保存で通信がない場面でも読み返せます。</dd>
-              <dt>カードで共有</dt>
-              <dd>記事や選んだリストを、X などで共有しやすいカード画像にできます。テンプレートとコメントにも対応します。</dd>
-              <dt>広告と上限</dt>
-              <dd>プレミアムでは広告非表示、保存上限拡張、メモ編集、高度な検索を利用できます。利用可能な場合はリワード広告で一時的にプレミアムを解放できます。</dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="req-title" style="margin-top:38px;">
-        <p class="section-label">Requirements</p>
-        <h2 id="req-title" class="section-title-lg">動作環境</h2>
-        <div class="card-flat">
-          <ul class="ft-list">
-            <li><strong>OS</strong> — iOS 17以降。</li>
-            <li><strong>通信</strong> — カタログ更新、オンライン記事表示、元サイトコンテンツ、広告、購入確認、外部リンクに必要です。</li>
-            <li><strong>アカウント</strong> — アプリで読むだけなら SCP Foundation や Wikidot のアカウントは不要です。</li>
-          </ul>
-        </div>
-      </section>
-
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。
-          </p>
-          <div class="pill-row">
-            <a class="pill" href="features-ja.html">機能</a>
-            <a class="pill" href="privacy-ja.html">プライバシー</a>
-            <a class="pill" href="support-ja.html">サポート</a>
-            <a class="pill" href="terms-ja.html">利用規約</a>
-            <a class="pill" href="rating-safety-ja.html">安全方針</a>
-          </div>
-        </div>
-      </section>
-    </main>""",
+        "lede": "SCP Docs は、SCP Wiki と各支部サイトの記事をより快適に読むための<strong>非公式ファンメイド iOS リーダー</strong>です。公開されている元ページを、書庫の閲覧、支部別検索、保存、読書記録、読みかけ復帰まで扱えるネイティブな読書ワークスペースにまとめます。",
+        "hero_alt": "続きから読む、書庫ルート、検索フィルタを表示した日本語UIのSCP Docsホーム画面",
+        "cta_main": "App Store で入手",
+        "cta_sub": "iPhone · iOS 17+",
+        "cta2_main": "機能を見る",
+        "cta2_sub": "Field guide",
+        "badges": ["非公式ファンアプリ", "無料 + プレミアム", "13+", "アカウント不要"],
+        "stats": [
+            ("5", "対応支部"),
+            ("10+", "書庫ルート"),
+            ("0", "必要なアカウント"),
+            ("17+", "対応 iOS"),
+        ],
+        "screens_title": "ワークフローに対応した画面",
+        "screens": [
+            ("home", "支部選択、続きから読む、書庫ルート、クイックフィルタを表示したホーム画面", "ホーム: 支部、書庫ルート、続きから読む"),
+            ("catalog", "シリーズと番号ブロックで記事を探せるSCPカタログ画面", "カタログ: 番号を知らなくても一覧から探す"),
+            ("library", "読書状態、評価、ブックマーク、保存状態を表示したライブラリ画面", "ライブラリ: 履歴、評価、ブックマーク、保存状態"),
+            ("search", "番号、キーワード、タグ、支部、種別、Object Class、高度な絞り込みを表示した検索画面", "検索: 番号、キーワード、タグ、高度な絞り込み"),
+        ],
+        "workspace_title": "読む、探す、整理する、戻ってくる",
+        "workspace_p1": "アプリはホーム、書庫、検索、設定を中心に構成されています。現在のホームは「続きから読む」、検索プリセット、ランダム発見、Stories / Tales / Canons / Series / GoI / ガイド類などへ進む整理されたディレクトリを備えます。",
+        "workspace_p2": "閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、フォルダ、続きから読むデータを記事に結びつけて保存し、読んできた経路を端末内で見失いにくくします。",
+        "scope_title": "5支部をひとつの読書フローに",
+        "scope_p": "英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。",
+        "scope_items": [
+            ("書庫リスト", "SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、関連ディレクトリ。"),
+            ("検索", "番号・タイトル検索は無料。プレミアムでは対象文書、タグ、オブジェクトクラス、メモ、読書状態、公式評価、長さ、保存検索まで組み合わせられます。"),
+            ("書庫", "ブックマーク、後で読む、評価、メモ、フォルダ、スクロール位置を記事に結びつけて、あとから戻れる状態にします。"),
+            ("リーダー", "文字組み、テーマ、スクロール操作、ダークモード、特殊レイアウト記事の再現性を見直した本文表示。"),
+        ],
+        "premium_title": "深く読むためのツール",
+        "premium_cols": [
+            [
+                ("読書統計", "読書時間、カタログ読了率、よく読むオブジェクトクラスやタグ、評価傾向、メモ、積読、曜日・月・年ごとの記録を表示します。"),
+                ("保存した検索", "検索条件を保存し、新しく一致する記事がカタログに現れたときに端末上の通知で知らせます。"),
+                ("ブックマークフォルダ", "保存した記事をフォルダで整理し、メモや保存検索とともに自分の iCloud Drive 経由で同期できます。"),
+            ],
+            [
+                ("聴く、保存する", "読み上げ機能で本文を音声再生し、対象記事のオフライン保存で通信がない場面でも読み返せます。"),
+                ("カードで共有", "記事や選んだリストを、X などで共有しやすいカード画像にできます。テンプレートとコメントにも対応します。"),
+                ("広告と上限", "プレミアムでは広告非表示、保存上限拡張、メモ編集、高度な検索を利用できます。利用可能な場合はリワード広告で一時的にプレミアムを解放できます。"),
+            ],
+        ],
+        "req_title": "動作環境",
+        "req_items": [
+            ("OS", "iOS 17以降。"),
+            ("通信", "カタログ更新、オンライン記事表示、元サイトコンテンツ、広告、購入確認、外部リンクに必要です。"),
+            ("アカウント", "アプリで読むだけなら SCP Foundation や Wikidot のアカウントは不要です。"),
+        ],
+        "cta_title": "書庫を開く",
+        "legal_p": "SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。",
+        "store_name": "SCP Docs for iPhone",
+        "store_note": "iOS 17以降に対応。アプリUIは現在、英語・日本語・フランス語・ロシア語・韓国語に対応しています。",
+        "store_main": "App Store で見る",
     },
     "fr": {
-        "title": "SCP Docs — Archive de la Fondation",
+        "title": "SCP Docs — Archive de la Fondation pour iPhone",
         "description": "SCP Docs est un lecteur iOS non officiel pour les archives SCP Wiki, la recherche par branche, l'état de lecture, les recherches enregistrées, le partage et les outils Premium.",
-        "body": r"""
-    <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs est un <strong>lecteur iOS non officiel et fan-made</strong> pour les articles du SCP Wiki et de ses branches. Il transforme les pages publiques en espace de lecture natif pour parcourir les archives, chercher par branche, sauvegarder ce qui compte et reprendre vos rapports en cours.
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">Lecteur iOS natif</span>
-            <span class="code-chip">Cinq branches</span>
-            <span class="code-chip">État de lecture</span>
-            <span class="code-chip">Outils Premium</span>
-          </div>
-          <div class="store-cta" aria-label="Lien App Store de SCP Docs">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs pour iPhone</strong>
-              <span>Nécessite iOS 17 ou version ultérieure. L'interface de l'app prend actuellement en charge l'anglais, le japonais, le français, le russe et le coréen.</span>
-            </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="Ouvrir SCP Docs sur l'App Store">
-              <span class="store-cta-link-main">Voir sur l'App Store</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
-          </div>
-        </div>
-        <figure class="hero-media" aria-label="Aperçu de l'app SCP Docs">
-          <img src="assets/images/home-fr.png"
-            alt="Écran d'accueil SCP Docs en français avec reprise de lecture, routes d'archive et filtres de recherche" />
-        </figure>
-      </section>
-
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
-        <p class="section-label">Reading workspace</p>
-        <h2 id="workspace-title" class="section-title-lg">Lire, chercher, organiser, reprendre</h2>
-        <div class="grid-2">
-          <div class="card">
-            <p>
-              L'app s'organise autour d'Accueil, Bibliothèque, Recherche et Réglages. L'accueil met en avant la reprise de lecture, les préréglages de recherche, la découverte aléatoire et des itinéraires plus clairs vers Stories, Tales, Canons, Series, GoI, guides et collections associées.
-            </p>
-          </div>
-          <div class="card">
-            <p>
-              Historique, état lu/non lu, notes, favoris, éléments à lire plus tard, position de défilement, mémos, dossiers et reprise de lecture restent liés aux articles ouverts, pour garder votre parcours visible sur l'appareil.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
-        <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">Cinq branches, un même flux de lecture</h2>
-        <div class="card">
-          <p>
-            SCP Docs prend en charge l'archive principale anglaise de la SCP Foundation ainsi que les branches japonaise, française, russe et coréenne. Changer de branche modifie l'accueil, la recherche, les listes intégrées, les destinations d'articles et la langue de l'interface. SCP International et les archives traduites sont listés lorsque les données de catalogue existent.
-          </p>
-          <ul class="ft-list">
-            <li><strong>Listes d'archives</strong> — SCP, Tales, Canons, séries Canon, GoI, Joke SCP, SCP-EX, collections, articles récents et répertoires associés.</li>
-            <li><strong>Recherche</strong> — la recherche par numéro et titre est gratuite. Premium ajoute des filtres par documents, tags, classe d'objet, mémos, état de lecture, score officiel, longueur et recherches enregistrées.</li>
-            <li><strong>Bibliothèque</strong> — favoris, à lire plus tard, notes, mémos, dossiers et position de défilement restent liés aux articles pour y revenir plus facilement.</li>
-            <li><strong>Lecteur</strong> — typographie plus claire, thèmes, outils de défilement, meilleur mode sombre et rendu plus fidèle des pages à mise en forme spéciale.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
-        <p class="section-label">Premium</p>
-        <h2 id="premium-title" class="section-title-lg">Des outils pour lire plus loin</h2>
-        <div class="grid-2">
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>Statistiques de lecture</dt>
-              <dd>Temps de lecture, progression du catalogue, classes d'objet et tags les plus lus, tendances de notes, mémos, pile à lire et journaux par jour, mois et année.</dd>
-              <dt>Recherches enregistrées</dt>
-              <dd>Enregistrez des critères et recevez une notification sur l'appareil quand de nouvelles entrées correspondantes apparaissent.</dd>
-              <dt>Dossiers de favoris</dt>
-              <dd>Organisez les articles sauvegardés dans des dossiers pouvant se synchroniser via votre iCloud Drive, avec mémos et recherches enregistrées.</dd>
-            </dl>
-          </div>
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>Écouter et sauvegarder</dt>
-              <dd>La synthèse vocale lit les articles à voix haute, et les instantanés hors ligne gardent les articles éligibles accessibles sans connexion.</dd>
-              <dt>Partager en cartes</dt>
-              <dd>Transformez un article ou une liste choisie en carte de partage pour X et d'autres apps sociales, avec modèles et commentaire facultatif.</dd>
-              <dt>Publicités et limites</dt>
-              <dd>Premium masque les publicités, étend les limites de sauvegarde, déverrouille l'édition de mémos et la recherche avancée. Une publicité récompensée peut donner un accès Premium temporaire lorsqu'elle est disponible.</dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="req-title" style="margin-top:38px;">
-        <p class="section-label">Requirements</p>
-        <h2 id="req-title" class="section-title-lg">Configuration requise</h2>
-        <div class="card-flat">
-          <ul class="ft-list">
-            <li><strong>OS</strong> — iOS 17 ou version ultérieure.</li>
-            <li><strong>Réseau</strong> — requis pour actualiser les catalogues, lire en ligne, charger les sites sources, les publicités, les vérifications d'achat et les liens externes.</li>
-            <li><strong>Comptes</strong> — aucun compte SCP Foundation ou Wikidot n'est requis pour lire dans l'app.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs est une <strong>application fan non officielle</strong>. Les articles, crédits d'auteurs, avis de droit d'auteur et licences restent régis par les sites sources. Les œuvres SCP sont généralement publiées sous Creative Commons BY-SA 3.0, mais chaque page source fait autorité.
-          </p>
-          <div class="pill-row">
-            <a class="pill" href="features-fr.html">Fonctionnalités</a>
-            <a class="pill" href="privacy-fr.html">Confidentialité</a>
-            <a class="pill" href="support-fr.html">Assistance</a>
-            <a class="pill" href="terms-fr.html">Conditions</a>
-            <a class="pill" href="rating-safety-fr.html">Sécurité</a>
-          </div>
-        </div>
-      </section>
-    </main>""",
+        "lede": "SCP Docs est un <strong>lecteur iOS non officiel et fan-made</strong> pour les articles du SCP Wiki et de ses branches. Il transforme les pages publiques en espace de lecture natif pour parcourir les archives, chercher par branche, sauvegarder ce qui compte et reprendre vos rapports en cours.",
+        "hero_alt": "Écran d'accueil SCP Docs en français avec reprise de lecture, routes d'archive et filtres de recherche",
+        "cta_main": "Voir sur l'App Store",
+        "cta_sub": "iPhone · iOS 17+",
+        "cta2_main": "Découvrir les fonctions",
+        "cta2_sub": "Field guide",
+        "badges": ["App fan non officielle", "Gratuit + Premium", "13+", "Sans compte"],
+        "stats": [
+            ("5", "branches d'archives"),
+            ("10+", "routes d'archive"),
+            ("0", "compte requis"),
+            ("17+", "conçu pour iOS"),
+        ],
+        "screens_title": "Écrans alignés sur le flux",
+        "screens": [
+            ("home", "Accueil avec sélection de branche, reprise de lecture, routes d'archive et filtres rapides", "Accueil : branche, routes d'archive et reprise"),
+            ("catalog", "Liste de catalogue SCP avec séries, blocs et lignes d'articles", "Catalogue : parcourir avant de connaître le numéro"),
+            ("library", "Bibliothèque avec historique, état de lecture, notes, favoris et actions rapides", "Bibliothèque : historique, notes, favoris et état sauvegardé"),
+            ("search", "Recherche avec numéro, mot-clé, tag, branche, type, classe d'objet et filtres avancés", "Recherche : numéro, mot-clé, tag et filtres avancés"),
+        ],
+        "workspace_title": "Lire, chercher, organiser, reprendre",
+        "workspace_p1": "L'app s'organise autour d'Accueil, Bibliothèque, Recherche et Réglages. L'accueil met en avant la reprise de lecture, les préréglages de recherche, la découverte aléatoire et des itinéraires plus clairs vers Stories, Tales, Canons, Series, GoI, guides et collections associées.",
+        "workspace_p2": "Historique, état lu/non lu, notes, favoris, éléments à lire plus tard, position de défilement, mémos, dossiers et reprise de lecture restent liés aux articles ouverts, pour garder votre parcours visible sur l'appareil.",
+        "scope_title": "Cinq branches, un même flux de lecture",
+        "scope_p": "SCP Docs prend en charge l'archive principale anglaise de la SCP Foundation ainsi que les branches japonaise, française, russe et coréenne. Changer de branche modifie l'accueil, la recherche, les listes intégrées, les destinations d'articles et la langue de l'interface. SCP International et les archives traduites sont listés lorsque les données de catalogue existent.",
+        "scope_items": [
+            ("Listes d'archives", "SCP, Tales, Canons, séries Canon, GoI, Joke SCP, SCP-EX, collections, articles récents et répertoires associés."),
+            ("Recherche", "la recherche par numéro et titre est gratuite. Premium ajoute des filtres par documents, tags, classe d'objet, mémos, état de lecture, score officiel, longueur et recherches enregistrées."),
+            ("Bibliothèque", "favoris, à lire plus tard, notes, mémos, dossiers et position de défilement restent liés aux articles pour y revenir plus facilement."),
+            ("Lecteur", "typographie plus claire, thèmes, outils de défilement, meilleur mode sombre et rendu plus fidèle des pages à mise en forme spéciale."),
+        ],
+        "premium_title": "Des outils pour lire plus loin",
+        "premium_cols": [
+            [
+                ("Statistiques de lecture", "Temps de lecture, progression du catalogue, classes d'objet et tags les plus lus, tendances de notes, mémos, pile à lire et journaux par jour, mois et année."),
+                ("Recherches enregistrées", "Enregistrez des critères et recevez une notification sur l'appareil quand de nouvelles entrées correspondantes apparaissent."),
+                ("Dossiers de favoris", "Organisez les articles sauvegardés dans des dossiers pouvant se synchroniser via votre iCloud Drive, avec mémos et recherches enregistrées."),
+            ],
+            [
+                ("Écouter et sauvegarder", "La synthèse vocale lit les articles à voix haute, et les instantanés hors ligne gardent les articles éligibles accessibles sans connexion."),
+                ("Partager en cartes", "Transformez un article ou une liste choisie en carte de partage pour X et d'autres apps sociales, avec modèles et commentaire facultatif."),
+                ("Publicités et limites", "Premium masque les publicités, étend les limites de sauvegarde, déverrouille l'édition de mémos et la recherche avancée. Une publicité récompensée peut donner un accès Premium temporaire lorsqu'elle est disponible."),
+            ],
+        ],
+        "req_title": "Configuration requise",
+        "req_items": [
+            ("OS", "iOS 17 ou version ultérieure."),
+            ("Réseau", "requis pour actualiser les catalogues, lire en ligne, charger les sites sources, publicités, vérifications d'achat et liens externes."),
+            ("Comptes", "aucun compte SCP Foundation ou Wikidot n'est requis pour lire dans l'app."),
+        ],
+        "cta_title": "Ouvrir l'archive",
+        "legal_p": "SCP Docs est une <strong>application fan non officielle</strong>. Les articles sources, crédits d'auteurs, mentions de copyright et conditions de licence restent régis par les sites sources. Les œuvres SCP sont généralement publiées sous Creative Commons BY-SA 3.0, mais chaque page source fait autorité.",
+        "store_name": "SCP Docs pour iPhone",
+        "store_note": "Nécessite iOS 17 ou version ultérieure. L'interface de l'app prend actuellement en charge l'anglais, le japonais, le français, le russe et le coréen.",
+        "store_main": "Voir sur l'App Store",
     },
     "ru": {
-        "title": "SCP Docs — Архив Фонда",
-        "description": "SCP Docs — неофициальный iOS-ридер для архивов SCP Wiki, поиска по филиалам, состояния чтения, сохранённых поисков, карточек для публикации и Premium-инструментов.",
-        "body": r"""
-    <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs — <strong>неофициальный фанатский iOS-ридер</strong> для статей SCP Wiki и сайтов филиалов. Он превращает публичные исходные страницы в нативное пространство для чтения: архивы, поиск по филиалам, сохранение важных материалов и возвращение к начатым отчётам.
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">Нативный iOS-ридер</span>
-            <span class="code-chip">Пять филиалов</span>
-            <span class="code-chip">Состояние чтения</span>
-            <span class="code-chip">Premium-инструменты</span>
-          </div>
-          <div class="store-cta" aria-label="Ссылка SCP Docs в App Store">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs для iPhone</strong>
-              <span>Требуется iOS 17 или новее. Интерфейс приложения сейчас поддерживает английский, японский, французский, русский и корейский языки.</span>
-            </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="Открыть SCP Docs в App Store">
-              <span class="store-cta-link-main">Открыть App Store</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
-          </div>
-        </div>
-        <figure class="hero-media" aria-label="Превью приложения SCP Docs">
-          <img src="assets/images/home-ru.png"
-            alt="Главный экран SCP Docs на русском с продолжением чтения, маршрутами архива и поисковыми фильтрами" />
-        </figure>
-      </section>
-
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
-        <p class="section-label">Reading workspace</p>
-        <h2 id="workspace-title" class="section-title-lg">Читайте, ищите, упорядочивайте и возвращайтесь</h2>
-        <div class="grid-2">
-          <div class="card">
-            <p>
-              Приложение построено вокруг Главной, Библиотеки, Поиска и Настроек. Главная теперь выделяет продолжение чтения, готовые поисковые наборы, случайное открытие и более понятные переходы к Stories, Tales, Canons, Series, GoI, руководствам и связанным коллекциям.
-            </p>
-          </div>
-          <div class="card">
-            <p>
-              История, статус прочтения, оценки, закладки, список «прочитать позже», позиция прокрутки, заметки, папки и данные продолжения чтения привязаны к открытым статьям, чтобы ваш путь по архиву оставался видимым на устройстве.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
-        <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">Пять филиалов в одном рабочем процессе</h2>
-        <div class="card">
-          <p>
-            SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский и корейский филиалы. При смене филиала меняются Главная, поиск, списки в приложении, ссылки на статьи и язык интерфейса. SCP International и переводные архивы перечисляются там, где доступны каталожные данные.
-          </p>
-          <ul class="ft-list">
-            <li><strong>Списки архивов</strong> — SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и связанные каталоги.</li>
-            <li><strong>Поиск</strong> — поиск по номеру и названию бесплатен. Premium добавляет фильтры по документам, тегам, классу объекта, заметкам, статусу чтения, официальной оценке, длине и сохранённым поискам.</li>
-            <li><strong>Библиотека</strong> — закладки, «прочитать позже», оценки, заметки, папки и позиция прокрутки остаются связанными со статьями, чтобы к ним было проще вернуться.</li>
-            <li><strong>Ридер</strong> — более аккуратная типографика, темы, инструменты прокрутки, улучшенная тёмная тема и более точное отображение страниц со специальной вёрсткой.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
-        <p class="section-label">Premium</p>
-        <h2 id="premium-title" class="section-title-lg">Инструменты для глубокого чтения</h2>
-        <div class="grid-2">
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>Статистика чтения</dt>
-              <dd>Время чтения, охват каталога, часто читаемые классы объектов и теги, динамика оценок, заметки, список к прочтению и журналы по дням, месяцам и годам.</dd>
-              <dt>Сохранённые поиски</dt>
-              <dd>Сохраняйте условия поиска и получайте уведомления на устройстве, когда появляются новые подходящие записи каталога.</dd>
-              <dt>Папки закладок</dt>
-              <dd>Раскладывайте сохранённые статьи по папкам, которые могут синхронизироваться через ваш iCloud Drive вместе с заметками и сохранёнными поисками.</dd>
-            </dl>
-          </div>
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>Слушать и сохранять</dt>
-              <dd>Синтез речи читает текст статей вслух, а офлайн-снимки оставляют подходящие сохранённые статьи доступными без сети.</dd>
-              <dt>Делиться карточками</dt>
-              <dd>Превратите статью или выбранный список в карточку для X и других социальных приложений, с шаблонами и необязательным комментарием.</dd>
-              <dt>Реклама и лимиты</dt>
-              <dd>Premium скрывает рекламу, расширяет лимиты сохранения, открывает редактирование заметок и расширенный поиск. Рекламный просмотр может временно открыть Premium, если предложение доступно.</dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="req-title" style="margin-top:38px;">
-        <p class="section-label">Requirements</p>
-        <h2 id="req-title" class="section-title-lg">Системные требования</h2>
-        <div class="card-flat">
-          <ul class="ft-list">
-            <li><strong>OS</strong> — iOS 17 или новее.</li>
-            <li><strong>Сеть</strong> — нужна для обновления каталогов, онлайн-чтения, загрузки исходных сайтов, рекламы, проверки покупок и внешних ссылок.</li>
-            <li><strong>Аккаунты</strong> — для чтения в приложении не нужен аккаунт SCP Foundation или Wikidot.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs — <strong>неофициальное фанатское приложение</strong>. Статьи, сведения об авторах, уведомления об авторских правах и лицензии регулируются исходными сайтами. Материалы SCP обычно публикуются по Creative Commons BY-SA 3.0, но приоритет имеет каждая исходная страница.
-          </p>
-          <div class="pill-row">
-            <a class="pill" href="features-ru.html">Возможности</a>
-            <a class="pill" href="privacy-ru.html">Конфиденциальность</a>
-            <a class="pill" href="support-ru.html">Поддержка</a>
-            <a class="pill" href="terms-ru.html">Условия</a>
-            <a class="pill" href="rating-safety-ru.html">Безопасность</a>
-          </div>
-        </div>
-      </section>
-    </main>""",
+        "title": "SCP Docs — читалка архива Фонда для iPhone",
+        "description": "SCP Docs — неофициальная нативная iOS-читалка архивов SCP Wiki: каталоги филиалов, поиск, Библиотека, сохранённые поиски, публикация карточек и Premium-инструменты.",
+        "lede": "SCP Docs — <strong>неофициальная фанатская iOS-читалка</strong> статей SCP Wiki и филиалов. Она превращает публичные исходные страницы в нативное рабочее пространство архива: просматривайте каталоги филиалов, ищите по номеру или названию, сохраняйте важные файлы, организуйте их в Библиотеке и возвращайтесь к тем самым отчётам, которые читали.",
+        "hero_alt": "Главный экран SCP Docs на русском с продолжением чтения, маршрутами архива и поисковыми фильтрами",
+        "cta_main": "Открыть в App Store",
+        "cta_sub": "iPhone · iOS 17+",
+        "cta2_main": "Смотреть возможности",
+        "cta2_sub": "Field guide",
+        "badges": ["Неофициальное фан-приложение", "Бесплатно + Premium", "13+", "Без аккаунта"],
+        "stats": [
+            ("5", "филиалов архива"),
+            ("10+", "маршрутов каталога"),
+            ("0", "аккаунтов нужно"),
+            ("17+", "для iOS"),
+        ],
+        "screens_title": "Экраны, соответствующие сценарию",
+        "screens": [
+            ("home", "Главная с выбором филиала, продолжением чтения, маршрутами архива и быстрыми фильтрами", "Главная: филиал, маршруты архива и продолжение чтения"),
+            ("catalog", "Каталог SCP со списком статей, сериями и блоками номеров", "Каталог: просматривайте статьи до того, как знаете номер"),
+            ("library", "Библиотека с историей, статусом чтения, оценками, закладками и быстрыми действиями", "Библиотека: история, оценки, закладки и сохранённое состояние"),
+            ("search", "Поиск по номеру, ключевым словам, тегам, филиалу, типу, классу объекта и расширенным фильтрам", "Поиск: номер, ключевое слово, тег и расширенные фильтры"),
+        ],
+        "workspace_title": "Читайте, ищите, организуйте, возвращайтесь",
+        "workspace_p1": "Приложение построено вокруг Главной, Библиотеки, Поиска и Настроек. Главная служит входом в архив: продолжение чтения, пресеты поиска, случайное открытие и маршруты каталога для отчётов SCP, Tales, Canons, серий Canon, Групп Интереса, руководств и связанных коллекций.",
+        "workspace_p2": "Библиотека превращает просмотр в личную полку. История, статус чтения, оценки, закладки, «прочитать позже», позиция прокрутки, заметки, папки и данные продолжения чтения остаются привязанными к открытым статьям, поэтому ваш путь по архиву виден на устройстве.",
+        "scope_title": "Пять филиалов — один рабочий процесс",
+        "scope_p": "SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский и корейский филиалы. Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык интерфейса. SCP International и переведённые архивы перечислены там, где есть данные каталога.",
+        "scope_items": [
+            ("Списки архива", "Начинайте с каталогов филиала: статьи SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и связанные маршруты."),
+            ("Поиск", "Переходите по номеру или названию бесплатно; Premium добавляет фильтры по документам, тегам, классу объекта, заметкам, статусу чтения, официальному рейтингу, длине и сохранённым поискам."),
+            ("Библиотека", "Сохраняйте статьи как закладки или «прочитать позже», оценивайте, добавляйте заметки, группируйте избранное в папки и продолжайте с сохранённой позиции прокрутки."),
+            ("Ридер", "Более чистая типографика, темы, инструменты прокрутки, улучшенная тёмная тема и более точное отображение специально свёрстанных страниц."),
+        ],
+        "premium_title": "Инструменты для глубокого чтения",
+        "premium_cols": [
+            [
+                ("Статистика чтения", "Время чтения, покрытие каталога, часто читаемые классы объектов и теги, тренды оценок, заметки, очередь и журналы по дням, месяцам и годам."),
+                ("Сохранённые поиски", "Сохраняйте условия поиска и получайте уведомления на устройстве, когда появляются новые совпадающие записи каталога."),
+                ("Папки закладок", "Организуйте сохранённые статьи в папки, которые могут синхронизироваться через ваш iCloud Drive вместе с заметками и сохранёнными поисками."),
+            ],
+            [
+                ("Слушать и сохранять", "Синтез речи читает текст статьи вслух, а офлайн-снимки сохраняют подходящие статьи доступными без соединения."),
+                ("Карточки для публикации", "Превратите статью или выбранный список в стилизованную карточку для X и других социальных приложений, с шаблонами и необязательным комментарием."),
+                ("Реклама и лимиты", "Premium скрывает рекламу, расширяет лимиты сохранения, открывает редактирование заметок и расширенный поиск. Рекламный просмотр может дать временный Premium, когда доступен."),
+            ],
+        ],
+        "req_title": "Требования",
+        "req_items": [
+            ("OS", "iOS 17 или новее."),
+            ("Сеть", "нужна для обновления каталогов, онлайн-чтения, контента исходных сайтов, рекламы, проверок покупок и внешних ссылок."),
+            ("Аккаунты", "для чтения в приложении не нужен аккаунт SCP Foundation или Wikidot."),
+        ],
+        "cta_title": "Открыть архив",
+        "legal_p": "SCP Docs — <strong>неофициальное фанатское приложение</strong>. Исходные статьи, сведения об авторах, уведомления об авторских правах и условия лицензий регулируются исходными сайтами. Работы SCP обычно публикуются под Creative Commons BY-SA 3.0, но каждая исходная страница является основным источником.",
+        "store_name": "SCP Docs для iPhone",
+        "store_note": "Требуется iOS 17 или новее. Интерфейс приложения поддерживает английский, японский, французский, русский и корейский языки.",
+        "store_main": "Открыть в App Store",
     },
     "ko": {
-        "title": "SCP Docs — Foundation Archive",
-        "description": "SCP Docs는 SCP Wiki 아카이브를 위한 비공식 iOS 리더입니다. 지부별 검색, 읽기 상태, 저장 검색, 공유 카드, 프리미엄 읽기 도구를 제공합니다.",
-        "body": r"""
+        "title": "SCP Docs — iPhone용 재단 아카이브 리더",
+        "description": "SCP Docs는 SCP Wiki 아카이브를 위한 비공식 네이티브 iOS 리더입니다. 지부 디렉터리, 아카이브 탐색, 라이브러리 정리, 저장 검색, 공유, 프리미엄 읽기 도구를 제공합니다.",
+        "lede": "SCP Docs는 SCP Wiki와 지부 사이트의 글을 위한 <strong>비공식 팬 제작 iOS 리더</strong>입니다. 공개된 원본 페이지를 네이티브 아카이브 작업 공간으로 바꿔 줍니다: 지부 디렉터리 탐색, 번호·제목 검색, 중요한 문서 저장, 라이브러리 정리, 그리고 읽던 보고서로 정확히 복귀할 수 있습니다.",
+        "hero_alt": "이어 읽기, 아카이브 경로, 검색 필터가 보이는 한국어 UI의 SCP Docs 홈 화면",
+        "cta_main": "App Store에서 받기",
+        "cta_sub": "iPhone · iOS 17+",
+        "cta2_main": "기능 살펴보기",
+        "cta2_sub": "Field guide",
+        "badges": ["비공식 팬 앱", "무료 + 프리미엄", "13+", "계정 불필요"],
+        "stats": [
+            ("5", "지원 지부"),
+            ("10+", "아카이브 경로"),
+            ("0", "필요한 계정"),
+            ("17+", "지원 iOS"),
+        ],
+        "screens_title": "흐름에 맞춘 화면",
+        "screens": [
+            ("home", "지부 선택, 이어 읽기, 아카이브 경로, 빠른 필터가 보이는 홈 화면", "홈: 지부, 아카이브 경로, 이어 읽기"),
+            ("catalog", "시리즈와 번호 블록으로 글을 찾는 SCP 카탈로그 화면", "카탈로그: 번호를 몰라도 목록에서 탐색"),
+            ("library", "읽기 상태, 평점, 북마크, 저장 상태를 보여 주는 라이브러리 화면", "라이브러리: 기록, 평점, 북마크, 저장 상태"),
+            ("search", "번호, 키워드, 태그, 지부, 종류, Object Class, 고급 필터가 보이는 검색 화면", "검색: 번호, 키워드, 태그, 고급 필터"),
+        ],
+        "workspace_title": "읽고, 찾고, 정리하고, 다시 돌아오기",
+        "workspace_p1": "앱은 홈, 라이브러리, 검색, 설정을 중심으로 구성됩니다. 홈은 아카이브 진입점 역할을 하며 이어 읽기, 빠른 검색 프리셋, 랜덤 발견, 그리고 SCP 보고서, Tales, Canons, Canon 시리즈, GoI, 가이드, 관련 컬렉션으로 이어지는 디렉터리 경로를 제공합니다.",
+        "workspace_p2": "라이브러리는 탐색을 개인 서가로 바꿉니다. 기록, 읽음 상태, 평점, 북마크, 나중에 읽기, 스크롤 위치, 메모, 폴더, 이어 읽기 데이터가 열어 본 글에 연결되어 남아, 아카이브를 지나온 경로가 기기 안에서 보입니다.",
+        "scope_title": "5개 지부, 하나의 아카이브 흐름",
+        "scope_p": "SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 카탈로그 데이터가 있는 범위에서 SCP International과 번역 아카이브 진입점도 정리됩니다.",
+        "scope_items": [
+            ("아카이브 목록", "SCP 글, Tales, Canons, Canon 시리즈, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 관련 경로의 지부별 디렉터리에서 시작합니다."),
+            ("검색", "번호·제목 검색은 무료입니다. 프리미엄은 문서, 태그, Object Class, 메모, 읽기 상태, 공식 점수, 길이, 저장 검색까지 고급 필터를 추가합니다."),
+            ("라이브러리", "글을 북마크나 나중에 읽기로 저장하고, 평가하고, 메모를 남기고, 즐겨찾기를 폴더로 묶고, 저장된 스크롤 위치에서 이어 읽습니다."),
+            ("리더", "더 깔끔한 타이포그래피, 테마, 스크롤 도구, 개선된 다크 모드, 특수 형식 페이지의 더 충실한 렌더링."),
+        ],
+        "premium_title": "더 깊이 읽기 위한 도구",
+        "premium_cols": [
+            [
+                ("읽기 통계", "읽기 시간, 카탈로그 커버리지, 자주 읽는 Object Class와 태그, 평점 추세, 메모 인사이트, 읽기 대기 상태, 일·월·년 기록을 보여 줍니다."),
+                ("저장 검색", "검색 조건을 저장하고 새로 일치하는 카탈로그 항목이 나타나면 기기 알림으로 알려 줍니다."),
+                ("북마크 폴더", "저장한 글을 폴더로 정리하고 메모, 저장 검색과 함께 사용자의 iCloud Drive를 통해 동기화할 수 있습니다."),
+            ],
+            [
+                ("듣고 저장하기", "텍스트 음성 변환이 본문을 읽어 주고, 오프라인 스냅샷은 저장 가능한 글을 연결 없이도 볼 수 있게 유지합니다."),
+                ("카드로 공유", "글 하나 또는 선택한 목록을 X 등 소셜 앱에 공유하기 좋은 스타일 카드로 만듭니다. 템플릿과 선택 코멘트를 지원합니다."),
+                ("광고와 한도", "프리미엄은 광고 숨김, 저장 한도 확장, 메모 편집, 고급 검색을 제공합니다. 제공되는 경우 리워드 광고로 임시 프리미엄을 받을 수 있습니다."),
+            ],
+        ],
+        "req_title": "요구 사항",
+        "req_items": [
+            ("OS", "iOS 17 이상."),
+            ("네트워크", "카탈로그 새로고침, 온라인 글 보기, 원본 사이트 콘텐츠, 광고, 구매 확인, 외부 링크에 필요합니다."),
+            ("계정", "앱에서 읽기만 할 경우 SCP Foundation이나 Wikidot 계정은 필요하지 않습니다."),
+        ],
+        "cta_title": "아카이브 열기",
+        "legal_p": "SCP Docs는 <strong>비공식 팬 애플리케이션</strong>입니다. 원본 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원본 페이지가 우선합니다.",
+        "store_name": "iPhone용 SCP Docs",
+        "store_note": "iOS 17 이상 지원. 앱 UI는 현재 영어, 일본어, 프랑스어, 러시아어, 한국어를 지원합니다.",
+        "store_main": "App Store에서 보기",
+    },
+    "es": {
+        "title": "SCP Docs — Lector del Archivo de la Fundación para iPhone",
+        "description": "SCP Docs es un lector iOS nativo no oficial para los archivos de SCP Wiki, con directorios por rama, navegación guiada, Biblioteca, búsquedas guardadas, tarjetas para compartir y herramientas Premium.",
+        "lede": "SCP Docs es un <strong>lector iOS no oficial hecho por fans</strong> para los artículos de SCP Wiki y sus ramas. Convierte las páginas públicas de origen en un espacio de lectura nativo: recorre los directorios de cada rama, busca por número o título, guarda los expedientes importantes, organízalos en tu Biblioteca y vuelve exactamente a los informes que estabas leyendo.",
+        "hero_alt": "Pantalla de inicio de SCP Docs con continuar leyendo, rutas de archivo y filtros de búsqueda",
+        "cta_main": "Descargar en el App Store",
+        "cta_sub": "iPhone · iOS 17+",
+        "cta2_main": "Explorar las funciones",
+        "cta2_sub": "Field guide",
+        "badges": ["App fan no oficial", "Gratis + Premium", "13+", "Sin cuenta"],
+        "stats": [
+            ("5", "ramas del archivo"),
+            ("10+", "rutas de directorio"),
+            ("0", "cuentas necesarias"),
+            ("17+", "hecha para iOS"),
+        ],
+        "screens_title": "Pantallas alineadas con el flujo de lectura",
+        "screens": [
+            ("home", "Pantalla de inicio con selección de rama, continuar leyendo, rutas de archivo y filtros rápidos", "Inicio: rama, rutas de archivo y continuar leyendo"),
+            ("catalog", "Catálogo SCP con filas de artículos, filtros por serie y por bloque", "Catálogo: explora artículos antes de saber el número"),
+            ("library", "Biblioteca con historial, estado de lectura, valoraciones, marcadores y acciones rápidas", "Biblioteca: historial, valoraciones, marcadores y estado guardado"),
+            ("search", "Búsqueda por número, palabra clave, etiqueta, rama, tipo, Clase de Objeto y filtros avanzados", "Búsqueda: número, palabra clave, etiqueta y filtros avanzados"),
+        ],
+        "workspace_title": "Explora el archivo y conserva tu lugar",
+        "workspace_p1": "La app se organiza en Inicio, Biblioteca, Búsqueda y Ajustes. Inicio funciona como puerta de entrada al archivo: continuar leyendo, preajustes de búsqueda, descubrimiento aleatorio y rutas de directorio hacia informes SCP, Tales, Canons, series Canon, Grupos de Interés, guías y colecciones relacionadas.",
+        "workspace_p2": "La Biblioteca convierte la navegación en una estantería personal. Historial, estado de lectura, valoraciones, marcadores, leer más tarde, posición de desplazamiento, notas, carpetas y datos de reanudación quedan ligados a los artículos que abres, de modo que tu recorrido por el archivo sigue visible en el dispositivo.",
+        "scope_title": "Cinco ramas, un mismo flujo de archivo",
+        "scope_p": "SCP Docs es compatible con el archivo principal en inglés de la SCP Foundation y con las ramas japonesa, francesa, rusa y coreana. Al cambiar de rama cambian el Inicio, la búsqueda, las listas integradas, los destinos de los artículos y el idioma de la interfaz. SCP International y los puntos de entrada de archivos traducidos se listan donde existen datos de catálogo.",
+        "scope_items": [
+            ("Listas de archivo", "Empieza por los directorios de cada rama: artículos SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes y rutas relacionadas."),
+            ("Búsqueda", "Salta directamente por número o título gratis; Premium añade filtros avanzados por documentos, etiquetas, Clase de Objeto, notas, estado de lectura, puntuación oficial, longitud y búsquedas guardadas."),
+            ("Biblioteca", "Guarda artículos como marcadores o para leer más tarde, valóralos, añade notas, agrupa favoritos en carpetas y reanuda desde la posición de desplazamiento guardada."),
+            ("Lector", "Tipografía más limpia, temas, herramientas de desplazamiento, mejor modo oscuro y un renderizado más fiel de las páginas con formato especial."),
+        ],
+        "premium_title": "Herramientas para leer más a fondo",
+        "premium_cols": [
+            [
+                ("Estadísticas de lectura", "Tiempo de lectura, cobertura del catálogo, Clases de Objeto y etiquetas más leídas, tendencias de valoración, notas, pila de pendientes y registros por día, mes y año."),
+                ("Búsquedas guardadas", "Guarda condiciones de búsqueda y recibe notificaciones en el dispositivo cuando aparecen nuevas entradas coincidentes en el catálogo."),
+                ("Carpetas de marcadores", "Organiza los artículos guardados en carpetas que pueden sincronizarse a través de tu propio iCloud Drive, junto con notas y búsquedas guardadas."),
+            ],
+            [
+                ("Escuchar y guardar", "La lectura en voz alta reproduce el texto del artículo, y las instantáneas sin conexión mantienen disponibles los artículos guardados aptos."),
+                ("Compartir como tarjetas", "Convierte un artículo o una lista elegida en una tarjeta con estilo para X y otras apps sociales, con plantillas y comentario opcional."),
+                ("Anuncios y límites", "Premium oculta los anuncios, amplía los límites de guardado, desbloquea la edición de notas y activa la búsqueda avanzada. Un anuncio con recompensa puede otorgar acceso Premium temporal cuando esté disponible."),
+            ],
+        ],
+        "req_title": "Requisitos del sistema",
+        "req_items": [
+            ("OS", "iOS 17 o posterior."),
+            ("Red", "necesaria para actualizar catálogos, leer en línea, cargar contenido de los sitios de origen, anuncios, verificaciones de compra y enlaces externos."),
+            ("Cuentas", "no se necesita cuenta de SCP Foundation ni de Wikidot para leer en la app."),
+        ],
+        "cta_title": "Abrir el archivo",
+        "legal_p": "SCP Docs es una <strong>aplicación fan no oficial</strong>. Los artículos de origen, los créditos de autor, los avisos de copyright y las condiciones de licencia siguen rigiéndose por los sitios de origen. Las obras SCP suelen publicarse bajo Creative Commons BY-SA 3.0, pero cada página de origen es la referencia autorizada.",
+        "store_name": "SCP Docs para iPhone",
+        "store_note": "Requiere iOS 17 o posterior. La interfaz de la app está disponible actualmente en inglés, japonés, francés, ruso y coreano.",
+        "store_main": "Ver en el App Store",
+    },
+}
+
+
+def build_index(lang: str) -> dict[str, str]:
+    s = INDEX_STRINGS[lang]
+    l = LANGS[lang]
+    badges = "\n".join(f"              <li>{b}</li>" for b in s["badges"])
+    stats = "\n".join(
+        f"""          <div class="hero-stat"><span class="num">{num}</span><span class="lbl">{lbl}</span></div>"""
+        for num, lbl in s["stats"]
+    )
+    screens = "\n".join(
+        f"""          <figure class="screen-frame">
+            <img src="{screenshot_path(lang, kind)}" alt="{alt}" loading="lazy" />
+            <figcaption>{cap}</figcaption>
+          </figure>"""
+        for kind, alt, cap in s["screens"]
+    )
+    scope_items = "\n".join(
+        f"            <li><strong>{k}</strong> — {v}</li>" for k, v in s["scope_items"]
+    )
+    premium_cols = "\n".join(
+        f"""          <div class="card">
+            <dl class="dl-flat">
+{chr(10).join(f'              <dt>{dt}</dt>{chr(10)}              <dd>{dd}</dd>' for dt, dd in col)}
+            </dl>
+          </div>"""
+        for col in s["premium_cols"]
+    )
+    req_items = "\n".join(
+        f"            <li><strong>{k}</strong> — {v}</li>" for k, v in s["req_items"]
+    )
+    pills = "\n".join(
+        f'            <a class="pill" href="{page_file(p, lang)}">{l.nav[p]}</a>'
+        for p in ["features", "privacy", "support", "terms", "rating-safety"]
+    )
+    body = f"""
     <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span class="blink">▮</span> ITEM #: SCP-DOCS-APP · OBJECT CLASS: <span class="accent">READER</span></p>
+            <h2 id="hero-title" class="hero-title">Secure.<br />Contain.<br /><span class="accent">Read.</span></h2>
+            <p class="hero-lede">{s['lede']}</p>
+            <div class="hero-cta">
+              <a class="btn-primary" href="{APP_STORE_URL}" target="_blank" rel="noopener noreferrer">
+                <span class="btn-main">{s['cta_main']}</span>
+                <span class="btn-sub">{s['cta_sub']}</span>
+              </a>
+              <a class="btn-ghost" href="{page_file('features', lang)}">
+                <span class="btn-main">{s['cta2_main']}</span>
+                <span class="btn-sub">{s['cta2_sub']}</span>
+              </a>
+            </div>
+            <ul class="hero-badges">
+{badges}
+            </ul>
+          </div>
+          <figure class="hero-shot" aria-label="SCP Docs app preview">
+            <img src="{screenshot_path(lang, 'home')}" alt="{s['hero_alt']}" />
+          </figure>
+        </div>
+        <div class="hero-stats">
+{stats}
+        </div>
+      </section>
+
+      <section aria-labelledby="screens-title" style="margin-top:64px;">
+        <p class="section-label">Field screens</p>
+        <h2 id="screens-title" class="section-title-lg">{s['screens_title']}</h2>
+        <div class="feature-shot-grid">
+{screens}
+        </div>
+      </section>
+
+      <section aria-labelledby="workspace-title" style="margin-top:56px;">
+        <p class="section-label">Reading workspace</p>
+        <h2 id="workspace-title" class="section-title-lg">{s['workspace_title']}</h2>
+        <div class="grid-2">
+          <div class="card">
+            <p style="margin:0;">{s['workspace_p1']}</p>
+          </div>
+          <div class="card">
+            <p style="margin:0;">{s['workspace_p2']}</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="branch-title" style="margin-top:56px;">
+        <p class="section-label">Content scope</p>
+        <h2 id="branch-title" class="section-title-lg">{s['scope_title']}</h2>
+        <div class="card">
+          <p style="margin-top:0;">{s['scope_p']}</p>
+          <ul class="ft-list">
+{scope_items}
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="premium-title" style="margin-top:56px;">
+        <p class="section-label">Premium</p>
+        <h2 id="premium-title" class="section-title-lg">{s['premium_title']}</h2>
+        <div class="grid-2">
+{premium_cols}
+        </div>
+      </section>
+
+      <section aria-labelledby="req-title" style="margin-top:56px;">
+        <p class="section-label">Requirements</p>
+        <h2 id="req-title" class="section-title-lg">{s['req_title']}</h2>
+        <div class="card-flat">
+          <ul class="ft-list">
+{req_items}
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="cta-title" style="margin-top:56px;">
+        <p class="section-label">Deployment</p>
+        <h2 id="cta-title" class="section-title-lg">{s['cta_title']}</h2>
         <div class="card-invert">
-          <p class="lede">
-            SCP Docs는 SCP Wiki와 각 지부 사이트의 글을 더 편하게 읽기 위한 <strong>비공식 팬 제작 iOS 리더</strong>입니다. 공개된 원문 페이지를 네이티브 읽기 공간으로 정리하여 아카이브 탐색, 지부별 검색, 저장, 읽기 기록, 이어 읽기를 한곳에서 다룰 수 있게 합니다.
-          </p>
+          <p class="lede" style="margin-top:0;">{s['legal_p']}</p>
           <div class="pill-row">
-            <span class="code-chip">네이티브 iOS 리더</span>
-            <span class="code-chip">5개 지부 아카이브</span>
-            <span class="code-chip">읽기 상태</span>
-            <span class="code-chip">프리미엄 읽기 도구</span>
+{pills}
           </div>
           <div class="store-cta" aria-label="SCP Docs App Store link">
             <div class="store-cta-copy">
               <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>iPhone용 SCP Docs</strong>
-              <span>iOS 17 이상이 필요합니다. 현재 앱 UI는 영어, 일본어, 프랑스어, 러시아어, 한국어를 지원합니다.</span>
+              <strong>{s['store_name']}</strong>
+              <span>{s['store_note']}</span>
             </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="App Store에서 SCP Docs 열기">
-              <span class="store-cta-link-main">App Store에서 보기</span>
+            <a class="store-cta-link" href="{APP_STORE_URL}" target="_blank"
+              rel="noopener noreferrer" aria-label="SCP Docs — App Store">
+              <span class="store-cta-link-main">{s['store_main']}</span>
               <span class="store-cta-link-sub">View on Apple</span>
             </a>
           </div>
         </div>
-        <figure class="hero-media" aria-label="SCP Docs app preview">
-          <img src="assets/images/home-ko.png"
-            alt="이어 읽기, 아카이브 경로, 검색 필터가 보이는 한국어 UI의 SCP Docs 홈 화면" />
-        </figure>
       </section>
-
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
-        <p class="section-label">Reading workspace</p>
-        <h2 id="workspace-title" class="section-title-lg">읽고, 찾고, 정리하고, 다시 돌아오기</h2>
-        <div class="grid-2">
-          <div class="card">
-            <p>
-              앱은 Home, Library, Search, Settings를 중심으로 구성됩니다. 최신 홈 화면은 이어 읽기, 빠른 검색 프리셋, 랜덤 발견, Stories, Tales, Canons, Series, GoI, 가이드와 관련 컬렉션으로 이동하는 정리된 디렉터리를 제공합니다.
-            </p>
-          </div>
-          <div class="card">
-            <p>
-              열람 기록, 읽음 상태, 평가, 북마크, 나중에 읽기, 스크롤 위치, 메모, 폴더, 이어 읽기 데이터가 각 글에 연결되어 기기 안에서 읽어 온 경로를 다시 찾기 쉽습니다.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
-        <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">5개 지부를 하나의 읽기 흐름으로</h2>
-        <div class="card">
-          <p>
-            SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 카탈로그 데이터가 있는 경우 SCP International과 번역 아카이브의 진입점도 정리해 보여 줍니다.
-          </p>
-          <ul class="ft-list">
-            <li><strong>아카이브 목록</strong> — SCP 글, Tales, Canons, Canon series, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 관련 디렉터리.</li>
-            <li><strong>검색</strong> — 번호와 제목 검색은 무료입니다. 프리미엄에서는 문서 범위, 태그, Object Class, 메모, 읽기 상태, 공식 점수, 길이, 저장 검색까지 조합할 수 있습니다.</li>
-            <li><strong>라이브러리</strong> — 북마크, 나중에 읽기, 평가, 메모, 폴더, 스크롤 위치를 글과 연결해 나중에 다시 찾기 쉽게 합니다.</li>
-            <li><strong>리더</strong> — 더 차분한 타이포그래피, 테마, 스크롤 도구, 개선된 다크 모드, 특수 레이아웃 글을 더 원문에 가깝게 보여 주는 표시 방식.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
-        <p class="section-label">Premium</p>
-        <h2 id="premium-title" class="section-title-lg">더 깊게 읽기 위한 도구</h2>
-        <div class="grid-2">
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>읽기 통계</dt>
-              <dd>읽기 시간, 카탈로그 진행률, 자주 읽는 Object Class와 태그, 평가 추세, 메모, 나중에 읽을 글, 요일·월·연도별 기록을 확인합니다.</dd>
-              <dt>저장 검색</dt>
-              <dd>검색 조건을 저장하고, 새로 일치하는 항목이 카탈로그에 나타나면 기기 알림으로 받을 수 있습니다.</dd>
-              <dt>북마크 폴더</dt>
-              <dd>저장한 글을 폴더로 정리하고, 메모와 저장 검색과 함께 사용자의 iCloud Drive를 통해 동기화할 수 있습니다.</dd>
-            </dl>
-          </div>
-          <div class="card">
-            <dl class="dl-flat">
-              <dt>듣기와 저장</dt>
-              <dd>텍스트 음성 변환으로 글을 들을 수 있고, 오프라인 스냅샷으로 저장 가능한 글을 연결 없이 다시 열 수 있습니다.</dd>
-              <dt>카드로 공유</dt>
-              <dd>글 하나 또는 직접 고른 목록을 X 등 소셜 앱에 공유하기 쉬운 카드 이미지로 만들 수 있습니다. 템플릿과 선택 코멘트를 지원합니다.</dd>
-              <dt>광고와 제한</dt>
-              <dd>프리미엄은 광고를 숨기고, 저장 한도를 늘리며, 메모 편집과 고급 검색을 엽니다. 제공되는 경우 리워드 광고로 임시 프리미엄을 사용할 수 있습니다.</dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="req-title" style="margin-top:38px;">
-        <p class="section-label">Requirements</p>
-        <h2 id="req-title" class="section-title-lg">시스템 요구 사항</h2>
-        <div class="card-flat">
-          <ul class="ft-list">
-            <li><strong>OS</strong> — iOS 17 이상.</li>
-            <li><strong>네트워크</strong> — 카탈로그 새로고침, 온라인 글 보기, 원본 사이트 콘텐츠, 광고, 구매 확인, 외부 링크에 필요합니다.</li>
-            <li><strong>계정</strong> — 앱에서 읽기만 할 때는 SCP Foundation 또는 Wikidot 계정이 필요하지 않습니다.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs는 <strong>비공식 팬 애플리케이션</strong>입니다. 원문 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원문 페이지의 표시가 우선합니다.
-          </p>
-          <div class="pill-row">
-            <a class="pill" href="features-ko.html">기능</a>
-            <a class="pill" href="privacy-ko.html">개인정보</a>
-            <a class="pill" href="support-ko.html">지원</a>
-            <a class="pill" href="terms-ko.html">이용약관</a>
-            <a class="pill" href="rating-safety-ko.html">안전</a>
-          </div>
-        </div>
-      </section>
-    </main>""",
-    },
-}
+    </main>"""
+    return {"title": s["title"], "description": s["description"], "body": body}
 
 
-FEATURES: dict[str, dict[str, str]] = {
+INDEX: dict[str, dict[str, str]] = {code: build_index(code) for code in LANGS}
+
+
+FEATURES: dict[str, dict[str, str]] = {}
+
+
+# Free vs Premium comparison table. Cell values: "yes", "no", or (css_class, text).
+FEATURE_CMP: dict[str, dict[str, object]] = {
     "en": {
-        "title": "Features — SCP Docs",
-        "description": "A screenshot-led tour of SCP Docs: archive directories, branch-aware Home, refreshed search, Library organization, reader tools, sharing, saved searches, reading stats, and sync.",
-        "body": r"""
-    <main class="main-pad">
-      <section aria-labelledby="feature-title">
-        <p class="section-label">Feature Overview</p>
-        <h2 id="feature-title" class="section-title-lg">Find a report, then actually get back to it</h2>
-        <div class="feature-hero">
-          <div>
-            <p class="lede">
-              SCP Docs brings archive entry points, search, reader controls, and personal reading state into one native iOS app. It is designed for the full archive loop: find the next file, save what matters, organize it in Library, and resume without rebuilding your trail.
-            </p>
-            <div class="pill-row">
-              <span class="code-chip">Home</span>
-              <span class="code-chip">Archive routes</span>
-              <span class="code-chip">Library</span>
-              <span class="code-chip">Search</span>
-              <span class="code-chip">Stats</span>
-              <span class="code-chip">Share cards</span>
-            </div>
-          </div>
-          <figure class="screen-frame screen-frame-compact">
-            <img src="assets/images/home-en.png"
-              alt="English SCP Docs home screen showing continue reading, archive routes, and search filters" />
-          </figure>
-        </div>
-      </section>
-
-      <section aria-labelledby="screens-title" style="margin-top:38px;">
-        <p class="section-label">Screenshots</p>
-        <h2 id="screens-title" class="section-title-lg">Screens that match the workflow</h2>
-        <div class="feature-shot-grid">
-          <figure class="screen-frame">
-            <img src="assets/images/home-en.png" alt="Home screen with branch selection, continue reading, archive routes, and quick filters" />
-            <figcaption>Home: branch, archive routes, and continue reading</figcaption>
-          </figure>
-          <figure class="screen-frame">
-            <img src="assets/images/catalog-en.png" alt="SCP catalog list with article rows, series filters, and block filters" />
-            <figcaption>Catalog: browse articles before you know the number</figcaption>
-          </figure>
-          <figure class="screen-frame">
-            <img src="assets/images/library-en.png" alt="Library history screen with read status, ratings, bookmarks, quick actions, and sort controls" />
-            <figcaption>Library: history, ratings, bookmarks, and saved state</figcaption>
-          </figure>
-          <figure class="screen-frame">
-            <img src="assets/images/search-en.png" alt="Search screen with number, keyword, tag, site, type, Object Class, and advanced filters" />
-            <figcaption>Search: number, keyword, tag, and advanced filters</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section aria-labelledby="archive-workflow-title" style="margin-top:38px;">
-        <p class="section-label">Archive & Library workflow</p>
-        <h2 id="archive-workflow-title" class="section-title-lg">From archive lists to a personal reading shelf</h2>
-        <div class="grid-2">
-          <div class="card">
-            <h3>Use Home as the archive map</h3>
-            <dl class="dl-flat">
-              <dt>Pick a branch</dt>
-              <dd>Choose English, Japanese, French, Russian, or Korean. Home, search, lists, article links, and the app language follow that branch context.</dd>
-              <dt>Start from directories</dt>
-              <dd>Browse SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists without needing the exact article number first.</dd>
-              <dt>Jump when you know the target</dt>
-              <dd>Use free number and title search for quick access. Premium advanced search adds tags, Object Class, document text, memos, read status, official score, length, and saved conditions.</dd>
-            </dl>
-          </div>
-          <div class="card">
-            <h3>Turn browsing into Library state</h3>
-            <dl class="dl-flat">
-              <dt>Save the article</dt>
-              <dd>Bookmark it, mark it read-later, rate it, or keep a memo so the report is no longer just another page in the archive.</dd>
-              <dt>Resume from context</dt>
-              <dd>History, continue-reading, read status, ratings, memos, and scroll position help you return to the same file or series after a break.</dd>
-              <dt>Organize for longer projects</dt>
-              <dd>Premium expands save limits, adds bookmark folders, supports memo editing, can sync Library state through your own iCloud Drive, and can store eligible articles for offline reading.</dd>
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="use-cases-title" style="margin-top:38px;">
-        <p class="section-label">Practical guide</p>
-        <h2 id="use-cases-title" class="section-title-lg">What to use when</h2>
-        <div class="card">
-          <dl class="dl-flat">
-            <dt>I want to browse without a specific article in mind</dt>
-            <dd>Start on Home, choose the branch, then open Archive routes such as SCP, SCP-INT, Stories, or Others. The catalog screen lets you move by series and block, with article rows showing titles, Object Class, tags, scores, and thumbnail previews where available.</dd>
-            <dt>I know the number, title, tag, or Object Class</dt>
-            <dd>Use Search. Number and title lookup are available for normal use, while Premium advanced filters help narrow by document group, branch, tags, official score, length, Object Class, reading state, and memos.</dd>
-            <dt>I found something I want to keep</dt>
-            <dd>Save it from the reader or Library as a bookmark, read-later item, rating, memo, or folder entry. Those signals make the article visible later from Library instead of relying on memory or browser history.</dd>
-            <dt>I stopped halfway through a series</dt>
-            <dd>Use Continue reading, Library history, stored scroll position, and read status to return to the same report or track what has already been handled.</dd>
-          </dl>
-        </div>
-      </section>
-
-      <section aria-labelledby="points-title" style="margin-top:38px;">
-        <p class="section-label">What it does</p>
-        <h2 id="points-title" class="section-title-lg">Core features</h2>
-        <div class="feature-grid">
-          <div class="feature-card">
-            <p class="section-label">Branches</p>
-            <h3>English, Japanese, French, Russian, and Korean archives</h3>
-            <p>Switching branches changes Home, search, lists, article destinations, and app language so each archive has its own reading context.</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Directories</p>
-            <h3>Cleaner archive routes before you know the number</h3>
-            <p>Move through SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists from organized entry points.</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Search</p>
-            <h3>Fast free search, deeper Premium filters</h3>
-            <p>Open by SCP number, search titles, and use shortcuts for tags and Object Classes. Premium adds documents, memos, reading status, official score, length, and saved searches.</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Reader</p>
-            <h3>A focused article view</h3>
-            <p>Typography controls, calmer themes, improved dark mode, scroll-to-top, offline snapshots, and closer rendering for specially formatted source pages.</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Library</p>
-            <h3>A personal shelf for the archive</h3>
-            <p>History, read status, ratings, bookmarks, read-later, scroll position, memos, folders, and resume-reading data stay organized on your device.</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Share</p>
-            <h3>Share as cards</h3>
-            <p>Turn an article or hand-picked list into a styled card for X and other social apps, with templates and optional comments.</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Premium</p>
-            <h3>Stats, speech, and offline reading</h3>
-            <p>Reading stats, text-to-speech, memo editing, expanded save limits, ad removal, and offline storage support longer reading sessions.</p>
-          </div>
-          <div class="feature-card">
-            <p class="section-label">Sync</p>
-            <h3>iCloud-backed personal organization</h3>
-            <p>When available, reading state, memos, saved searches, and bookmark folders sync through your own iCloud Drive. Saved searches can notify you about new matches on device.</p>
-          </div>
-        </div>
-      </section>
-
-      <section style="margin-top:40px;">
-        <div class="card-flat">
-          <p style="margin-top:0;">
-            SCP Docs is not an official SCP Foundation or Wikidot app. Source pages, author credits, and license notices on each source site remain authoritative.
-          </p>
-          <div class="pill-row">
-            <a class="pill" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer">App Store</a>
-            <a class="pill" href="support.html">Support</a>
-            <a class="pill" href="privacy.html">Privacy</a>
-          </div>
-        </div>
-      </section>
-    </main>""",
+        "title": "Free vs Premium",
+        "col_feature": "Capability",
+        "col_free": "Free",
+        "col_premium": "Premium",
+        "note": "Premium is provided as an auto-renewing subscription through the App Store. When available, a rewarded ad can grant temporary Premium access without a subscription.",
+        "rows": [
+            ("Number & title search", "yes", "yes"),
+            ("Archive directories & catalog browsing", "yes", "yes"),
+            ("History, bookmarks, read-later, ratings", "yes", "yes"),
+            ("Reader themes, typography & dark mode", "yes", "yes"),
+            ("Ads", ("part", "shown"), ("yes", "hidden")),
+            ("Save limits", ("part", "standard"), ("yes", "expanded")),
+            ("Advanced search filters", "no", "yes"),
+            ("Memo editing", "no", "yes"),
+            ("Offline snapshots", "no", "yes"),
+            ("Reading stats", "no", "yes"),
+            ("Text-to-speech", "no", "yes"),
+            ("Saved searches & new-match alerts", "no", "yes"),
+            ("Bookmark folders & iCloud sync", "no", "yes"),
+        ],
+    },
+    "ja": {
+        "title": "無料とプレミアムの違い",
+        "col_feature": "機能",
+        "col_free": "無料",
+        "col_premium": "プレミアム",
+        "note": "プレミアムは App Store の自動更新購読として提供されます。利用可能な場合は、リワード広告で購読なしに一時的なプレミアムアクセスを利用できます。",
+        "rows": [
+            ("番号・タイトル検索", "yes", "yes"),
+            ("書庫ディレクトリとカタログ閲覧", "yes", "yes"),
+            ("履歴・ブックマーク・後で読む・評価", "yes", "yes"),
+            ("リーダーのテーマ・文字組み・ダークモード", "yes", "yes"),
+            ("広告", ("part", "表示"), ("yes", "非表示")),
+            ("保存上限", ("part", "標準"), ("yes", "拡張")),
+            ("高度な検索フィルタ", "no", "yes"),
+            ("メモ編集", "no", "yes"),
+            ("オフライン保存", "no", "yes"),
+            ("読書統計", "no", "yes"),
+            ("読み上げ（TTS）", "no", "yes"),
+            ("保存検索と新着通知", "no", "yes"),
+            ("ブックマークフォルダと iCloud 同期", "no", "yes"),
+        ],
+    },
+    "fr": {
+        "title": "Gratuit vs Premium",
+        "col_feature": "Fonction",
+        "col_free": "Gratuit",
+        "col_premium": "Premium",
+        "note": "Premium est un abonnement à renouvellement automatique géré via l'App Store. Lorsqu'elle est disponible, une publicité récompensée peut donner un accès Premium temporaire sans abonnement.",
+        "rows": [
+            ("Recherche par numéro et titre", "yes", "yes"),
+            ("Répertoires d'archive et catalogue", "yes", "yes"),
+            ("Historique, favoris, à lire plus tard, notes", "yes", "yes"),
+            ("Thèmes, typographie et mode sombre", "yes", "yes"),
+            ("Publicités", ("part", "affichées"), ("yes", "masquées")),
+            ("Limites de sauvegarde", ("part", "standard"), ("yes", "étendues")),
+            ("Filtres de recherche avancés", "no", "yes"),
+            ("Édition des mémos", "no", "yes"),
+            ("Instantanés hors ligne", "no", "yes"),
+            ("Statistiques de lecture", "no", "yes"),
+            ("Synthèse vocale", "no", "yes"),
+            ("Recherches enregistrées et alertes", "no", "yes"),
+            ("Dossiers de favoris et synchronisation iCloud", "no", "yes"),
+        ],
+    },
+    "ru": {
+        "title": "Бесплатно и Premium",
+        "col_feature": "Возможность",
+        "col_free": "Бесплатно",
+        "col_premium": "Premium",
+        "note": "Premium предоставляется как автопродлеваемая подписка через App Store. Когда доступно, рекламный просмотр может дать временный Premium-доступ без подписки.",
+        "rows": [
+            ("Поиск по номеру и названию", "yes", "yes"),
+            ("Каталоги и списки архива", "yes", "yes"),
+            ("История, закладки, «прочитать позже», оценки", "yes", "yes"),
+            ("Темы, типографика и тёмный режим", "yes", "yes"),
+            ("Реклама", ("part", "показывается"), ("yes", "скрыта")),
+            ("Лимиты сохранения", ("part", "стандартные"), ("yes", "расширенные")),
+            ("Расширенные фильтры поиска", "no", "yes"),
+            ("Редактирование заметок", "no", "yes"),
+            ("Офлайн-снимки", "no", "yes"),
+            ("Статистика чтения", "no", "yes"),
+            ("Озвучивание текста", "no", "yes"),
+            ("Сохранённые поиски и уведомления", "no", "yes"),
+            ("Папки закладок и синхронизация iCloud", "no", "yes"),
+        ],
+    },
+    "ko": {
+        "title": "무료와 프리미엄 비교",
+        "col_feature": "기능",
+        "col_free": "무료",
+        "col_premium": "프리미엄",
+        "note": "프리미엄은 App Store의 자동 갱신 구독으로 제공됩니다. 제공되는 경우 리워드 광고로 구독 없이 임시 프리미엄을 이용할 수 있습니다.",
+        "rows": [
+            ("번호·제목 검색", "yes", "yes"),
+            ("아카이브 디렉터리와 카탈로그 탐색", "yes", "yes"),
+            ("기록·북마크·나중에 읽기·평점", "yes", "yes"),
+            ("리더 테마·타이포그래피·다크 모드", "yes", "yes"),
+            ("광고", ("part", "표시"), ("yes", "제거")),
+            ("저장 한도", ("part", "기본"), ("yes", "확장")),
+            ("고급 검색 필터", "no", "yes"),
+            ("메모 편집", "no", "yes"),
+            ("오프라인 스냅샷", "no", "yes"),
+            ("읽기 통계", "no", "yes"),
+            ("텍스트 음성 변환", "no", "yes"),
+            ("저장 검색과 새 항목 알림", "no", "yes"),
+            ("북마크 폴더와 iCloud 동기화", "no", "yes"),
+        ],
+    },
+    "es": {
+        "title": "Gratis frente a Premium",
+        "col_feature": "Función",
+        "col_free": "Gratis",
+        "col_premium": "Premium",
+        "note": "Premium se ofrece como suscripción con renovación automática a través del App Store. Cuando está disponible, un anuncio con recompensa puede otorgar acceso Premium temporal sin suscripción.",
+        "rows": [
+            ("Búsqueda por número y título", "yes", "yes"),
+            ("Directorios de archivo y catálogo", "yes", "yes"),
+            ("Historial, marcadores, leer más tarde, valoraciones", "yes", "yes"),
+            ("Temas, tipografía y modo oscuro", "yes", "yes"),
+            ("Anuncios", ("part", "se muestran"), ("yes", "eliminados")),
+            ("Límites de guardado", ("part", "estándar"), ("yes", "ampliados")),
+            ("Filtros de búsqueda avanzados", "no", "yes"),
+            ("Edición de notas", "no", "yes"),
+            ("Instantáneas sin conexión", "no", "yes"),
+            ("Estadísticas de lectura", "no", "yes"),
+            ("Lectura en voz alta", "no", "yes"),
+            ("Búsquedas guardadas y avisos", "no", "yes"),
+            ("Carpetas de marcadores y sincronización iCloud", "no", "yes"),
+        ],
     },
 }
+
+
+def cmp_cell(value: object) -> str:
+    if value == "yes":
+        return '<td><span class="yes">✓</span></td>'
+    if value == "no":
+        return '<td><span class="no">—</span></td>'
+    cls, text = value  # type: ignore[misc]
+    return f'<td><span class="{cls}">{text}</span></td>'
+
+
+def cmp_section(lang: str) -> str:
+    cmp = FEATURE_CMP[lang]
+    rows = "\n".join(
+        f"              <tr><td>{label}</td>{cmp_cell(free)}{cmp_cell(premium)}</tr>"
+        for label, free, premium in cmp["rows"]
+    )
+    return f"""      <section aria-labelledby="cmp-title" style="margin-top:38px;">
+        <p class="section-label">Access tiers</p>
+        <h2 id="cmp-title" class="section-title-lg">{cmp['title']}</h2>
+        <div class="table-scroll">
+          <table class="cmp-table">
+            <thead>
+              <tr><th>{cmp['col_feature']}</th><th>{cmp['col_free']}</th><th>{cmp['col_premium']}</th></tr>
+            </thead>
+            <tbody>
+{rows}
+            </tbody>
+          </table>
+        </div>
+        <p class="ft-muted" style="margin-top:12px;">{cmp['note']}</p>
+      </section>"""
 
 
 def translated_feature(lang: str) -> dict[str, str]:
     bodies = {
+        "en": (
+            "Features — SCP Docs",
+            "A screenshot-led tour of SCP Docs: archive directories, branch-aware Home, refreshed search, Library organization, reader tools, sharing, saved searches, reading stats, and sync.",
+            "Find a report, then actually get back to it",
+            "SCP Docs brings archive entry points, search, reader controls, and personal reading state into one native iOS app. It is designed for the full archive loop: find the next file, save what matters, organize it in Library, and resume without rebuilding your trail.",
+            [
+                ("Branches", "English, Japanese, French, Russian, and Korean archives", "Switching branches changes Home, search, lists, article destinations, and app language so each archive has its own reading context."),
+                ("Directories", "Cleaner archive routes before you know the number", "Move through SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists from organized entry points."),
+                ("Search", "Fast free search, deeper Premium filters", "Open by SCP number, search titles, and use shortcuts for tags and Object Classes. Premium adds documents, memos, reading status, official score, length, and saved searches."),
+                ("Reader", "A focused article view", "Typography controls, calmer themes, improved dark mode, scroll-to-top, offline snapshots, and closer rendering for specially formatted source pages."),
+                ("Library", "A personal shelf for the archive", "History, read status, ratings, bookmarks, read-later, scroll position, memos, folders, and resume-reading data stay organized on your device."),
+                ("Share", "Share as cards", "Turn an article or hand-picked list into a styled card for X and other social apps, with templates and optional comments."),
+                ("Premium", "Stats, speech, and offline reading", "Reading stats, text-to-speech, memo editing, expanded save limits, ad removal, and offline storage support longer reading sessions."),
+                ("Sync", "iCloud-backed personal organization", "When available, reading state, memos, saved searches, and bookmark folders sync through your own iCloud Drive. Saved searches can notify you about new matches on device."),
+            ],
+            "SCP Docs is not an official SCP Foundation or Wikidot app. Source pages, author credits, and license notices on each source site remain authoritative.",
+            "Home (light)",
+            "Home (dark)",
+        ),
         "ja": (
             "機能紹介 — SCP Docs",
             "SCP Docs のホーム、検索、書庫、リーダー、共有カード、保存検索、読書統計、同期機能をスクリーンショット付きで紹介します。",
@@ -1166,9 +1093,71 @@ def translated_feature(lang: str) -> dict[str, str]:
             "라이트 모드 홈",
             "다크 모드 홈",
         ),
+        "es": (
+            "Funciones — SCP Docs",
+            "Un recorrido con capturas por SCP Docs: directorios de archivo, Inicio por rama, búsqueda renovada, Biblioteca, herramientas de lectura, tarjetas para compartir, búsquedas guardadas, estadísticas y sincronización.",
+            "Encuentra un informe y vuelve a él de verdad",
+            "SCP Docs reúne las entradas al archivo, la búsqueda, los controles de lectura y el estado personal de lectura en una sola app iOS nativa. Está diseñada para el ciclo completo: encontrar el siguiente expediente, guardar lo que importa, organizarlo en la Biblioteca y reanudar sin reconstruir tu rastro.",
+            [
+                ("Branches", "Archivos en inglés, japonés, francés, ruso y coreano", "Cambiar de rama modifica el Inicio, la búsqueda, las listas, los destinos de los artículos y el idioma de la app, para leer cada archivo en su propio contexto."),
+                ("Directories", "Rutas de archivo más claras antes de saber el número", "Recorre informes SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes, guías y listas relacionadas desde entradas organizadas."),
+                ("Search", "Búsqueda gratuita rápida y filtros Premium más profundos", "Abre por número SCP, busca por título y usa atajos de etiquetas y Clases de Objeto. Premium añade documentos, notas, estado de lectura, puntuación oficial, longitud y búsquedas guardadas."),
+                ("Reader", "Una vista de artículo para concentrarse", "Controles tipográficos, temas tranquilos, modo oscuro mejorado, volver arriba, instantáneas sin conexión y un renderizado más fiel de las páginas con formato especial."),
+                ("Library", "Una estantería personal para el archivo", "Historial, estado de lectura, valoraciones, marcadores, leer más tarde, posición de desplazamiento, notas, carpetas y datos de reanudación quedan organizados en tu dispositivo."),
+                ("Share", "Compartir como tarjetas", "Convierte un artículo o una lista elegida en una tarjeta con estilo para X y otras apps sociales, con plantillas y comentario opcional."),
+                ("Premium", "Estadísticas, voz y lectura sin conexión", "Estadísticas de lectura, lectura en voz alta, edición de notas, límites ampliados, sin anuncios y almacenamiento sin conexión para sesiones de lectura largas."),
+                ("Sync", "Organización personal respaldada por iCloud", "Cuando está disponible, el estado de lectura, las notas, las búsquedas guardadas y las carpetas de marcadores se sincronizan a través de tu propio iCloud Drive. Las búsquedas guardadas pueden avisarte de nuevas coincidencias en el dispositivo."),
+            ],
+            "SCP Docs no es una app oficial de la SCP Foundation ni de Wikidot. Las páginas de origen, los créditos de autor y los avisos de licencia de cada sitio de origen son la referencia autorizada.",
+            "Inicio (claro)",
+            "Inicio (oscuro)",
+        ),
     }
     title, description, h2, lede, cards, legal, _light_caption, _dark_caption = bodies[lang]
     feature_copy = {
+        "en": {
+            "overview_label": "Feature overview",
+            "screens_label": "Screenshots",
+            "screens_title": "Screens that match the workflow",
+            "workflow_label": "Archive & Library workflow",
+            "workflow_title": "From archive lists to a personal reading shelf",
+            "guide_label": "Practical guide",
+            "guide_title": "What to use when",
+            "points_label": "What it does",
+            "points_title": "Core features",
+            "hero_alt": "English SCP Docs home screen showing continue reading, archive routes, and search filters",
+            "pills": ["Home", "Archive routes", "Library", "Search", "Stats", "Share cards"],
+            "screens": [
+                ("home", "Home screen with branch selection, continue reading, archive routes, and quick filters", "Home: branch, archive routes, and continue reading"),
+                ("catalog", "SCP catalog list with article rows, series filters, and block filters", "Catalog: browse articles before you know the number"),
+                ("library", "Library history screen with read status, ratings, bookmarks, quick actions, and sort controls", "Library: history, ratings, bookmarks, and saved state"),
+                ("search", "Search screen with number, keyword, tag, site, type, Object Class, and advanced filters", "Search: number, keyword, tag, and advanced filters"),
+            ],
+            "workflow_cards": [
+                (
+                    "Use Home as the archive map",
+                    [
+                        ("Pick a branch", "Choose English, Japanese, French, Russian, or Korean. Home, search, lists, article links, and the app language follow that branch context."),
+                        ("Start from directories", "Browse SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists without needing the exact article number first."),
+                        ("Jump when you know the target", "Use free number and title search for quick access. Premium advanced search adds tags, Object Class, document text, memos, read status, official score, length, and saved conditions."),
+                    ],
+                ),
+                (
+                    "Turn browsing into Library state",
+                    [
+                        ("Save the article", "Bookmark it, mark it read-later, rate it, or keep a memo so the report is no longer just another page in the archive."),
+                        ("Resume from context", "History, continue-reading, read status, ratings, memos, and scroll position help you return to the same file or series after a break."),
+                        ("Organize for longer projects", "Premium expands save limits, adds bookmark folders, supports memo editing, can sync Library state through your own iCloud Drive, and can store eligible articles for offline reading."),
+                    ],
+                ),
+            ],
+            "guide_items": [
+                ("I want to browse without a specific article in mind", "Start on Home, choose the branch, then open Archive routes such as SCP, SCP-INT, Stories, or Others. The catalog screen lets you move by series and block, with article rows showing titles, Object Class, tags, scores, and thumbnail previews where available."),
+                ("I know the number, title, tag, or Object Class", "Use Search. Number and title lookup are available for normal use, while Premium advanced filters help narrow by document group, branch, tags, official score, length, Object Class, reading state, and memos."),
+                ("I found something I want to keep", "Save it from the reader or Library as a bookmark, read-later item, rating, memo, or folder entry. Those signals make the article visible later from Library instead of relying on memory or browser history."),
+                ("I stopped halfway through a series", "Use Continue reading, Library history, stored scroll position, and read status to return to the same report or track what has already been handled."),
+            ],
+        },
         "ja": {
             "overview_label": "機能概要",
             "screens_label": "スクリーンショット",
@@ -1341,6 +1330,49 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("시리즈를 중간에 멈췄을 때", "이어 읽기, 라이브러리 기록, 저장된 스크롤 위치, 읽음 상태를 사용해 같은 보고서나 진행 상황으로 돌아갈 수 있습니다."),
             ],
         },
+        "es": {
+            "overview_label": "Resumen de funciones",
+            "screens_label": "Capturas",
+            "screens_title": "Pantallas alineadas con el flujo de lectura",
+            "workflow_label": "Flujo de archivo y Biblioteca",
+            "workflow_title": "De las listas del archivo a tu estantería de lectura",
+            "guide_label": "Guía práctica",
+            "guide_title": "Qué usar en cada momento",
+            "points_label": "Qué hace",
+            "points_title": "Funciones principales",
+            "hero_alt": "Pantalla de inicio de SCP Docs con continuar leyendo, rutas de archivo y filtros de búsqueda",
+            "pills": ["Inicio", "Rutas de archivo", "Biblioteca", "Búsqueda", "Estadísticas", "Tarjetas"],
+            "screens": [
+                ("home", "Pantalla de inicio con selección de rama, continuar leyendo, rutas de archivo y filtros rápidos", "Inicio: rama, rutas de archivo y continuar leyendo"),
+                ("catalog", "Catálogo SCP con filas de artículos, filtros por serie y por bloque", "Catálogo: explora artículos antes de saber el número"),
+                ("library", "Biblioteca con historial, estado de lectura, valoraciones, marcadores y acciones rápidas", "Biblioteca: historial, valoraciones, marcadores y estado guardado"),
+                ("search", "Búsqueda por número, palabra clave, etiqueta, rama, tipo, Clase de Objeto y filtros avanzados", "Búsqueda: número, palabra clave, etiqueta y filtros avanzados"),
+            ],
+            "workflow_cards": [
+                (
+                    "Usa el Inicio como mapa del archivo",
+                    [
+                        ("Elige una rama", "Selecciona inglés, japonés, francés, ruso o coreano. El Inicio, la búsqueda, las listas, los enlaces a artículos y el idioma de la app siguen ese contexto de rama."),
+                        ("Empieza por los directorios", "Recorre informes SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes y guías sin necesitar primero el número exacto."),
+                        ("Salta cuando conoces el objetivo", "La búsqueda por número y título es gratuita. La búsqueda avanzada Premium añade etiquetas, Clase de Objeto, texto del documento, notas, estado de lectura, puntuación oficial, longitud y condiciones guardadas."),
+                    ],
+                ),
+                (
+                    "Convierte la navegación en estado de Biblioteca",
+                    [
+                        ("Guarda el artículo", "Márcalo como favorito, ponlo en leer más tarde, valóralo o deja una nota para que el informe deje de ser una página más del archivo."),
+                        ("Reanuda con contexto", "El historial, continuar leyendo, el estado de lectura, las valoraciones, las notas y la posición de desplazamiento te ayudan a volver al mismo expediente o serie tras una pausa."),
+                        ("Organiza proyectos largos", "Premium amplía los límites de guardado, añade carpetas de marcadores, permite editar notas, puede sincronizar la Biblioteca a través de tu propio iCloud Drive y guardar artículos aptos para leer sin conexión."),
+                    ],
+                ),
+            ],
+            "guide_items": [
+                ("Quiero explorar sin un artículo concreto en mente", "Empieza en Inicio, elige la rama y abre rutas de archivo como SCP, SCP-INT, Stories u Others. La pantalla de catálogo permite moverse por series y bloques, con filas que muestran títulos, Clase de Objeto, etiquetas, puntuaciones y miniaturas cuando existen."),
+                ("Conozco el número, el título, la etiqueta o la Clase de Objeto", "Usa Búsqueda. La búsqueda por número y título está disponible en el uso normal, y los filtros avanzados Premium permiten acotar por grupo de documentos, rama, etiquetas, puntuación oficial, longitud, Clase de Objeto, estado de lectura y notas."),
+                ("Encontré algo que quiero conservar", "Guárdalo desde el lector o la Biblioteca como marcador, leer más tarde, valoración, nota o entrada de carpeta. Esas señales hacen visible el artículo más adelante desde la Biblioteca, sin depender de la memoria ni del historial del navegador."),
+                ("Dejé una serie a medias", "Usa Continuar leyendo, el historial de la Biblioteca, la posición de desplazamiento guardada y el estado de lectura para volver al mismo informe o repasar lo que ya está atendido."),
+            ],
+        },
     }
     ui = feature_copy[lang]
     card_html = "\n".join(
@@ -1425,6 +1457,8 @@ def translated_feature(lang: str) -> dict[str, str]:
         </div>
       </section>
 
+{cmp_section(lang)}
+
       <section style="margin-top:40px;">
         <div class="card-flat">
           <p style="margin-top:0;">{legal}</p>
@@ -1440,7 +1474,7 @@ def translated_feature(lang: str) -> dict[str, str]:
     return {"title": title, "description": description, "body": body}
 
 
-for code in ["ja", "fr", "ru", "ko"]:
+for code in LANGS:
     FEATURES[code] = translated_feature(code)
 
 
@@ -1562,11 +1596,33 @@ def translated_legal(kind: str, lang: str) -> dict[str, str]:
                 ("14. 문의", f'이 방침에 관한 문의: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> 또는 <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.'),
             ],
         },
+        "es": {
+            "title": "Política de privacidad — SCP Docs",
+            "description": "Política de privacidad de SCP Docs: datos en el dispositivo, sincronización con iCloud Drive, búsquedas guardadas, notificaciones, anuncios, suscripciones y sitios de origen de terceros.",
+            "heading": "Política de privacidad",
+            "updated": "Última actualización: 24 de junio de 2026",
+            "sections": [
+                ("1. Introducción", "Esta Política de privacidad describe cómo se trata la información en la aplicación móvil «SCP Docs» (la «App»). Lee esta Política antes de usar la App. Si no estás de acuerdo con ella, no utilices la App."),
+                ("2. Operador y contacto", f'Para consultas de privacidad sobre la App:<br /><a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br /><a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>'),
+                ("3. Resumen de la información que tratamos", "La App conserva un estado en el dispositivo para que puedas explorar, organizar, reanudar y repasar artículos. También realiza comunicaciones de red cuando es necesario para catálogos, páginas de origen, compras, anuncios y enlaces. No es necesario crear una cuenta para usar la App."),
+                ("4. Información almacenada en tu dispositivo", "La App puede almacenar URL o claves normalizadas de artículos, historial de navegación, estado de lectura, valoraciones, favoritos, marcadores, entradas de leer más tarde, carpetas de marcadores, posición de desplazamiento, títulos o miniaturas en caché, notas, condiciones de búsqueda guardadas, estado de coincidencias, registros de sesiones de lectura, datos de estadísticas de lectura, instantáneas HTML sin conexión, estado de suscripción y caducidad del Premium temporal por anuncio con recompensa. Estos datos sirven para el historial, la reanudación, la biblioteca, la búsqueda avanzada, las notas, las búsquedas guardadas, las estadísticas, la lectura sin conexión y el estado Premium."),
+                ("5. Sincronización con iCloud Drive", "Si has iniciado sesión en iCloud Drive y la función está disponible, el estado de lectura, las notas, las búsquedas guardadas y las carpetas de marcadores pueden sincronizarse a través de tu propio almacenamiento de iCloud. El operador de la App no gestiona un servidor separado para recopilar estos registros de lectura o notas."),
+                ("6. Actividad de red y notificaciones", "La actividad de red se produce cuando la App descarga datos de catálogo, etiquetas y listas, muestra el cuerpo de artículos desde Wikidot u otros sitios externos, comprueba el estado de la suscripción del App Store, abre enlaces externos o carga anuncios de Google AdMob. Las notificaciones de búsquedas guardadas se generan en el dispositivo tras comprobar los datos del catálogo; su entrega depende del permiso de notificaciones de iOS."),
+                ("7. Publicidad (Google AdMob)", 'La App utiliza el Google Mobile Ads SDK (AdMob), proporcionado por Google LLC, y puede mostrar anuncios de tipo banner, integrados, nativos, intersticiales, con recompensa y formatos similares. Durante la entrega de anuncios, pueden transmitirse identificadores e información del dispositivo o de impresiones a Google y a socios publicitarios con fines de entrega, medición, prevención del fraude y similares. Consulta la <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Política de privacidad de Google</a> y <a href="https://developers.google.com/admob/ios/privacy/play-data-disclosure" rel="noopener noreferrer">Ads &amp; privacy</a>. Según los ajustes de iOS y tus decisiones, la personalización puede estar limitada.'),
+                ("8. Sitios de terceros", "Gran parte del contenido al que accedes a través de la App está alojado en sitios web operados por terceros. Se aplican sus registros, cookies, scripts de análisis, reglas del sitio y políticas de privacidad. No controlamos cómo los sitios de terceros tratan la información."),
+                ("9. Divulgación a terceros y requerimientos legales", "Además de las divulgaciones descritas anteriormente, como publicidad, pagos, infraestructura de entrega de contenido y diagnósticos ofrecidos por el sistema operativo o el App Store, podemos divulgar información cuando lo exija la ley o en respuesta a requerimientos legítimos de tribunales o autoridades públicas."),
+                ("10. Seguridad", "Nos esforzamos por aplicar salvaguardas razonables a los entornos en los que se desarrolla y distribuye la App. Sin embargo, la seguridad no puede garantizarse de forma absoluta en Internet ni en dispositivos móviles."),
+                ("11. Conservación", "Los datos almacenados en el dispositivo o en tu iCloud Drive pueden conservarse hasta que desinstales la App, elimines datos con los controles de la App, elimines los archivos de iCloud relacionados o restablezcas el dispositivo o el sistema, según corresponda."),
+                ("12. Menores", "La App está destinada a lectores en general. Si permites que un menor use la App, hazlo con la supervisión parental adecuada."),
+                ("13. Cambios en esta Política", "Podemos modificar esta Política para reflejar requisitos legales, cambios en la App o necesidades operativas. Las actualizaciones se publicarán en esta página y, cuando proceda, se mostrarán en la App."),
+                ("14. Preguntas", f'Preguntas sobre esta Política: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> o <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.'),
+            ],
+        },
     }
     return privacy[lang]
 
 
-for code in ["fr", "ru", "ko"]:
+for code in ["fr", "ru", "ko", "es"]:
     PRIVACY_TEXT[code] = translated_legal("privacy", code)
 
 
@@ -1673,12 +1729,31 @@ def make_terms(lang: str) -> dict[str, str]:
                 ("11. 연락처", f'<a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br /><a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>'),
             ],
         ),
+        "es": (
+            "Términos de uso — SCP Docs",
+            "Términos de uso de SCP Docs: estado no oficial, licencias del contenido de origen, suscripciones Premium, desbloqueos con recompensa, servicios de terceros y exenciones de responsabilidad.",
+            "Términos de uso",
+            "Última actualización: 24 de junio de 2026",
+            [
+                ("1. Alcance y aceptación", "Estos Términos de uso (los «Términos») rigen tu uso de la aplicación móvil «SCP Docs» (la «App»). Al descargar o usar la App, aceptas quedar vinculado por estos Términos."),
+                ("2. Naturaleza del servicio", "La App no es una aplicación oficial proporcionada o respaldada por la SCP Foundation, Wikidot, Inc. ni ningún operador oficial del contenido referenciado. Es software no oficial hecho por fans. Las referencias a nombres o universos de ficción son solo por comodidad y no implican asociación, respaldo ni representación."),
+                ("3. Contenido y licencias", 'Gran parte del texto y las imágenes accesibles a través de la App se publica por colaboradores individuales bajo licencias como Creative Commons Attribution-ShareAlike 3.0 Unported (<strong>CC BY-SA 3.0</strong>). El <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">texto completo de la licencia</a> está disponible en Creative Commons. Si reproduces, redistribuyes o modificas artículos u otros materiales, debes cumplir la licencia aplicable y las reglas de cada sitio de origen. La App en sí no es el licenciante del contenido de terceros.'),
+                ("4. Funciones de la App y datos personales", "La App ofrece navegación por archivos, búsqueda por rama, estado de lectura, marcadores, leer más tarde, valoraciones, notas, tarjetas para compartir, búsquedas guardadas, estadísticas de lectura, lectura en voz alta, instantáneas sin conexión y herramientas de lectura relacionadas. El tratamiento de datos se describe en la Política de privacidad."),
+                ("5. Compras, suscripciones y desbloqueos con recompensa", "Las funciones Premium pueden ofrecerse mediante suscripciones con renovación automática, otras compras dentro de la app o desbloqueos temporales por anuncios con recompensa cuando estén disponibles. Apple Inc. gestiona el procesamiento de compras de suscripciones, la facturación, la cancelación, los reembolsos y asuntos relacionados a través del App Store. Un desbloqueo por anuncio con recompensa, cuando se ofrece, solo otorga acceso temporal y no sustituye a una suscripción. La disponibilidad de funciones y los límites pueden cambiar con las actualizaciones de la App o los requisitos de revisión del App Store."),
+                ("6. Servicios de terceros y sitios externos", "La App depende de la infraestructura de pago del App Store, plataformas publicitarias, iCloud Drive cuando está activado y sitios web operados por terceros. Cada servicio se rige por sus propios términos y su política de privacidad. Los sitios de origen siguen siendo la referencia autorizada para el texto de los artículos, la autoría, las licencias, las advertencias y las reglas del sitio."),
+                ("7. Usos prohibidos", "Te comprometes a no infringir la ley aplicable ni el orden público, no vulnerar derechos de terceros, no imponer una carga indebida a la App o a la infraestructura relacionada, no intentar redistribuciones o descompilaciones no autorizadas, no eludir los mecanismos de compra o publicidad, ni realizar conductas que el operador determine razonablemente inapropiadas."),
+                ("8. Exenciones y limitación de responsabilidad", "La App se proporciona «TAL CUAL». El operador no garantiza que la App satisfaga tus requisitos particulares ni que esté disponible, sea precisa, ininterrumpida o libre de errores. En la máxima medida permitida por la ley aplicable, el operador no será responsable de los daños derivados de la App, salvo en casos de dolo o negligencia grave."),
+                ("9. Cambios en los Términos", "El operador puede revisar estos Términos cuando sea necesario. Los Términos revisados entran en vigor cuando se publican en esta página o se muestran a través de la App, según proceda."),
+                ("10. Ley aplicable y jurisdicción", "Estos Términos se aplican a la luz de la ley aplicable y de los acuerdos con proveedores de plataforma como Apple. Las disputas se resolverán conforme a la ley aplicable correspondiente. Si es necesario indicar una ley o jurisdicción concreta, esta sección podrá actualizarse o complementarse."),
+                ("11. Contacto", f'<a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br /><a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>'),
+            ],
+        ),
     }
     title, description, heading, updated, sections = data[lang]
     return {"title": title, "description": description, "heading": heading, "updated": updated, "sections": sections}
 
 
-for code in ["ja", "fr", "ru", "ko"]:
+for code in ["ja", "fr", "ru", "ko", "es"]:
     TERMS_TEXT[code] = make_terms(code)
 
 
@@ -1775,6 +1850,20 @@ def make_support(lang: str) -> dict[str, object]:
             "원본 콘텐츠가 기준입니다",
             "권리, 공식 본문, 저자 표시, 경고, 라이선스 고지는 각 원본 사이트가 기준입니다. SCP Docs는 탐색과 개인 읽기 상태를 돕는 리더 계층이며, 원본 사이트 규칙을 대체하지 않습니다.",
         ),
+        "es": (
+            "Soporte — SCP Docs",
+            "Soporte de SCP Docs: contacto, requisitos, ramas compatibles, funciones Premium, lectura sin conexión, anuncios, sincronización con iCloud, notificaciones y sitios de origen.",
+            "Soporte",
+            "Contacto",
+            "Las solicitudes de funciones, los problemas de visualización, los problemas de catálogo y los comentarios se aceptan por correo electrónico cuando es posible. La respuesta puede tardar varios días.",
+            "Incluye tu versión de iOS, la versión de la app SCP Docs, la rama seleccionada y la pantalla o acción donde ocurrió el problema.",
+            "Requisitos",
+            [("Plataforma", "iPhone / iPod touch. El comportamiento en iPad depende del dispositivo y de la compatibilidad del sistema."), ("OS", "Las versiones actuales del App Store están dirigidas a iOS 17 y posteriores."), ("Red", "Necesaria para actualizar listas, leer en línea, cargar contenido de los sitios de origen, compras, anuncios y comprobaciones de búsquedas guardadas. La lectura sin conexión solo funciona con instantáneas guardadas."), ("Sitios de origen", "Los cambios de diseño o el mantenimiento de Wikidot y otros sitios de origen pueden causar problemas de visualización temporales o cargas más lentas.")],
+            "Preguntas frecuentes",
+            [("¿Necesito una cuenta o iniciar sesión?", "No. SCP Docs está diseñada para leer sin cuenta de Wikidot. Editar artículos o publicar comentarios sigue las reglas de cada sitio oficial de origen."), ("¿Qué ramas e idiomas son compatibles?", "La app admite actualmente el archivo principal en inglés y las ramas japonesa, francesa, rusa y coreana. La interfaz de la app está disponible en inglés, japonés, francés, ruso y coreano."), ("Las listas o los títulos parecen antiguos / no se pueden obtener", "Los datos de catálogo se descargan en línea y se guardan en caché en tu dispositivo. Comprueba la conexión, actualiza los catálogos desde Ajustes o reinicia la app. Algunos cambios de los sitios de origen pueden requerir una actualización de catálogo posterior."), ("¿Qué es gratis y qué es Premium?", "La búsqueda por número y título, la lectura, las funciones básicas de biblioteca, el historial, las valoraciones, los marcadores y leer más tarde están disponibles en el uso normal. Premium añade eliminación de anuncios, búsqueda avanzada, edición de notas, límites de guardado más altos, almacenamiento sin conexión, estadísticas de lectura, lectura en voz alta, avisos de búsquedas guardadas y carpetas de marcadores con sincronización iCloud."), ("Quiero leer sin conexión", "El guardado sin conexión es una función Premium. Mientras Premium está activo, los artículos guardados aptos pueden conservar una instantánea HTML local. Si estás sin conexión, solo pueden mostrarse los artículos con copia guardada; las imágenes, los recursos externos, los artículos no guardados y las actualizaciones de catálogo siguen requiriendo conexión."), ("Quiero quitar los anuncios / veo un banner", "Durante el uso gratuito se muestran anuncios de tipo banner, integrados, nativos, intersticiales, con recompensa y formatos similares. Mientras el Premium mensual está activo, los anuncios se ocultan. Si no estás suscrito, un anuncio con recompensa puede otorgar acceso Premium temporal cuando esté disponible."), ("¿Cómo funcionan las búsquedas guardadas y las notificaciones?", "Las búsquedas guardadas son Premium. La app comprueba los datos de catálogo en el dispositivo tras la sincronización y puede avisarte cuando aparecen nuevas entradas coincidentes. Se requiere el permiso de notificaciones de iOS, y las notificaciones no se generan en un servidor del operador."), ("¿Adónde se envían mis datos?", "El historial de lectura, el progreso, las valoraciones, los marcadores, leer más tarde, las notas, el tiempo de lectura, las carpetas, las búsquedas guardadas, las instantáneas sin conexión y la caducidad del Premium por recompensa se almacenan principalmente en tu dispositivo. Si iCloud Drive está disponible, el estado de lectura, las notas, las búsquedas guardadas y las carpetas de marcadores pueden sincronizarse a través de tu propio almacenamiento de iCloud. Consulta la Política de privacidad para más detalles.")],
+            "El contenido de origen es la referencia autorizada",
+            "Los derechos, el texto oficial, los créditos de autor, las advertencias y los avisos de licencia se rigen por cada sitio de origen. SCP Docs es una capa de lectura que ayuda con la navegación y el estado personal de lectura; no sustituye las reglas de los sitios de origen.",
+        ),
     }
     (
         title,
@@ -1795,12 +1884,14 @@ def make_support(lang: str) -> dict[str, object]:
         "fr": "Assistance SCP Docs : contact, configuration, flux archive et bibliothèque, branches prises en charge, Premium, lecture hors ligne, publicités, iCloud, notifications et sites sources.",
         "ru": "Поддержка SCP Docs: контакты, требования, архив и Библиотека, филиалы, Premium, офлайн-чтение, реклама, iCloud, уведомления и исходные сайты.",
         "ko": "SCP Docs 지원: 문의, 요구 사항, 아카이브와 라이브러리 사용법, 지원 지부, 프리미엄 기능, 오프라인 읽기, 광고, iCloud 동기화, 알림, 원본 사이트 안내.",
+        "es": "Soporte de SCP Docs: contacto, requisitos, flujo de archivo y Biblioteca, ramas compatibles, funciones Premium, lectura sin conexión, anuncios, sincronización con iCloud, notificaciones y sitios de origen.",
     }
     archive_faq = {
         "ja": ("書庫とライブラリはどう使い分けますか？", "まずホームで支部を選び、SCP記事、Tales、Canons、GoI、Joke SCP、SCP-EX、コレクション、新着記事、ガイドなどの書庫ルートから探します。目的の記事が分かっている場合は検索を使います。見つけた記事はブックマーク、後で読む、評価、メモ、フォルダに保存すると、あとからライブラリや続きから読むで戻れます。"),
         "fr": ("Comment utiliser les archives et la Bibliothèque ?", "Commencez sur Accueil, choisissez une branche, puis parcourez les routes d'archive : SCP, Tales, Canons, GoI, Joke SCP, SCP-EX, collections, articles récents et guides. Si vous savez quoi chercher, utilisez Recherche. Quand un article compte, ajoutez favori, à lire plus tard, note, mémo ou dossier pour le retrouver dans la Bibliothèque et la reprise de lecture."),
         "ru": ("Как использовать архив и Библиотеку?", "Начните с Главной, выберите филиал и просматривайте маршруты архива: SCP, Tales, Canons, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и руководства. Если цель известна, используйте Поиск. Когда материал важен, сохраните его как закладку, «прочитать позже», оценку, заметку или запись в папке, чтобы вернуться через Библиотеку и продолжение чтения."),
         "ko": ("아카이브와 라이브러리는 어떻게 나눠 쓰나요?", "먼저 홈에서 지부를 선택하고 SCP 글, Tales, Canons, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 가이드 같은 아카이브 경로에서 찾습니다. 찾을 대상이 분명하면 검색을 사용합니다. 중요한 글은 북마크, 나중에 읽기, 평점, 메모, 폴더로 저장하면 나중에 라이브러리와 이어 읽기에서 다시 돌아갈 수 있습니다."),
+        "es": ("¿Cómo debo usar el archivo y la Biblioteca?", "Empieza en Inicio, elige una rama y recorre rutas de directorio como informes SCP, Tales, Canons, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes y guías. Usa Búsqueda cuando conozcas un número, título, etiqueta o Clase de Objeto. Cuando encuentres algo útil, márcalo como favorito, ponlo en leer más tarde, valóralo, añade una nota o colócalo en una carpeta para que siga disponible desde la Biblioteca y continuar leyendo."),
     }
     faqs = list(faqs)
     faqs.insert(2, archive_faq[lang])
@@ -1820,7 +1911,7 @@ def make_support(lang: str) -> dict[str, object]:
     }
 
 
-for code in ["ja", "fr", "ru", "ko"]:
+for code in ["ja", "fr", "ru", "ko", "es"]:
     SUPPORT_TEXT[code] = make_support(code)
 
 
@@ -1850,12 +1941,13 @@ def make_safety(lang: str) -> dict[str, object]:
         "fr": ("Politique de classification et de sécurité — SCP Docs", "Politique de classification et de sécurité de SCP Docs : App Store 13+, thèmes d'horreur fictionnels, conseils aux lecteurs et responsabilité des sites sources.", "Politique de classification et de sécurité", "Dernière mise à jour : 24 juin 2026", [("1. Objet de cette page", "Cette page fournit des informations supplémentaires sur l'âge conseillé et la sécurité des contenus de l'application mobile « SCP Docs » (l'« App »). L'App est traitée comme appropriée pour une classification App Store 13+."), ("2. Nature de l'App", "L'App est un client non officiel de navigation et lecture pour des œuvres créatives publiques de la communauté en ligne connue comme SCP Foundation. Elle n'est pas fournie ni approuvée par la SCP Foundation, Wikidot, Inc. ou les opérateurs officiels des contenus référencés."), ("3. Contenu attendu", "Les œuvres SCP peuvent inclure horreur textuelle, suspense, entités anormales, procédures de confinement fictionnelles, prose d'avertissement, thèmes tragiques, violence implicite, références au sang, sujets dérangeants et parfois images des sites sources. La plupart du contenu est fictionnel et ne vise pas à encourager des comportements dangereux réels."), ("4. Conseils aux lecteurs", "L'App s'adresse aux lecteurs de 13 ans et plus. Les personnes sensibles à l'horreur ou à la fiction troublante, ainsi que les mineurs, doivent choisir leurs lectures avec prudence. Tags, avertissements, règles des sites sources et supervision parentale peuvent être pertinents."), ("5. Contrôles et limites", "SCP Docs fournit des réglages de lecture et des outils de navigation, mais ne réécrit pas et ne classe pas par âge chaque article source. Parents et responsables peuvent utiliser Temps d'écran iOS, restrictions d'âge et contrôles de contenu."), ("6. Contact", f"Questions sur l'âge conseillé ou cette page : <a href=\"mailto:{CONTACT_EMAIL}\">{CONTACT_EMAIL}</a> ou <a href=\"{X_URL}\" target=\"_blank\" rel=\"noopener noreferrer\">X: @SCPdocs</a>.")]),
         "ru": ("Политика рейтинга и безопасности — SCP Docs", "Политика рейтинга и безопасности SCP Docs: App Store 13+, вымышленные хоррор-темы, рекомендации читателям и ответственность исходных сайтов.", "Политика рейтинга и безопасности", "Последнее обновление: 24 июня 2026 г.", [("1. Назначение страницы", "Эта страница содержит дополнительную информацию о возрастной пригодности и безопасности контента мобильного приложения «SCP Docs» («Приложение»). Приложение рассматривается как подходящее для рейтинга App Store 13+."), ("2. Характер приложения", "Приложение является неофициальным клиентом для просмотра и чтения публичных творческих работ онлайн-сообщества, известного как SCP Foundation. Оно не предоставлено и не одобрено SCP Foundation, Wikidot, Inc. или официальными операторами упомянутого контента."), ("3. Ожидаемый контент", "Материалы SCP могут включать текстовый хоррор, саспенс, аномальные сущности, вымышленные процедуры содержания, предупреждающий стиль, трагические темы, подразумеваемое насилие, упоминания крови, тревожные темы и иногда изображения с исходных сайтов. Большинство материалов является вымыслом и не предназначено для поощрения опасного поведения в реальности."), ("4. Рекомендации читателям", "Приложение предназначено для читателей 13 лет и старше. Читателям, чувствительным к хоррору или тревожной художественной прозе, а также несовершеннолетним, следует внимательно выбирать материалы. Теги, предупреждения, правила исходных сайтов и родительский контроль могут быть важны."), ("5. Контроли и ограничения", "SCP Docs предоставляет настройки чтения и навигацию, но не переписывает и не присваивает возрастной рейтинг каждой исходной статье. Родители и опекуны могут использовать Экранное время iOS, возрастные ограничения и контент-фильтры."), ("6. Контакт", f'Вопросы о возрастной пригодности или этой странице: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> или <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
         "ko": ("등급 및 안전 정책 — SCP Docs", "SCP Docs 등급 및 안전 정책: App Store 13+ 적합성, 픽션 호러 주제, 독자 안내, 원본 사이트 책임에 대한 설명.", "등급 및 안전 정책", "최종 업데이트: 2026년 6월 24일", [("1. 이 페이지의 목적", "이 페이지는 모바일 애플리케이션 “SCP Docs”(이하 “앱”)의 연령 적합성과 콘텐츠 안전성에 대한 추가 정보를 제공합니다. 앱은 App Store 13+ 등급에 적합한 것으로 취급됩니다."), ("2. 앱의 성격", "앱은 SCP Foundation으로 알려진 온라인 창작 커뮤니티의 공개 작품을 탐색하고 읽기 위한 비공식 클라이언트입니다. SCP Foundation, Wikidot, Inc. 또는 참조 콘텐츠의 공식 운영자가 제공하거나 승인한 것이 아닙니다."), ("3. 예상되는 콘텐츠", "SCP 관련 작품에는 텍스트 기반 호러, 서스펜스, 변칙 존재, 가상의 격리 절차, 경고문 형식, 비극적 주제, 암시적 폭력, 피에 대한 언급, 불편할 수 있는 소재, 원본 사이트의 이미지가 포함될 수 있습니다. 대부분은 픽션이며 현실의 위험한 행동을 장려하려는 것이 아닙니다."), ("4. 독자 안내", "앱은 13세 이상 독자를 대상으로 합니다. 호러나 불안한 픽션에 민감한 독자와 미성년자는 읽을 글을 신중히 선택해야 합니다. 글 태그, 경고, 원본 사이트 규칙, 보호자 지도가 도움이 될 수 있습니다."), ("5. 앱의 제어와 한계", "SCP Docs는 리더 설정과 탐색 도구를 제공하지만 각 원본 글을 다시 쓰거나 개별적으로 연령 등급을 매기지는 않습니다. 보호자는 iOS 스크린 타임, 연령 제한, 콘텐츠 제어를 사용해 자녀의 탐색 환경을 관리할 수 있습니다."), ("6. 문의", f'연령 적합성 또는 이 페이지에 관한 문의는 <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> 또는 <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>로 보내 주세요.')]),
+        "es": ("Política de clasificación y seguridad — SCP Docs", "Política de clasificación y seguridad de SCP Docs: idoneidad 13+ del App Store, temas de terror de ficción, orientación para lectores y responsabilidad de los sitios de origen.", "Política de clasificación y seguridad", "Última actualización: 24 de junio de 2026", [("1. Objeto de esta página", "Esta página ofrece información adicional sobre la idoneidad por edad y la seguridad del contenido de la aplicación móvil «SCP Docs» (la «App»). La App se considera apropiada para una clasificación 13+ del App Store."), ("2. Naturaleza de la app", "La App es un cliente no oficial de navegación y lectura para obras creativas públicas de la comunidad en línea conocida como SCP Foundation. No la proporcionan ni la respaldan la SCP Foundation, Wikidot, Inc. ni los operadores oficiales del contenido referenciado."), ("3. Contenido esperado", "Las obras relacionadas con SCP pueden incluir terror en formato de texto, suspenso, entidades anómalas, procedimientos de contención ficticios, prosa de advertencia, temas trágicos, violencia implícita, referencias a sangre, temas perturbadores e imágenes ocasionales proporcionadas por los sitios de origen. La mayor parte del contenido es ficción y no pretende fomentar conductas peligrosas en el mundo real."), ("4. Orientación para lectores", "La App está destinada a lectores de 13 años o más. Los lectores sensibles al terror o a la ficción inquietante, y los menores que usen la App, deben elegir sus lecturas con cuidado. Las etiquetas de los artículos, las advertencias, las reglas de los sitios de origen y la orientación parental pueden ser relevantes."), ("5. Controles y límites de la app", "SCP Docs ofrece ajustes de lectura y herramientas de navegación, pero no reescribe ni clasifica por edad cada artículo de origen. Los padres y tutores pueden usar Tiempo de uso de iOS, las restricciones de edad y los controles de contenido para gestionar el entorno de navegación de un menor."), ("6. Contacto", f'Las preguntas sobre la idoneidad por edad o esta página pueden enviarse a <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> o <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
     }
     title, description, heading, updated, sections = data[lang]
     return {"title": title, "description": description, "heading": heading, "updated": updated, "sections": sections}
 
 
-for code in ["ja", "fr", "ru", "ko"]:
+for code in ["ja", "fr", "ru", "ko", "es"]:
     SAFETY_TEXT[code] = make_safety(code)
 
 

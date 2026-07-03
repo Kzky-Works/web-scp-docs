@@ -5,14 +5,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。" />
-  <meta name="theme-color" content="#F7F6F0" />
-  <title>SCP Docs — Foundation Archive</title>
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
+  <title>SCP Docs — Foundation Archive Reader for iPhone</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <link rel="alternate" hreflang="en" href="https://kzky-works.github.io/web-scp-docs/" />
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/index-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
   <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
+  <link rel="alternate" hreflang="es" href="https://kzky-works.github.io/web-scp-docs/index-es.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -21,13 +23,14 @@
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ru_RU" />
   <meta property="og:locale:alternate" content="ko_KR" />
-  <meta property="og:title" content="SCP Docs — Foundation Archive" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:title" content="SCP Docs — Foundation Archive Reader for iPhone" />
   <meta property="og:description" content="SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。" />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ja.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ja.png" />
-  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
+  <meta name="twitter:title" content="SCP Docs — Foundation Archive Reader for iPhone" />
   <meta name="twitter:description" content="SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
@@ -48,6 +51,7 @@
             <a href="index-fr.html" lang="fr">FR</a>
             <a href="index-ru.html" lang="ru">RU</a>
             <a href="index-ko.html" lang="ko">한국어</a>
+            <a href="index-es.html" lang="es">ES</a>
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index-ja.html" aria-current="page">ホーム</a>
@@ -65,62 +69,82 @@
 
 
     <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs は、SCP Wiki と各支部サイトの記事をより快適に読むための<strong>非公式ファンメイド iOS リーダー</strong>です。公開されている元ページを、書庫の閲覧、支部別検索、保存、読書記録、読みかけ復帰まで扱えるネイティブな読書ワークスペースにまとめます。
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">ネイティブ iOS リーダー</span>
-            <span class="code-chip">5支部対応</span>
-            <span class="code-chip">読書状態</span>
-            <span class="code-chip">プレミアム読書ツール</span>
-          </div>
-          <div class="store-cta" aria-label="SCP Docs App Store link">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs for iPhone</strong>
-              <span>iOS 17以降に対応。アプリUIは現在、英語・日本語・フランス語・ロシア語・韓国語に対応しています。</span>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span class="blink">▮</span> ITEM #: SCP-DOCS-APP · OBJECT CLASS: <span class="accent">READER</span></p>
+            <h2 id="hero-title" class="hero-title">Secure.<br />Contain.<br /><span class="accent">Read.</span></h2>
+            <p class="hero-lede">SCP Docs は、SCP Wiki と各支部サイトの記事をより快適に読むための<strong>非公式ファンメイド iOS リーダー</strong>です。公開されている元ページを、書庫の閲覧、支部別検索、保存、読書記録、読みかけ復帰まで扱えるネイティブな読書ワークスペースにまとめます。</p>
+            <div class="hero-cta">
+              <a class="btn-primary" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank" rel="noopener noreferrer">
+                <span class="btn-main">App Store で入手</span>
+                <span class="btn-sub">iPhone · iOS 17+</span>
+              </a>
+              <a class="btn-ghost" href="features-ja.html">
+                <span class="btn-main">機能を見る</span>
+                <span class="btn-sub">Field guide</span>
+              </a>
             </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="App Store で SCP Docs を開く">
-              <span class="store-cta-link-main">App Store で見る</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
+            <ul class="hero-badges">
+              <li>非公式ファンアプリ</li>
+              <li>無料 + プレミアム</li>
+              <li>13+</li>
+              <li>アカウント不要</li>
+            </ul>
           </div>
+          <figure class="hero-shot" aria-label="SCP Docs app preview">
+            <img src="assets/images/home-ja.png" alt="続きから読む、書庫ルート、検索フィルタを表示した日本語UIのSCP Docsホーム画面" />
+          </figure>
         </div>
-        <figure class="hero-media" aria-label="SCP Docs app preview">
-          <img src="assets/images/home-ja.png"
-            alt="続きから読む、書庫ルート、検索フィルタを表示した日本語UIのSCP Docsホーム画面" />
-        </figure>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="num">5</span><span class="lbl">対応支部</span></div>
+          <div class="hero-stat"><span class="num">10+</span><span class="lbl">書庫ルート</span></div>
+          <div class="hero-stat"><span class="num">0</span><span class="lbl">必要なアカウント</span></div>
+          <div class="hero-stat"><span class="num">17+</span><span class="lbl">対応 iOS</span></div>
+        </div>
       </section>
 
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
+      <section aria-labelledby="screens-title" style="margin-top:64px;">
+        <p class="section-label">Field screens</p>
+        <h2 id="screens-title" class="section-title-lg">ワークフローに対応した画面</h2>
+        <div class="feature-shot-grid">
+          <figure class="screen-frame">
+            <img src="assets/images/home-ja.png" alt="支部選択、続きから読む、書庫ルート、クイックフィルタを表示したホーム画面" loading="lazy" />
+            <figcaption>ホーム: 支部、書庫ルート、続きから読む</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/catalog-ja.png" alt="シリーズと番号ブロックで記事を探せるSCPカタログ画面" loading="lazy" />
+            <figcaption>カタログ: 番号を知らなくても一覧から探す</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-ja.png" alt="読書状態、評価、ブックマーク、保存状態を表示したライブラリ画面" loading="lazy" />
+            <figcaption>ライブラリ: 履歴、評価、ブックマーク、保存状態</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-ja.png" alt="番号、キーワード、タグ、支部、種別、Object Class、高度な絞り込みを表示した検索画面" loading="lazy" />
+            <figcaption>検索: 番号、キーワード、タグ、高度な絞り込み</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="workspace-title" style="margin-top:56px;">
         <p class="section-label">Reading workspace</p>
         <h2 id="workspace-title" class="section-title-lg">読む、探す、整理する、戻ってくる</h2>
         <div class="grid-2">
           <div class="card">
-            <p>
-              アプリはホーム、書庫、検索、設定を中心に構成されています。現在のホームは「続きから読む」、検索プリセット、ランダム発見、Stories / Tales / Canons / Series / GoI / ガイド類などへ進む整理されたディレクトリを備えます。
-            </p>
+            <p style="margin:0;">アプリはホーム、書庫、検索、設定を中心に構成されています。現在のホームは「続きから読む」、検索プリセット、ランダム発見、Stories / Tales / Canons / Series / GoI / ガイド類などへ進む整理されたディレクトリを備えます。</p>
           </div>
           <div class="card">
-            <p>
-              閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、フォルダ、続きから読むデータを記事に結びつけて保存し、読んできた経路を端末内で見失いにくくします。
-            </p>
+            <p style="margin:0;">閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、フォルダ、続きから読むデータを記事に結びつけて保存し、読んできた経路を端末内で見失いにくくします。</p>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
+      <section aria-labelledby="branch-title" style="margin-top:56px;">
         <p class="section-label">Content scope</p>
         <h2 id="branch-title" class="section-title-lg">5支部をひとつの読書フローに</h2>
         <div class="card">
-          <p>
-            英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。
-          </p>
+          <p style="margin-top:0;">英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。</p>
           <ul class="ft-list">
             <li><strong>書庫リスト</strong> — SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、関連ディレクトリ。</li>
             <li><strong>検索</strong> — 番号・タイトル検索は無料。プレミアムでは対象文書、タグ、オブジェクトクラス、メモ、読書状態、公式評価、長さ、保存検索まで組み合わせられます。</li>
@@ -130,7 +154,7 @@
         </div>
       </section>
 
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
+      <section aria-labelledby="premium-title" style="margin-top:56px;">
         <p class="section-label">Premium</p>
         <h2 id="premium-title" class="section-title-lg">深く読むためのツール</h2>
         <div class="grid-2">
@@ -157,7 +181,7 @@
         </div>
       </section>
 
-      <section aria-labelledby="req-title" style="margin-top:38px;">
+      <section aria-labelledby="req-title" style="margin-top:56px;">
         <p class="section-label">Requirements</p>
         <h2 id="req-title" class="section-title-lg">動作環境</h2>
         <div class="card-flat">
@@ -169,18 +193,29 @@
         </div>
       </section>
 
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。
-          </p>
+      <section aria-labelledby="cta-title" style="margin-top:56px;">
+        <p class="section-label">Deployment</p>
+        <h2 id="cta-title" class="section-title-lg">書庫を開く</h2>
+        <div class="card-invert">
+          <p class="lede" style="margin-top:0;">SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。</p>
           <div class="pill-row">
             <a class="pill" href="features-ja.html">機能</a>
             <a class="pill" href="privacy-ja.html">プライバシー</a>
             <a class="pill" href="support-ja.html">サポート</a>
             <a class="pill" href="terms-ja.html">利用規約</a>
             <a class="pill" href="rating-safety-ja.html">安全方針</a>
+          </div>
+          <div class="store-cta" aria-label="SCP Docs App Store link">
+            <div class="store-cta-copy">
+              <span class="store-cta-kicker">Available on the App Store</span>
+              <strong>SCP Docs for iPhone</strong>
+              <span>iOS 17以降に対応。アプリUIは現在、英語・日本語・フランス語・ロシア語・韓国語に対応しています。</span>
+            </div>
+            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
+              rel="noopener noreferrer" aria-label="SCP Docs — App Store">
+              <span class="store-cta-link-main">App Store で見る</span>
+              <span class="store-cta-link-sub">View on Apple</span>
+            </a>
           </div>
         </div>
       </section>

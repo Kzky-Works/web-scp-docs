@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="A screenshot-led tour of SCP Docs: archive directories, branch-aware Home, refreshed search, Library organization, reader tools, sharing, saved searches, reading stats, and sync." />
-  <meta name="theme-color" content="#F7F6F0" />
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
   <title>Features — SCP Docs</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/features.html" />
   <link rel="alternate" hreflang="en" href="https://kzky-works.github.io/web-scp-docs/features.html" />
@@ -13,6 +14,7 @@
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/features-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/features-ru.html" />
   <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/features-ko.html" />
+  <link rel="alternate" hreflang="es" href="https://kzky-works.github.io/web-scp-docs/features-es.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/features.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -21,6 +23,7 @@
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ru_RU" />
   <meta property="og:locale:alternate" content="ko_KR" />
+  <meta property="og:locale:alternate" content="es_ES" />
   <meta property="og:title" content="Features — SCP Docs" />
   <meta property="og:description" content="A screenshot-led tour of SCP Docs: archive directories, branch-aware Home, refreshed search, Library organization, reader tools, sharing, saved searches, reading stats, and sync." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/features.html" />
@@ -48,6 +51,7 @@
             <a href="features-fr.html" lang="fr">FR</a>
             <a href="features-ru.html" lang="ru">RU</a>
             <a href="features-ko.html" lang="ko">한국어</a>
+            <a href="features-es.html" lang="es">ES</a>
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index.html">Home</a>
@@ -66,13 +70,11 @@
 
     <main class="main-pad">
       <section aria-labelledby="feature-title">
-        <p class="section-label">Feature Overview</p>
+        <p class="section-label">Feature overview</p>
         <h2 id="feature-title" class="section-title-lg">Find a report, then actually get back to it</h2>
         <div class="feature-hero">
           <div>
-            <p class="lede">
-              SCP Docs brings archive entry points, search, reader controls, and personal reading state into one native iOS app. It is designed for the full archive loop: find the next file, save what matters, organize it in Library, and resume without rebuilding your trail.
-            </p>
+            <p class="lede">SCP Docs brings archive entry points, search, reader controls, and personal reading state into one native iOS app. It is designed for the full archive loop: find the next file, save what matters, organize it in Library, and resume without rebuilding your trail.</p>
             <div class="pill-row">
               <span class="code-chip">Home</span>
               <span class="code-chip">Archive routes</span>
@@ -83,8 +85,7 @@
             </div>
           </div>
           <figure class="screen-frame screen-frame-compact">
-            <img src="assets/images/home-en.png"
-              alt="English SCP Docs home screen showing continue reading, archive routes, and search filters" />
+            <img src="assets/images/home-en.png" alt="English SCP Docs home screen showing continue reading, archive routes, and search filters" />
           </figure>
         </div>
       </section>
@@ -205,11 +206,37 @@
         </div>
       </section>
 
+      <section aria-labelledby="cmp-title" style="margin-top:38px;">
+        <p class="section-label">Access tiers</p>
+        <h2 id="cmp-title" class="section-title-lg">Free vs Premium</h2>
+        <div class="table-scroll">
+          <table class="cmp-table">
+            <thead>
+              <tr><th>Capability</th><th>Free</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Number & title search</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Archive directories & catalog browsing</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>History, bookmarks, read-later, ratings</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Reader themes, typography & dark mode</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Ads</td><td><span class="part">shown</span></td><td><span class="yes">hidden</span></td></tr>
+              <tr><td>Save limits</td><td><span class="part">standard</span></td><td><span class="yes">expanded</span></td></tr>
+              <tr><td>Advanced search filters</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Memo editing</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Offline snapshots</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Reading stats</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Text-to-speech</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Saved searches & new-match alerts</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Bookmark folders & iCloud sync</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ft-muted" style="margin-top:12px;">Premium is provided as an auto-renewing subscription through the App Store. When available, a rewarded ad can grant temporary Premium access without a subscription.</p>
+      </section>
+
       <section style="margin-top:40px;">
         <div class="card-flat">
-          <p style="margin-top:0;">
-            SCP Docs is not an official SCP Foundation or Wikidot app. Source pages, author credits, and license notices on each source site remain authoritative.
-          </p>
+          <p style="margin-top:0;">SCP Docs is not an official SCP Foundation or Wikidot app. Source pages, author credits, and license notices on each source site remain authoritative.</p>
           <div class="pill-row">
             <a class="pill" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
               rel="noopener noreferrer">App Store</a>

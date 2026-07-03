@@ -4,15 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="SCP Docs는 SCP Wiki 아카이브를 위한 비공식 iOS 리더입니다. 지부별 검색, 읽기 상태, 저장 검색, 공유 카드, 프리미엄 읽기 도구를 제공합니다." />
-  <meta name="theme-color" content="#F7F6F0" />
-  <title>SCP Docs — Foundation Archive</title>
+  <meta name="description" content="SCP Docs는 SCP Wiki 아카이브를 위한 비공식 네이티브 iOS 리더입니다. 지부 디렉터리, 아카이브 탐색, 라이브러리 정리, 저장 검색, 공유, 프리미엄 읽기 도구를 제공합니다." />
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
+  <title>SCP Docs — iPhone용 재단 아카이브 리더</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
   <link rel="alternate" hreflang="en" href="https://kzky-works.github.io/web-scp-docs/" />
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/index-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
   <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
+  <link rel="alternate" hreflang="es" href="https://kzky-works.github.io/web-scp-docs/index-es.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -21,14 +23,15 @@
   <meta property="og:locale:alternate" content="ja_JP" />
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ru_RU" />
-  <meta property="og:title" content="SCP Docs — Foundation Archive" />
-  <meta property="og:description" content="SCP Docs는 SCP Wiki 아카이브를 위한 비공식 iOS 리더입니다. 지부별 검색, 읽기 상태, 저장 검색, 공유 카드, 프리미엄 읽기 도구를 제공합니다." />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:title" content="SCP Docs — iPhone용 재단 아카이브 리더" />
+  <meta property="og:description" content="SCP Docs는 SCP Wiki 아카이브를 위한 비공식 네이티브 iOS 리더입니다. 지부 디렉터리, 아카이브 탐색, 라이브러리 정리, 저장 검색, 공유, 프리미엄 읽기 도구를 제공합니다." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ko.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ko.png" />
-  <meta name="twitter:title" content="SCP Docs — Foundation Archive" />
-  <meta name="twitter:description" content="SCP Docs는 SCP Wiki 아카이브를 위한 비공식 iOS 리더입니다. 지부별 검색, 읽기 상태, 저장 검색, 공유 카드, 프리미엄 읽기 도구를 제공합니다." />
+  <meta name="twitter:title" content="SCP Docs — iPhone용 재단 아카이브 리더" />
+  <meta name="twitter:description" content="SCP Docs는 SCP Wiki 아카이브를 위한 비공식 네이티브 iOS 리더입니다. 지부 디렉터리, 아카이브 탐색, 라이브러리 정리, 저장 검색, 공유, 프리미엄 읽기 도구를 제공합니다." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -48,6 +51,7 @@
             <a href="index-fr.html" lang="fr">FR</a>
             <a href="index-ru.html" lang="ru">RU</a>
             <a href="index-ko.html" aria-current="true" lang="ko">한국어</a>
+            <a href="index-es.html" lang="es">ES</a>
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index-ko.html" aria-current="page">홈</a>
@@ -65,122 +69,153 @@
 
 
     <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs는 SCP Wiki와 각 지부 사이트의 글을 더 편하게 읽기 위한 <strong>비공식 팬 제작 iOS 리더</strong>입니다. 공개된 원문 페이지를 네이티브 읽기 공간으로 정리하여 아카이브 탐색, 지부별 검색, 저장, 읽기 기록, 이어 읽기를 한곳에서 다룰 수 있게 합니다.
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">네이티브 iOS 리더</span>
-            <span class="code-chip">5개 지부 아카이브</span>
-            <span class="code-chip">읽기 상태</span>
-            <span class="code-chip">프리미엄 읽기 도구</span>
-          </div>
-          <div class="store-cta" aria-label="SCP Docs App Store link">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>iPhone용 SCP Docs</strong>
-              <span>iOS 17 이상이 필요합니다. 현재 앱 UI는 영어, 일본어, 프랑스어, 러시아어, 한국어를 지원합니다.</span>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span class="blink">▮</span> ITEM #: SCP-DOCS-APP · OBJECT CLASS: <span class="accent">READER</span></p>
+            <h2 id="hero-title" class="hero-title">Secure.<br />Contain.<br /><span class="accent">Read.</span></h2>
+            <p class="hero-lede">SCP Docs는 SCP Wiki와 지부 사이트의 글을 위한 <strong>비공식 팬 제작 iOS 리더</strong>입니다. 공개된 원본 페이지를 네이티브 아카이브 작업 공간으로 바꿔 줍니다: 지부 디렉터리 탐색, 번호·제목 검색, 중요한 문서 저장, 라이브러리 정리, 그리고 읽던 보고서로 정확히 복귀할 수 있습니다.</p>
+            <div class="hero-cta">
+              <a class="btn-primary" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank" rel="noopener noreferrer">
+                <span class="btn-main">App Store에서 받기</span>
+                <span class="btn-sub">iPhone · iOS 17+</span>
+              </a>
+              <a class="btn-ghost" href="features-ko.html">
+                <span class="btn-main">기능 살펴보기</span>
+                <span class="btn-sub">Field guide</span>
+              </a>
             </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="App Store에서 SCP Docs 열기">
-              <span class="store-cta-link-main">App Store에서 보기</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
+            <ul class="hero-badges">
+              <li>비공식 팬 앱</li>
+              <li>무료 + 프리미엄</li>
+              <li>13+</li>
+              <li>계정 불필요</li>
+            </ul>
           </div>
+          <figure class="hero-shot" aria-label="SCP Docs app preview">
+            <img src="assets/images/home-ko.png" alt="이어 읽기, 아카이브 경로, 검색 필터가 보이는 한국어 UI의 SCP Docs 홈 화면" />
+          </figure>
         </div>
-        <figure class="hero-media" aria-label="SCP Docs app preview">
-          <img src="assets/images/home-ko.png"
-            alt="이어 읽기, 아카이브 경로, 검색 필터가 보이는 한국어 UI의 SCP Docs 홈 화면" />
-        </figure>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="num">5</span><span class="lbl">지원 지부</span></div>
+          <div class="hero-stat"><span class="num">10+</span><span class="lbl">아카이브 경로</span></div>
+          <div class="hero-stat"><span class="num">0</span><span class="lbl">필요한 계정</span></div>
+          <div class="hero-stat"><span class="num">17+</span><span class="lbl">지원 iOS</span></div>
+        </div>
       </section>
 
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
+      <section aria-labelledby="screens-title" style="margin-top:64px;">
+        <p class="section-label">Field screens</p>
+        <h2 id="screens-title" class="section-title-lg">흐름에 맞춘 화면</h2>
+        <div class="feature-shot-grid">
+          <figure class="screen-frame">
+            <img src="assets/images/home-ko.png" alt="지부 선택, 이어 읽기, 아카이브 경로, 빠른 필터가 보이는 홈 화면" loading="lazy" />
+            <figcaption>홈: 지부, 아카이브 경로, 이어 읽기</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/catalog-ko.png" alt="시리즈와 번호 블록으로 글을 찾는 SCP 카탈로그 화면" loading="lazy" />
+            <figcaption>카탈로그: 번호를 몰라도 목록에서 탐색</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-ko.png" alt="읽기 상태, 평점, 북마크, 저장 상태를 보여 주는 라이브러리 화면" loading="lazy" />
+            <figcaption>라이브러리: 기록, 평점, 북마크, 저장 상태</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-ko.png" alt="번호, 키워드, 태그, 지부, 종류, Object Class, 고급 필터가 보이는 검색 화면" loading="lazy" />
+            <figcaption>검색: 번호, 키워드, 태그, 고급 필터</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="workspace-title" style="margin-top:56px;">
         <p class="section-label">Reading workspace</p>
         <h2 id="workspace-title" class="section-title-lg">읽고, 찾고, 정리하고, 다시 돌아오기</h2>
         <div class="grid-2">
           <div class="card">
-            <p>
-              앱은 Home, Library, Search, Settings를 중심으로 구성됩니다. 최신 홈 화면은 이어 읽기, 빠른 검색 프리셋, 랜덤 발견, Stories, Tales, Canons, Series, GoI, 가이드와 관련 컬렉션으로 이동하는 정리된 디렉터리를 제공합니다.
-            </p>
+            <p style="margin:0;">앱은 홈, 라이브러리, 검색, 설정을 중심으로 구성됩니다. 홈은 아카이브 진입점 역할을 하며 이어 읽기, 빠른 검색 프리셋, 랜덤 발견, 그리고 SCP 보고서, Tales, Canons, Canon 시리즈, GoI, 가이드, 관련 컬렉션으로 이어지는 디렉터리 경로를 제공합니다.</p>
           </div>
           <div class="card">
-            <p>
-              열람 기록, 읽음 상태, 평가, 북마크, 나중에 읽기, 스크롤 위치, 메모, 폴더, 이어 읽기 데이터가 각 글에 연결되어 기기 안에서 읽어 온 경로를 다시 찾기 쉽습니다.
-            </p>
+            <p style="margin:0;">라이브러리는 탐색을 개인 서가로 바꿉니다. 기록, 읽음 상태, 평점, 북마크, 나중에 읽기, 스크롤 위치, 메모, 폴더, 이어 읽기 데이터가 열어 본 글에 연결되어 남아, 아카이브를 지나온 경로가 기기 안에서 보입니다.</p>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
+      <section aria-labelledby="branch-title" style="margin-top:56px;">
         <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">5개 지부를 하나의 읽기 흐름으로</h2>
+        <h2 id="branch-title" class="section-title-lg">5개 지부, 하나의 아카이브 흐름</h2>
         <div class="card">
-          <p>
-            SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 카탈로그 데이터가 있는 경우 SCP International과 번역 아카이브의 진입점도 정리해 보여 줍니다.
-          </p>
+          <p style="margin-top:0;">SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 카탈로그 데이터가 있는 범위에서 SCP International과 번역 아카이브 진입점도 정리됩니다.</p>
           <ul class="ft-list">
-            <li><strong>아카이브 목록</strong> — SCP 글, Tales, Canons, Canon series, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 관련 디렉터리.</li>
-            <li><strong>검색</strong> — 번호와 제목 검색은 무료입니다. 프리미엄에서는 문서 범위, 태그, Object Class, 메모, 읽기 상태, 공식 점수, 길이, 저장 검색까지 조합할 수 있습니다.</li>
-            <li><strong>라이브러리</strong> — 북마크, 나중에 읽기, 평가, 메모, 폴더, 스크롤 위치를 글과 연결해 나중에 다시 찾기 쉽게 합니다.</li>
-            <li><strong>리더</strong> — 더 차분한 타이포그래피, 테마, 스크롤 도구, 개선된 다크 모드, 특수 레이아웃 글을 더 원문에 가깝게 보여 주는 표시 방식.</li>
+            <li><strong>아카이브 목록</strong> — SCP 글, Tales, Canons, Canon 시리즈, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 관련 경로의 지부별 디렉터리에서 시작합니다.</li>
+            <li><strong>검색</strong> — 번호·제목 검색은 무료입니다. 프리미엄은 문서, 태그, Object Class, 메모, 읽기 상태, 공식 점수, 길이, 저장 검색까지 고급 필터를 추가합니다.</li>
+            <li><strong>라이브러리</strong> — 글을 북마크나 나중에 읽기로 저장하고, 평가하고, 메모를 남기고, 즐겨찾기를 폴더로 묶고, 저장된 스크롤 위치에서 이어 읽습니다.</li>
+            <li><strong>리더</strong> — 더 깔끔한 타이포그래피, 테마, 스크롤 도구, 개선된 다크 모드, 특수 형식 페이지의 더 충실한 렌더링.</li>
           </ul>
         </div>
       </section>
 
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
+      <section aria-labelledby="premium-title" style="margin-top:56px;">
         <p class="section-label">Premium</p>
-        <h2 id="premium-title" class="section-title-lg">더 깊게 읽기 위한 도구</h2>
+        <h2 id="premium-title" class="section-title-lg">더 깊이 읽기 위한 도구</h2>
         <div class="grid-2">
           <div class="card">
             <dl class="dl-flat">
               <dt>읽기 통계</dt>
-              <dd>읽기 시간, 카탈로그 진행률, 자주 읽는 Object Class와 태그, 평가 추세, 메모, 나중에 읽을 글, 요일·월·연도별 기록을 확인합니다.</dd>
+              <dd>읽기 시간, 카탈로그 커버리지, 자주 읽는 Object Class와 태그, 평점 추세, 메모 인사이트, 읽기 대기 상태, 일·월·년 기록을 보여 줍니다.</dd>
               <dt>저장 검색</dt>
-              <dd>검색 조건을 저장하고, 새로 일치하는 항목이 카탈로그에 나타나면 기기 알림으로 받을 수 있습니다.</dd>
+              <dd>검색 조건을 저장하고 새로 일치하는 카탈로그 항목이 나타나면 기기 알림으로 알려 줍니다.</dd>
               <dt>북마크 폴더</dt>
-              <dd>저장한 글을 폴더로 정리하고, 메모와 저장 검색과 함께 사용자의 iCloud Drive를 통해 동기화할 수 있습니다.</dd>
+              <dd>저장한 글을 폴더로 정리하고 메모, 저장 검색과 함께 사용자의 iCloud Drive를 통해 동기화할 수 있습니다.</dd>
             </dl>
           </div>
           <div class="card">
             <dl class="dl-flat">
-              <dt>듣기와 저장</dt>
-              <dd>텍스트 음성 변환으로 글을 들을 수 있고, 오프라인 스냅샷으로 저장 가능한 글을 연결 없이 다시 열 수 있습니다.</dd>
+              <dt>듣고 저장하기</dt>
+              <dd>텍스트 음성 변환이 본문을 읽어 주고, 오프라인 스냅샷은 저장 가능한 글을 연결 없이도 볼 수 있게 유지합니다.</dd>
               <dt>카드로 공유</dt>
-              <dd>글 하나 또는 직접 고른 목록을 X 등 소셜 앱에 공유하기 쉬운 카드 이미지로 만들 수 있습니다. 템플릿과 선택 코멘트를 지원합니다.</dd>
-              <dt>광고와 제한</dt>
-              <dd>프리미엄은 광고를 숨기고, 저장 한도를 늘리며, 메모 편집과 고급 검색을 엽니다. 제공되는 경우 리워드 광고로 임시 프리미엄을 사용할 수 있습니다.</dd>
+              <dd>글 하나 또는 선택한 목록을 X 등 소셜 앱에 공유하기 좋은 스타일 카드로 만듭니다. 템플릿과 선택 코멘트를 지원합니다.</dd>
+              <dt>광고와 한도</dt>
+              <dd>프리미엄은 광고 숨김, 저장 한도 확장, 메모 편집, 고급 검색을 제공합니다. 제공되는 경우 리워드 광고로 임시 프리미엄을 받을 수 있습니다.</dd>
             </dl>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="req-title" style="margin-top:38px;">
+      <section aria-labelledby="req-title" style="margin-top:56px;">
         <p class="section-label">Requirements</p>
-        <h2 id="req-title" class="section-title-lg">시스템 요구 사항</h2>
+        <h2 id="req-title" class="section-title-lg">요구 사항</h2>
         <div class="card-flat">
           <ul class="ft-list">
             <li><strong>OS</strong> — iOS 17 이상.</li>
             <li><strong>네트워크</strong> — 카탈로그 새로고침, 온라인 글 보기, 원본 사이트 콘텐츠, 광고, 구매 확인, 외부 링크에 필요합니다.</li>
-            <li><strong>계정</strong> — 앱에서 읽기만 할 때는 SCP Foundation 또는 Wikidot 계정이 필요하지 않습니다.</li>
+            <li><strong>계정</strong> — 앱에서 읽기만 할 경우 SCP Foundation이나 Wikidot 계정은 필요하지 않습니다.</li>
           </ul>
         </div>
       </section>
 
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs는 <strong>비공식 팬 애플리케이션</strong>입니다. 원문 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원문 페이지의 표시가 우선합니다.
-          </p>
+      <section aria-labelledby="cta-title" style="margin-top:56px;">
+        <p class="section-label">Deployment</p>
+        <h2 id="cta-title" class="section-title-lg">아카이브 열기</h2>
+        <div class="card-invert">
+          <p class="lede" style="margin-top:0;">SCP Docs는 <strong>비공식 팬 애플리케이션</strong>입니다. 원본 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원본 페이지가 우선합니다.</p>
           <div class="pill-row">
             <a class="pill" href="features-ko.html">기능</a>
             <a class="pill" href="privacy-ko.html">개인정보</a>
             <a class="pill" href="support-ko.html">지원</a>
             <a class="pill" href="terms-ko.html">이용약관</a>
             <a class="pill" href="rating-safety-ko.html">안전</a>
+          </div>
+          <div class="store-cta" aria-label="SCP Docs App Store link">
+            <div class="store-cta-copy">
+              <span class="store-cta-kicker">Available on the App Store</span>
+              <strong>iPhone용 SCP Docs</strong>
+              <span>iOS 17 이상 지원. 앱 UI는 현재 영어, 일본어, 프랑스어, 러시아어, 한국어를 지원합니다.</span>
+            </div>
+            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
+              rel="noopener noreferrer" aria-label="SCP Docs — App Store">
+              <span class="store-cta-link-main">App Store에서 보기</span>
+              <span class="store-cta-link-sub">View on Apple</span>
+            </a>
           </div>
         </div>
       </section>

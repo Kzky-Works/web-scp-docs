@@ -4,15 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="SCP Docs — неофициальный iOS-ридер для архивов SCP Wiki, поиска по филиалам, состояния чтения, сохранённых поисков, карточек для публикации и Premium-инструментов." />
-  <meta name="theme-color" content="#F7F6F0" />
-  <title>SCP Docs — Архив Фонда</title>
+  <meta name="description" content="SCP Docs — неофициальная нативная iOS-читалка архивов SCP Wiki: каталоги филиалов, поиск, Библиотека, сохранённые поиски, публикация карточек и Premium-инструменты." />
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
+  <title>SCP Docs — читалка архива Фонда для iPhone</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
   <link rel="alternate" hreflang="en" href="https://kzky-works.github.io/web-scp-docs/" />
   <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/index-ja.html" />
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/index-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
   <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/index-ko.html" />
+  <link rel="alternate" hreflang="es" href="https://kzky-works.github.io/web-scp-docs/index-es.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -21,14 +23,15 @@
   <meta property="og:locale:alternate" content="ja_JP" />
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="ko_KR" />
-  <meta property="og:title" content="SCP Docs — Архив Фонда" />
-  <meta property="og:description" content="SCP Docs — неофициальный iOS-ридер для архивов SCP Wiki, поиска по филиалам, состояния чтения, сохранённых поисков, карточек для публикации и Premium-инструментов." />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:title" content="SCP Docs — читалка архива Фонда для iPhone" />
+  <meta property="og:description" content="SCP Docs — неофициальная нативная iOS-читалка архивов SCP Wiki: каталоги филиалов, поиск, Библиотека, сохранённые поиски, публикация карточек и Premium-инструменты." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/index-ru.html" />
   <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ru.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-ru.png" />
-  <meta name="twitter:title" content="SCP Docs — Архив Фонда" />
-  <meta name="twitter:description" content="SCP Docs — неофициальный iOS-ридер для архивов SCP Wiki, поиска по филиалам, состояния чтения, сохранённых поисков, карточек для публикации и Premium-инструментов." />
+  <meta name="twitter:title" content="SCP Docs — читалка архива Фонда для iPhone" />
+  <meta name="twitter:description" content="SCP Docs — неофициальная нативная iOS-читалка архивов SCP Wiki: каталоги филиалов, поиск, Библиотека, сохранённые поиски, публикация карточек и Premium-инструменты." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 
@@ -48,6 +51,7 @@
             <a href="index-fr.html" lang="fr">FR</a>
             <a href="index-ru.html" aria-current="true" lang="ru">RU</a>
             <a href="index-ko.html" lang="ko">한국어</a>
+            <a href="index-es.html" lang="es">ES</a>
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index-ru.html" aria-current="page">Главная</a>
@@ -65,122 +69,153 @@
 
 
     <main class="main-pad">
-      <section aria-labelledby="hero-title">
-        <p class="section-label">Overview</p>
-        <h2 id="hero-title" class="section-title-lg">Secure · Contain · Read</h2>
-        <div class="card-invert">
-          <p class="lede">
-            SCP Docs — <strong>неофициальный фанатский iOS-ридер</strong> для статей SCP Wiki и сайтов филиалов. Он превращает публичные исходные страницы в нативное пространство для чтения: архивы, поиск по филиалам, сохранение важных материалов и возвращение к начатым отчётам.
-          </p>
-          <div class="pill-row">
-            <span class="code-chip">Нативный iOS-ридер</span>
-            <span class="code-chip">Пять филиалов</span>
-            <span class="code-chip">Состояние чтения</span>
-            <span class="code-chip">Premium-инструменты</span>
-          </div>
-          <div class="store-cta" aria-label="Ссылка SCP Docs в App Store">
-            <div class="store-cta-copy">
-              <span class="store-cta-kicker">Available on the App Store</span>
-              <strong>SCP Docs для iPhone</strong>
-              <span>Требуется iOS 17 или новее. Интерфейс приложения сейчас поддерживает английский, японский, французский, русский и корейский языки.</span>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span class="blink">▮</span> ITEM #: SCP-DOCS-APP · OBJECT CLASS: <span class="accent">READER</span></p>
+            <h2 id="hero-title" class="hero-title">Secure.<br />Contain.<br /><span class="accent">Read.</span></h2>
+            <p class="hero-lede">SCP Docs — <strong>неофициальная фанатская iOS-читалка</strong> статей SCP Wiki и филиалов. Она превращает публичные исходные страницы в нативное рабочее пространство архива: просматривайте каталоги филиалов, ищите по номеру или названию, сохраняйте важные файлы, организуйте их в Библиотеке и возвращайтесь к тем самым отчётам, которые читали.</p>
+            <div class="hero-cta">
+              <a class="btn-primary" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank" rel="noopener noreferrer">
+                <span class="btn-main">Открыть в App Store</span>
+                <span class="btn-sub">iPhone · iOS 17+</span>
+              </a>
+              <a class="btn-ghost" href="features-ru.html">
+                <span class="btn-main">Смотреть возможности</span>
+                <span class="btn-sub">Field guide</span>
+              </a>
             </div>
-            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
-              rel="noopener noreferrer" aria-label="Открыть SCP Docs в App Store">
-              <span class="store-cta-link-main">Открыть App Store</span>
-              <span class="store-cta-link-sub">View on Apple</span>
-            </a>
+            <ul class="hero-badges">
+              <li>Неофициальное фан-приложение</li>
+              <li>Бесплатно + Premium</li>
+              <li>13+</li>
+              <li>Без аккаунта</li>
+            </ul>
           </div>
+          <figure class="hero-shot" aria-label="SCP Docs app preview">
+            <img src="assets/images/home-ru.png" alt="Главный экран SCP Docs на русском с продолжением чтения, маршрутами архива и поисковыми фильтрами" />
+          </figure>
         </div>
-        <figure class="hero-media" aria-label="Превью приложения SCP Docs">
-          <img src="assets/images/home-ru.png"
-            alt="Главный экран SCP Docs на русском с продолжением чтения, маршрутами архива и поисковыми фильтрами" />
-        </figure>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="num">5</span><span class="lbl">филиалов архива</span></div>
+          <div class="hero-stat"><span class="num">10+</span><span class="lbl">маршрутов каталога</span></div>
+          <div class="hero-stat"><span class="num">0</span><span class="lbl">аккаунтов нужно</span></div>
+          <div class="hero-stat"><span class="num">17+</span><span class="lbl">для iOS</span></div>
+        </div>
       </section>
 
-      <section aria-labelledby="workspace-title" style="margin-top:38px;">
+      <section aria-labelledby="screens-title" style="margin-top:64px;">
+        <p class="section-label">Field screens</p>
+        <h2 id="screens-title" class="section-title-lg">Экраны, соответствующие сценарию</h2>
+        <div class="feature-shot-grid">
+          <figure class="screen-frame">
+            <img src="assets/images/home-ru.png" alt="Главная с выбором филиала, продолжением чтения, маршрутами архива и быстрыми фильтрами" loading="lazy" />
+            <figcaption>Главная: филиал, маршруты архива и продолжение чтения</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/catalog-ru.png" alt="Каталог SCP со списком статей, сериями и блоками номеров" loading="lazy" />
+            <figcaption>Каталог: просматривайте статьи до того, как знаете номер</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-ru.png" alt="Библиотека с историей, статусом чтения, оценками, закладками и быстрыми действиями" loading="lazy" />
+            <figcaption>Библиотека: история, оценки, закладки и сохранённое состояние</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-ru.png" alt="Поиск по номеру, ключевым словам, тегам, филиалу, типу, классу объекта и расширенным фильтрам" loading="lazy" />
+            <figcaption>Поиск: номер, ключевое слово, тег и расширенные фильтры</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="workspace-title" style="margin-top:56px;">
         <p class="section-label">Reading workspace</p>
-        <h2 id="workspace-title" class="section-title-lg">Читайте, ищите, упорядочивайте и возвращайтесь</h2>
+        <h2 id="workspace-title" class="section-title-lg">Читайте, ищите, организуйте, возвращайтесь</h2>
         <div class="grid-2">
           <div class="card">
-            <p>
-              Приложение построено вокруг Главной, Библиотеки, Поиска и Настроек. Главная теперь выделяет продолжение чтения, готовые поисковые наборы, случайное открытие и более понятные переходы к Stories, Tales, Canons, Series, GoI, руководствам и связанным коллекциям.
-            </p>
+            <p style="margin:0;">Приложение построено вокруг Главной, Библиотеки, Поиска и Настроек. Главная служит входом в архив: продолжение чтения, пресеты поиска, случайное открытие и маршруты каталога для отчётов SCP, Tales, Canons, серий Canon, Групп Интереса, руководств и связанных коллекций.</p>
           </div>
           <div class="card">
-            <p>
-              История, статус прочтения, оценки, закладки, список «прочитать позже», позиция прокрутки, заметки, папки и данные продолжения чтения привязаны к открытым статьям, чтобы ваш путь по архиву оставался видимым на устройстве.
-            </p>
+            <p style="margin:0;">Библиотека превращает просмотр в личную полку. История, статус чтения, оценки, закладки, «прочитать позже», позиция прокрутки, заметки, папки и данные продолжения чтения остаются привязанными к открытым статьям, поэтому ваш путь по архиву виден на устройстве.</p>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="branch-title" style="margin-top:38px;">
+      <section aria-labelledby="branch-title" style="margin-top:56px;">
         <p class="section-label">Content scope</p>
-        <h2 id="branch-title" class="section-title-lg">Пять филиалов в одном рабочем процессе</h2>
+        <h2 id="branch-title" class="section-title-lg">Пять филиалов — один рабочий процесс</h2>
         <div class="card">
-          <p>
-            SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский и корейский филиалы. При смене филиала меняются Главная, поиск, списки в приложении, ссылки на статьи и язык интерфейса. SCP International и переводные архивы перечисляются там, где доступны каталожные данные.
-          </p>
+          <p style="margin-top:0;">SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский и корейский филиалы. Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык интерфейса. SCP International и переведённые архивы перечислены там, где есть данные каталога.</p>
           <ul class="ft-list">
-            <li><strong>Списки архивов</strong> — SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и связанные каталоги.</li>
-            <li><strong>Поиск</strong> — поиск по номеру и названию бесплатен. Premium добавляет фильтры по документам, тегам, классу объекта, заметкам, статусу чтения, официальной оценке, длине и сохранённым поискам.</li>
-            <li><strong>Библиотека</strong> — закладки, «прочитать позже», оценки, заметки, папки и позиция прокрутки остаются связанными со статьями, чтобы к ним было проще вернуться.</li>
-            <li><strong>Ридер</strong> — более аккуратная типографика, темы, инструменты прокрутки, улучшенная тёмная тема и более точное отображение страниц со специальной вёрсткой.</li>
+            <li><strong>Списки архива</strong> — Начинайте с каталогов филиала: статьи SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и связанные маршруты.</li>
+            <li><strong>Поиск</strong> — Переходите по номеру или названию бесплатно; Premium добавляет фильтры по документам, тегам, классу объекта, заметкам, статусу чтения, официальному рейтингу, длине и сохранённым поискам.</li>
+            <li><strong>Библиотека</strong> — Сохраняйте статьи как закладки или «прочитать позже», оценивайте, добавляйте заметки, группируйте избранное в папки и продолжайте с сохранённой позиции прокрутки.</li>
+            <li><strong>Ридер</strong> — Более чистая типографика, темы, инструменты прокрутки, улучшенная тёмная тема и более точное отображение специально свёрстанных страниц.</li>
           </ul>
         </div>
       </section>
 
-      <section aria-labelledby="premium-title" style="margin-top:38px;">
+      <section aria-labelledby="premium-title" style="margin-top:56px;">
         <p class="section-label">Premium</p>
         <h2 id="premium-title" class="section-title-lg">Инструменты для глубокого чтения</h2>
         <div class="grid-2">
           <div class="card">
             <dl class="dl-flat">
               <dt>Статистика чтения</dt>
-              <dd>Время чтения, охват каталога, часто читаемые классы объектов и теги, динамика оценок, заметки, список к прочтению и журналы по дням, месяцам и годам.</dd>
+              <dd>Время чтения, покрытие каталога, часто читаемые классы объектов и теги, тренды оценок, заметки, очередь и журналы по дням, месяцам и годам.</dd>
               <dt>Сохранённые поиски</dt>
-              <dd>Сохраняйте условия поиска и получайте уведомления на устройстве, когда появляются новые подходящие записи каталога.</dd>
+              <dd>Сохраняйте условия поиска и получайте уведомления на устройстве, когда появляются новые совпадающие записи каталога.</dd>
               <dt>Папки закладок</dt>
-              <dd>Раскладывайте сохранённые статьи по папкам, которые могут синхронизироваться через ваш iCloud Drive вместе с заметками и сохранёнными поисками.</dd>
+              <dd>Организуйте сохранённые статьи в папки, которые могут синхронизироваться через ваш iCloud Drive вместе с заметками и сохранёнными поисками.</dd>
             </dl>
           </div>
           <div class="card">
             <dl class="dl-flat">
               <dt>Слушать и сохранять</dt>
-              <dd>Синтез речи читает текст статей вслух, а офлайн-снимки оставляют подходящие сохранённые статьи доступными без сети.</dd>
-              <dt>Делиться карточками</dt>
-              <dd>Превратите статью или выбранный список в карточку для X и других социальных приложений, с шаблонами и необязательным комментарием.</dd>
+              <dd>Синтез речи читает текст статьи вслух, а офлайн-снимки сохраняют подходящие статьи доступными без соединения.</dd>
+              <dt>Карточки для публикации</dt>
+              <dd>Превратите статью или выбранный список в стилизованную карточку для X и других социальных приложений, с шаблонами и необязательным комментарием.</dd>
               <dt>Реклама и лимиты</dt>
-              <dd>Premium скрывает рекламу, расширяет лимиты сохранения, открывает редактирование заметок и расширенный поиск. Рекламный просмотр может временно открыть Premium, если предложение доступно.</dd>
+              <dd>Premium скрывает рекламу, расширяет лимиты сохранения, открывает редактирование заметок и расширенный поиск. Рекламный просмотр может дать временный Premium, когда доступен.</dd>
             </dl>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="req-title" style="margin-top:38px;">
+      <section aria-labelledby="req-title" style="margin-top:56px;">
         <p class="section-label">Requirements</p>
-        <h2 id="req-title" class="section-title-lg">Системные требования</h2>
+        <h2 id="req-title" class="section-title-lg">Требования</h2>
         <div class="card-flat">
           <ul class="ft-list">
             <li><strong>OS</strong> — iOS 17 или новее.</li>
-            <li><strong>Сеть</strong> — нужна для обновления каталогов, онлайн-чтения, загрузки исходных сайтов, рекламы, проверки покупок и внешних ссылок.</li>
+            <li><strong>Сеть</strong> — нужна для обновления каталогов, онлайн-чтения, контента исходных сайтов, рекламы, проверок покупок и внешних ссылок.</li>
             <li><strong>Аккаунты</strong> — для чтения в приложении не нужен аккаунт SCP Foundation или Wikidot.</li>
           </ul>
         </div>
       </section>
 
-      <section style="margin-top:40px;">
-        <p class="section-label">Legal</p>
-        <div class="card">
-          <p>
-            SCP Docs — <strong>неофициальное фанатское приложение</strong>. Статьи, сведения об авторах, уведомления об авторских правах и лицензии регулируются исходными сайтами. Материалы SCP обычно публикуются по Creative Commons BY-SA 3.0, но приоритет имеет каждая исходная страница.
-          </p>
+      <section aria-labelledby="cta-title" style="margin-top:56px;">
+        <p class="section-label">Deployment</p>
+        <h2 id="cta-title" class="section-title-lg">Открыть архив</h2>
+        <div class="card-invert">
+          <p class="lede" style="margin-top:0;">SCP Docs — <strong>неофициальное фанатское приложение</strong>. Исходные статьи, сведения об авторах, уведомления об авторских правах и условия лицензий регулируются исходными сайтами. Работы SCP обычно публикуются под Creative Commons BY-SA 3.0, но каждая исходная страница является основным источником.</p>
           <div class="pill-row">
             <a class="pill" href="features-ru.html">Возможности</a>
             <a class="pill" href="privacy-ru.html">Конфиденциальность</a>
             <a class="pill" href="support-ru.html">Поддержка</a>
             <a class="pill" href="terms-ru.html">Условия</a>
             <a class="pill" href="rating-safety-ru.html">Безопасность</a>
+          </div>
+          <div class="store-cta" aria-label="SCP Docs App Store link">
+            <div class="store-cta-copy">
+              <span class="store-cta-kicker">Available on the App Store</span>
+              <strong>SCP Docs для iPhone</strong>
+              <span>Требуется iOS 17 или новее. Интерфейс приложения поддерживает английский, японский, французский, русский и корейский языки.</span>
+            </div>
+            <a class="store-cta-link" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
+              rel="noopener noreferrer" aria-label="SCP Docs — App Store">
+              <span class="store-cta-link-main">Открыть в App Store</span>
+              <span class="store-cta-link-sub">View on Apple</span>
+            </a>
           </div>
         </div>
       </section>

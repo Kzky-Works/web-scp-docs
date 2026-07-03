@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Visite de SCP Docs avec captures : Accueil par branche, recherche améliorée, Bibliothèque, lecteur, cartes de partage, recherches enregistrées, statistiques et synchronisation." />
-  <meta name="theme-color" content="#F7F6F0" />
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
   <title>Fonctionnalités — SCP Docs</title>
   <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/features-fr.html" />
   <link rel="alternate" hreflang="en" href="https://kzky-works.github.io/web-scp-docs/features.html" />
@@ -13,6 +14,7 @@
   <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/features-fr.html" />
   <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/features-ru.html" />
   <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/features-ko.html" />
+  <link rel="alternate" hreflang="es" href="https://kzky-works.github.io/web-scp-docs/features-es.html" />
   <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/features.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="SCP Docs" />
@@ -21,6 +23,7 @@
   <meta property="og:locale:alternate" content="ja_JP" />
   <meta property="og:locale:alternate" content="ru_RU" />
   <meta property="og:locale:alternate" content="ko_KR" />
+  <meta property="og:locale:alternate" content="es_ES" />
   <meta property="og:title" content="Fonctionnalités — SCP Docs" />
   <meta property="og:description" content="Visite de SCP Docs avec captures : Accueil par branche, recherche améliorée, Bibliothèque, lecteur, cartes de partage, recherches enregistrées, statistiques et synchronisation." />
   <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/features-fr.html" />
@@ -48,6 +51,7 @@
             <a href="features-fr.html" aria-current="true" lang="fr">FR</a>
             <a href="features-ru.html" lang="ru">RU</a>
             <a href="features-ko.html" lang="ko">한국어</a>
+            <a href="features-es.html" lang="es">ES</a>
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index-fr.html">Accueil</a>
@@ -200,6 +204,34 @@
             <p>Lorsque disponible, état de lecture, mémos, recherches enregistrées et dossiers de favoris se synchronisent via votre iCloud Drive. Les recherches enregistrées peuvent notifier les nouveaux résultats sur l'appareil.</p>
           </div>
         </div>
+      </section>
+
+      <section aria-labelledby="cmp-title" style="margin-top:38px;">
+        <p class="section-label">Access tiers</p>
+        <h2 id="cmp-title" class="section-title-lg">Gratuit vs Premium</h2>
+        <div class="table-scroll">
+          <table class="cmp-table">
+            <thead>
+              <tr><th>Fonction</th><th>Gratuit</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Recherche par numéro et titre</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Répertoires d'archive et catalogue</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Historique, favoris, à lire plus tard, notes</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Thèmes, typographie et mode sombre</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Publicités</td><td><span class="part">affichées</span></td><td><span class="yes">masquées</span></td></tr>
+              <tr><td>Limites de sauvegarde</td><td><span class="part">standard</span></td><td><span class="yes">étendues</span></td></tr>
+              <tr><td>Filtres de recherche avancés</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Édition des mémos</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Instantanés hors ligne</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Statistiques de lecture</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Synthèse vocale</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Recherches enregistrées et alertes</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Dossiers de favoris et synchronisation iCloud</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ft-muted" style="margin-top:12px;">Premium est un abonnement à renouvellement automatique géré via l'App Store. Lorsqu'elle est disponible, une publicité récompensée peut donner un accès Premium temporaire sans abonnement.</p>
       </section>
 
       <section style="margin-top:40px;">
