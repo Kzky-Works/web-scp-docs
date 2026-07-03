@@ -105,3 +105,4 @@ GitHub **Settings → Pages**: **Deploy from a branch** — **`main`** / **`/ (r
 ## 連絡先の変更
 
 `scpdocs_admin@proton.me` または `@SCPdocs` を変えるときは、各 HTML のフッターと `support.html` を置換後、`git push`。
+
