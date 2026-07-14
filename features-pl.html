@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Przewodnik po SCP Docs ze zrzutami ekranu: katalogi, ekran Start zależny od oddziału, wyszukiwanie, Biblioteka, Reader, karty udostępniania, zapisane wyszukiwania, statystyki i synchronizacja." />
+  <meta name="theme-color" content="#0a0c0e" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
+  <title>Funkcje — SCP Docs</title>
+  <link rel="canonical" href="https://kzky-works.github.io/web-scp-docs/features-pl.html" />
+  <link rel="alternate" hreflang="en" href="https://kzky-works.github.io/web-scp-docs/features.html" />
+  <link rel="alternate" hreflang="ja" href="https://kzky-works.github.io/web-scp-docs/features-ja.html" />
+  <link rel="alternate" hreflang="fr" href="https://kzky-works.github.io/web-scp-docs/features-fr.html" />
+  <link rel="alternate" hreflang="ru" href="https://kzky-works.github.io/web-scp-docs/features-ru.html" />
+  <link rel="alternate" hreflang="ko" href="https://kzky-works.github.io/web-scp-docs/features-ko.html" />
+  <link rel="alternate" hreflang="es" href="https://kzky-works.github.io/web-scp-docs/features-es.html" />
+  <link rel="alternate" hreflang="pl" href="https://kzky-works.github.io/web-scp-docs/features-pl.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kzky-works.github.io/web-scp-docs/features.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="SCP Docs" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ja_JP" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:locale:alternate" content="ko_KR" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta property="og:title" content="Funkcje — SCP Docs" />
+  <meta property="og:description" content="Przewodnik po SCP Docs ze zrzutami ekranu: katalogi, ekran Start zależny od oddziału, wyszukiwanie, Biblioteka, Reader, karty udostępniania, zapisane wyszukiwania, statystyki i synchronizacja." />
+  <meta property="og:url" content="https://kzky-works.github.io/web-scp-docs/features-pl.html" />
+  <meta property="og:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-en.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://kzky-works.github.io/web-scp-docs/assets/images/home-en.png" />
+  <meta name="twitter:title" content="Funkcje — SCP Docs" />
+  <meta name="twitter:description" content="Przewodnik po SCP Docs ze zrzutami ekranu: katalogi, ekran Start zależny od oddziału, wyszukiwanie, Biblioteka, Reader, karty udostępniania, zapisane wyszukiwania, statystyki i synchronizacja." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+  <div class="layout-wide">
+    <header class="terminal-header">
+      <div class="terminal-header-inner">
+        <div>
+          <div class="brand-line">Field Guide / Feature Brief</div>
+          <h1 class="brand-title">SCP Docs</h1>
+        </div>
+        <div class="terminal-header-actions">
+          <div class="language-switch" aria-label="Wybór języka">
+            <span class="language-switch-label">Język</span>
+            <a href="features.html" lang="en">EN</a>
+            <a href="features-ja.html" lang="ja">日本語</a>
+            <a href="features-fr.html" lang="fr">FR</a>
+            <a href="features-ru.html" lang="ru">RU</a>
+            <a href="features-ko.html" lang="ko">한국어</a>
+            <a href="features-es.html" lang="es">ES</a>
+            <a href="features-pl.html" aria-current="true" lang="pl">PL</a>
+          </div>
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="index-pl.html">Start</a>
+            <a href="features-pl.html" aria-current="page">Funkcje</a>
+            <a href="privacy-pl.html">Prywatność</a>
+            <a href="support-pl.html">Wsparcie</a>
+            <a href="terms-pl.html">Warunki</a>
+            <a href="rating-safety-pl.html">Bezpieczeństwo</a>
+            <a class="nav-store" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
+              rel="noopener noreferrer">App Store</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+
+    <main class="main-pad">
+      <section aria-labelledby="feature-title">
+        <p class="section-label">Przegląd funkcji</p>
+        <h2 id="feature-title" class="section-title-lg">Znajdź raport i naprawdę do niego wróć</h2>
+        <div class="feature-hero">
+          <div>
+            <p class="lede">SCP Docs łączy wejścia do archiwum, wyszukiwanie, ustawienia czytania i osobisty stan lektury w jednej natywnej aplikacji na iOS. Obsługuje cały cykl pracy z archiwum: znajdź kolejne akta, zapisz to, co ważne, uporządkuj w Bibliotece i wznów czytanie bez odtwarzania swojej ścieżki.</p>
+            <div class="pill-row">
+              <span class="code-chip">Start</span>
+              <span class="code-chip">Trasy archiwum</span>
+              <span class="code-chip">Biblioteka</span>
+              <span class="code-chip">Wyszukiwanie</span>
+              <span class="code-chip">Statystyki</span>
+              <span class="code-chip">Karty</span>
+            </div>
+          </div>
+          <figure class="screen-frame screen-frame-compact">
+            <img src="assets/images/home-en.png" alt="Ekran główny SCP Docs z kontynuacją czytania, trasami archiwum i filtrami wyszukiwania" />
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="screens-title" style="margin-top:38px;">
+        <p class="section-label">Zrzuty ekranu</p>
+        <h2 id="screens-title" class="section-title-lg">Ekrany dopasowane do sposobu czytania</h2>
+        <div class="feature-shot-grid">
+          <figure class="screen-frame">
+            <img src="assets/images/home-en.png" alt="Ekran główny z wyborem oddziału, kontynuacją czytania, trasami archiwum i szybkimi filtrami" />
+            <figcaption>Start: oddział, trasy archiwum i kontynuacja czytania</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/catalog-en.png" alt="Katalog SCP z listą artykułów oraz filtrami serii i bloków numerów" />
+            <figcaption>Katalog: przeglądaj artykuły, zanim poznasz numer</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/library-en.png" alt="Biblioteka z historią, stanem czytania, ocenami, zakładkami i szybkimi akcjami" />
+            <figcaption>Biblioteka: historia, oceny, zakładki i zapisany stan</figcaption>
+          </figure>
+          <figure class="screen-frame">
+            <img src="assets/images/search-en.png" alt="Wyszukiwanie po numerze, słowie kluczowym, tagu, oddziale, typie, Klasie Obiektu i filtrach zaawansowanych" />
+            <figcaption>Wyszukiwanie: numer, słowo kluczowe, tag i filtry zaawansowane</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="archive-workflow-title" style="margin-top:38px;">
+        <p class="section-label">Praca z archiwum i Biblioteką</p>
+        <h2 id="archive-workflow-title" class="section-title-lg">Od list archiwum do osobistej półki</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Używaj ekranu Start jako mapy archiwum</h3>
+            <dl class="dl-flat">
+              <dt>Wybierz oddział</dt>
+              <dd>Wybierz archiwum angielskie, japońskie, francuskie, rosyjskie, koreańskie, hiszpańskie lub polskie. Start, wyszukiwanie, listy, odnośniki i język aplikacji podążają za wybranym kontekstem.</dd>
+              <dt>Zacznij od katalogów</dt>
+              <dd>Przeglądaj raporty SCP, Opowieści, Kanony, serie kanonów, GoI, Joke SCP, SCP-EX, kolekcje, nowe artykuły i poradniki bez znajomości dokładnego numeru. Każdy katalog ma filtr „Tylko nieprzeczytane”, sortowanie po numerze lub ocenie oraz widok „Najwyżej oceniane”.</dd>
+              <dt>Gdy znasz cel, przejdź do wyszukiwania</dt>
+              <dd>Wyszukiwanie po numerze i tytule jest bezpłatne. Ostatnie wyszukiwania można powtórzyć jednym dotknięciem. Zaawansowane wyszukiwanie Premium dodaje tagi, Klasę Obiektu, tekst dokumentu, notatki, stan czytania, oficjalną ocenę, długość i zapisane warunki.</dd>
+            </dl>
+          </div>
+          <div class="card">
+            <h3>Zamień przeglądanie w stan Biblioteki</h3>
+            <dl class="dl-flat">
+              <dt>Zapisz artykuł</dt>
+              <dd>Dodaj zakładkę, oznacz jako do przeczytania, oceń lub dopisz notatkę, aby raport pozostał na osobistej półce.</dd>
+              <dt>Wznów z kontekstem</dt>
+              <dd>Historia, kontynuacja czytania, stan przeczytania, oceny, notatki i pozycja przewijania pomagają wrócić do tych samych akt lub serii. Artykuły otwierają się w ostatniej pozycji, a pozycje „Do przeczytania” są automatycznie zapisywane offline.</dd>
+              <dt>Porządkuj dłuższe projekty</dt>
+              <dd>Premium zwiększa limity, dodaje foldery zakładek i edycję notatek, synchronizuje stan Biblioteki przez własny iCloud Drive oraz zapisuje odpowiednie artykuły offline.</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="use-cases-title" style="margin-top:38px;">
+        <p class="section-label">Praktyczny przewodnik</p>
+        <h2 id="use-cases-title" class="section-title-lg">Czego użyć w danej sytuacji</h2>
+        <div class="card">
+          <dl class="dl-flat">
+            <dt>Chcę przeglądać bez konkretnego artykułu</dt>
+            <dd>Na ekranie Start wybierz oddział i otwórz trasę archiwum, np. SCP, SCP-INT, Stories lub Others. W katalogu można poruszać się po seriach i blokach, widząc tytuły, Klasy Obiektu, tagi, oceny i miniatury.</dd>
+            <dt>Znam numer, tytuł, tag lub Klasę Obiektu</dt>
+            <dd>Użyj Wyszukiwania. Numer i tytuł są dostępne bezpłatnie, a filtry Premium zawężają wyniki według grupy dokumentów, oddziału, tagów, oficjalnej oceny, długości, Klasy Obiektu, stanu czytania i notatek.</dd>
+            <dt>Znalazłem coś, co chcę zachować</dt>
+            <dd>Zapisz artykuł w Readerze lub Bibliotece jako zakładkę, pozycję do przeczytania, ocenę, notatkę lub element folderu. Dzięki temu później odnajdziesz go bez polegania na pamięci czy historii przeglądarki.</dd>
+            <dt>Przerwałem serię w połowie</dt>
+            <dd>Użyj Kontynuacji czytania, historii Biblioteki, zapisanej pozycji przewijania i stanu przeczytania, aby wrócić do tego samego raportu lub sprawdzić postęp.</dd>
+          </dl>
+        </div>
+      </section>
+
+      <section aria-labelledby="points-title" style="margin-top:38px;">
+        <p class="section-label">Możliwości</p>
+        <h2 id="points-title" class="section-title-lg">Najważniejsze funkcje</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <p class="section-label">Oddziały</p>
+            <h3>Archiwa angielskie, japońskie, francuskie, rosyjskie, koreańskie, hiszpańskie i polskie</h3>
+            <p>Zmiana oddziału przełącza ekran Start, wyszukiwanie, listy, docelowe strony artykułów i język aplikacji, dzięki czemu każde archiwum zachowuje własny kontekst.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Katalogi</p>
+            <h3>Czytelne trasy archiwum, zanim poznasz numer</h3>
+            <p>Przeglądaj raporty SCP, Opowieści, Kanony, serie kanonów, GoI, Joke SCP, SCP-EX, kolekcje, nowe artykuły, poradniki i powiązane listy. Indeks Biblioteki dzieli się na cztery sekcje: strumienie artykułów, kanony i kolekcje, oceny i odkrywanie oraz poradniki i materiały.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Listy</p>
+            <h3>Filtr nieprzeczytanych i widok najwyżej ocenianych</h3>
+            <p>Każdy katalog ma filtr „Tylko nieprzeczytane” oraz sortowanie po numerze lub oficjalnej ocenie. Widok „Najwyżej oceniane” gromadzi najlepsze artykuły każdego oddziału.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Wyszukiwanie</p>
+            <h3>Szybkie wyszukiwanie bezpłatne i dokładniejsze filtry Premium</h3>
+            <p>Otwieraj po numerze SCP, szukaj tytułów i używaj skrótów do tagów oraz Klas Obiektu. Ostatnie wyszukiwania wracają jako przyciski jednego dotknięcia. Premium dodaje dokumenty, notatki, stan czytania, oficjalną ocenę, długość i zapisane wyszukiwania.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Reader</p>
+            <h3>Skupiony widok artykułu</h3>
+            <p>Ustawienia typografii, spokojne motywy, lepszy tryb ciemny, powrót na początek, kopie offline i wierniejsze wyświetlanie stron o specjalnym formatowaniu.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Biblioteka</p>
+            <h3>Osobista półka archiwum</h3>
+            <p>Historia, stan przeczytania, oceny, zakładki, lista do przeczytania, pozycja przewijania, notatki, foldery i dane kontynuacji pozostają uporządkowane na urządzeniu. Artykuły wracają do ostatniej pozycji, a wpisy z listy „Do przeczytania” są automatycznie zapisywane offline.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Udostępnianie</p>
+            <h3>Udostępniaj jako karty</h3>
+            <p>Zamień artykuł lub własną listę w stylizowaną kartę do X i innych aplikacji społecznościowych, korzystając z szablonów i opcjonalnego komentarza.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Premium</p>
+            <h3>Statystyki, synteza mowy i tryb offline</h3>
+            <p>Statystyki czytania, synteza mowy zgodna z językiem artykułu, edycja notatek, wyższe limity, brak reklam i zapis offline wspierają dłuższe sesje czytania.</p>
+          </div>
+          <div class="feature-card">
+            <p class="section-label">Synchronizacja</p>
+            <h3>Osobista organizacja przez iCloud</h3>
+            <p>Gdy funkcja jest dostępna, stan czytania, notatki, zapisane wyszukiwania i foldery zakładek synchronizują się przez własny iCloud Drive. Zapisane wyszukiwania mogą powiadamiać na urządzeniu o nowych wynikach.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="cmp-title" style="margin-top:38px;">
+        <p class="section-label">Access tiers</p>
+        <h2 id="cmp-title" class="section-title-lg">Wersja bezpłatna i Premium</h2>
+        <div class="table-scroll">
+          <table class="cmp-table">
+            <thead>
+              <tr><th>Funkcja</th><th>Bezpłatna</th><th>Premium</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Wyszukiwanie po numerze i tytule</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Katalogi archiwum i przeglądanie</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Historia, zakładki, do przeczytania, oceny</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Motywy Readera, typografia i tryb ciemny</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Reklamy</td><td><span class="part">wyświetlane</span></td><td><span class="yes">ukryte</span></td></tr>
+              <tr><td>Limity zapisu</td><td><span class="part">standardowe</span></td><td><span class="yes">zwiększone</span></td></tr>
+              <tr><td>Zaawansowane filtry wyszukiwania</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Edycja notatek</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Kopie offline</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Statystyki czytania</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Synteza mowy</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Zapisane wyszukiwania i powiadomienia</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>Foldery zakładek i synchronizacja iCloud</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ft-muted" style="margin-top:12px;">Premium jest automatycznie odnawianą subskrypcją w App Store. Gdy opcja jest dostępna, reklama z nagrodą może przyznać tymczasowy dostęp Premium bez subskrypcji.</p>
+      </section>
+
+      <section style="margin-top:40px;">
+        <div class="card-flat">
+          <p style="margin-top:0;">SCP Docs nie jest oficjalną aplikacją SCP Foundation ani Wikidot. Rozstrzygające pozostają strony źródłowe, informacje o autorach i licencjach.</p>
+          <div class="pill-row">
+            <a class="pill" href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank"
+              rel="noopener noreferrer">App Store</a>
+            <a class="pill" href="support-pl.html">Wsparcie</a>
+            <a class="pill" href="privacy-pl.html">Prywatność</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div>
+          <strong>SCP Docs</strong> — Funkcje
+        </div>
+        <div>
+          Kontakt: <a href="mailto:scpdocs_admin@proton.me">scpdocs_admin@proton.me</a><br />
+          X: <a href="https://x.com/SCPdocs" target="_blank" rel="noopener noreferrer">@SCPdocs</a><br />
+          <span class="ft-muted"><a href="index-pl.html">Powrót na stronę główną</a></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
