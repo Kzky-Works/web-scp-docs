@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "4Y7UDGM5VH.com.kzkyworks.scpdocs"
+        ],
+        "components": [
+          {
+            "/": "/open/*",
+            "comment": "Open shared SCP articles in the SCP docs app."
+          }
+        ]
+      }
+    ]
+  }
+}

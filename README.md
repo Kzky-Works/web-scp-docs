@@ -73,6 +73,15 @@
 python3 scripts/generate_pages.py
 ```
 
+## 記事共有リンク
+
+X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載せる。`open/` は端末言語または前回選択した言語に対応する公式支部記事へ振り分け、iOS では Universal Link または `scpdocs://` フォールバックでインストール済みアプリを開く。
+
+- `.well-known/apple-app-site-association`: `com.kzkyworks.scpdocs` の `/open/*` を関連付ける。
+- `scripts/build_shared_article_routes.py`: 公開済み `manifest_daily_scp_translations.json` を 2 桁 hash prefix の小さな `routes/*.json` に分割する。
+- `.github/workflows/deploy-pages.yml`: push と毎日 05:17 JST に route shard を再生成し、GitHub Pages へ無料配信する。
+- Repository variable `SCPDOCS_CUSTOM_DOMAIN=scpdocs.link` を設定すると、deploy artifact に `CNAME` を追加する。
+
 ## ワークフロー（このフォルダだけで完了）
 
 ```bash
@@ -86,7 +95,7 @@ git push origin main
 
 初回のみ: wrapper `SCP-docs/` 直下で `git clone https://github.com/Kzky-Works/web-scp-docs.git web-scp-docs`（既にあれば不要）。
 
-GitHub **Settings → Pages**: **Deploy from a branch** — **`main`** / **`/ (root)`**。
+GitHub **Settings → Pages → Build and deployment → Source**: **GitHub Actions**。独自ドメイン導入時は、先にPagesのCustom domainへ追加してからDNSを設定し、リポジトリ変数 `SCPDOCS_CUSTOM_DOMAIN` も同じ値にする。
 
 反映まで数十秒〜数分。強制再読込で確認すること。
 
