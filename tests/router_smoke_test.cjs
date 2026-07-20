@@ -68,8 +68,9 @@ async function runRouter({ search, languages = ["en-US"], route = null }) {
   };
 
   vm.runInNewContext(routerSource, sandbox, { filename: "router.js" });
-  for (let index = 0; index < 4; index += 1) {
-    await new Promise(resolve => setImmediate(resolve));
+  for (let index = 0; index < 100; index += 1) {
+    if (location.replaced || elements.get("#status").textContent === "Unable to open this link") break;
+    await new Promise(resolve => setTimeout(resolve, 5));
   }
   return { elements, location };
 }
