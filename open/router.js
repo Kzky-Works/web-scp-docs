@@ -18,6 +18,8 @@
   const detail = document.querySelector("#detail");
   const appLink = document.querySelector("#open-app");
   const webLink = document.querySelector("#open-web");
+  const storeLink = document.querySelector("#open-store");
+  const safariHelp = document.querySelector("#safari-help");
   const languages = document.querySelector("#languages");
   const languageLinks = document.querySelector("#language-links");
 
@@ -85,14 +87,29 @@
       || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   }
 
+  function isSafariBrowser() {
+    const userAgent = navigator.userAgent;
+    return isIOSBrowser()
+      && /Version\/[\d.]+/.test(userAgent)
+      && /Safari\//.test(userAgent)
+      && !/(CriOS|FxiOS|EdgiOS|OPiOS)/.test(userAgent);
+  }
+
   function revealDestinations(destination, params) {
-    appLink.href = appURL(params);
-    appLink.hidden = false;
     webLink.href = destination;
     webLink.hidden = false;
 
     if (!isIOSBrowser()) {
       window.location.replace(destination);
+      return;
+    }
+
+    if (isSafariBrowser()) {
+      appLink.href = appURL(params);
+      appLink.hidden = false;
+      storeLink.hidden = false;
+    } else {
+      safariHelp.hidden = false;
     }
   }
 
@@ -122,9 +139,12 @@
     if (!destination) throw new Error("No official article URL is available yet.");
 
     renderLanguages(versions);
-    if (isIOSBrowser()) {
-      status.textContent = "Open this SCP article";
-      detail.textContent = "In X, tap Open in SCP docs below. If X blocks it, use the browser menu to open this page in Safari.";
+    if (isSafariBrowser()) {
+      status.textContent = "Open this article in SCP docs";
+      detail.textContent = "Safari can hand this article to the installed app.";
+    } else if (isIOSBrowser()) {
+      status.textContent = "Open this page in Safari";
+      detail.textContent = "X keeps links inside its browser, so the app cannot be launched from this page directly.";
     } else {
       status.textContent = "Opening the SCP article…";
       detail.textContent = selected ? `Selected ${selected} from your language preference.` : "Opening the available original version.";

@@ -9,7 +9,7 @@
   <meta property="og:description" content="Open the available SCP Wiki version for your language." />
   <title>Opening SCP article…</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="router.js?v=20260722-1" defer></script>
+  <script src="router.js?v=20260722-2" defer></script>
 </head>
 <body>
   <main class="panel" aria-live="polite">
@@ -17,9 +17,23 @@
     <h1 id="status">Opening the article…</h1>
     <p id="detail">Selecting an available SCP Wiki version for your language.</p>
 
+    <section id="safari-help" class="safari-help" hidden>
+      <div class="browser-menu" aria-hidden="true">•••</div>
+      <div>
+        <p class="help-kicker">OPEN IN THE APP</p>
+        <h2>Continue in Safari</h2>
+        <ol>
+          <li>Open the X browser menu.</li>
+          <li>Choose <strong>Open in Safari</strong>.</li>
+          <li>Tap <strong>Open in SCP docs</strong> on this page.</li>
+        </ol>
+      </div>
+    </section>
+
     <div class="actions">
       <a id="open-app" class="button primary" hidden>Open in SCP docs</a>
       <a id="open-web" class="button" hidden>Continue on the official wiki</a>
+      <a id="open-store" class="store-link" href="https://apps.apple.com/app/scp-docs/id6765882660" hidden>Get SCP docs on the App Store</a>
     </div>
 
     <section id="languages" hidden>

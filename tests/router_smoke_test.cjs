@@ -10,9 +10,9 @@ function encodedSource(value) {
   return Buffer.from(value, "utf8").toString("base64url");
 }
 
-async function runRouter({ search, languages = ["en-US"], route = null, ios = false }) {
+async function runRouter({ search, languages = ["en-US"], route = null, ios = false, safari = false }) {
   const elements = new Map();
-  for (const id of ["status", "detail", "open-app", "open-web", "languages", "language-links"]) {
+  for (const id of ["status", "detail", "open-app", "open-web", "open-store", "safari-help", "languages", "language-links"]) {
     elements.set(`#${id}`, {
       hidden: true,
       childElementCount: 0,
@@ -58,7 +58,11 @@ async function runRouter({ search, languages = ["en-US"], route = null, ios = fa
       languages,
       maxTouchPoints: ios ? 5 : 0,
       platform: ios ? "iPhone" : "MacIntel",
-      userAgent: ios ? "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X)" : "Desktop test"
+      userAgent: ios
+        ? (safari
+          ? "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 Version/26.0 Mobile/15E148 Safari/604.1"
+          : "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148")
+        : "Desktop test"
     },
     window: {
       clearTimeout,
@@ -69,7 +73,7 @@ async function runRouter({ search, languages = ["en-US"], route = null, ios = fa
 
   vm.runInNewContext(routerSource, sandbox, { filename: "router.js" });
   for (let index = 0; index < 100; index += 1) {
-    if (location.replaced || !elements.get("#open-app").hidden || elements.get("#status").textContent === "Unable to open this link") break;
+    if (location.replaced || !elements.get("#open-web").hidden || elements.get("#status").textContent === "Unable to open this link") break;
     await new Promise(resolve => setTimeout(resolve, 5));
   }
   return { elements, location };
@@ -102,7 +106,7 @@ test("uses the signed official source fallback while route shards lag", async ()
   assert.equal(result.location.replaced, "https://scp-wiki.wikidot.com/scp-173");
 });
 
-test("keeps iOS in-app browsers on the router until the user taps a destination", async () => {
+test("shows a prominent Safari handoff instead of a dead app button in iOS in-app browsers", async () => {
   const id = "a3ecd8849da128f3d092c004";
   const source = encodedSource("https://scp-wiki.wikidot.com/scp-173");
   const result = await runRouter({
@@ -120,10 +124,27 @@ test("keeps iOS in-app browsers on the router until the user taps a destination"
   });
 
   assert.equal(result.location.replaced, null);
-  assert.equal(result.elements.get("#status").textContent, "Open this SCP article");
+  assert.equal(result.elements.get("#status").textContent, "Open this page in Safari");
+  assert.equal(result.elements.get("#open-app").hidden, true);
+  assert.equal(result.elements.get("#safari-help").hidden, false);
+  assert.equal(result.elements.get("#open-web").href, "https://scp-jp.wikidot.com/scp-173");
+});
+
+test("offers the article deep link after the page is opened in Safari", async () => {
+  const id = "a3ecd8849da128f3d092c004";
+  const source = encodedSource("https://scp-wiki.wikidot.com/scp-173");
+  const result = await runRouter({
+    search: `?id=${id}&source=${source}`,
+    ios: true,
+    safari: true
+  });
+
+  assert.equal(result.location.replaced, null);
+  assert.equal(result.elements.get("#status").textContent, "Open this article in SCP docs");
   assert.equal(result.elements.get("#open-app").hidden, false);
   assert.equal(result.elements.get("#open-app").href, `scpdocs://open?id=${id}&source=${source}`);
-  assert.equal(result.elements.get("#open-web").href, "https://scp-jp.wikidot.com/scp-173");
+  assert.equal(result.elements.get("#open-store").hidden, false);
+  assert.equal(result.elements.get("#safari-help").hidden, true);
 });
 
 test("does not redirect malformed links", async () => {
