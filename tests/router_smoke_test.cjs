@@ -10,7 +10,7 @@ function encodedSource(value) {
   return Buffer.from(value, "utf8").toString("base64url");
 }
 
-async function runRouter({ search, languages = ["en-US"], route = null }) {
+async function runRouter({ search, languages = ["en-US"], route = null, ios = false }) {
   const elements = new Map();
   for (const id of ["status", "detail", "open-app", "open-web", "languages", "language-links"]) {
     elements.set(`#${id}`, {
@@ -56,9 +56,9 @@ async function runRouter({ search, languages = ["en-US"], route = null }) {
     navigator: {
       language: languages[0],
       languages,
-      maxTouchPoints: 0,
-      platform: "MacIntel",
-      userAgent: "Desktop test"
+      maxTouchPoints: ios ? 5 : 0,
+      platform: ios ? "iPhone" : "MacIntel",
+      userAgent: ios ? "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X)" : "Desktop test"
     },
     window: {
       clearTimeout,
@@ -69,7 +69,7 @@ async function runRouter({ search, languages = ["en-US"], route = null }) {
 
   vm.runInNewContext(routerSource, sandbox, { filename: "router.js" });
   for (let index = 0; index < 100; index += 1) {
-    if (location.replaced || elements.get("#status").textContent === "Unable to open this link") break;
+    if (location.replaced || !elements.get("#open-app").hidden || elements.get("#status").textContent === "Unable to open this link") break;
     await new Promise(resolve => setTimeout(resolve, 5));
   }
   return { elements, location };
@@ -100,6 +100,30 @@ test("uses the signed official source fallback while route shards lag", async ()
   const result = await runRouter({ search: `?id=${id}&source=${source}` });
 
   assert.equal(result.location.replaced, "https://scp-wiki.wikidot.com/scp-173");
+});
+
+test("keeps iOS in-app browsers on the router until the user taps a destination", async () => {
+  const id = "a3ecd8849da128f3d092c004";
+  const source = encodedSource("https://scp-wiki.wikidot.com/scp-173");
+  const result = await runRouter({
+    search: `?id=${id}&source=${source}`,
+    languages: ["ja-JP", "en-US"],
+    ios: true,
+    route: {
+      sourceURL: "https://scp-wiki.wikidot.com/scp-173",
+      original: { language: "EN", url: "https://scp-wiki.wikidot.com/scp-173" },
+      versions: {
+        EN: "https://scp-wiki.wikidot.com/scp-173",
+        JP: "https://scp-jp.wikidot.com/scp-173"
+      }
+    }
+  });
+
+  assert.equal(result.location.replaced, null);
+  assert.equal(result.elements.get("#status").textContent, "Open this SCP article");
+  assert.equal(result.elements.get("#open-app").hidden, false);
+  assert.equal(result.elements.get("#open-app").href, `scpdocs://open?id=${id}&source=${source}`);
+  assert.equal(result.elements.get("#open-web").href, "https://scp-jp.wikidot.com/scp-173");
 });
 
 test("does not redirect malformed links", async () => {

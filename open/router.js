@@ -80,26 +80,20 @@
     return `scpdocs://open?${query.toString()}`;
   }
 
-  function attemptOpen(destination, params) {
+  function isIOSBrowser() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent)
+      || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  }
+
+  function revealDestinations(destination, params) {
     appLink.href = appURL(params);
     appLink.hidden = false;
     webLink.href = destination;
     webLink.hidden = false;
 
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    if (!isIOS) {
+    if (!isIOSBrowser()) {
       window.location.replace(destination);
-      return;
     }
-
-    let fallbackTimer = window.setTimeout(() => window.location.replace(destination), 1400);
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden && fallbackTimer) {
-        window.clearTimeout(fallbackTimer);
-        fallbackTimer = 0;
-      }
-    }, { once: true });
-    window.location.href = appLink.href;
   }
 
   async function run() {
@@ -128,9 +122,14 @@
     if (!destination) throw new Error("No official article URL is available yet.");
 
     renderLanguages(versions);
-    status.textContent = "Opening the SCP article…";
-    detail.textContent = selected ? `Selected ${selected} from your language preference.` : "Opening the available original version.";
-    attemptOpen(destination, params);
+    if (isIOSBrowser()) {
+      status.textContent = "Open this SCP article";
+      detail.textContent = "In X, tap Open in SCP docs below. If X blocks it, use the browser menu to open this page in Safari.";
+    } else {
+      status.textContent = "Opening the SCP article…";
+      detail.textContent = selected ? `Selected ${selected} from your language preference.` : "Opening the available original version.";
+    }
+    revealDestinations(destination, params);
   }
 
   run().catch(error => {
