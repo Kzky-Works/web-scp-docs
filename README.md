@@ -75,10 +75,10 @@ python3 scripts/generate_pages.py
 
 ## 記事共有リンク
 
-X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載せる。`open/` は端末言語または前回選択した言語に対応する公式支部記事へ振り分ける。iOS の通常ブラウザでは `scpdocs://` を直接提示し、X などのアプリ内ブラウザでは `launch/` の HTTPS 中継ページを経由してインストール済みアプリを開く。起動しなかった場合は App Store へフォールバックする。公式 Wiki を直接開く導線も `open/` に残す。
+X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載せる。`open/` は端末言語または前回選択した言語に対応する公式支部記事へ振り分ける。iOS ではユーザーが押す `scpdocs://` リンク、公式 Wiki、App Storeの3導線を同じ画面に表示する。自動アプリ起動や自動App Store転送は行わない。
 
 - `.well-known/apple-app-site-association`: `com.kzkyworks.scpdocs` の `/open/*` を関連付ける。
-- `launch/`: X のアプリ内ブラウザからカスタム URL スキームを再試行し、未インストール時は App Store へ送る無料の静的ランチャー。
+- `launch/`: 既存URL保護用の静的ページ。自動遷移はせず、アプリ、App Store、記事選択画面への明示リンクだけを表示する。
 - `scripts/build_shared_article_routes.py`: 公開済み `manifest_daily_scp_translations.json` を 2 桁 hash prefix の小さな `routes/*.json` に分割する。
 - `.github/workflows/deploy-pages.yml`: push と毎日 05:17 JST に route shard を再生成し、GitHub Pages へ無料配信する。
 - Repository variable `SCPDOCS_CUSTOM_DOMAIN=scpdocs.link` を設定すると、deploy artifact に `CNAME` を追加する。

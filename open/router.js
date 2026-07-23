@@ -19,7 +19,6 @@
   const appLink = document.querySelector("#open-app");
   const webLink = document.querySelector("#open-web");
   const storeLink = document.querySelector("#open-store");
-  const handoffHelp = document.querySelector("#handoff-help");
   const languages = document.querySelector("#languages");
   const languageLinks = document.querySelector("#language-links");
 
@@ -82,23 +81,9 @@
     return `scpdocs://open?${query.toString()}`;
   }
 
-  function launchURL(params) {
-    const target = new URL("../launch/", window.location.href);
-    target.search = params.toString();
-    return target.href;
-  }
-
   function isIOSBrowser() {
     return /iPad|iPhone|iPod/.test(navigator.userAgent)
       || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-  }
-
-  function isSafariBrowser() {
-    const userAgent = navigator.userAgent;
-    return isIOSBrowser()
-      && /Version\/[\d.]+/.test(userAgent)
-      && /Safari\//.test(userAgent)
-      && !/(CriOS|FxiOS|EdgiOS|OPiOS)/.test(userAgent);
   }
 
   function revealDestinations(destination, params) {
@@ -110,15 +95,9 @@
       return;
     }
 
-    if (isSafariBrowser()) {
-      appLink.href = appURL(params);
-      appLink.hidden = false;
-      storeLink.hidden = false;
-    } else {
-      appLink.href = launchURL(params);
-      appLink.hidden = false;
-      handoffHelp.hidden = false;
-    }
+    appLink.href = appURL(params);
+    appLink.hidden = false;
+    storeLink.hidden = false;
   }
 
   async function run() {
@@ -150,12 +129,9 @@
     if (!destination) throw new Error("No official article URL is available yet.");
 
     renderLanguages(versions);
-    if (isSafariBrowser()) {
+    if (isIOSBrowser()) {
       status.textContent = "Open this article in SCP docs";
-      detail.textContent = "Safari can hand this article to the installed app.";
-    } else if (isIOSBrowser()) {
-      status.textContent = "Open this article in SCP docs";
-      detail.textContent = "The handoff page will launch the installed app. Or continue on the official wiki.";
+      detail.textContent = "Tap below to open the installed app, or continue on the official wiki.";
     } else {
       status.textContent = "Opening the SCP article…";
       detail.textContent = selected ? `Selected ${selected} from your language preference.` : "Opening the available original version.";

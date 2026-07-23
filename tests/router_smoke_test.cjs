@@ -12,7 +12,7 @@ function encodedSource(value) {
 
 async function runRouter({ search, languages = ["en-US"], route = null, ios = false, safari = false }) {
   const elements = new Map();
-  for (const id of ["status", "detail", "open-app", "open-web", "open-store", "handoff-help", "languages", "language-links"]) {
+  for (const id of ["status", "detail", "open-app", "open-web", "open-store", "languages", "language-links"]) {
     elements.set(`#${id}`, {
       hidden: true,
       childElementCount: 0,
@@ -106,7 +106,7 @@ test("uses the signed official source fallback while route shards lag", async ()
   assert.equal(result.location.replaced, "https://scp-wiki.wikidot.com/scp-173");
 });
 
-test("routes the app button through the web-to-app launcher in iOS in-app browsers", async () => {
+test("offers a direct article deep link in iOS in-app browsers", async () => {
   const id = "a3ecd8849da128f3d092c004";
   const source = encodedSource("https://scp-wiki.wikidot.com/scp-173");
   const result = await runRouter({
@@ -126,11 +126,8 @@ test("routes the app button through the web-to-app launcher in iOS in-app browse
   assert.equal(result.location.replaced, null);
   assert.equal(result.elements.get("#status").textContent, "Open this article in SCP docs");
   assert.equal(result.elements.get("#open-app").hidden, false);
-  assert.equal(
-    result.elements.get("#open-app").href,
-    `https://scpdocs.link/launch/?id=${id}&source=${source}`
-  );
-  assert.equal(result.elements.get("#handoff-help").hidden, false);
+  assert.equal(result.elements.get("#open-app").href, `scpdocs://open?id=${id}&source=${source}`);
+  assert.equal(result.elements.get("#open-store").hidden, false);
   assert.equal(result.elements.get("#open-web").href, "https://scp-jp.wikidot.com/scp-173");
 });
 
@@ -148,7 +145,6 @@ test("offers the article deep link after the page is opened in Safari", async ()
   assert.equal(result.elements.get("#open-app").hidden, false);
   assert.equal(result.elements.get("#open-app").href, `scpdocs://open?id=${id}&source=${source}`);
   assert.equal(result.elements.get("#open-store").hidden, false);
-  assert.equal(result.elements.get("#handoff-help").hidden, true);
 });
 
 test("does not pass an unverified source fallback to the app", async () => {
