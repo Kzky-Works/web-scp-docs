@@ -95,7 +95,12 @@
       return;
     }
 
-    appLink.href = appURL(params);
+    const target = appURL(params);
+    appLink.href = target;
+    appLink.addEventListener("click", event => {
+      event.preventDefault();
+      window.location.replace(target);
+    });
     appLink.hidden = false;
     storeLink.hidden = false;
   }

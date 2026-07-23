@@ -75,7 +75,7 @@ python3 scripts/generate_pages.py
 
 ## 記事共有リンク
 
-X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載せる。`open/` は端末言語または前回選択した言語に対応する公式支部記事へ振り分ける。iOS ではユーザーが押す `scpdocs://` リンク、公式 Wiki、App Storeの3導線を同じ画面に表示する。自動アプリ起動や自動App Store転送は行わない。
+X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載せる。`open/` は端末言語または前回選択した言語に対応する公式支部記事へ振り分ける。iOS ではユーザーが押す `Open in SCP docs` のクリック処理内で `scpdocs://` へ遷移し、公式 Wiki、App Storeの3導線を同じ画面に表示する。ページ読み込み時の自動アプリ起動や自動App Store転送は行わない。
 
 - `.well-known/apple-app-site-association`: `com.kzkyworks.scpdocs` の `/open/*` を関連付ける。
 - `launch/`: 既存URL保護用の静的ページ。自動遷移はせず、アプリ、App Store、記事選択画面への明示リンクだけを表示する。

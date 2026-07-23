@@ -10,7 +10,9 @@ function runLauncher(search) {
   const elements = new Map();
   for (const id of ["launcher", "open-app", "open-store", "back-to-article", "error"]) {
     elements.set(`#${id}`, {
-      hidden: id === "launcher" || id === "error"
+      hidden: id === "launcher" || id === "error",
+      listeners: {},
+      addEventListener(name, callback) { this.listeners[name] = callback; }
     });
   }
 
@@ -46,6 +48,13 @@ test("shows direct app, store, and article-option links without automatic naviga
     `https://scpdocs.link/open/?id=${id}&source=${source}`
   );
   assert.equal(result.elements.get("#open-store").hidden, false);
+
+  let prevented = false;
+  result.elements.get("#open-app").listeners.click({
+    preventDefault() { prevented = true; }
+  });
+  assert.equal(prevented, true);
+  assert.equal(result.location.replaced, `scpdocs://open?id=${id}&source=${source}`);
 });
 
 test("rejects malformed launch links without navigating", () => {

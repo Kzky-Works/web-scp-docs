@@ -16,6 +16,8 @@ async function runRouter({ search, languages = ["en-US"], route = null, ios = fa
     elements.set(`#${id}`, {
       hidden: true,
       childElementCount: 0,
+      listeners: {},
+      addEventListener(name, callback) { this.listeners[name] = callback; },
       replaceChildren() { this.childElementCount = 0; },
       append() { this.childElementCount += 1; }
     });
@@ -129,6 +131,13 @@ test("offers a direct article deep link in iOS in-app browsers", async () => {
   assert.equal(result.elements.get("#open-app").href, `scpdocs://open?id=${id}&source=${source}`);
   assert.equal(result.elements.get("#open-store").hidden, false);
   assert.equal(result.elements.get("#open-web").href, "https://scp-jp.wikidot.com/scp-173");
+
+  let prevented = false;
+  result.elements.get("#open-app").listeners.click({
+    preventDefault() { prevented = true; }
+  });
+  assert.equal(prevented, true);
+  assert.equal(result.location.replaced, `scpdocs://open?id=${id}&source=${source}`);
 });
 
 test("offers the article deep link after the page is opened in Safari", async () => {
