@@ -19,7 +19,7 @@
   const appLink = document.querySelector("#open-app");
   const webLink = document.querySelector("#open-web");
   const storeLink = document.querySelector("#open-store");
-  const safariHelp = document.querySelector("#safari-help");
+  const handoffHelp = document.querySelector("#handoff-help");
   const languages = document.querySelector("#languages");
   const languageLinks = document.querySelector("#language-links");
 
@@ -82,6 +82,12 @@
     return `scpdocs://open?${query.toString()}`;
   }
 
+  function launchURL(params) {
+    const target = new URL("../launch/", window.location.href);
+    target.search = params.toString();
+    return target.href;
+  }
+
   function isIOSBrowser() {
     return /iPad|iPhone|iPod/.test(navigator.userAgent)
       || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
@@ -109,7 +115,9 @@
       appLink.hidden = false;
       storeLink.hidden = false;
     } else {
-      safariHelp.hidden = false;
+      appLink.href = launchURL(params);
+      appLink.hidden = false;
+      handoffHelp.hidden = false;
     }
   }
 
@@ -119,6 +127,9 @@
     if (!ROUTE_ID.test(identifier)) throw new Error("The shared article link is invalid.");
     const decodedFallback = safeURL(decodeSource(params.get("source")));
     const fallback = decodedFallback && await routeIDForURL(decodedFallback) === identifier ? decodedFallback : null;
+    const handoffParams = new URLSearchParams();
+    handoffParams.set("id", identifier);
+    if (fallback) handoffParams.set("source", params.get("source"));
 
     let route = null;
     try {
@@ -143,13 +154,13 @@
       status.textContent = "Open this article in SCP docs";
       detail.textContent = "Safari can hand this article to the installed app.";
     } else if (isIOSBrowser()) {
-      status.textContent = "Open this page in Safari";
-      detail.textContent = "X keeps links inside its browser, so the app cannot be launched from this page directly.";
+      status.textContent = "Open this article in SCP docs";
+      detail.textContent = "The handoff page will launch the installed app. Or continue on the official wiki.";
     } else {
       status.textContent = "Opening the SCP article…";
       detail.textContent = selected ? `Selected ${selected} from your language preference.` : "Opening the available original version.";
     }
-    revealDestinations(destination, params);
+    revealDestinations(destination, handoffParams);
   }
 
   run().catch(error => {
