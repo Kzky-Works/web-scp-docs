@@ -35,9 +35,9 @@
 | サポート（韓国語） | `.../support-ko.html` | 韓国語版サポート |
 | サポート（スペイン語） | `.../support-es.html` | スペイン語版サポート |
 | サポート（ポーランド語） | `.../support-pl.html` | ポーランド語版サポート |
-| 追加8言語のトップ | `.../index-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant}.html` | 5.0.0 追加言語の Marketing URL |
-| 追加8言語のプライバシー | `.../privacy-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant}.html` | 5.0.0 追加言語の Privacy Policy URL |
-| 追加8言語のサポート | `.../support-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant}.html` | 5.0.0 追加言語の Support URL |
+| 追加9言語のトップ | `.../index-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant,tr}.html` | 5.0.0/5.3.0 追加言語の Marketing URL |
+| 追加9言語のプライバシー | `.../privacy-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant,tr}.html` | 5.0.0/5.3.0 追加言語の Privacy Policy URL |
+| 追加9言語のサポート | `.../support-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant,tr}.html` | 5.0.0/5.3.0 追加言語の Support URL |
 | 利用規約（英語・既定） | `.../terms.html` | 非公式性・CC・免責など |
 | 利用規約（日本語） | `.../terms-ja.html` | 日本語版利用規約 |
 | 利用規約（フランス語） | `.../terms-fr.html` | フランス語版利用規約 |
@@ -65,10 +65,11 @@
 - スペイン語版は `*-es.html` に統一する。
 - ポーランド語版は `*-pl.html` に統一する。
 - 5.0.0 追加言語は、チェコ語 `*-cs.html`、ドイツ語 `*-de.html`、イタリア語 `*-it.html`、ブラジルポルトガル語 `*-pt-br.html`、タイ語 `*-th.html`、ベトナム語 `*-vi.html`、簡体字中国語 `*-zh-hans.html`、繁体字中国語 `*-zh-hant.html` に統一する。
-- 追加8言語では、App Store Connect に必要なトップ・プライバシー・サポートをローカライズする。機能紹介・利用規約・安全方針のナビゲーション先は英語版とする。
+- 5.3.0 追加言語（SCP Türkiye 支部追加に伴う）は、トルコ語 `*-tr.html` に統一する。
+- 追加9言語では、App Store Connect に必要なトップ・プライバシー・サポートをローカライズする。機能紹介・利用規約・安全方針のナビゲーション先は英語版とする。
 - サイト用の追加言語スクリーンショットは未収録のため、スペイン語・ポーランド語を含む追加言語ページでは英語版 `*-en.png` を流用する。
 - 旧英語 URL の `privacy-en.html` / `terms-en.html` は外部リンク保護用のリダイレクトとしてだけ残す。
-- すべての公開ページの共通ヘッダーに `.language-switch` を置く。トップ・プライバシー・サポートでは全15言語、それ以外では全ページを持つ既存7言語を切り替えられるようにする。
+- すべての公開ページの共通ヘッダーに `.language-switch` を置く。トップ・プライバシー・サポートでは全16言語、それ以外では全ページを持つ既存7言語を切り替えられるようにする。
 
 ## ページ生成
 

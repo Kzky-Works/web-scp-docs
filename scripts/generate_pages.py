@@ -377,7 +377,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["Unofficial fan app", "Free + Premium", "Rated 13+", "No account needed"],
         "stats": [
-            ("15", "archive branches"),
+            ("16", "archive branches"),
             ("10+", "directory routes"),
             ("0", "accounts required"),
             ("17+", "built for iOS"),
@@ -392,8 +392,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Browse the archive, then keep your place",
         "workspace_p1": "The app is organized around Home, Library, Search, and Settings. Home acts as the archive entry point, with continue-reading, quick search presets, random discovery, and directory routes for SCP reports, Tales, Canons, Canon series, Groups of Interest, guides, and related collections.",
         "workspace_p2": "Library turns browsing into a personal shelf. History, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your path through the archive remains visible on device. Articles reopen automatically at your last scroll position, and Read Later items are stored for offline reading automatically.",
-        "scope_title": "Fifteen branches, one archive workflow",
-        "scope_p": "SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, and Traditional Chinese branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.",
+        "scope_title": "Sixteen branches, one archive workflow",
+        "scope_p": "SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, Traditional Chinese, and Turkish branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.",
         "scope_items": [
             ("Archive lists", "Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes."),
             ("Catalogs", "Every catalog adds an \"Unread only\" filter, sort by number or official rating, and a \"Top rated\" lens gathering each branch's highest-rated articles."),
@@ -423,7 +423,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Open the archive",
         "legal_p": "SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.",
         "store_name": "SCP Docs for iPhone",
-        "store_note": "Built for iOS 17 and later. App UI supports fifteen languages, including English, Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, and Traditional Chinese.",
+        "store_note": "Built for iOS 17 and later. App UI supports sixteen languages, including English, Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, Traditional Chinese, and Turkish.",
         "store_main": "Get on the App Store",
     },
     "ja": {
@@ -437,7 +437,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["非公式ファンアプリ", "無料 + プレミアム", "13+", "アカウント不要"],
         "stats": [
-            ("15", "対応支部"),
+            ("16", "対応支部"),
             ("10+", "書庫ルート"),
             ("0", "必要なアカウント"),
             ("17+", "対応 iOS"),
@@ -452,8 +452,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "読む、探す、整理する、戻ってくる",
         "workspace_p1": "アプリはホーム、書庫、検索、設定を中心に構成されています。現在のホームは「続きから読む」、検索プリセット、ランダム発見、Stories / Tales / Canons / Series / GoI / ガイド類などへ進む整理されたディレクトリを備えます。",
         "workspace_p2": "閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、フォルダ、続きから読むデータを記事に結びつけて保存し、読んできた経路を端末内で見失いにくくします。記事は前回のスクロール位置から自動的に開き、「後で読む」に入れた記事は自動でオフライン保存されます。",
-        "scope_title": "15支部をひとつの読書フローに",
-        "scope_p": "英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国・スペイン・ポーランド・中国・タイ・ドイツ・イタリア・ポルトガル・ベトナム・チェコ・繁体字中国支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。",
+        "scope_title": "16支部をひとつの読書フローに",
+        "scope_p": "英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国・スペイン・ポーランド・中国・タイ・ドイツ・イタリア・ポルトガル・ベトナム・チェコ・繁体字中国・トルコ支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。",
         "scope_items": [
             ("書庫リスト", "SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、関連ディレクトリ。"),
             ("カタログ", "各カタログに「未読のみ」フィルタ、番号順・公式評価順の並び替え、各支部の評価上位記事をまとめた「評価の高い記事」レンズを追加。"),
@@ -483,7 +483,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "書庫を開く",
         "legal_p": "SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。",
         "store_name": "SCP Docs for iPhone",
-        "store_note": "iOS 17以降に対応。アプリUIは英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語・簡体字中国語・タイ語・ドイツ語・イタリア語・ポルトガル語・ベトナム語・チェコ語・繁体字中国語に対応しています。",
+        "store_note": "iOS 17以降に対応。アプリUIは英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語・簡体字中国語・タイ語・ドイツ語・イタリア語・ポルトガル語・ベトナム語・チェコ語・繁体字中国語・トルコ語に対応しています。",
         "store_main": "App Store で見る",
     },
     "fr": {
@@ -497,7 +497,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["App fan non officielle", "Gratuit + Premium", "13+", "Sans compte"],
         "stats": [
-            ("15", "branches d'archives"),
+            ("16", "branches d'archives"),
             ("10+", "routes d'archive"),
             ("0", "compte requis"),
             ("17+", "conçu pour iOS"),
@@ -512,8 +512,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Lire, chercher, organiser, reprendre",
         "workspace_p1": "L'app s'organise autour d'Accueil, Bibliothèque, Recherche et Réglages. L'accueil met en avant la reprise de lecture, les préréglages de recherche, la découverte aléatoire et des itinéraires plus clairs vers Stories, Tales, Canons, Series, GoI, guides et collections associées.",
         "workspace_p2": "Historique, état lu/non lu, notes, favoris, éléments à lire plus tard, position de défilement, mémos, dossiers et reprise de lecture restent liés aux articles ouverts, pour garder votre parcours visible sur l'appareil. Les articles se rouvrent automatiquement à votre dernière position de défilement, et les éléments « À lire plus tard » sont stockés automatiquement hors ligne.",
-        "scope_title": "Quinze branches, un même flux de lecture",
-        "scope_p": "SCP Docs prend en charge l'archive principale anglaise de la SCP Foundation ainsi que les branches japonaise, française, russe, coréenne, espagnole, polonaise, chinoise, thaïlandaise, allemande, italienne, portugaise, vietnamienne, tchèque et chinoise traditionnelle. Changer de branche modifie l'accueil, la recherche, les listes intégrées, les destinations d'articles et la langue de l'interface. SCP International et les archives traduites sont listés lorsque les données de catalogue existent.",
+        "scope_title": "Seize branches, un même flux de lecture",
+        "scope_p": "SCP Docs prend en charge l'archive principale anglaise de la SCP Foundation ainsi que les branches japonaise, française, russe, coréenne, espagnole, polonaise, chinoise, thaïlandaise, allemande, italienne, portugaise, vietnamienne, tchèque, chinoise traditionnelle et turque. Changer de branche modifie l'accueil, la recherche, les listes intégrées, les destinations d'articles et la langue de l'interface. SCP International et les archives traduites sont listés lorsque les données de catalogue existent.",
         "scope_items": [
             ("Listes d'archives", "SCP, Tales, Canons, séries Canon, GoI, Joke SCP, SCP-EX, collections, articles récents et répertoires associés."),
             ("Catalogues", "Chaque catalogue ajoute un filtre « Non lus », un tri par numéro ou note officielle, et une loupe « Les mieux notés » réunissant les articles les mieux notés de chaque branche."),
@@ -543,7 +543,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Ouvrir l'archive",
         "legal_p": "SCP Docs est une <strong>application fan non officielle</strong>. Les articles sources, crédits d'auteurs, mentions de copyright et conditions de licence restent régis par les sites sources. Les œuvres SCP sont généralement publiées sous Creative Commons BY-SA 3.0, mais chaque page source fait autorité.",
         "store_name": "SCP Docs pour iPhone",
-        "store_note": "Nécessite iOS 17 ou version ultérieure. L'interface prend en charge quinze langues : anglais, japonais, français, russe, coréen, espagnol, polonais, chinois, thaïlandais, allemand, italien, portugais, vietnamien, tchèque et chinois traditionnel.",
+        "store_note": "Nécessite iOS 17 ou version ultérieure. L'interface prend en charge seize langues : anglais, japonais, français, russe, coréen, espagnol, polonais, chinois, thaïlandais, allemand, italien, portugais, vietnamien, tchèque, chinois traditionnel et turc.",
         "store_main": "Voir sur l'App Store",
     },
     "ru": {
@@ -557,7 +557,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["Неофициальное фан-приложение", "Бесплатно + Premium", "13+", "Без аккаунта"],
         "stats": [
-            ("15", "филиалов архива"),
+            ("16", "филиалов архива"),
             ("10+", "маршрутов каталога"),
             ("0", "аккаунтов нужно"),
             ("17+", "для iOS"),
@@ -572,8 +572,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Читайте, ищите, организуйте, возвращайтесь",
         "workspace_p1": "Приложение построено вокруг Главной, Библиотеки, Поиска и Настроек. Главная служит входом в архив: продолжение чтения, пресеты поиска, случайное открытие и маршруты каталога для отчётов SCP, Tales, Canons, серий Canon, Групп Интереса, руководств и связанных коллекций.",
         "workspace_p2": "Библиотека превращает просмотр в личную полку. История, статус чтения, оценки, закладки, «прочитать позже», позиция прокрутки, заметки, папки и данные продолжения чтения остаются привязанными к открытым статьям, поэтому ваш путь по архиву виден на устройстве. Статьи автоматически открываются на последней позиции прокрутки, а материалы «прочитать позже» автоматически сохраняются для чтения офлайн.",
-        "scope_title": "Пятнадцать филиалов — один рабочий процесс",
-        "scope_p": "SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский и традиционный китайский филиалы. Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык интерфейса. SCP International и переведённые архивы перечислены там, где есть данные каталога.",
+        "scope_title": "Шестнадцать филиалов — один рабочий процесс",
+        "scope_p": "SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский, традиционный китайский и турецкий филиалы. Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык интерфейса. SCP International и переведённые архивы перечислены там, где есть данные каталога.",
         "scope_items": [
             ("Списки архива", "Начинайте с каталогов филиала: статьи SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и связанные маршруты."),
             ("Каталоги", "В каждом каталоге появился фильтр «Только непрочитанные», сортировка по номеру или официальному рейтингу и линза «С высоким рейтингом» с лучшими статьями каждого филиала."),
@@ -603,7 +603,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Открыть архив",
         "legal_p": "SCP Docs — <strong>неофициальное фанатское приложение</strong>. Исходные статьи, сведения об авторах, уведомления об авторских правах и условия лицензий регулируются исходными сайтами. Работы SCP обычно публикуются под Creative Commons BY-SA 3.0, но каждая исходная страница является основным источником.",
         "store_name": "SCP Docs для iPhone",
-        "store_note": "Требуется iOS 17 или новее. Интерфейс поддерживает английский, японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский и традиционный китайский языки.",
+        "store_note": "Требуется iOS 17 или новее. Интерфейс поддерживает английский, японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский, традиционный китайский и турецкий языки.",
         "store_main": "Открыть в App Store",
     },
     "ko": {
@@ -617,7 +617,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["비공식 팬 앱", "무료 + 프리미엄", "13+", "계정 불필요"],
         "stats": [
-            ("15", "지원 지부"),
+            ("16", "지원 지부"),
             ("10+", "아카이브 경로"),
             ("0", "필요한 계정"),
             ("17+", "지원 iOS"),
@@ -632,8 +632,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "읽고, 찾고, 정리하고, 다시 돌아오기",
         "workspace_p1": "앱은 홈, 라이브러리, 검색, 설정을 중심으로 구성됩니다. 홈은 아카이브 진입점 역할을 하며 이어 읽기, 빠른 검색 프리셋, 랜덤 발견, 그리고 SCP 보고서, Tales, Canons, Canon 시리즈, GoI, 가이드, 관련 컬렉션으로 이어지는 디렉터리 경로를 제공합니다.",
         "workspace_p2": "라이브러리는 탐색을 개인 서가로 바꿉니다. 기록, 읽음 상태, 평점, 북마크, 나중에 읽기, 스크롤 위치, 메모, 폴더, 이어 읽기 데이터가 열어 본 글에 연결되어 남아, 아카이브를 지나온 경로가 기기 안에서 보입니다. 글은 마지막 스크롤 위치에서 자동으로 다시 열리고, '나중에 읽기'에 담은 글은 자동으로 오프라인 저장됩니다.",
-        "scope_title": "15개 지부, 하나의 아카이브 흐름",
-        "scope_p": "SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 카탈로그 데이터가 있는 범위에서 SCP International과 번역 아카이브 진입점도 정리됩니다.",
+        "scope_title": "16개 지부, 하나의 아카이브 흐름",
+        "scope_p": "SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어, 터키어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 카탈로그 데이터가 있는 범위에서 SCP International과 번역 아카이브 진입점도 정리됩니다.",
         "scope_items": [
             ("아카이브 목록", "SCP 글, Tales, Canons, Canon 시리즈, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 관련 경로의 지부별 디렉터리에서 시작합니다."),
             ("카탈로그", "모든 카탈로그에 '읽지 않음만' 필터, 번호순·공식 평가순 정렬, 각 지부의 평가 상위 기사를 모은 '높은 평가 기사' 렌즈를 추가했습니다."),
@@ -663,7 +663,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "아카이브 열기",
         "legal_p": "SCP Docs는 <strong>비공식 팬 애플리케이션</strong>입니다. 원본 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원본 페이지가 우선합니다.",
         "store_name": "iPhone용 SCP Docs",
-        "store_note": "iOS 17 이상 지원. 앱 UI는 영어, 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어를 지원합니다.",
+        "store_note": "iOS 17 이상 지원. 앱 UI는 영어, 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어, 터키어를 지원합니다.",
         "store_main": "App Store에서 보기",
     },
     "es": {
@@ -677,7 +677,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["App fan no oficial", "Gratis + Premium", "13+", "Sin cuenta"],
         "stats": [
-            ("15", "ramas del archivo"),
+            ("16", "ramas del archivo"),
             ("10+", "rutas de directorio"),
             ("0", "cuentas necesarias"),
             ("17+", "hecha para iOS"),
@@ -692,8 +692,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Explora el archivo y conserva tu lugar",
         "workspace_p1": "La app se organiza en Inicio, Biblioteca, Búsqueda y Ajustes. Inicio funciona como puerta de entrada al archivo: continuar leyendo, preajustes de búsqueda, descubrimiento aleatorio y rutas de directorio hacia informes SCP, Tales, Canons, series Canon, Grupos de Interés, guías y colecciones relacionadas.",
         "workspace_p2": "La Biblioteca convierte la navegación en una estantería personal. Historial, estado de lectura, valoraciones, marcadores, leer más tarde, posición de desplazamiento, notas, carpetas y datos de reanudación quedan ligados a los artículos que abres, de modo que tu recorrido por el archivo sigue visible en el dispositivo. Los artículos se reabren automáticamente en tu última posición de desplazamiento, y los artículos de «Leer más tarde» se guardan automáticamente para leer sin conexión.",
-        "scope_title": "Quince ramas, un mismo flujo de archivo",
-        "scope_p": "SCP Docs es compatible con el archivo principal en inglés de la SCP Foundation y con las ramas japonesa, francesa, rusa, coreana, española, polaca, china, tailandesa, alemana, italiana, portuguesa, vietnamita, checa y china tradicional. Al cambiar de rama cambian el Inicio, la búsqueda, las listas integradas, los destinos de los artículos y el idioma de la interfaz. SCP International y los puntos de entrada de archivos traducidos se listan donde existen datos de catálogo.",
+        "scope_title": "Dieciséis ramas, un mismo flujo de archivo",
+        "scope_p": "SCP Docs es compatible con el archivo principal en inglés de la SCP Foundation y con las ramas japonesa, francesa, rusa, coreana, española, polaca, china, tailandesa, alemana, italiana, portuguesa, vietnamita, checa, china tradicional y turca. Al cambiar de rama cambian el Inicio, la búsqueda, las listas integradas, los destinos de los artículos y el idioma de la interfaz. SCP International y los puntos de entrada de archivos traducidos se listan donde existen datos de catálogo.",
         "scope_items": [
             ("Listas de archivo", "Empieza por los directorios de cada rama: artículos SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes y rutas relacionadas."),
             ("Catálogos", "Cada catálogo suma un filtro «Solo no leídos», orden por número o puntuación oficial, y una lente «Mejor valorados» que reúne los artículos mejor puntuados de cada rama."),
@@ -723,7 +723,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Abrir el archivo",
         "legal_p": "SCP Docs es una <strong>aplicación fan no oficial</strong>. Los artículos de origen, los créditos de autor, los avisos de copyright y las condiciones de licencia siguen rigiéndose por los sitios de origen. Las obras SCP suelen publicarse bajo Creative Commons BY-SA 3.0, pero cada página de origen es la referencia autorizada.",
         "store_name": "SCP Docs para iPhone",
-        "store_note": "Requiere iOS 17 o posterior. La interfaz está disponible en inglés, japonés, francés, ruso, coreano, español, polaco, chino, tailandés, alemán, italiano, portugués, vietnamita, checo y chino tradicional.",
+        "store_note": "Requiere iOS 17 o posterior. La interfaz está disponible en inglés, japonés, francés, ruso, coreano, español, polaco, chino, tailandés, alemán, italiano, portugués, vietnamita, checo, chino tradicional y turco.",
         "store_main": "Ver en el App Store",
     },
     "pl": {
@@ -737,7 +737,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Przewodnik",
         "badges": ["Nieoficjalna aplikacja fanowska", "Bezpłatna + Premium", "Od 13 lat", "Bez konta"],
         "stats": [
-            ("15", "oddziałów archiwum"),
+            ("16", "oddziałów archiwum"),
             ("10+", "tras katalogów"),
             ("0", "wymaganych kont"),
             ("17+", "wersja iOS"),
@@ -752,8 +752,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Przeglądaj archiwum i zachowuj swoje miejsce",
         "workspace_p1": "Aplikacja opiera się na ekranach Start, Biblioteka, Wyszukiwanie i Ustawienia. Start jest wejściem do archiwum: pozwala kontynuować czytanie, korzystać z szybkich wyszukiwań, losowo odkrywać treści i otwierać katalogi raportów SCP, Opowieści, Kanonów, serii kanonów, Grup Interesów, poradników i powiązanych zbiorów.",
         "workspace_p2": "Biblioteka zmienia przeglądanie w osobistą półkę. Historia, stan przeczytania, oceny, zakładki, lista do przeczytania, pozycja przewijania, notatki, foldery i dane kontynuacji pozostają powiązane z otwieranymi artykułami. Artykuły otwierają się automatycznie w ostatnim miejscu, a pozycje z listy „Do przeczytania” są automatycznie zapisywane do czytania offline.",
-        "scope_title": "Piętnaście oddziałów, jeden sposób pracy z archiwum",
-        "scope_p": "SCP Docs obsługuje główne angielskie archiwum SCP Foundation oraz oddziały japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski i tradycyjnego języka chińskiego. Zmiana oddziału przełącza ekran Start, wyszukiwanie, listy w aplikacji, docelowe strony artykułów i język interfejsu. SCP International i wejścia do archiwów tłumaczeń są dostępne tam, gdzie istnieją dane katalogowe.",
+        "scope_title": "Szesnaście oddziałów, jeden sposób pracy z archiwum",
+        "scope_p": "SCP Docs obsługuje główne angielskie archiwum SCP Foundation oraz oddziały japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski, tradycyjnego języka chińskiego i turecki. Zmiana oddziału przełącza ekran Start, wyszukiwanie, listy w aplikacji, docelowe strony artykułów i język interfejsu. SCP International i wejścia do archiwów tłumaczeń są dostępne tam, gdzie istnieją dane katalogowe.",
         "scope_items": [
             ("Listy archiwum", "Zacznij od katalogów właściwych dla oddziału: artykułów SCP, Opowieści, Kanonów, serii kanonów, GoI, Joke SCP, SCP-EX, kolekcji, nowych artykułów i powiązanych tras."),
             ("Katalogi", "Każdy katalog ma filtr „Tylko nieprzeczytane”, sortowanie po numerze lub oficjalnej ocenie oraz widok „Najwyżej oceniane” z najlepszymi artykułami danego oddziału."),
@@ -783,7 +783,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Otwórz archiwum",
         "legal_p": "SCP Docs jest <strong>nieoficjalną aplikacją fanowską</strong>. Artykuły źródłowe, autorstwo, informacje o prawach autorskich i warunki licencji podlegają stronom źródłowym. Utwory SCP są zwykle publikowane na licencji Creative Commons BY-SA 3.0, ale rozstrzygająca jest każda strona źródłowa.",
         "store_name": "SCP Docs na iPhone'a",
-        "store_note": "Wymaga iOS 17 lub nowszego. Interfejs obsługuje angielski, japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski i tradycyjny chiński.",
+        "store_note": "Wymaga iOS 17 lub nowszego. Interfejs obsługuje angielski, japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski, tradycyjny chiński i turecki.",
         "store_main": "Pobierz w App Store",
     },
 }
@@ -956,7 +956,7 @@ def build_added_index(lang: str) -> dict[str, str]:
           </figure>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><span class="num">15</span><span class="lbl">{s["branches_stat"]}</span></div>
+          <div class="hero-stat"><span class="num">16</span><span class="lbl">{s["branches_stat"]}</span></div>
           <div class="hero-stat"><span class="num">10+</span><span class="lbl">{s["routes_stat"]}</span></div>
           <div class="hero-stat"><span class="num">0</span><span class="lbl">{s["accounts_stat"]}</span></div>
           <div class="hero-stat"><span class="num">17+</span><span class="lbl">iOS</span></div>
