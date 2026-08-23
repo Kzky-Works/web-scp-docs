@@ -4,9 +4,9 @@
 
 ## サイトの役割
 
-| ページ | URL 例（Project Pages） | 用途 |
+| ページ | URL 例（カスタムドメイン） | 用途 |
 |--------|-------------------------|------|
-| トップ（英語・既定） | `https://kzky-works.github.io/web-scp-docs/` | **アプリ紹介**・ディスクレーマー・各ページへの導線。**Marketing URL（任意）** にもそのまま使える |
+| トップ（英語・既定） | `https://scpdocs.link/` | **アプリ紹介**・ディスクレーマー・各ページへの導線。**Marketing URL（任意）** にもそのまま使える |
 | トップ（日本語） | `.../index-ja.html` | 日本語版トップ |
 | トップ（フランス語） | `.../index-fr.html` | フランス語版トップ |
 | トップ（ロシア語） | `.../index-ru.html` | ロシア語版トップ |
@@ -115,7 +115,7 @@ GitHub **Settings → Pages → Build and deployment → Source**: **GitHub Acti
 
 | 項目 | 例 |
 |------|-----|
-| Privacy Policy URL | `https://kzky-works.github.io/web-scp-docs/privacy.html` |
+| Privacy Policy URL | `https://scpdocs.link/privacy.html` |
 | Support URL | `.../support.html` |
 | Marketing URL（任意） | トップ |
 | App Store URL | `https://apps.apple.com/jp/app/scp-docs/id6765882660` |

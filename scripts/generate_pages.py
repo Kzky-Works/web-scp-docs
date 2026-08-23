@@ -15,7 +15,7 @@ from added_locale_copy import (
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://kzky-works.github.io/web-scp-docs"
+BASE_URL = "https://scpdocs.link"
 APP_STORE_URL = "https://apps.apple.com/jp/app/scp-docs/id6765882660"
 CONTACT_EMAIL = "scpdocs_admin@proton.me"
 X_URL = "https://x.com/SCPdocs"
