@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="SCP Docs のホーム、検索、書庫、リーダー、共有カード、保存検索、読書統計、同期機能をスクリーンショット付きで紹介します。" />
-  <meta name="theme-color" content="#0a0c0e" />
+  <meta name="theme-color" content="#f4f0e6" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
   <title>機能紹介 — SCP Docs</title>
   <link rel="canonical" href="https://scpdocs.link/features-ja.html" />
@@ -58,6 +58,7 @@
           </div>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index-ja.html">ホーム</a>
+            <a href="discover-ja.html">記事を探す</a>
             <a href="features-ja.html" aria-current="page">機能</a>
             <a href="privacy-ja.html">プライバシー</a>
             <a href="support-ja.html">サポート</a>
@@ -93,6 +94,50 @@
         </div>
       </section>
 
+      <section class="capability-showcase" aria-labelledby="capability-title">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-label">最新の読書ツール</p>
+            <h2 id="capability-title" class="section-title-lg">見つける。印を残す。自分の書庫に育てる。</h2>
+          </div>
+          <span class="archive-stamp" aria-hidden="true">CURRENT<br />FIELD KIT</span>
+        </div>
+        <article class="capability-story capability-story-search">
+          <div class="capability-copy">
+            <span class="capability-number">01 / SEARCH</span>
+            <h3>調査の流れを止めない検索</h3>
+            <p>入口は「番号・キーワード」の1つだけ。検索結果を残したまま条件チップを変更でき、タグ、オブジェクトクラス、文書種別、読書状態、公式評価、長さ、メモを組み合わせられます。関連度順、入力候補、表記ゆれ・誤字の候補、保存検索の新着通知まで、手掛かりが曖昧でも次の報告書へ進めます。</p>
+          </div>
+          <figure class="capability-screen">
+            <a class="capability-image-link" href="assets/images/search-current-ja.png" target="_blank" rel="noopener">
+              <img src="assets/images/search-current-ja.png" alt="検索語と適用中の条件を、ひとつの画面で見失わない" loading="lazy" />
+            </a>
+            <figcaption>検索語と適用中の条件を、ひとつの画面で見失わない</figcaption>
+          </figure>
+        </article>
+        <article class="capability-story capability-story-library">
+          <figure class="capability-screen">
+            <a class="capability-image-link" href="assets/images/library-sections-ja.png" target="_blank" rel="noopener">
+              <img src="assets/images/library-sections-ja.png" alt="フォルダ、ハイライト、メモ、評価、履歴、保存状態をひとつの書庫へ" loading="lazy" />
+            </a>
+            <figcaption>フォルダ、ハイライト、メモ、評価、履歴、保存状態をひとつの書庫へ</figcaption>
+          </figure>
+          <div class="capability-copy capability-copy-stack">
+            <div>
+              <span class="capability-number">02 / FOLDERS</span>
+              <h3>ブックマーク一覧ではなく、ファイルのように使えるフォルダ</h3>
+              <p>プレミアムのフォルダは、ネスト、フォルダ間移動、複数選択、手動並べ替え、ドラッグ＆ドロップ、インライン名称変更、リスト／グリッド切替に対応。構成は自分の iCloud Drive 経由で同期できます。</p>
+            </div>
+            <div class="highlight-note">
+              <span class="capability-number">03 / HIGHLIGHTS</span>
+              <h3>3色のハイライトを、あとから書庫で見返す</h3>
+              <p>リーダーで気になった本文を選び、黄色・青・ピンクで保存。書庫のハイライト一覧から元の箇所へ戻れます。標準・クイック・手動の3モードで、精読、素早い記録、意図した範囲だけの保存を使い分けられ、iCloud同期にも対応します。</p>
+              <div class="highlight-swatches" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
       <section aria-labelledby="screens-title" style="margin-top:38px;">
         <p class="section-label">スクリーンショット</p>
         <h2 id="screens-title" class="section-title-lg">ワークフローに対応した画面</h2>
@@ -124,11 +169,11 @@
             <h3>ホームを書庫の地図として使う</h3>
             <dl class="dl-flat">
               <dt>支部を選ぶ</dt>
-              <dd>英語、日本語、フランス語、ロシア語、韓国語、スペイン語、ポーランド語を選択できます。ホーム、検索、一覧、記事リンク、アプリ言語がその支部の文脈に揃います。</dd>
+              <dd>英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国・スペイン・ポーランド・中国・タイ・ドイツ・イタリア・ポルトガル・ベトナム・チェコ・繁体字中国・トルコ・インドネシア支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。データがある範囲で SCP International や翻訳アーカイブの入口も整理します。</dd>
               <dt>ディレクトリから始める</dt>
               <dd>SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、ガイド類を、番号を知らない状態から探せます。各カタログには「未読のみ」フィルタ、番号順・公式評価順の並び替え、各支部の評価上位記事をまとめた「評価の高い記事」レンズを備えます。</dd>
               <dt>分かっている時は検索へ</dt>
-              <dd>番号やタイトル検索は無料で使えます。最近の検索はワンタップのチップで再利用できます。プレミアムの高度な検索ではタグ、Object Class、本文、メモ、読書状態、公式評価、長さ、保存条件まで絞り込めます。</dd>
+              <dd>入口は「番号・キーワード」の1つだけ。検索結果を残したまま条件チップを変更でき、タグ、オブジェクトクラス、文書種別、読書状態、公式評価、長さ、メモを組み合わせられます。関連度順、入力候補、表記ゆれ・誤字の候補、保存検索の新着通知まで、手掛かりが曖昧でも次の報告書へ進めます。</dd>
             </dl>
           </div>
           <div class="card">
@@ -139,7 +184,7 @@
               <dt>文脈ごと再開する</dt>
               <dd>履歴、続きから読む、読了状態、評価、メモ、スクロール位置から、同じ報告書やシリーズに戻れます。記事は前回のスクロール位置から自動的に開き、「後で読む」に入れた記事は自動でオフライン保存されます。</dd>
               <dt>長い読書を整理する</dt>
-              <dd>プレミアムでは保存上限拡張、ブックマークフォルダ、メモ編集、iCloud Drive同期、対象記事のオフライン保存を利用できます。</dd>
+              <dd>プレミアムのフォルダは、ネスト、フォルダ間移動、複数選択、手動並べ替え、ドラッグ＆ドロップ、インライン名称変更、リスト／グリッド切替に対応。構成は自分の iCloud Drive 経由で同期できます。 リーダーで気になった本文を選び、黄色・青・ピンクで保存。書庫のハイライト一覧から元の箇所へ戻れます。標準・クイック・手動の3モードで、精読、素早い記録、意図した範囲だけの保存を使い分けられ、iCloud同期にも対応します。</dd>
             </dl>
           </div>
         </div>
@@ -153,9 +198,9 @@
             <dt>特定の記事を決めずに探したい</dt>
             <dd>ホームで支部を選び、SCP、SCP-INT、Stories、Others などの書庫ルートを開きます。カタログ画面ではシリーズや番号ブロックで移動でき、タイトル、Object Class、タグ、スコア、サムネイルを見ながら探せます。</dd>
             <dt>番号、タイトル、タグ、Object Class が分かっている</dt>
-            <dd>検索を使います。番号・タイトル検索は通常利用でき、プレミアムの高度な検索では文書種別、支部、タグ、公式評価、長さ、Object Class、読書状態、メモまで絞り込めます。</dd>
+            <dd>入口は「番号・キーワード」の1つだけ。検索結果を残したまま条件チップを変更でき、タグ、オブジェクトクラス、文書種別、読書状態、公式評価、長さ、メモを組み合わせられます。関連度順、入力候補、表記ゆれ・誤字の候補、保存検索の新着通知まで、手掛かりが曖昧でも次の報告書へ進めます。</dd>
             <dt>あとで読み返したい記事を見つけた</dt>
-            <dd>リーダーやライブラリからブックマーク、後で読む、評価、メモ、フォルダに保存します。後から記憶やブラウザ履歴に頼らずライブラリで見つけられます。</dd>
+            <dd>プレミアムのフォルダは、ネスト、フォルダ間移動、複数選択、手動並べ替え、ドラッグ＆ドロップ、インライン名称変更、リスト／グリッド切替に対応。構成は自分の iCloud Drive 経由で同期できます。 リーダーで気になった本文を選び、黄色・青・ピンクで保存。書庫のハイライト一覧から元の箇所へ戻れます。標準・クイック・手動の3モードで、精読、素早い記録、意図した範囲だけの保存を使い分けられ、iCloud同期にも対応します。</dd>
             <dt>シリーズを途中で止めた</dt>
             <dd>続きから読む、ライブラリ履歴、保存済みスクロール位置、読了状態を使うと、同じ報告書や進捗に戻れます。</dd>
           </dl>
@@ -168,8 +213,8 @@
         <div class="feature-grid">
           <div class="feature-card">
             <p class="section-label">Branches</p>
-            <h3>英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語の書庫</h3>
-            <p>支部を切り替えると、ホーム、検索、一覧、記事リンク先、アプリ言語が切り替わり、それぞれの書庫をその文脈で読めます。</p>
+            <h3>17支部をひとつの読書フローに</h3>
+            <p>英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国・スペイン・ポーランド・中国・タイ・ドイツ・イタリア・ポルトガル・ベトナム・チェコ・繁体字中国・トルコ・インドネシア支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。データがある範囲で SCP International や翻訳アーカイブの入口も整理します。</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Directories</p>
@@ -183,8 +228,8 @@
           </div>
           <div class="feature-card">
             <p class="section-label">Search</p>
-            <h3>無料の高速検索とプレミアム絞り込み</h3>
-            <p>SCP番号で即オープンし、タイトル、タグ、オブジェクトクラスで検索できます。最近の検索はワンタップのチップで再利用できます。プレミアムでは対象文書、メモ、読書状態、公式評価、長さ、保存検索まで扱えます。</p>
+            <h3>調査の流れを止めない検索</h3>
+            <p>入口は「番号・キーワード」の1つだけ。検索結果を残したまま条件チップを変更でき、タグ、オブジェクトクラス、文書種別、読書状態、公式評価、長さ、メモを組み合わせられます。関連度順、入力候補、表記ゆれ・誤字の候補、保存検索の新着通知まで、手掛かりが曖昧でも次の報告書へ進めます。</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Reader</p>
@@ -193,8 +238,8 @@
           </div>
           <div class="feature-card">
             <p class="section-label">Library</p>
-            <h3>戻ってくるための場所</h3>
-            <p>閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、続きから読むデータを端末内で整理します。記事は前回のスクロール位置から自動的に開き、「後で読む」に入れた記事は自動でオフライン保存されます。</p>
+            <h3>ブックマーク一覧ではなく、ファイルのように使えるフォルダ</h3>
+            <p>プレミアムのフォルダは、ネスト、フォルダ間移動、複数選択、手動並べ替え、ドラッグ＆ドロップ、インライン名称変更、リスト／グリッド切替に対応。構成は自分の iCloud Drive 経由で同期できます。 リーダーで気になった本文を選び、黄色・青・ピンクで保存。書庫のハイライト一覧から元の箇所へ戻れます。標準・クイック・手動の3モードで、精読、素早い記録、意図した範囲だけの保存を使い分けられ、iCloud同期にも対応します。</p>
           </div>
           <div class="feature-card">
             <p class="section-label">Share</p>
@@ -236,6 +281,7 @@
               <tr><td>読み上げ（TTS）</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
               <tr><td>保存検索と新着通知</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
               <tr><td>ブックマークフォルダと iCloud 同期</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+              <tr><td>3色ハイライトと書庫からの見返し</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
             </tbody>
           </table>
         </div>

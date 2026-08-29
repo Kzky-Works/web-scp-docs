@@ -79,6 +79,12 @@
 python3 scripts/generate_pages.py
 ```
 
+日本語の「記事を探す」は、隣接する公開データリポジトリの JP カタログから軽量スナップショットを生成する。本文は含めず、タイトル、公式URL、タグ、文字数、Wiki評価だけを利用する。
+
+```bash
+python3 scripts/build_discovery_catalog.py
+```
+
 ## 記事共有リンク
 
 X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載せる。`open/` は端末言語または前回選択した言語に対応する公式支部記事へ振り分ける。iOS ではユーザーが押す `Open in SCP docs` のクリック処理内で `scpdocs://` へ遷移し、公式 Wiki、App Storeの3導線を同じ画面に表示する。ページ読み込み時の自動アプリ起動や自動App Store転送は行わない。

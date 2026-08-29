@@ -258,6 +258,8 @@ def nav(page: str, active_lang: str) -> str:
     for item in PAGE_ORDER:
         current = ' aria-current="page"' if item == page else ""
         rows.append(f'            <a href="{page_file(item, active_lang)}"{current}>{lang.nav[item]}</a>')
+        if active_lang == "ja" and item == "index":
+            rows.append('            <a href="discover-ja.html">記事を探す</a>')
     rows.append(
         '            <a class="nav-store" href="{}" target="_blank"\n'
         '              rel="noopener noreferrer">App Store</a>'.format(APP_STORE_URL)
@@ -333,7 +335,7 @@ def layout(
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="{escape(description, quote=True)}" />
-  <meta name="theme-color" content="#0a0c0e" />
+  <meta name="theme-color" content="#f4f0e6" />
   <link rel="icon" href="data:image/svg+xml,{FAVICON_SVG}" />
   <title>{escape(title)}</title>
   <link rel="canonical" href="{page_url(page, lang_code)}" />
@@ -377,7 +379,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["Unofficial fan app", "Free + Premium", "Rated 13+", "No account needed"],
         "stats": [
-            ("16", "archive branches"),
+            ("17", "archive branches"),
             ("10+", "directory routes"),
             ("0", "accounts required"),
             ("17+", "built for iOS"),
@@ -392,12 +394,12 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Browse the archive, then keep your place",
         "workspace_p1": "The app is organized around Home, Library, Search, and Settings. Home acts as the archive entry point, with continue-reading, quick search presets, random discovery, and directory routes for SCP reports, Tales, Canons, Canon series, Groups of Interest, guides, and related collections.",
         "workspace_p2": "Library turns browsing into a personal shelf. History, read status, ratings, bookmarks, read-later items, scroll position, memos, folders, and resume-reading data stay tied to the articles you open, so your path through the archive remains visible on device. Articles reopen automatically at your last scroll position, and Read Later items are stored for offline reading automatically.",
-        "scope_title": "Sixteen branches, one archive workflow",
-        "scope_p": "SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, Traditional Chinese, and Turkish branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.",
+        "scope_title": "Seventeen branches, one archive workflow",
+        "scope_p": "SCP Docs supports the English main SCP Foundation archive plus the Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, Traditional Chinese, Turkish, and Indonesian branches. Switching branches changes Home, search, in-app lists, article destinations, and the app UI language. SCP International and translated archive entry points are listed where catalog data is available.",
         "scope_items": [
             ("Archive lists", "Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes."),
             ("Catalogs", "Every catalog adds an \"Unread only\" filter, sort by number or official rating, and a \"Top rated\" lens gathering each branch's highest-rated articles."),
-            ("Search", "Jump directly by number or title for free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches."),
+            ("Search", "Search by number or title for free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches."),
             ("Library", "Save articles as bookmarks or read-later items, rate them, add memos, group favorites into folders, and resume from stored scroll positions."),
             ("Reader", "Cleaner typography, themes, scroll tools, better dark mode, and more faithful rendering for specially formatted source pages."),
         ],
@@ -423,7 +425,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Open the archive",
         "legal_p": "SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.",
         "store_name": "SCP Docs for iPhone",
-        "store_note": "Built for iOS 17 and later. App UI supports sixteen languages, including English, Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, Traditional Chinese, and Turkish.",
+        "store_note": "Built for iOS 17 and later. App UI supports seventeen languages, including English, Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, Traditional Chinese, Turkish, and Indonesian.",
         "store_main": "Get on the App Store",
     },
     "ja": {
@@ -437,7 +439,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["非公式ファンアプリ", "無料 + プレミアム", "13+", "アカウント不要"],
         "stats": [
-            ("16", "対応支部"),
+            ("17", "対応支部"),
             ("10+", "書庫ルート"),
             ("0", "必要なアカウント"),
             ("17+", "対応 iOS"),
@@ -452,8 +454,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "読む、探す、整理する、戻ってくる",
         "workspace_p1": "アプリはホーム、書庫、検索、設定を中心に構成されています。現在のホームは「続きから読む」、検索プリセット、ランダム発見、Stories / Tales / Canons / Series / GoI / ガイド類などへ進む整理されたディレクトリを備えます。",
         "workspace_p2": "閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、フォルダ、続きから読むデータを記事に結びつけて保存し、読んできた経路を端末内で見失いにくくします。記事は前回のスクロール位置から自動的に開き、「後で読む」に入れた記事は自動でオフライン保存されます。",
-        "scope_title": "16支部をひとつの読書フローに",
-        "scope_p": "英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国・スペイン・ポーランド・中国・タイ・ドイツ・イタリア・ポルトガル・ベトナム・チェコ・繁体字中国・トルコ支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。カタログデータがある範囲で SCP International や翻訳アーカイブの入口も整理します。",
+        "scope_title": "17支部をひとつの読書フローに",
+        "scope_p": "英語本家 SCP Foundation アーカイブと、日本・フランス・ロシア・韓国・スペイン・ポーランド・中国・タイ・ドイツ・イタリア・ポルトガル・ベトナム・チェコ・繁体字中国・トルコ・インドネシア支部に対応しています。支部を切り替えると、ホーム、検索、アプリ内リスト、記事リンク先、アプリUI言語が切り替わります。データがある範囲で SCP International や翻訳アーカイブの入口も整理します。",
         "scope_items": [
             ("書庫リスト", "SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、関連ディレクトリ。"),
             ("カタログ", "各カタログに「未読のみ」フィルタ、番号順・公式評価順の並び替え、各支部の評価上位記事をまとめた「評価の高い記事」レンズを追加。"),
@@ -483,7 +485,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "書庫を開く",
         "legal_p": "SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。",
         "store_name": "SCP Docs for iPhone",
-        "store_note": "iOS 17以降に対応。アプリUIは英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語・簡体字中国語・タイ語・ドイツ語・イタリア語・ポルトガル語・ベトナム語・チェコ語・繁体字中国語・トルコ語に対応しています。",
+        "store_note": "iOS 17以降に対応。アプリUIは英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語・簡体字中国語・タイ語・ドイツ語・イタリア語・ポルトガル語・ベトナム語・チェコ語・繁体字中国語・トルコ語・インドネシア語に対応しています。",
         "store_main": "App Store で見る",
     },
     "fr": {
@@ -497,7 +499,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["App fan non officielle", "Gratuit + Premium", "13+", "Sans compte"],
         "stats": [
-            ("16", "branches d'archives"),
+            ("17", "branches d'archives"),
             ("10+", "routes d'archive"),
             ("0", "compte requis"),
             ("17+", "conçu pour iOS"),
@@ -512,8 +514,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Lire, chercher, organiser, reprendre",
         "workspace_p1": "L'app s'organise autour d'Accueil, Bibliothèque, Recherche et Réglages. L'accueil met en avant la reprise de lecture, les préréglages de recherche, la découverte aléatoire et des itinéraires plus clairs vers Stories, Tales, Canons, Series, GoI, guides et collections associées.",
         "workspace_p2": "Historique, état lu/non lu, notes, favoris, éléments à lire plus tard, position de défilement, mémos, dossiers et reprise de lecture restent liés aux articles ouverts, pour garder votre parcours visible sur l'appareil. Les articles se rouvrent automatiquement à votre dernière position de défilement, et les éléments « À lire plus tard » sont stockés automatiquement hors ligne.",
-        "scope_title": "Seize branches, un même flux de lecture",
-        "scope_p": "SCP Docs prend en charge l'archive principale anglaise de la SCP Foundation ainsi que les branches japonaise, française, russe, coréenne, espagnole, polonaise, chinoise, thaïlandaise, allemande, italienne, portugaise, vietnamienne, tchèque, chinoise traditionnelle et turque. Changer de branche modifie l'accueil, la recherche, les listes intégrées, les destinations d'articles et la langue de l'interface. SCP International et les archives traduites sont listés lorsque les données de catalogue existent.",
+        "scope_title": "Dix-sept branches, un même flux de lecture",
+        "scope_p": "SCP Docs prend en charge l'archive principale anglaise de la SCP Foundation ainsi que les branches japonaise, française, russe, coréenne, espagnole, polonaise, chinoise, thaïlandaise, allemande, italienne, portugaise, vietnamienne, tchèque, chinoise traditionnelle, turque et indonésienne. Changer de branche modifie l'accueil, la recherche, les listes intégrées, les destinations d'articles et la langue de l'interface. SCP International et les archives traduites sont listés lorsque les données existent.",
         "scope_items": [
             ("Listes d'archives", "SCP, Tales, Canons, séries Canon, GoI, Joke SCP, SCP-EX, collections, articles récents et répertoires associés."),
             ("Catalogues", "Chaque catalogue ajoute un filtre « Non lus », un tri par numéro ou note officielle, et une loupe « Les mieux notés » réunissant les articles les mieux notés de chaque branche."),
@@ -543,7 +545,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Ouvrir l'archive",
         "legal_p": "SCP Docs est une <strong>application fan non officielle</strong>. Les articles sources, crédits d'auteurs, mentions de copyright et conditions de licence restent régis par les sites sources. Les œuvres SCP sont généralement publiées sous Creative Commons BY-SA 3.0, mais chaque page source fait autorité.",
         "store_name": "SCP Docs pour iPhone",
-        "store_note": "Nécessite iOS 17 ou version ultérieure. L'interface prend en charge seize langues : anglais, japonais, français, russe, coréen, espagnol, polonais, chinois, thaïlandais, allemand, italien, portugais, vietnamien, tchèque, chinois traditionnel et turc.",
+        "store_note": "Nécessite iOS 17 ou version ultérieure. L'interface prend en charge dix-sept langues : anglais, japonais, français, russe, coréen, espagnol, polonais, chinois, thaïlandais, allemand, italien, portugais, vietnamien, tchèque, chinois traditionnel, turc et indonésien.",
         "store_main": "Voir sur l'App Store",
     },
     "ru": {
@@ -557,7 +559,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["Неофициальное фан-приложение", "Бесплатно + Premium", "13+", "Без аккаунта"],
         "stats": [
-            ("16", "филиалов архива"),
+            ("17", "филиалов архива"),
             ("10+", "маршрутов каталога"),
             ("0", "аккаунтов нужно"),
             ("17+", "для iOS"),
@@ -572,8 +574,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Читайте, ищите, организуйте, возвращайтесь",
         "workspace_p1": "Приложение построено вокруг Главной, Библиотеки, Поиска и Настроек. Главная служит входом в архив: продолжение чтения, пресеты поиска, случайное открытие и маршруты каталога для отчётов SCP, Tales, Canons, серий Canon, Групп Интереса, руководств и связанных коллекций.",
         "workspace_p2": "Библиотека превращает просмотр в личную полку. История, статус чтения, оценки, закладки, «прочитать позже», позиция прокрутки, заметки, папки и данные продолжения чтения остаются привязанными к открытым статьям, поэтому ваш путь по архиву виден на устройстве. Статьи автоматически открываются на последней позиции прокрутки, а материалы «прочитать позже» автоматически сохраняются для чтения офлайн.",
-        "scope_title": "Шестнадцать филиалов — один рабочий процесс",
-        "scope_p": "SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский, традиционный китайский и турецкий филиалы. Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык интерфейса. SCP International и переведённые архивы перечислены там, где есть данные каталога.",
+        "scope_title": "Семнадцать филиалов — один рабочий процесс",
+        "scope_p": "SCP Docs поддерживает основной английский архив SCP Foundation, а также японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский, традиционный китайский, турецкий и индонезийский филиалы. Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык интерфейса. SCP International и переведённые архивы перечислены там, где есть данные.",
         "scope_items": [
             ("Списки архива", "Начинайте с каталогов филиала: статьи SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и связанные маршруты."),
             ("Каталоги", "В каждом каталоге появился фильтр «Только непрочитанные», сортировка по номеру или официальному рейтингу и линза «С высоким рейтингом» с лучшими статьями каждого филиала."),
@@ -603,7 +605,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Открыть архив",
         "legal_p": "SCP Docs — <strong>неофициальное фанатское приложение</strong>. Исходные статьи, сведения об авторах, уведомления об авторских правах и условия лицензий регулируются исходными сайтами. Работы SCP обычно публикуются под Creative Commons BY-SA 3.0, но каждая исходная страница является основным источником.",
         "store_name": "SCP Docs для iPhone",
-        "store_note": "Требуется iOS 17 или новее. Интерфейс поддерживает английский, японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский, традиционный китайский и турецкий языки.",
+        "store_note": "Требуется iOS 17 или новее. Интерфейс поддерживает английский, японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский, традиционный китайский, турецкий и индонезийский языки.",
         "store_main": "Открыть в App Store",
     },
     "ko": {
@@ -617,7 +619,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["비공식 팬 앱", "무료 + 프리미엄", "13+", "계정 불필요"],
         "stats": [
-            ("16", "지원 지부"),
+            ("17", "지원 지부"),
             ("10+", "아카이브 경로"),
             ("0", "필요한 계정"),
             ("17+", "지원 iOS"),
@@ -632,8 +634,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "읽고, 찾고, 정리하고, 다시 돌아오기",
         "workspace_p1": "앱은 홈, 라이브러리, 검색, 설정을 중심으로 구성됩니다. 홈은 아카이브 진입점 역할을 하며 이어 읽기, 빠른 검색 프리셋, 랜덤 발견, 그리고 SCP 보고서, Tales, Canons, Canon 시리즈, GoI, 가이드, 관련 컬렉션으로 이어지는 디렉터리 경로를 제공합니다.",
         "workspace_p2": "라이브러리는 탐색을 개인 서가로 바꿉니다. 기록, 읽음 상태, 평점, 북마크, 나중에 읽기, 스크롤 위치, 메모, 폴더, 이어 읽기 데이터가 열어 본 글에 연결되어 남아, 아카이브를 지나온 경로가 기기 안에서 보입니다. 글은 마지막 스크롤 위치에서 자동으로 다시 열리고, '나중에 읽기'에 담은 글은 자동으로 오프라인 저장됩니다.",
-        "scope_title": "16개 지부, 하나의 아카이브 흐름",
-        "scope_p": "SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어, 터키어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 카탈로그 데이터가 있는 범위에서 SCP International과 번역 아카이브 진입점도 정리됩니다.",
+        "scope_title": "17개 지부, 하나의 아카이브 흐름",
+        "scope_p": "SCP Docs는 영어 본가 SCP Foundation 아카이브와 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어, 터키어, 인도네시아어 지부를 지원합니다. 지부를 바꾸면 홈, 검색, 앱 내 목록, 글 링크 대상, 앱 UI 언어가 함께 바뀝니다. 데이터가 있는 범위에서 SCP International과 번역 아카이브 진입점도 정리됩니다.",
         "scope_items": [
             ("아카이브 목록", "SCP 글, Tales, Canons, Canon 시리즈, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 관련 경로의 지부별 디렉터리에서 시작합니다."),
             ("카탈로그", "모든 카탈로그에 '읽지 않음만' 필터, 번호순·공식 평가순 정렬, 각 지부의 평가 상위 기사를 모은 '높은 평가 기사' 렌즈를 추가했습니다."),
@@ -663,7 +665,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "아카이브 열기",
         "legal_p": "SCP Docs는 <strong>비공식 팬 애플리케이션</strong>입니다. 원본 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원본 페이지가 우선합니다.",
         "store_name": "iPhone용 SCP Docs",
-        "store_note": "iOS 17 이상 지원. 앱 UI는 영어, 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어, 터키어를 지원합니다.",
+        "store_note": "iOS 17 이상 지원. 앱 UI는 영어, 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어, 터키어, 인도네시아어를 지원합니다.",
         "store_main": "App Store에서 보기",
     },
     "es": {
@@ -677,7 +679,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Field guide",
         "badges": ["App fan no oficial", "Gratis + Premium", "13+", "Sin cuenta"],
         "stats": [
-            ("16", "ramas del archivo"),
+            ("17", "ramas del archivo"),
             ("10+", "rutas de directorio"),
             ("0", "cuentas necesarias"),
             ("17+", "hecha para iOS"),
@@ -692,8 +694,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Explora el archivo y conserva tu lugar",
         "workspace_p1": "La app se organiza en Inicio, Biblioteca, Búsqueda y Ajustes. Inicio funciona como puerta de entrada al archivo: continuar leyendo, preajustes de búsqueda, descubrimiento aleatorio y rutas de directorio hacia informes SCP, Tales, Canons, series Canon, Grupos de Interés, guías y colecciones relacionadas.",
         "workspace_p2": "La Biblioteca convierte la navegación en una estantería personal. Historial, estado de lectura, valoraciones, marcadores, leer más tarde, posición de desplazamiento, notas, carpetas y datos de reanudación quedan ligados a los artículos que abres, de modo que tu recorrido por el archivo sigue visible en el dispositivo. Los artículos se reabren automáticamente en tu última posición de desplazamiento, y los artículos de «Leer más tarde» se guardan automáticamente para leer sin conexión.",
-        "scope_title": "Dieciséis ramas, un mismo flujo de archivo",
-        "scope_p": "SCP Docs es compatible con el archivo principal en inglés de la SCP Foundation y con las ramas japonesa, francesa, rusa, coreana, española, polaca, china, tailandesa, alemana, italiana, portuguesa, vietnamita, checa, china tradicional y turca. Al cambiar de rama cambian el Inicio, la búsqueda, las listas integradas, los destinos de los artículos y el idioma de la interfaz. SCP International y los puntos de entrada de archivos traducidos se listan donde existen datos de catálogo.",
+        "scope_title": "Diecisiete ramas, un mismo flujo de archivo",
+        "scope_p": "SCP Docs es compatible con el archivo principal en inglés de la SCP Foundation y con las ramas japonesa, francesa, rusa, coreana, española, polaca, china, tailandesa, alemana, italiana, portuguesa, vietnamita, checa, china tradicional, turca e indonesia. Al cambiar de rama cambian el Inicio, la búsqueda, las listas integradas, los destinos de los artículos y el idioma de la interfaz. SCP International y los archivos traducidos se listan donde existen datos.",
         "scope_items": [
             ("Listas de archivo", "Empieza por los directorios de cada rama: artículos SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes y rutas relacionadas."),
             ("Catálogos", "Cada catálogo suma un filtro «Solo no leídos», orden por número o puntuación oficial, y una lente «Mejor valorados» que reúne los artículos mejor puntuados de cada rama."),
@@ -723,7 +725,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Abrir el archivo",
         "legal_p": "SCP Docs es una <strong>aplicación fan no oficial</strong>. Los artículos de origen, los créditos de autor, los avisos de copyright y las condiciones de licencia siguen rigiéndose por los sitios de origen. Las obras SCP suelen publicarse bajo Creative Commons BY-SA 3.0, pero cada página de origen es la referencia autorizada.",
         "store_name": "SCP Docs para iPhone",
-        "store_note": "Requiere iOS 17 o posterior. La interfaz está disponible en inglés, japonés, francés, ruso, coreano, español, polaco, chino, tailandés, alemán, italiano, portugués, vietnamita, checo, chino tradicional y turco.",
+        "store_note": "Requiere iOS 17 o posterior. La interfaz está disponible en inglés, japonés, francés, ruso, coreano, español, polaco, chino, tailandés, alemán, italiano, portugués, vietnamita, checo, chino tradicional, turco e indonesio.",
         "store_main": "Ver en el App Store",
     },
     "pl": {
@@ -737,7 +739,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta2_sub": "Przewodnik",
         "badges": ["Nieoficjalna aplikacja fanowska", "Bezpłatna + Premium", "Od 13 lat", "Bez konta"],
         "stats": [
-            ("16", "oddziałów archiwum"),
+            ("17", "oddziałów archiwum"),
             ("10+", "tras katalogów"),
             ("0", "wymaganych kont"),
             ("17+", "wersja iOS"),
@@ -752,8 +754,8 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "workspace_title": "Przeglądaj archiwum i zachowuj swoje miejsce",
         "workspace_p1": "Aplikacja opiera się na ekranach Start, Biblioteka, Wyszukiwanie i Ustawienia. Start jest wejściem do archiwum: pozwala kontynuować czytanie, korzystać z szybkich wyszukiwań, losowo odkrywać treści i otwierać katalogi raportów SCP, Opowieści, Kanonów, serii kanonów, Grup Interesów, poradników i powiązanych zbiorów.",
         "workspace_p2": "Biblioteka zmienia przeglądanie w osobistą półkę. Historia, stan przeczytania, oceny, zakładki, lista do przeczytania, pozycja przewijania, notatki, foldery i dane kontynuacji pozostają powiązane z otwieranymi artykułami. Artykuły otwierają się automatycznie w ostatnim miejscu, a pozycje z listy „Do przeczytania” są automatycznie zapisywane do czytania offline.",
-        "scope_title": "Szesnaście oddziałów, jeden sposób pracy z archiwum",
-        "scope_p": "SCP Docs obsługuje główne angielskie archiwum SCP Foundation oraz oddziały japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski, tradycyjnego języka chińskiego i turecki. Zmiana oddziału przełącza ekran Start, wyszukiwanie, listy w aplikacji, docelowe strony artykułów i język interfejsu. SCP International i wejścia do archiwów tłumaczeń są dostępne tam, gdzie istnieją dane katalogowe.",
+        "scope_title": "Siedemnaście oddziałów, jeden sposób pracy z archiwum",
+        "scope_p": "SCP Docs obsługuje główne angielskie archiwum SCP Foundation oraz oddziały japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski, tradycyjnego języka chińskiego, turecki i indonezyjski. Zmiana oddziału przełącza ekran Start, wyszukiwanie, listy, docelowe strony artykułów i język interfejsu. SCP International i archiwa tłumaczeń są dostępne tam, gdzie istnieją dane.",
         "scope_items": [
             ("Listy archiwum", "Zacznij od katalogów właściwych dla oddziału: artykułów SCP, Opowieści, Kanonów, serii kanonów, GoI, Joke SCP, SCP-EX, kolekcji, nowych artykułów i powiązanych tras."),
             ("Katalogi", "Każdy katalog ma filtr „Tylko nieprzeczytane”, sortowanie po numerze lub oficjalnej ocenie oraz widok „Najwyżej oceniane” z najlepszymi artykułami danego oddziału."),
@@ -783,10 +785,206 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_title": "Otwórz archiwum",
         "legal_p": "SCP Docs jest <strong>nieoficjalną aplikacją fanowską</strong>. Artykuły źródłowe, autorstwo, informacje o prawach autorskich i warunki licencji podlegają stronom źródłowym. Utwory SCP są zwykle publikowane na licencji Creative Commons BY-SA 3.0, ale rozstrzygająca jest każda strona źródłowa.",
         "store_name": "SCP Docs na iPhone'a",
-        "store_note": "Wymaga iOS 17 lub nowszego. Interfejs obsługuje angielski, japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski, tradycyjny chiński i turecki.",
+        "store_note": "Wymaga iOS 17 lub nowszego. Interfejs obsługuje angielski, japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski, tradycyjny chiński, turecki i indonezyjski.",
         "store_main": "Pobierz w App Store",
     },
 }
+
+
+BRANCH_COUNT = "17"
+
+HERO_HEADINGS = {
+    "en": "The archive,<br />made <span class=\"accent\">readable.</span>",
+    "ja": "収容記録を、<br /><span class=\"accent\">読む人の手元へ。</span>",
+    "fr": "Les archives,<br /><span class=\"accent\">enfin lisibles.</span>",
+    "ru": "Архив,<br /><span class=\"accent\">который удобно читать.</span>",
+    "ko": "아카이브를,<br /><span class=\"accent\">읽는 사람의 손에.</span>",
+    "es": "El archivo,<br /><span class=\"accent\">hecho para leer.</span>",
+    "pl": "Archiwum,<br /><span class=\"accent\">które da się czytać.</span>",
+    "cs": "Archiv,<br /><span class=\"accent\">který se dobře čte.</span>",
+    "de": "Das Archiv,<br /><span class=\"accent\">lesbar gemacht.</span>",
+    "it": "L'archivio,<br /><span class=\"accent\">pensato per leggere.</span>",
+    "pt-BR": "O arquivo,<br /><span class=\"accent\">feito para ler.</span>",
+    "th": "คลังข้อมูล<br /><span class=\"accent\">ที่สร้างมาเพื่อการอ่าน</span>",
+    "vi": "Kho lưu trữ,<br /><span class=\"accent\">được tạo để đọc.</span>",
+    "zh-Hans": "让档案，<br /><span class=\"accent\">真正适合阅读。</span>",
+    "zh-Hant": "讓檔案，<br /><span class=\"accent\">真正適合閱讀。</span>",
+    "tr": "Arşiv,<br /><span class=\"accent\">okumak için tasarlandı.</span>",
+}
+
+FEATURE_SPOTLIGHT_COPY = {
+    "en": {
+        "label": "Current field kit",
+        "title": "Find the file. Mark the passage. Build your own archive.",
+        "search_title": "Search that keeps the investigation moving",
+        "search_body": "Start from one persistent number-or-keyword field. Results stay visible while condition chips change; tag, Object Class, document type, reading state, score, length, and memo filters can be combined. Ranked matches, suggestions, typo guidance, and saved-search alerts help when you know only part of the trail.",
+        "organize_title": "Folders that work like files, not a flat bookmark list",
+        "organize_body": "Premium folders support nesting, moving, multi-select actions, manual ordering, drag and drop, inline renaming, and list or grid views. Folder structure can sync through your own iCloud Drive.",
+        "highlight_title": "Three-color highlights, ready to revisit",
+        "highlight_body": "Select a passage in the reader, save it in yellow, blue, or pink, and return to it from the Library. Standard, quick, and manual interaction modes adapt the tool to careful reading, fast capture, or deliberate markup; highlights can sync through iCloud.",
+        "search_caption": "Search keeps the query and active conditions in one place",
+        "library_caption": "Library gathers folders, highlights, memos, ratings, history, and saved state",
+    },
+    "ja": {
+        "label": "最新の読書ツール",
+        "title": "見つける。印を残す。自分の書庫に育てる。",
+        "search_title": "調査の流れを止めない検索",
+        "search_body": "入口は「番号・キーワード」の1つだけ。検索結果を残したまま条件チップを変更でき、タグ、オブジェクトクラス、文書種別、読書状態、公式評価、長さ、メモを組み合わせられます。関連度順、入力候補、表記ゆれ・誤字の候補、保存検索の新着通知まで、手掛かりが曖昧でも次の報告書へ進めます。",
+        "organize_title": "ブックマーク一覧ではなく、ファイルのように使えるフォルダ",
+        "organize_body": "プレミアムのフォルダは、ネスト、フォルダ間移動、複数選択、手動並べ替え、ドラッグ＆ドロップ、インライン名称変更、リスト／グリッド切替に対応。構成は自分の iCloud Drive 経由で同期できます。",
+        "highlight_title": "3色のハイライトを、あとから書庫で見返す",
+        "highlight_body": "リーダーで気になった本文を選び、黄色・青・ピンクで保存。書庫のハイライト一覧から元の箇所へ戻れます。標準・クイック・手動の3モードで、精読、素早い記録、意図した範囲だけの保存を使い分けられ、iCloud同期にも対応します。",
+        "search_caption": "検索語と適用中の条件を、ひとつの画面で見失わない",
+        "library_caption": "フォルダ、ハイライト、メモ、評価、履歴、保存状態をひとつの書庫へ",
+    },
+    "fr": {
+        "label": "Outils de lecture actuels",
+        "title": "Trouver le dossier. Marquer le passage. Construire ses archives.",
+        "search_title": "Une recherche qui ne casse pas le fil",
+        "search_body": "Un seul champ persistant accueille numéro ou mot-clé. Les résultats restent visibles pendant l'ajustement des filtres : tags, classe d'objet, type de document, état de lecture, note, longueur et mémos. Classement, suggestions, correction de saisie et alertes de recherches enregistrées aident même avec un indice incomplet.",
+        "organize_title": "Des dossiers qui fonctionnent comme de vrais fichiers",
+        "organize_body": "Les dossiers Premium prennent en charge l'imbrication, le déplacement, la sélection multiple, l'ordre manuel, le glisser-déposer, le renommage direct et les vues liste ou grille. Leur structure peut se synchroniser via votre iCloud Drive.",
+        "highlight_title": "Trois couleurs de surlignage à retrouver ensuite",
+        "highlight_body": "Sélectionnez un passage, enregistrez-le en jaune, bleu ou rose, puis retrouvez-le dans la Bibliothèque. Les modes standard, rapide et manuel s'adaptent à la lecture attentive ou à la capture immédiate, avec synchronisation iCloud.",
+        "search_caption": "La requête et les critères actifs restent réunis",
+        "library_caption": "Dossiers, surlignages, mémos, notes, historique et état sauvegardé",
+    },
+    "ru": {
+        "label": "Актуальные инструменты",
+        "title": "Найдите файл. Отметьте фрагмент. Соберите свой архив.",
+        "search_title": "Поиск, который не прерывает расследование",
+        "search_body": "Единое постоянное поле принимает номер или ключевые слова. Результаты остаются на экране при изменении тегов, класса объекта, типа документа, статуса чтения, рейтинга, длины и заметок. Ранжирование, подсказки, исправление опечаток и уведомления сохранённых поисков помогают даже по неполному следу.",
+        "organize_title": "Папки как файлы, а не плоский список закладок",
+        "organize_body": "Premium-папки поддерживают вложенность, перемещение, множественный выбор, ручной порядок, перетаскивание, переименование и виды списком или сеткой. Структура может синхронизироваться через ваш iCloud Drive.",
+        "highlight_title": "Трёхцветные выделения, к которым можно вернуться",
+        "highlight_body": "Выделите фрагмент жёлтым, синим или розовым и откройте его позже из Библиотеки. Стандартный, быстрый и ручной режимы подходят для внимательного чтения и быстрой фиксации; выделения синхронизируются через iCloud.",
+        "search_caption": "Запрос и активные условия остаются в одном месте",
+        "library_caption": "Папки, выделения, заметки, оценки, история и сохранённое состояние",
+    },
+    "ko": {
+        "label": "최신 읽기 도구",
+        "title": "문서를 찾고, 구절을 표시하고, 나만의 아카이브를 만드세요.",
+        "search_title": "조사의 흐름을 끊지 않는 검색",
+        "search_body": "하나의 상시 번호·키워드 입력란에서 시작합니다. 결과를 유지한 채 태그, Object Class, 문서 종류, 읽기 상태, 공식 평점, 길이, 메모 조건을 조정할 수 있습니다. 관련도 정렬, 제안, 오타 안내, 저장 검색 알림이 단서가 일부뿐일 때도 다음 문서로 이끕니다.",
+        "organize_title": "평면 북마크가 아닌 파일처럼 쓰는 폴더",
+        "organize_body": "프리미엄 폴더는 중첩, 이동, 다중 선택, 수동 정렬, 드래그 앤 드롭, 인라인 이름 변경, 목록·그리드 보기를 지원합니다. 폴더 구조는 사용자의 iCloud Drive를 통해 동기화할 수 있습니다.",
+        "highlight_title": "세 가지 색으로 표시하고 다시 찾아보기",
+        "highlight_body": "리더에서 구절을 선택해 노랑, 파랑, 분홍으로 저장하고 라이브러리에서 원문으로 돌아갈 수 있습니다. 표준·빠른·수동 모드는 정독과 빠른 기록에 맞게 동작하며 iCloud 동기화를 지원합니다.",
+        "search_caption": "검색어와 적용 조건을 한 화면에 유지",
+        "library_caption": "폴더, 하이라이트, 메모, 평점, 기록, 저장 상태를 한곳에",
+    },
+    "es": {
+        "label": "Herramientas actuales",
+        "title": "Encuentra el expediente. Marca el pasaje. Construye tu archivo.",
+        "search_title": "Una búsqueda que mantiene el hilo",
+        "search_body": "Empieza en un único campo persistente para número o palabra clave. Los resultados siguen visibles al cambiar etiquetas, Clase de Objeto, tipo, estado de lectura, puntuación, longitud y notas. El orden por relevancia, las sugerencias, la ayuda con errores y los avisos de búsquedas guardadas sirven incluso con una pista incompleta.",
+        "organize_title": "Carpetas que funcionan como archivos reales",
+        "organize_body": "Las carpetas Premium admiten anidación, traslado, selección múltiple, orden manual, arrastrar y soltar, cambio de nombre y vistas de lista o cuadrícula. La estructura puede sincronizarse mediante tu iCloud Drive.",
+        "highlight_title": "Resaltados en tres colores para volver después",
+        "highlight_body": "Selecciona un pasaje, guárdalo en amarillo, azul o rosa y recupéralo desde la Biblioteca. Los modos estándar, rápido y manual se adaptan a la lectura atenta o a la captura inmediata, con sincronización iCloud.",
+        "search_caption": "Consulta y condiciones activas permanecen juntas",
+        "library_caption": "Carpetas, resaltados, notas, valoraciones, historial y estado guardado",
+    },
+    "pl": {
+        "label": "Aktualne narzędzia",
+        "title": "Znajdź akta. Zaznacz fragment. Zbuduj własne archiwum.",
+        "search_title": "Wyszukiwanie bez gubienia wątku",
+        "search_body": "Jedno stałe pole przyjmuje numer lub słowo kluczowe. Wyniki pozostają widoczne podczas zmiany tagów, Klasy Obiektu, typu dokumentu, stanu czytania, oceny, długości i notatek. Trafność, podpowiedzi, korekta literówek i alerty zapisanych wyszukiwań pomagają nawet przy niepełnym tropie.",
+        "organize_title": "Foldery działające jak pliki, nie płaska lista zakładek",
+        "organize_body": "Foldery Premium obsługują zagnieżdżanie, przenoszenie, wielokrotny wybór, ręczną kolejność, przeciąganie, zmianę nazwy oraz widok listy lub siatki. Struktura może synchronizować się przez własny iCloud Drive.",
+        "highlight_title": "Trzy kolory zaznaczeń do późniejszego powrotu",
+        "highlight_body": "Zaznacz fragment na żółto, niebiesko lub różowo i wróć do niego z Biblioteki. Tryby standardowy, szybki i ręczny wspierają uważne czytanie i szybkie notowanie, a zaznaczenia mogą synchronizować się przez iCloud.",
+        "search_caption": "Zapytanie i aktywne warunki pozostają razem",
+        "library_caption": "Foldery, zaznaczenia, notatki, oceny, historia i zapisany stan",
+    },
+}
+
+# Added-locale landing pages use the same verified screenshots and concise,
+# localized descriptions. English is intentionally used as the fallback when a
+# localized screenshot does not exist yet.
+for _code in ADDED_PAGE_LANGS:
+    if _code not in FEATURE_SPOTLIGHT_COPY:
+        _copy = ADDED_INDEX_TEXT[_code]
+        FEATURE_SPOTLIGHT_COPY[_code] = {
+            "label": "SCP Docs / Current",
+            "title": _copy["library_title"],
+            "search_title": _copy["archive_title"],
+            "search_body": _copy["archive_copy"],
+            "organize_title": _copy["library_title"],
+            "organize_body": _copy["library_copy"],
+            "highlight_title": "Highlights / Premium",
+            "highlight_body": _copy["premium_copy"],
+            "search_caption": _copy["hero_alt"],
+            "library_caption": _copy["library_title"],
+        }
+
+
+def capability_showcase(lang: str) -> str:
+    s = FEATURE_SPOTLIGHT_COPY[lang]
+    search_image = "assets/images/search-current-ja.png" if lang == "ja" else screenshot_path(lang, "search")
+    library_image = "assets/images/library-sections-ja.png" if lang == "ja" else screenshot_path(lang, "library")
+    return f"""      <section class="capability-showcase" aria-labelledby="capability-title">
+        <div class="section-heading-row">
+          <div>
+            <p class="section-label">{s['label']}</p>
+            <h2 id="capability-title" class="section-title-lg">{s['title']}</h2>
+          </div>
+          <span class="archive-stamp" aria-hidden="true">CURRENT<br />FIELD KIT</span>
+        </div>
+        <article class="capability-story capability-story-search">
+          <div class="capability-copy">
+            <span class="capability-number">01 / SEARCH</span>
+            <h3>{s['search_title']}</h3>
+            <p>{s['search_body']}</p>
+          </div>
+          <figure class="capability-screen">
+            <a class="capability-image-link" href="{search_image}" target="_blank" rel="noopener">
+              <img src="{search_image}" alt="{s['search_caption']}" loading="lazy" />
+            </a>
+            <figcaption>{s['search_caption']}</figcaption>
+          </figure>
+        </article>
+        <article class="capability-story capability-story-library">
+          <figure class="capability-screen">
+            <a class="capability-image-link" href="{library_image}" target="_blank" rel="noopener">
+              <img src="{library_image}" alt="{s['library_caption']}" loading="lazy" />
+            </a>
+            <figcaption>{s['library_caption']}</figcaption>
+          </figure>
+          <div class="capability-copy capability-copy-stack">
+            <div>
+              <span class="capability-number">02 / FOLDERS</span>
+              <h3>{s['organize_title']}</h3>
+              <p>{s['organize_body']}</p>
+            </div>
+            <div class="highlight-note">
+              <span class="capability-number">03 / HIGHLIGHTS</span>
+              <h3>{s['highlight_title']}</h3>
+              <p>{s['highlight_body']}</p>
+              <div class="highlight-swatches" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
+      </section>"""
+
+
+def discovery_teaser(lang: str) -> str:
+    if lang != "ja":
+        return ""
+    return """      <section class="discovery-teaser" aria-labelledby="discovery-teaser-title">
+        <div>
+          <p class="section-label">Article discovery</p>
+          <h2 id="discovery-teaser-title" class="section-title-lg">アプリを持っていなくても、面白い記事に出会える。</h2>
+          <p class="lede">怖い、不思議、短く読める、世界観に浸れる。気分を選ぶと、日本語で読める公開カタログから3件を提案します。記事は公式Wikiでそのまま読めます。</p>
+        </div>
+        <div class="discovery-teaser-action">
+          <span class="archive-stamp" aria-hidden="true">PUBLIC<br />ACCESS</span>
+          <a class="btn-primary" href="discover-ja.html">
+            <span class="btn-main">面白い記事を探す</span>
+            <span class="btn-sub">無料 · アプリ不要</span>
+          </a>
+        </div>
+      </section>"""
 
 
 def build_index(lang: str) -> dict[str, str]:
@@ -794,8 +992,8 @@ def build_index(lang: str) -> dict[str, str]:
     l = LANGS[lang]
     badges = "\n".join(f"              <li>{b}</li>" for b in s["badges"])
     stats = "\n".join(
-        f"""          <div class="hero-stat"><span class="num">{num}</span><span class="lbl">{lbl}</span></div>"""
-        for num, lbl in s["stats"]
+        f"""          <div class="hero-stat"><span class="num">{BRANCH_COUNT if index == 0 else num}</span><span class="lbl">{lbl}</span></div>"""
+        for index, (num, lbl) in enumerate(s["stats"])
     )
     screens = "\n".join(
         f"""          <figure class="screen-frame">
@@ -822,13 +1020,14 @@ def build_index(lang: str) -> dict[str, str]:
         f'            <a class="pill" href="{page_file(p, lang)}">{l.nav[p]}</a>'
         for p in ["features", "privacy", "support", "terms", "rating-safety"]
     )
+    discovery = discovery_teaser(lang)
     body = f"""
     <main class="main-pad">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="hero-kicker"><span class="blink">▮</span> ITEM #: SCP-DOCS-APP · OBJECT CLASS: <span class="accent">READER</span></p>
-            <h2 id="hero-title" class="hero-title">Secure.<br />Contain.<br /><span class="accent">Read.</span></h2>
+            <p class="hero-kicker"><span class="blink">●</span> PERSONAL ARCHIVE ACCESS · <span class="accent">IOS READER</span></p>
+            <h2 id="hero-title" class="hero-title">{HERO_HEADINGS[lang]}</h2>
             <p class="hero-lede">{s['lede']}</p>
             <div class="hero-cta">
               <a class="btn-primary" href="{APP_STORE_URL}" target="_blank" rel="noopener noreferrer">
@@ -852,6 +1051,10 @@ def build_index(lang: str) -> dict[str, str]:
 {stats}
         </div>
       </section>
+
+{discovery}
+
+{capability_showcase(lang)}
 
       <section aria-labelledby="screens-title" style="margin-top:64px;">
         <p class="section-label">Field screens</p>
@@ -937,8 +1140,8 @@ def build_added_index(lang: str) -> dict[str, str]:
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="hero-kicker"><span class="blink">▮</span> ITEM #: SCP-DOCS-APP · OBJECT CLASS: <span class="accent">READER</span></p>
-            <h2 id="hero-title" class="hero-title">Secure.<br />Contain.<br /><span class="accent">Read.</span></h2>
+            <p class="hero-kicker"><span class="blink">●</span> PERSONAL ARCHIVE ACCESS · <span class="accent">IOS READER</span></p>
+            <h2 id="hero-title" class="hero-title">{HERO_HEADINGS[lang]}</h2>
             <p class="hero-lede">{s["lede"]}</p>
             <div class="hero-cta">
               <a class="btn-primary" href="{APP_STORE_URL}" target="_blank" rel="noopener noreferrer">
@@ -956,12 +1159,14 @@ def build_added_index(lang: str) -> dict[str, str]:
           </figure>
         </div>
         <div class="hero-stats">
-          <div class="hero-stat"><span class="num">16</span><span class="lbl">{s["branches_stat"]}</span></div>
+          <div class="hero-stat"><span class="num">{BRANCH_COUNT}</span><span class="lbl">{s["branches_stat"]}</span></div>
           <div class="hero-stat"><span class="num">10+</span><span class="lbl">{s["routes_stat"]}</span></div>
           <div class="hero-stat"><span class="num">0</span><span class="lbl">{s["accounts_stat"]}</span></div>
           <div class="hero-stat"><span class="num">17+</span><span class="lbl">iOS</span></div>
         </div>
       </section>
+
+{capability_showcase(lang)}
 
       <section aria-labelledby="archive-title" style="margin-top:56px;">
         <p class="section-label">Archive</p>
@@ -1165,6 +1370,16 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
     },
 }
 
+HIGHLIGHT_COMPARISON_LABEL = {
+    "en": "Three-color highlights & Library review",
+    "ja": "3色ハイライトと書庫からの見返し",
+    "fr": "Surlignage en trois couleurs et reprise dans la Bibliothèque",
+    "ru": "Трёхцветные выделения и просмотр в Библиотеке",
+    "ko": "3색 하이라이트와 라이브러리에서 다시 보기",
+    "es": "Resaltados en tres colores y revisión en la Biblioteca",
+    "pl": "Trzy kolory zaznaczeń i powrót z Biblioteki",
+}
+
 
 def cmp_cell(value: object) -> str:
     if value == "yes":
@@ -1177,9 +1392,10 @@ def cmp_cell(value: object) -> str:
 
 def cmp_section(lang: str) -> str:
     cmp = FEATURE_CMP[lang]
+    comparison_rows = [*cmp["rows"], (HIGHLIGHT_COMPARISON_LABEL[lang], "no", "yes")]
     rows = "\n".join(
         f"              <tr><td>{label}</td>{cmp_cell(free)}{cmp_cell(premium)}</tr>"
-        for label, free, premium in cmp["rows"]
+        for label, free, premium in comparison_rows
     )
     return f"""      <section aria-labelledby="cmp-title" style="margin-top:38px;">
         <p class="section-label">Access tiers</p>
@@ -1342,6 +1558,9 @@ def translated_feature(lang: str) -> dict[str, str]:
         ),
     }
     title, description, h2, lede, cards, legal, _light_caption, _dark_caption = bodies[lang]
+    cards = [*cards]
+    branch_label = cards[0][0]
+    cards[0] = (branch_label, INDEX_STRINGS[lang]["scope_title"], INDEX_STRINGS[lang]["scope_p"])
     feature_copy = {
         "en": {
             "overview_label": "Feature overview",
@@ -1646,6 +1865,34 @@ def translated_feature(lang: str) -> dict[str, str]:
         },
     }
     ui = feature_copy[lang]
+    spotlight = FEATURE_SPOTLIGHT_COPY[lang]
+    cards[3] = (cards[3][0], spotlight["search_title"], spotlight["search_body"])
+    cards[5] = (
+        cards[5][0],
+        spotlight["organize_title"],
+        f'{spotlight["organize_body"]} {spotlight["highlight_body"]}',
+    )
+
+    workflow_cards = [(heading, [*items]) for heading, items in ui["workflow_cards"]]
+    workflow_cards[0][1][0] = (
+        workflow_cards[0][1][0][0],
+        INDEX_STRINGS[lang]["scope_p"],
+    )
+    workflow_cards[0][1][2] = (
+        workflow_cards[0][1][2][0],
+        spotlight["search_body"],
+    )
+    workflow_cards[1][1][2] = (
+        workflow_cards[1][1][2][0],
+        f'{spotlight["organize_body"]} {spotlight["highlight_body"]}',
+    )
+
+    guide_items = [*ui["guide_items"]]
+    guide_items[1] = (guide_items[1][0], spotlight["search_body"])
+    guide_items[2] = (
+        guide_items[2][0],
+        f'{spotlight["organize_body"]} {spotlight["highlight_body"]}',
+    )
     card_html = "\n".join(
         f"""          <div class="feature-card">
             <p class="section-label">{label}</p>
@@ -1669,12 +1916,12 @@ def translated_feature(lang: str) -> dict[str, str]:
 {chr(10).join(f'              <dt>{term}</dt>{chr(10)}              <dd>{definition}</dd>' for term, definition in items)}
             </dl>
           </div>"""
-        for heading, items in ui["workflow_cards"]
+        for heading, items in workflow_cards
     )
     guide_html = "\n".join(
         f"""            <dt>{term}</dt>
             <dd>{definition}</dd>"""
-        for term, definition in ui["guide_items"]
+        for term, definition in guide_items
     )
     body = f"""
     <main class="main-pad">
@@ -1693,6 +1940,8 @@ def translated_feature(lang: str) -> dict[str, str]:
           </figure>
         </div>
       </section>
+
+{capability_showcase(lang)}
 
       <section aria-labelledby="screens-title" style="margin-top:38px;">
         <p class="section-label">{ui['screens_label']}</p>
@@ -2411,6 +2660,19 @@ def support_body(data: dict[str, object], lang: str) -> str:
     </main>"""
 
 
+def current_support_copy(data: dict[str, object], lang: str) -> dict[str, object]:
+    current = {**data, "faqs": [*data["faqs"]]}
+    if len(current["faqs"]) > 1:
+        question, _answer = current["faqs"][1]
+        scope = (
+            INDEX_STRINGS[lang]["scope_p"]
+            if lang in INDEX_STRINGS
+            else ADDED_INDEX_TEXT[lang]["branches_copy"]
+        )
+        current["faqs"][1] = (question, scope)
+    return current
+
+
 def write_pages() -> None:
     for lang in LANGS:
         index = INDEX[lang]
@@ -2462,7 +2724,7 @@ def write_pages() -> None:
             encoding="utf-8",
         )
 
-        support = SUPPORT_TEXT[lang]
+        support = current_support_copy(SUPPORT_TEXT[lang], lang)
         (ROOT / page_file("support", lang)).write_text(
             layout(
                 "support",
