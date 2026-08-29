@@ -128,7 +128,6 @@ if (typeof document !== "undefined") {
     const status = document.querySelector("#search-status");
     const results = document.querySelector("#search-results");
     const pagination = document.querySelector("#search-pagination");
-    const catalogCount = document.querySelector("#catalog-count");
     const presetButtons = [...document.querySelectorAll("[data-search-preset]")];
     let catalog = [];
     let state = SCPDocsSearch.parseState(new URLSearchParams(window.location.search));
@@ -321,7 +320,6 @@ if (typeof document !== "undefined") {
           searchableText: SCPDocsSearch.searchableText(article),
         }));
         if (catalog.length === 0) throw new Error("empty catalog");
-        catalogCount.textContent = catalog.length.toLocaleString("ja-JP");
         form.querySelectorAll("input, select, button").forEach(control => { control.disabled = false; });
         presetButtons.forEach(button => { button.disabled = false; });
         render();
