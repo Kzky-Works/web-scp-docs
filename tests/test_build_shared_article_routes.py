@@ -71,6 +71,31 @@ class SharedArticleRouteTests(unittest.TestCase):
         self.assertIn("a3ecd8849da128f3d092c004", shard["routes"])
         self.assertEqual(index["routeCount"], 1)
 
+    def test_adds_japanese_catalog_articles_as_direct_routes(self) -> None:
+        routes: dict[str, dict] = {}
+        catalog = {
+            "articles": [
+                {"id": "scp-178-jp", "url": "https://scp-jp.wikidot.com/scp-178-jp"},
+                {"id": "invalid", "url": "https://example.com/not-official"},
+            ]
+        }
+
+        subject.add_catalog_routes(routes, catalog, "JP")
+
+        identifier = subject.route_id("https://scp-jp.wikidot.com/scp-178-jp")
+        self.assertEqual(
+            routes[identifier],
+            {
+                "sourceURL": "https://scp-jp.wikidot.com/scp-178-jp",
+                "original": {
+                    "language": "JP",
+                    "url": "https://scp-jp.wikidot.com/scp-178-jp",
+                },
+                "versions": {"JP": "https://scp-jp.wikidot.com/scp-178-jp"},
+            },
+        )
+        self.assertEqual(len(routes), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

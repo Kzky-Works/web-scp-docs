@@ -86,6 +86,36 @@ def build_routes(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return routes
 
 
+def add_catalog_routes(
+    routes: dict[str, dict[str, Any]],
+    catalog: dict[str, Any],
+    language: str,
+) -> None:
+    normalized_language = language.upper()
+    if normalized_language not in ALLOWED_LANGUAGES:
+        raise ValueError(f"unsupported catalog language: {language}")
+    for article in catalog.get("articles") or []:
+        if not isinstance(article, dict):
+            continue
+        source_url = normalize_url(article.get("url"))
+        identifier = route_id(source_url)
+        if not source_url or not identifier:
+            continue
+        existing = routes.get(identifier)
+        if existing is not None:
+            if existing["sourceURL"] != source_url:
+                raise ValueError(
+                    f"route ID collision: {identifier}: {existing['sourceURL']} != {source_url}"
+                )
+            existing["versions"][normalized_language] = source_url
+            continue
+        routes[identifier] = {
+            "sourceURL": source_url,
+            "original": {"language": normalized_language, "url": source_url},
+            "versions": {normalized_language: source_url},
+        }
+
+
 def write_shards(routes: dict[str, dict[str, Any]], output_dir: Path, generated_at: str) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     for existing in output_dir.glob("*.json"):
@@ -122,6 +152,8 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--catalog", type=Path)
+    parser.add_argument("--catalog-language", default="JP")
     args = parser.parse_args()
 
     with args.source.open(encoding="utf-8") as handle:
@@ -129,6 +161,12 @@ def main() -> int:
     if not isinstance(payload, dict):
         raise ValueError("translation manifest root must be an object")
     routes = build_routes(payload)
+    if args.catalog is not None:
+        with args.catalog.open(encoding="utf-8") as handle:
+            catalog = json.load(handle)
+        if not isinstance(catalog, dict):
+            raise ValueError("catalog root must be an object")
+        add_catalog_routes(routes, catalog, args.catalog_language)
     write_shards(routes, args.output, str(payload.get("generatedAt") or ""))
     print(f"OK: wrote {len(routes)} routes to {args.output}")
     return 0

@@ -82,3 +82,15 @@ test("builds the installed-app URL from the signed article route", () => {
     "scpdocs://open?id=a3ecd8849da128f3d092c004&source=c2Nw",
   );
 });
+
+test("opening the app leaves fallback navigation to the user", () => {
+  const article = { openUrl: "open/?id=a3ecd8849da128f3d092c004&source=c2Nw" };
+  const pageLocation = { href: "https://scpdocs.link/discover-ja.html?q=scp-173" };
+
+  search.openArticleInApp(article, pageLocation);
+
+  assert.equal(
+    pageLocation.href,
+    "scpdocs://open?id=a3ecd8849da128f3d092c004&source=c2Nw",
+  );
+});

@@ -66,6 +66,10 @@ const SCPDocsSearch = (() => {
     return `scpdocs://open?${route.searchParams.toString()}`;
   }
 
+  function openArticleInApp(article, pageLocation) {
+    pageLocation.href = articleAppURL(article, pageLocation.href);
+  }
+
   function relevance(article, needle) {
     if (!needle) return Number(article.score || 0);
     const id = normalize(article.id);
@@ -108,7 +112,16 @@ const SCPDocsSearch = (() => {
     return filtered;
   }
 
-  return { PAGE_SIZE, articleAppURL, filterArticles, normalize, parseState, searchableText, stateParameters };
+  return {
+    PAGE_SIZE,
+    articleAppURL,
+    filterArticles,
+    normalize,
+    openArticleInApp,
+    parseState,
+    searchableText,
+    stateParameters,
+  };
 })();
 
 if (typeof document !== "undefined") {
@@ -144,11 +157,7 @@ if (typeof document !== "undefined") {
     function openInstalledApp(event, article) {
       if (!isAppleMobile()) return;
       event.preventDefault();
-      const startedAt = Date.now();
-      window.location.href = appURL(article);
-      window.setTimeout(() => {
-        if (!document.hidden && Date.now() - startedAt < 2_000) window.location.href = article.url;
-      }, 900);
+      SCPDocsSearch.openArticleInApp(article, window.location);
     }
 
     function formatScore(value) {

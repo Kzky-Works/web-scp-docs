@@ -41,7 +41,9 @@ jobs:
           tar --exclude=.git --exclude=.github --exclude=tests -cf - . | tar -xf - -C "${RUNNER_TEMP}/site"
           python3 scripts/build_shared_article_routes.py \
             "${RUNNER_TEMP}/manifest_daily_scp_translations.json" \
-            "${RUNNER_TEMP}/site/routes"
+            "${RUNNER_TEMP}/site/routes" \
+            --catalog assets/discovery-ja.json \
+            --catalog-language JP
           if [[ -n "${{ vars.SCPDOCS_CUSTOM_DOMAIN }}" ]]; then
             printf '%s\n' "${{ vars.SCPDOCS_CUSTOM_DOMAIN }}" > "${RUNNER_TEMP}/site/CNAME"
           fi
