@@ -399,7 +399,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "scope_items": [
             ("Archive lists", "Start from branch-aware directories for SCP articles, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, and related routes."),
             ("Catalogs", "Every catalog adds an \"Unread only\" filter, sort by number or official rating, and a \"Top rated\" lens gathering each branch's highest-rated articles."),
-            ("Search", "Search by number or title for free; Premium adds advanced filters across documents, tags, Object Class, memos, reading status, official score, length, and saved searches."),
+            ("Search", "All search tools are free: combine document types and branches, then filter by number, title, tags, Object Class, document text, memos, reading status, official score, length, ratings, and saved state. Saved searches and new-match alerts are free too."),
             ("Library", "Save articles as bookmarks or read-later items, rate them, add memos, group favorites into folders, and resume from stored scroll positions."),
             ("Reader", "Cleaner typography, themes, scroll tools, better dark mode, and more faithful rendering for specially formatted source pages."),
         ],
@@ -407,13 +407,13 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "premium_cols": [
             [
                 ("Reading stats", "Reading time, catalog coverage, frequently read Object Classes and tags, rating trends, memo insights, backlog status, and logs by day, month, and year."),
-                ("Saved searches", "Save search conditions and receive on-device notifications when new matching catalog entries appear."),
+                ("Personal memos", "Premium unlocks memo editing so you can leave private notes on articles and sync them through your own iCloud Drive when available."),
                 ("Bookmark folders", "Organize saved articles into folders that can sync through your own iCloud Drive, along with memos and saved searches."),
             ],
             [
                 ("Listen and save", "Text-to-speech reads article text aloud in the article's own language rather than the app language, and offline snapshots keep eligible saved articles available without a connection."),
                 ("Share as cards", "Turn an article or selected list into a styled share card for X and other social apps, with templates and optional comments."),
-                ("Ads and limits", "Premium hides ads, expands save limits, unlocks memo editing, and enables advanced search. A rewarded ad can grant temporary Premium access when available."),
+                ("Ads and limits", "Premium hides ads, expands save limits, and unlocks memo editing. A rewarded ad can grant temporary Premium access when available."),
             ],
         ],
         "req_title": "System requirements",
@@ -459,7 +459,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "scope_items": [
             ("書庫リスト", "SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、関連ディレクトリ。"),
             ("カタログ", "各カタログに「未読のみ」フィルタ、番号順・公式評価順の並び替え、各支部の評価上位記事をまとめた「評価の高い記事」レンズを追加。"),
-            ("検索", "番号・タイトル検索は無料。プレミアムでは対象文書、タグ、オブジェクトクラス、メモ、読書状態、公式評価、長さ、保存検索まで組み合わせられます。"),
+            ("検索", "検索機能はすべて無料です。対象文書や支部を組み合わせ、番号・タイトル・タグ・Object Class・本文・メモ・読書状態・公式評価・長さ・好み度・保存状態まで絞り込めます。検索条件の保存と新着通知も無料で使えます。"),
             ("書庫", "ブックマーク、後で読む、評価、メモ、フォルダ、スクロール位置を記事に結びつけて、あとから戻れる状態にします。"),
             ("リーダー", "文字組み、テーマ、スクロール操作、ダークモード、特殊レイアウト記事の再現性を見直した本文表示。"),
         ],
@@ -467,13 +467,13 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "premium_cols": [
             [
                 ("読書統計", "読書時間、カタログ読了率、よく読むオブジェクトクラスやタグ、評価傾向、メモ、積読、曜日・月・年ごとの記録を表示します。"),
-                ("保存した検索", "検索条件を保存し、新しく一致する記事がカタログに現れたときに端末上の通知で知らせます。"),
+                ("個人メモ", "プレミアムでは記事へのメモ編集を解放し、利用可能な場合は自分の iCloud Drive 経由で同期できます。"),
                 ("ブックマークフォルダ", "保存した記事をフォルダで整理し、メモや保存検索とともに自分の iCloud Drive 経由で同期できます。"),
             ],
             [
                 ("聴く、保存する", "読み上げ機能はアプリ言語ではなく記事自体の言語で本文を音声再生し、対象記事のオフライン保存で通信がない場面でも読み返せます。"),
                 ("カードで共有", "記事や選んだリストを、X などで共有しやすいカード画像にできます。テンプレートとコメントにも対応します。"),
-                ("広告と上限", "プレミアムでは広告非表示、保存上限拡張、メモ編集、高度な検索を利用できます。利用可能な場合はリワード広告で一時的にプレミアムを解放できます。"),
+                ("広告と上限", "プレミアムでは広告非表示、保存上限拡張、メモ編集を利用できます。利用可能な場合はリワード広告で一時的にプレミアムを解放できます。"),
             ],
         ],
         "req_title": "動作環境",
@@ -519,7 +519,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "scope_items": [
             ("Listes d'archives", "SCP, Tales, Canons, séries Canon, GoI, Joke SCP, SCP-EX, collections, articles récents et répertoires associés."),
             ("Catalogues", "Chaque catalogue ajoute un filtre « Non lus », un tri par numéro ou note officielle, et une loupe « Les mieux notés » réunissant les articles les mieux notés de chaque branche."),
-            ("Recherche", "la recherche par numéro et titre est gratuite. Premium ajoute des filtres par documents, tags, classe d'objet, mémos, état de lecture, score officiel, longueur et recherches enregistrées."),
+            ("Recherche", "Tous les outils de recherche sont gratuits : combinez types de documents et branches, puis filtrez par numéro, titre, tags, classe d'objet, texte, mémos, état de lecture, score officiel, longueur, notes et état de sauvegarde. Les recherches enregistrées et alertes sont également gratuites."),
             ("Bibliothèque", "favoris, à lire plus tard, notes, mémos, dossiers et position de défilement restent liés aux articles pour y revenir plus facilement."),
             ("Lecteur", "typographie plus claire, thèmes, outils de défilement, meilleur mode sombre et rendu plus fidèle des pages à mise en forme spéciale."),
         ],
@@ -527,13 +527,13 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "premium_cols": [
             [
                 ("Statistiques de lecture", "Temps de lecture, progression du catalogue, classes d'objet et tags les plus lus, tendances de notes, mémos, pile à lire et journaux par jour, mois et année."),
-                ("Recherches enregistrées", "Enregistrez des critères et recevez une notification sur l'appareil quand de nouvelles entrées correspondantes apparaissent."),
+                ("Mémos personnels", "Premium permet de modifier des mémos privés sur les articles et de les synchroniser via votre propre iCloud Drive lorsqu'il est disponible."),
                 ("Dossiers de favoris", "Organisez les articles sauvegardés dans des dossiers pouvant se synchroniser via votre iCloud Drive, avec mémos et recherches enregistrées."),
             ],
             [
                 ("Écouter et sauvegarder", "La synthèse vocale lit les articles à voix haute dans la langue de l'article plutôt que celle de l'app, et les instantanés hors ligne gardent les articles éligibles accessibles sans connexion."),
                 ("Partager en cartes", "Transformez un article ou une liste choisie en carte de partage pour X et d'autres apps sociales, avec modèles et commentaire facultatif."),
-                ("Publicités et limites", "Premium masque les publicités, étend les limites de sauvegarde, déverrouille l'édition de mémos et la recherche avancée. Une publicité récompensée peut donner un accès Premium temporaire lorsqu'elle est disponible."),
+                ("Publicités et limites", "Premium masque les publicités, étend les limites de sauvegarde et déverrouille l'édition de mémos. Une publicité récompensée peut donner un accès Premium temporaire lorsqu'elle est disponible."),
             ],
         ],
         "req_title": "Configuration requise",
@@ -579,7 +579,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "scope_items": [
             ("Списки архива", "Начинайте с каталогов филиала: статьи SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и связанные маршруты."),
             ("Каталоги", "В каждом каталоге появился фильтр «Только непрочитанные», сортировка по номеру или официальному рейтингу и линза «С высоким рейтингом» с лучшими статьями каждого филиала."),
-            ("Поиск", "Переходите по номеру или названию бесплатно; Premium добавляет фильтры по документам, тегам, классу объекта, заметкам, статусу чтения, официальному рейтингу, длине и сохранённым поискам."),
+            ("Поиск", "Все инструменты поиска бесплатны: сочетайте типы документов и филиалы, фильтруйте по номеру, названию, тегам, классу объекта, тексту, заметкам, статусу чтения, официальному рейтингу, длине, личной оценке и состоянию сохранения. Сохранённые поиски и уведомления тоже бесплатны."),
             ("Библиотека", "Сохраняйте статьи как закладки или «прочитать позже», оценивайте, добавляйте заметки, группируйте избранное в папки и продолжайте с сохранённой позиции прокрутки."),
             ("Ридер", "Более чистая типографика, темы, инструменты прокрутки, улучшенная тёмная тема и более точное отображение специально свёрстанных страниц."),
         ],
@@ -587,13 +587,13 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "premium_cols": [
             [
                 ("Статистика чтения", "Время чтения, покрытие каталога, часто читаемые классы объектов и теги, тренды оценок, заметки, очередь и журналы по дням, месяцам и годам."),
-                ("Сохранённые поиски", "Сохраняйте условия поиска и получайте уведомления на устройстве, когда появляются новые совпадающие записи каталога."),
+                ("Личные заметки", "Premium открывает редактирование личных заметок к статьям и их синхронизацию через ваш iCloud Drive, когда он доступен."),
                 ("Папки закладок", "Организуйте сохранённые статьи в папки, которые могут синхронизироваться через ваш iCloud Drive вместе с заметками и сохранёнными поисками."),
             ],
             [
                 ("Слушать и сохранять", "Синтез речи читает текст статьи вслух на языке самой статьи, а не языке приложения, а офлайн-снимки сохраняют подходящие статьи доступными без соединения."),
                 ("Карточки для публикации", "Превратите статью или выбранный список в стилизованную карточку для X и других социальных приложений, с шаблонами и необязательным комментарием."),
-                ("Реклама и лимиты", "Premium скрывает рекламу, расширяет лимиты сохранения, открывает редактирование заметок и расширенный поиск. Рекламный просмотр может дать временный Premium, когда доступен."),
+                ("Реклама и лимиты", "Premium скрывает рекламу, расширяет лимиты сохранения и открывает редактирование заметок. Рекламный просмотр может дать временный Premium, когда доступен."),
             ],
         ],
         "req_title": "Требования",
@@ -639,7 +639,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "scope_items": [
             ("아카이브 목록", "SCP 글, Tales, Canons, Canon 시리즈, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 관련 경로의 지부별 디렉터리에서 시작합니다."),
             ("카탈로그", "모든 카탈로그에 '읽지 않음만' 필터, 번호순·공식 평가순 정렬, 각 지부의 평가 상위 기사를 모은 '높은 평가 기사' 렌즈를 추가했습니다."),
-            ("검색", "번호·제목 검색은 무료입니다. 프리미엄은 문서, 태그, Object Class, 메모, 읽기 상태, 공식 점수, 길이, 저장 검색까지 고급 필터를 추가합니다."),
+            ("검색", "모든 검색 기능은 무료입니다. 문서 종류와 지부를 조합하고 번호, 제목, 태그, Object Class, 본문, 메모, 읽기 상태, 공식 점수, 길이, 개인 평점, 저장 상태로 필터링할 수 있습니다. 검색 조건 저장과 새 결과 알림도 무료입니다."),
             ("라이브러리", "글을 북마크나 나중에 읽기로 저장하고, 평가하고, 메모를 남기고, 즐겨찾기를 폴더로 묶고, 저장된 스크롤 위치에서 이어 읽습니다."),
             ("리더", "더 깔끔한 타이포그래피, 테마, 스크롤 도구, 개선된 다크 모드, 특수 형식 페이지의 더 충실한 렌더링."),
         ],
@@ -647,13 +647,13 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "premium_cols": [
             [
                 ("읽기 통계", "읽기 시간, 카탈로그 커버리지, 자주 읽는 Object Class와 태그, 평점 추세, 메모 인사이트, 읽기 대기 상태, 일·월·년 기록을 보여 줍니다."),
-                ("저장 검색", "검색 조건을 저장하고 새로 일치하는 카탈로그 항목이 나타나면 기기 알림으로 알려 줍니다."),
+                ("개인 메모", "프리미엄은 글에 개인 메모를 편집하고, 가능한 경우 자신의 iCloud Drive로 동기화할 수 있게 합니다."),
                 ("북마크 폴더", "저장한 글을 폴더로 정리하고 메모, 저장 검색과 함께 사용자의 iCloud Drive를 통해 동기화할 수 있습니다."),
             ],
             [
                 ("듣고 저장하기", "텍스트 음성 변환은 앱 언어가 아닌 글 자체의 언어로 본문을 읽어 주고, 오프라인 스냅샷은 저장 가능한 글을 연결 없이도 볼 수 있게 유지합니다."),
                 ("카드로 공유", "글 하나 또는 선택한 목록을 X 등 소셜 앱에 공유하기 좋은 스타일 카드로 만듭니다. 템플릿과 선택 코멘트를 지원합니다."),
-                ("광고와 한도", "프리미엄은 광고 숨김, 저장 한도 확장, 메모 편집, 고급 검색을 제공합니다. 제공되는 경우 리워드 광고로 임시 프리미엄을 받을 수 있습니다."),
+                ("광고와 한도", "프리미엄은 광고 숨김, 저장 한도 확장, 메모 편집을 제공합니다. 제공되는 경우 리워드 광고로 임시 프리미엄을 받을 수 있습니다."),
             ],
         ],
         "req_title": "요구 사항",
@@ -699,7 +699,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "scope_items": [
             ("Listas de archivo", "Empieza por los directorios de cada rama: artículos SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes y rutas relacionadas."),
             ("Catálogos", "Cada catálogo suma un filtro «Solo no leídos», orden por número o puntuación oficial, y una lente «Mejor valorados» que reúne los artículos mejor puntuados de cada rama."),
-            ("Búsqueda", "Salta directamente por número o título gratis; Premium añade filtros avanzados por documentos, etiquetas, Clase de Objeto, notas, estado de lectura, puntuación oficial, longitud y búsquedas guardadas."),
+            ("Búsqueda", "Todas las herramientas de búsqueda son gratuitas: combina tipos de documento y ramas, y filtra por número, título, etiquetas, Clase de Objeto, texto, notas, estado de lectura, puntuación oficial, longitud, valoración personal y estado guardado. Las búsquedas guardadas y los avisos también son gratis."),
             ("Biblioteca", "Guarda artículos como marcadores o para leer más tarde, valóralos, añade notas, agrupa favoritos en carpetas y reanuda desde la posición de desplazamiento guardada."),
             ("Lector", "Tipografía más limpia, temas, herramientas de desplazamiento, mejor modo oscuro y un renderizado más fiel de las páginas con formato especial."),
         ],
@@ -707,13 +707,13 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "premium_cols": [
             [
                 ("Estadísticas de lectura", "Tiempo de lectura, cobertura del catálogo, Clases de Objeto y etiquetas más leídas, tendencias de valoración, notas, pila de pendientes y registros por día, mes y año."),
-                ("Búsquedas guardadas", "Guarda condiciones de búsqueda y recibe notificaciones en el dispositivo cuando aparecen nuevas entradas coincidentes en el catálogo."),
+                ("Notas personales", "Premium permite editar notas privadas en los artículos y sincronizarlas mediante tu propio iCloud Drive cuando está disponible."),
                 ("Carpetas de marcadores", "Organiza los artículos guardados en carpetas que pueden sincronizarse a través de tu propio iCloud Drive, junto con notas y búsquedas guardadas."),
             ],
             [
                 ("Escuchar y guardar", "La lectura en voz alta reproduce el texto del artículo en el idioma del propio artículo, no el de la app, y las instantáneas sin conexión mantienen disponibles los artículos guardados aptos."),
                 ("Compartir como tarjetas", "Convierte un artículo o una lista elegida en una tarjeta con estilo para X y otras apps sociales, con plantillas y comentario opcional."),
-                ("Anuncios y límites", "Premium oculta los anuncios, amplía los límites de guardado, desbloquea la edición de notas y activa la búsqueda avanzada. Un anuncio con recompensa puede otorgar acceso Premium temporal cuando esté disponible."),
+                ("Anuncios y límites", "Premium oculta los anuncios, amplía los límites de guardado y desbloquea la edición de notas. Un anuncio con recompensa puede otorgar acceso Premium temporal cuando esté disponible."),
             ],
         ],
         "req_title": "Requisitos del sistema",
@@ -759,7 +759,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "scope_items": [
             ("Listy archiwum", "Zacznij od katalogów właściwych dla oddziału: artykułów SCP, Opowieści, Kanonów, serii kanonów, GoI, Joke SCP, SCP-EX, kolekcji, nowych artykułów i powiązanych tras."),
             ("Katalogi", "Każdy katalog ma filtr „Tylko nieprzeczytane”, sortowanie po numerze lub oficjalnej ocenie oraz widok „Najwyżej oceniane” z najlepszymi artykułami danego oddziału."),
-            ("Wyszukiwanie", "Przechodzenie po numerze lub tytule jest bezpłatne; Premium dodaje filtry dokumentów, tagów, Klasy Obiektu, notatek, stanu czytania, oficjalnej oceny, długości i zapisanych wyszukiwań."),
+            ("Wyszukiwanie", "Wszystkie narzędzia wyszukiwania są bezpłatne: łącz typy dokumentów i oddziały, a następnie filtruj po numerze, tytule, tagach, Klasie Obiektu, tekście, notatkach, stanie czytania, oficjalnej ocenie, długości, własnej ocenie i stanie zapisu. Zapisane wyszukiwania i alerty też są bezpłatne."),
             ("Biblioteka", "Zapisuj artykuły jako zakładki lub pozycje do przeczytania, oceniaj je, dodawaj notatki, grupuj ulubione w folderach i wracaj do zapisanej pozycji przewijania."),
             ("Reader", "Czytelniejsza typografia, motywy, narzędzia przewijania, lepszy tryb ciemny i wierniejsze wyświetlanie specjalnie formatowanych stron źródłowych."),
         ],
@@ -767,13 +767,13 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "premium_cols": [
             [
                 ("Statystyki czytania", "Czas czytania, pokrycie katalogu, najczęstsze Klasy Obiektu i tagi, trendy ocen, notatki, zaległości oraz dzienniki dzienne, miesięczne i roczne."),
-                ("Zapisane wyszukiwania", "Zapisuj warunki wyszukiwania i otrzymuj powiadomienia na urządzeniu, gdy w katalogu pojawią się nowe pasujące wpisy."),
+                ("Prywatne notatki", "Premium odblokowuje edycję prywatnych notatek do artykułów oraz ich synchronizację przez własny iCloud Drive, gdy jest dostępny."),
                 ("Foldery zakładek", "Porządkuj zapisane artykuły w folderach synchronizowanych przez własny iCloud Drive wraz z notatkami i zapisanymi wyszukiwaniami."),
             ],
             [
                 ("Słuchanie i zapis", "Synteza mowy czyta tekst w języku artykułu, a nie interfejsu aplikacji, a kopie offline przechowują wybrane zapisane artykuły bez połączenia."),
                 ("Udostępnianie jako karty", "Zamieniaj artykuł lub wybraną listę w stylizowaną kartę do X i innych aplikacji społecznościowych, z szablonami i opcjonalnym komentarzem."),
-                ("Reklamy i limity", "Premium ukrywa reklamy, zwiększa limity zapisu, odblokowuje edycję notatek i wyszukiwanie zaawansowane. Reklama z nagrodą może czasowo odblokować Premium, gdy ta opcja jest dostępna."),
+                ("Reklamy i limity", "Premium ukrywa reklamy, zwiększa limity zapisu i odblokowuje edycję notatek. Reklama z nagrodą może czasowo odblokować Premium, gdy ta opcja jest dostępna."),
             ],
         ],
         "req_title": "Wymagania systemowe",
@@ -816,8 +816,8 @@ FEATURE_SPOTLIGHT_COPY = {
     "en": {
         "label": "Current field kit",
         "title": "Find the file. Mark the passage. Build your own archive.",
-        "search_title": "Search that keeps the investigation moving",
-        "search_body": "Start from one persistent number-or-keyword field. Results stay visible while condition chips change; tag, Object Class, document type, reading state, score, length, and memo filters can be combined. Ranked matches, suggestions, typo guidance, and saved-search alerts help when you know only part of the trail.",
+        "search_title": "Powerful search, free for everyone",
+        "search_body": "Every search tool is free. Start from one persistent number-or-keyword field, keep results visible while condition chips change, and combine branch, document type, tag, Object Class, text, memo, reading state, score, length, rating, and saved-state filters. Saved searches and new-match alerts are free too.",
         "organize_title": "Folders that work like files, not a flat bookmark list",
         "organize_body": "Premium folders support nesting, moving, multi-select actions, manual ordering, drag and drop, inline renaming, and list or grid views. Folder structure can sync through your own iCloud Drive.",
         "highlight_title": "Three-color highlights, ready to revisit",
@@ -828,8 +828,8 @@ FEATURE_SPOTLIGHT_COPY = {
     "ja": {
         "label": "最新の読書ツール",
         "title": "見つける。印を残す。自分の書庫に育てる。",
-        "search_title": "調査の流れを止めない検索",
-        "search_body": "入口は「番号・キーワード」の1つだけ。検索結果を残したまま条件チップを変更でき、タグ、オブジェクトクラス、文書種別、読書状態、公式評価、長さ、メモを組み合わせられます。関連度順、入力候補、表記ゆれ・誤字の候補、保存検索の新着通知まで、手掛かりが曖昧でも次の報告書へ進めます。",
+        "search_title": "すべて無料の高機能検索",
+        "search_body": "検索機能はすべて無料です。入口は「番号・キーワード」の1つだけ。結果を残したまま、支部、対象文書、タグ、Object Class、本文、メモ、読書状態、公式評価、長さ、好み度、保存状態を組み合わせられます。保存検索と新着通知も無料です。",
         "organize_title": "ブックマーク一覧ではなく、ファイルのように使えるフォルダ",
         "organize_body": "プレミアムのフォルダは、ネスト、フォルダ間移動、複数選択、手動並べ替え、ドラッグ＆ドロップ、インライン名称変更、リスト／グリッド切替に対応。構成は自分の iCloud Drive 経由で同期できます。",
         "highlight_title": "3色のハイライトを、あとから書庫で見返す",
@@ -840,8 +840,8 @@ FEATURE_SPOTLIGHT_COPY = {
     "fr": {
         "label": "Outils de lecture actuels",
         "title": "Trouver le dossier. Marquer le passage. Construire ses archives.",
-        "search_title": "Une recherche qui ne casse pas le fil",
-        "search_body": "Un seul champ persistant accueille numéro ou mot-clé. Les résultats restent visibles pendant l'ajustement des filtres : tags, classe d'objet, type de document, état de lecture, note, longueur et mémos. Classement, suggestions, correction de saisie et alertes de recherches enregistrées aident même avec un indice incomplet.",
+        "search_title": "Une recherche puissante, gratuite pour tous",
+        "search_body": "Tous les outils de recherche sont gratuits. Un seul champ accueille numéro ou mot-clé ; les résultats restent visibles pendant que vous combinez branche, type de document, tags, classe d'objet, texte, mémos, état de lecture, score, longueur, note et état sauvegardé. Recherches enregistrées et alertes sont gratuites aussi.",
         "organize_title": "Des dossiers qui fonctionnent comme de vrais fichiers",
         "organize_body": "Les dossiers Premium prennent en charge l'imbrication, le déplacement, la sélection multiple, l'ordre manuel, le glisser-déposer, le renommage direct et les vues liste ou grille. Leur structure peut se synchroniser via votre iCloud Drive.",
         "highlight_title": "Trois couleurs de surlignage à retrouver ensuite",
@@ -852,8 +852,8 @@ FEATURE_SPOTLIGHT_COPY = {
     "ru": {
         "label": "Актуальные инструменты",
         "title": "Найдите файл. Отметьте фрагмент. Соберите свой архив.",
-        "search_title": "Поиск, который не прерывает расследование",
-        "search_body": "Единое постоянное поле принимает номер или ключевые слова. Результаты остаются на экране при изменении тегов, класса объекта, типа документа, статуса чтения, рейтинга, длины и заметок. Ранжирование, подсказки, исправление опечаток и уведомления сохранённых поисков помогают даже по неполному следу.",
+        "search_title": "Мощный поиск, бесплатный для всех",
+        "search_body": "Все инструменты поиска бесплатны. Единое поле принимает номер или ключевые слова, а результаты остаются на экране, пока вы сочетаете филиал, тип документа, теги, класс объекта, текст, заметки, статус чтения, рейтинг, длину, личную оценку и состояние сохранения. Сохранённые поиски и уведомления тоже бесплатны.",
         "organize_title": "Папки как файлы, а не плоский список закладок",
         "organize_body": "Premium-папки поддерживают вложенность, перемещение, множественный выбор, ручной порядок, перетаскивание, переименование и виды списком или сеткой. Структура может синхронизироваться через ваш iCloud Drive.",
         "highlight_title": "Трёхцветные выделения, к которым можно вернуться",
@@ -864,8 +864,8 @@ FEATURE_SPOTLIGHT_COPY = {
     "ko": {
         "label": "최신 읽기 도구",
         "title": "문서를 찾고, 구절을 표시하고, 나만의 아카이브를 만드세요.",
-        "search_title": "조사의 흐름을 끊지 않는 검색",
-        "search_body": "하나의 상시 번호·키워드 입력란에서 시작합니다. 결과를 유지한 채 태그, Object Class, 문서 종류, 읽기 상태, 공식 평점, 길이, 메모 조건을 조정할 수 있습니다. 관련도 정렬, 제안, 오타 안내, 저장 검색 알림이 단서가 일부뿐일 때도 다음 문서로 이끕니다.",
+        "search_title": "모두에게 무료인 강력한 검색",
+        "search_body": "모든 검색 기능은 무료입니다. 하나의 번호·키워드 입력란에서 시작해 결과를 유지한 채 지부, 문서 종류, 태그, Object Class, 본문, 메모, 읽기 상태, 공식 점수, 길이, 개인 평점, 저장 상태를 조합할 수 있습니다. 저장 검색과 새 결과 알림도 무료입니다.",
         "organize_title": "평면 북마크가 아닌 파일처럼 쓰는 폴더",
         "organize_body": "프리미엄 폴더는 중첩, 이동, 다중 선택, 수동 정렬, 드래그 앤 드롭, 인라인 이름 변경, 목록·그리드 보기를 지원합니다. 폴더 구조는 사용자의 iCloud Drive를 통해 동기화할 수 있습니다.",
         "highlight_title": "세 가지 색으로 표시하고 다시 찾아보기",
@@ -876,8 +876,8 @@ FEATURE_SPOTLIGHT_COPY = {
     "es": {
         "label": "Herramientas actuales",
         "title": "Encuentra el expediente. Marca el pasaje. Construye tu archivo.",
-        "search_title": "Una búsqueda que mantiene el hilo",
-        "search_body": "Empieza en un único campo persistente para número o palabra clave. Los resultados siguen visibles al cambiar etiquetas, Clase de Objeto, tipo, estado de lectura, puntuación, longitud y notas. El orden por relevancia, las sugerencias, la ayuda con errores y los avisos de búsquedas guardadas sirven incluso con una pista incompleta.",
+        "search_title": "Búsqueda potente, gratis para todos",
+        "search_body": "Todas las funciones de búsqueda son gratuitas. Empieza en un campo de número o palabra clave y mantén los resultados visibles mientras combinas rama, tipo de documento, etiquetas, Clase de Objeto, texto, notas, estado de lectura, puntuación, longitud, valoración y estado guardado. Las búsquedas guardadas y los avisos también son gratis.",
         "organize_title": "Carpetas que funcionan como archivos reales",
         "organize_body": "Las carpetas Premium admiten anidación, traslado, selección múltiple, orden manual, arrastrar y soltar, cambio de nombre y vistas de lista o cuadrícula. La estructura puede sincronizarse mediante tu iCloud Drive.",
         "highlight_title": "Resaltados en tres colores para volver después",
@@ -888,8 +888,8 @@ FEATURE_SPOTLIGHT_COPY = {
     "pl": {
         "label": "Aktualne narzędzia",
         "title": "Znajdź akta. Zaznacz fragment. Zbuduj własne archiwum.",
-        "search_title": "Wyszukiwanie bez gubienia wątku",
-        "search_body": "Jedno stałe pole przyjmuje numer lub słowo kluczowe. Wyniki pozostają widoczne podczas zmiany tagów, Klasy Obiektu, typu dokumentu, stanu czytania, oceny, długości i notatek. Trafność, podpowiedzi, korekta literówek i alerty zapisanych wyszukiwań pomagają nawet przy niepełnym tropie.",
+        "search_title": "Potężne wyszukiwanie bezpłatne dla wszystkich",
+        "search_body": "Wszystkie funkcje wyszukiwania są bezpłatne. Zacznij od jednego pola numeru lub słowa kluczowego i zachowaj wyniki podczas łączenia oddziału, typu dokumentu, tagów, Klasy Obiektu, tekstu, notatek, stanu czytania, oceny, długości i stanu zapisu. Zapisane wyszukiwania i alerty też są bezpłatne.",
         "organize_title": "Foldery działające jak pliki, nie płaska lista zakładek",
         "organize_body": "Foldery Premium obsługują zagnieżdżanie, przenoszenie, wielokrotny wybór, ręczną kolejność, przeciąganie, zmianę nazwy oraz widok listy lub siatki. Struktura może synchronizować się przez własny iCloud Drive.",
         "highlight_title": "Trzy kolory zaznaczeń do późniejszego powrotu",
@@ -1221,18 +1221,17 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
         "col_premium": "Premium",
         "note": "Premium is provided as an auto-renewing subscription through the App Store. When available, a rewarded ad can grant temporary Premium access without a subscription.",
         "rows": [
-            ("Number & title search", "yes", "yes"),
+            ("All search features and filters", "yes", "yes"),
             ("Archive directories & catalog browsing", "yes", "yes"),
             ("History, bookmarks, read-later, ratings", "yes", "yes"),
             ("Reader themes, typography & dark mode", "yes", "yes"),
             ("Ads", ("part", "shown"), ("yes", "hidden")),
             ("Save limits", ("part", "standard"), ("yes", "expanded")),
-            ("Advanced search filters", "no", "yes"),
+            ("Saved searches & new-match alerts", "yes", "yes"),
             ("Memo editing", "no", "yes"),
             ("Offline snapshots", "no", "yes"),
             ("Reading stats", "no", "yes"),
             ("Text-to-speech", "no", "yes"),
-            ("Saved searches & new-match alerts", "no", "yes"),
             ("Bookmark folders & iCloud sync", "no", "yes"),
         ],
     },
@@ -1243,18 +1242,17 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
         "col_premium": "プレミアム",
         "note": "プレミアムは App Store の自動更新購読として提供されます。利用可能な場合は、リワード広告で購読なしに一時的なプレミアムアクセスを利用できます。",
         "rows": [
-            ("番号・タイトル検索", "yes", "yes"),
+            ("すべての検索機能とフィルタ", "yes", "yes"),
             ("書庫ディレクトリとカタログ閲覧", "yes", "yes"),
             ("履歴・ブックマーク・後で読む・評価", "yes", "yes"),
             ("リーダーのテーマ・文字組み・ダークモード", "yes", "yes"),
             ("広告", ("part", "表示"), ("yes", "非表示")),
             ("保存上限", ("part", "標準"), ("yes", "拡張")),
-            ("高度な検索フィルタ", "no", "yes"),
+            ("保存検索と新着通知", "yes", "yes"),
             ("メモ編集", "no", "yes"),
             ("オフライン保存", "no", "yes"),
             ("読書統計", "no", "yes"),
             ("読み上げ（TTS）", "no", "yes"),
-            ("保存検索と新着通知", "no", "yes"),
             ("ブックマークフォルダと iCloud 同期", "no", "yes"),
         ],
     },
@@ -1265,18 +1263,17 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
         "col_premium": "Premium",
         "note": "Premium est un abonnement à renouvellement automatique géré via l'App Store. Lorsqu'elle est disponible, une publicité récompensée peut donner un accès Premium temporaire sans abonnement.",
         "rows": [
-            ("Recherche par numéro et titre", "yes", "yes"),
+            ("Tous les outils et filtres de recherche", "yes", "yes"),
             ("Répertoires d'archive et catalogue", "yes", "yes"),
             ("Historique, favoris, à lire plus tard, notes", "yes", "yes"),
             ("Thèmes, typographie et mode sombre", "yes", "yes"),
             ("Publicités", ("part", "affichées"), ("yes", "masquées")),
             ("Limites de sauvegarde", ("part", "standard"), ("yes", "étendues")),
-            ("Filtres de recherche avancés", "no", "yes"),
+            ("Recherches enregistrées et alertes", "yes", "yes"),
             ("Édition des mémos", "no", "yes"),
             ("Instantanés hors ligne", "no", "yes"),
             ("Statistiques de lecture", "no", "yes"),
             ("Synthèse vocale", "no", "yes"),
-            ("Recherches enregistrées et alertes", "no", "yes"),
             ("Dossiers de favoris et synchronisation iCloud", "no", "yes"),
         ],
     },
@@ -1287,18 +1284,17 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
         "col_premium": "Premium",
         "note": "Premium предоставляется как автопродлеваемая подписка через App Store. Когда доступно, рекламный просмотр может дать временный Premium-доступ без подписки.",
         "rows": [
-            ("Поиск по номеру и названию", "yes", "yes"),
+            ("Все инструменты и фильтры поиска", "yes", "yes"),
             ("Каталоги и списки архива", "yes", "yes"),
             ("История, закладки, «прочитать позже», оценки", "yes", "yes"),
             ("Темы, типографика и тёмный режим", "yes", "yes"),
             ("Реклама", ("part", "показывается"), ("yes", "скрыта")),
             ("Лимиты сохранения", ("part", "стандартные"), ("yes", "расширенные")),
-            ("Расширенные фильтры поиска", "no", "yes"),
+            ("Сохранённые поиски и уведомления", "yes", "yes"),
             ("Редактирование заметок", "no", "yes"),
             ("Офлайн-снимки", "no", "yes"),
             ("Статистика чтения", "no", "yes"),
             ("Озвучивание текста", "no", "yes"),
-            ("Сохранённые поиски и уведомления", "no", "yes"),
             ("Папки закладок и синхронизация iCloud", "no", "yes"),
         ],
     },
@@ -1309,18 +1305,17 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
         "col_premium": "프리미엄",
         "note": "프리미엄은 App Store의 자동 갱신 구독으로 제공됩니다. 제공되는 경우 리워드 광고로 구독 없이 임시 프리미엄을 이용할 수 있습니다.",
         "rows": [
-            ("번호·제목 검색", "yes", "yes"),
+            ("모든 검색 기능과 필터", "yes", "yes"),
             ("아카이브 디렉터리와 카탈로그 탐색", "yes", "yes"),
             ("기록·북마크·나중에 읽기·평점", "yes", "yes"),
             ("리더 테마·타이포그래피·다크 모드", "yes", "yes"),
             ("광고", ("part", "표시"), ("yes", "제거")),
             ("저장 한도", ("part", "기본"), ("yes", "확장")),
-            ("고급 검색 필터", "no", "yes"),
+            ("저장 검색과 새 항목 알림", "yes", "yes"),
             ("메모 편집", "no", "yes"),
             ("오프라인 스냅샷", "no", "yes"),
             ("읽기 통계", "no", "yes"),
             ("텍스트 음성 변환", "no", "yes"),
-            ("저장 검색과 새 항목 알림", "no", "yes"),
             ("북마크 폴더와 iCloud 동기화", "no", "yes"),
         ],
     },
@@ -1331,18 +1326,17 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
         "col_premium": "Premium",
         "note": "Premium se ofrece como suscripción con renovación automática a través del App Store. Cuando está disponible, un anuncio con recompensa puede otorgar acceso Premium temporal sin suscripción.",
         "rows": [
-            ("Búsqueda por número y título", "yes", "yes"),
+            ("Todas las funciones y filtros de búsqueda", "yes", "yes"),
             ("Directorios de archivo y catálogo", "yes", "yes"),
             ("Historial, marcadores, leer más tarde, valoraciones", "yes", "yes"),
             ("Temas, tipografía y modo oscuro", "yes", "yes"),
             ("Anuncios", ("part", "se muestran"), ("yes", "eliminados")),
             ("Límites de guardado", ("part", "estándar"), ("yes", "ampliados")),
-            ("Filtros de búsqueda avanzados", "no", "yes"),
+            ("Búsquedas guardadas y avisos", "yes", "yes"),
             ("Edición de notas", "no", "yes"),
             ("Instantáneas sin conexión", "no", "yes"),
             ("Estadísticas de lectura", "no", "yes"),
             ("Lectura en voz alta", "no", "yes"),
-            ("Búsquedas guardadas y avisos", "no", "yes"),
             ("Carpetas de marcadores y sincronización iCloud", "no", "yes"),
         ],
     },
@@ -1353,18 +1347,17 @@ FEATURE_CMP: dict[str, dict[str, object]] = {
         "col_premium": "Premium",
         "note": "Premium jest automatycznie odnawianą subskrypcją w App Store. Gdy opcja jest dostępna, reklama z nagrodą może przyznać tymczasowy dostęp Premium bez subskrypcji.",
         "rows": [
-            ("Wyszukiwanie po numerze i tytule", "yes", "yes"),
+            ("Wszystkie funkcje i filtry wyszukiwania", "yes", "yes"),
             ("Katalogi archiwum i przeglądanie", "yes", "yes"),
             ("Historia, zakładki, do przeczytania, oceny", "yes", "yes"),
             ("Motywy Readera, typografia i tryb ciemny", "yes", "yes"),
             ("Reklamy", ("part", "wyświetlane"), ("yes", "ukryte")),
             ("Limity zapisu", ("part", "standardowe"), ("yes", "zwiększone")),
-            ("Zaawansowane filtry wyszukiwania", "no", "yes"),
+            ("Zapisane wyszukiwania i powiadomienia", "yes", "yes"),
             ("Edycja notatek", "no", "yes"),
             ("Kopie offline", "no", "yes"),
             ("Statystyki czytania", "no", "yes"),
             ("Synteza mowy", "no", "yes"),
-            ("Zapisane wyszukiwania i powiadomienia", "no", "yes"),
             ("Foldery zakładek i synchronizacja iCloud", "no", "yes"),
         ],
     },
@@ -1425,7 +1418,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Branches", "English, Japanese, French, Russian, Korean, Spanish, and Polish archives", "Switching branches changes Home, search, lists, article destinations, and app language so each archive has its own reading context."),
                 ("Directories", "Cleaner archive routes before you know the number", "Move through SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists from organized entry points. The Library index is organized into four sections: article feeds, canons & collections, ratings & discovery, and guides & reference."),
                 ("Catalogs", "Unread filters and a Top rated lens", "Every catalog adds an \"Unread only\" filter and sort by number or official rating. A new \"Top rated\" lens gathers each branch's highest-rated articles in one place."),
-                ("Search", "Fast free search, deeper Premium filters", "Open by SCP number, search titles, and use shortcuts for tags and Object Classes. Recent searches reappear as one-tap chips. Premium adds documents, memos, reading status, official score, length, and saved searches."),
+                ("Search", "Powerful search, free for everyone", "Open by SCP number or search across titles, tags, Object Classes, document text, and memos. Combine branches and document types, then refine by reading status, official score, length, ratings, and saved state. Recent and saved searches, plus new-match alerts, are free too."),
                 ("Reader", "A focused article view", "Typography controls, calmer themes, improved dark mode, scroll-to-top, offline snapshots, and closer rendering for specially formatted source pages."),
                 ("Library", "A personal shelf for the archive", "History, read status, ratings, bookmarks, read-later, scroll position, memos, folders, and resume-reading data stay organized on your device. Articles reopen automatically at your last scroll position, and Read Later items are saved for offline reading automatically."),
                 ("Share", "Share as cards", "Turn an article or hand-picked list into a styled card for X and other social apps, with templates and optional comments."),
@@ -1445,7 +1438,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Branches", "英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語の書庫", "支部を切り替えると、ホーム、検索、一覧、記事リンク先、アプリ言語が切り替わり、それぞれの書庫をその文脈で読めます。"),
                 ("Directories", "整理された書庫ルート", "SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、ガイド類へ移動できます。書庫の索引は「記事フィード」「世界観」「評価・発見」「ガイド資料」の4セクションに整理しています。"),
                 ("Catalogs", "未読フィルタと評価の高い記事レンズ", "各カタログに「未読のみ」フィルタと番号順・公式評価順の並び替えを追加。新しい「評価の高い記事」レンズは、各支部の評価上位記事をひとつの場所にまとめます。"),
-                ("Search", "無料の高速検索とプレミアム絞り込み", "SCP番号で即オープンし、タイトル、タグ、オブジェクトクラスで検索できます。最近の検索はワンタップのチップで再利用できます。プレミアムでは対象文書、メモ、読書状態、公式評価、長さ、保存検索まで扱えます。"),
+                ("Search", "全ユーザーに開放された高機能検索", "SCP番号で即オープンし、タイトル、タグ、Object Class、本文、メモを横断検索できます。支部と対象文書を組み合わせ、読書状態、公式評価、長さ、好み度、保存状態まで絞り込み可能。最近の検索、保存検索、新着通知もすべて無料です。"),
                 ("Reader", "集中できる記事ビュー", "文字設定、落ち着いたテーマ、改善したダークモード、トップへ戻る操作、オフライン保存、特殊レイアウト記事の再現性を備えます。"),
                 ("Library", "戻ってくるための場所", "閲覧履歴、読了状態、評価、ブックマーク、後で読む、スクロール位置、メモ、続きから読むデータを端末内で整理します。記事は前回のスクロール位置から自動的に開き、「後で読む」に入れた記事は自動でオフライン保存されます。"),
                 ("Share", "カードで共有", "記事や選んだリストを、X などで共有しやすいカード画像にできます。テンプレートとコメントにも対応します。"),
@@ -1465,7 +1458,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Branches", "Archives anglaise, japonaise, française, russe, coréenne, espagnole et polonaise", "Changer de branche modifie l'accueil, la recherche, les listes, les destinations d'articles et la langue de l'app."),
                 ("Directories", "Itinéraires d'archives plus clairs", "Parcourez SCP, Tales, Canons, séries Canon, GoI, Joke SCP, SCP-EX, collections, articles récents, guides et listes associées. L'index de la Bibliothèque est organisé en quatre sections : flux d'articles, canons & collections, notes & découverte, guides & référence."),
                 ("Catalogs", "Filtre « Non lus » et loupe « Les mieux notés »", "Chaque catalogue ajoute un filtre « Non lus » et un tri par numéro ou note officielle. Une nouvelle loupe « Les mieux notés » réunit les articles les mieux notés de chaque branche au même endroit."),
-                ("Search", "Recherche gratuite rapide, filtres Premium", "Ouvrez par numéro SCP, cherchez les titres et utilisez les raccourcis tags/classes d'objet. Les recherches récentes réapparaissent en un tap. Premium ajoute documents, mémos, état de lecture, score officiel, longueur et recherches enregistrées."),
+                ("Search", "Une recherche puissante, gratuite pour tous", "Ouvrez par numéro SCP ou cherchez dans les titres, tags, classes d'objet, texte et mémos. Combinez branches et types de documents, puis affinez par état de lecture, score officiel, longueur, note et état sauvegardé. Recherches enregistrées et alertes sont gratuites."),
                 ("Reader", "Une vue article concentrée", "Contrôles typographiques, thèmes plus calmes, mode sombre amélioré, retour en haut, instantanés hors ligne et rendu plus fidèle des pages spéciales."),
                 ("Library", "Un endroit où revenir", "Historique, état de lecture, notes, favoris, à lire plus tard, position de défilement, mémos et reprise restent organisés sur votre appareil. Les articles se rouvrent automatiquement à votre dernière position de défilement, et les éléments « À lire plus tard » sont sauvegardés automatiquement hors ligne."),
                 ("Share", "Partage sous forme de cartes", "Transformez un article ou une liste choisie en carte stylisée pour X et d'autres apps sociales, avec modèles et commentaire facultatif."),
@@ -1485,7 +1478,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Branches", "Английский, японский, французский, русский, корейский, испанский и польский архивы", "Смена филиала меняет Главную, поиск, списки, переходы к статьям и язык приложения."),
                 ("Directories", "Более понятные маршруты по архиву", "Просматривайте SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи, руководства и связанные списки. Индекс Библиотеки теперь состоит из четырёх разделов: ленты статей, каноны и коллекции, рейтинги и открытия, справочные материалы."),
                 ("Catalogs", "Фильтр «Непрочитанные» и линза «С высоким рейтингом»", "В каждом каталоге появился фильтр «Только непрочитанные» и сортировка по номеру или официальному рейтингу. Новая линза «С высоким рейтингом» собирает лучшие статьи каждого филиала в одном месте."),
-                ("Search", "Быстрый бесплатный поиск и Premium-фильтры", "Открывайте по номеру SCP, ищите по названиям, тегам и классам объектов. Недавние поиски возвращаются одним нажатием. Premium добавляет документы, заметки, статус чтения, официальный рейтинг, длину и сохранённые поиски."),
+                ("Search", "Мощный поиск, бесплатный для всех", "Открывайте по номеру SCP или ищите по названиям, тегам, классам объектов, тексту и заметкам. Сочетайте филиалы и типы документов, затем уточняйте по статусу чтения, официальному рейтингу, длине, личной оценке и состоянию сохранения. Сохранённые поиски и уведомления бесплатны."),
                 ("Reader", "Сосредоточенный вид статьи", "Настройки типографики, спокойные темы, улучшенная тёмная тема, возврат наверх, офлайн-снимки и более точное отображение специальных страниц."),
                 ("Library", "Место, куда можно вернуться", "История, статус чтения, оценки, закладки, «прочитать позже», позиция прокрутки, заметки и продолжение чтения остаются организованными на устройстве. Статьи автоматически открываются на последней позиции прокрутки, а материалы «прочитать позже» автоматически сохраняются для чтения офлайн."),
                 ("Share", "Поделиться карточками", "Превратите статью или выбранный список в карточку для X и других социальных приложений, с шаблонами и необязательным комментарием."),
@@ -1505,7 +1498,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Branches", "영어, 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어 아카이브", "지부를 바꾸면 홈, 검색, 목록, 글 링크 대상, 앱 언어가 함께 바뀌어 각 아카이브의 문맥으로 읽을 수 있습니다."),
                 ("Directories", "더 정리된 아카이브 경로", "SCP 글, Tales, Canons, Canon series, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 가이드와 관련 목록을 탐색합니다. 라이브러리 색인은 '글 피드', '세계관', '평가·발견', '안내 자료'의 4개 섹션으로 구성됩니다."),
                 ("Catalogs", "읽지 않음 필터와 높은 평가 기사 렌즈", "모든 카탈로그에 '읽지 않음만' 필터와 번호순·공식 평가순 정렬을 추가했습니다. 새로운 '높은 평가 기사' 렌즈는 각 지부의 평가 상위 기사를 한곳에 모읍니다."),
-                ("Search", "빠른 무료 검색과 프리미엄 필터", "SCP 번호로 바로 열고, 제목, 태그, Object Class로 찾을 수 있습니다. 최근 검색은 원탭 칩으로 재사용할 수 있습니다. 프리미엄은 문서, 메모, 읽기 상태, 공식 점수, 길이, 저장 검색을 추가합니다."),
+                ("Search", "모두에게 무료인 강력한 검색", "SCP 번호로 바로 열거나 제목, 태그, Object Class, 본문, 메모를 검색할 수 있습니다. 지부와 문서 종류를 조합한 뒤 읽기 상태, 공식 점수, 길이, 개인 평점, 저장 상태로 좁힐 수 있습니다. 저장 검색과 새 결과 알림도 무료입니다."),
                 ("Reader", "집중할 수 있는 글 보기", "타이포그래피 설정, 차분한 테마, 개선된 다크 모드, 맨 위로 이동, 오프라인 스냅샷, 특수 형식 페이지의 더 충실한 표시를 제공합니다."),
                 ("Library", "다시 돌아오기 위한 장소", "기록, 읽음 상태, 평가, 북마크, 나중에 읽기, 스크롤 위치, 메모, 이어 읽기 데이터가 기기 안에서 정리됩니다. 글은 마지막 스크롤 위치에서 자동으로 다시 열리고, '나중에 읽기'에 담은 글은 자동으로 오프라인 저장됩니다."),
                 ("Share", "카드로 공유", "글 하나 또는 직접 고른 목록을 X 등 소셜 앱에 공유하기 쉬운 카드로 만들 수 있습니다. 템플릿과 선택 코멘트를 지원합니다."),
@@ -1525,7 +1518,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Branches", "Archivos en inglés, japonés, francés, ruso, coreano, español y polaco", "Cambiar de rama modifica el Inicio, la búsqueda, las listas, los destinos de los artículos y el idioma de la app, para leer cada archivo en su propio contexto."),
                 ("Directories", "Rutas de archivo más claras antes de saber el número", "Recorre informes SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes, guías y listas relacionadas desde entradas organizadas. El índice de la Biblioteca está organizado en cuatro secciones: fuentes de artículos, cánones y colecciones, valoraciones y descubrimiento, y guías y referencia."),
                 ("Catalogs", "Filtro «No leídos» y lente «Mejor valorados»", "Cada catálogo suma un filtro «Solo no leídos» y orden por número o puntuación oficial. Una nueva lente «Mejor valorados» reúne los artículos mejor puntuados de cada rama en un solo lugar."),
-                ("Search", "Búsqueda gratuita rápida y filtros Premium más profundos", "Abre por número SCP, busca por título y usa atajos de etiquetas y Clases de Objeto. Las búsquedas recientes vuelven con un toque. Premium añade documentos, notas, estado de lectura, puntuación oficial, longitud y búsquedas guardadas."),
+                ("Search", "Búsqueda potente, gratis para todos", "Abre por número SCP o busca en títulos, etiquetas, Clases de Objeto, texto y notas. Combina ramas y tipos de documento, y filtra por estado de lectura, puntuación oficial, longitud, valoración personal y estado guardado. Las búsquedas guardadas y los avisos también son gratis."),
                 ("Reader", "Una vista de artículo para concentrarse", "Controles tipográficos, temas tranquilos, modo oscuro mejorado, volver arriba, instantáneas sin conexión y un renderizado más fiel de las páginas con formato especial."),
                 ("Library", "Una estantería personal para el archivo", "Historial, estado de lectura, valoraciones, marcadores, leer más tarde, posición de desplazamiento, notas, carpetas y datos de reanudación quedan organizados en tu dispositivo. Los artículos se reabren automáticamente en tu última posición de desplazamiento, y los artículos de «Leer más tarde» se guardan automáticamente para leer sin conexión."),
                 ("Share", "Compartir como tarjetas", "Convierte un artículo o una lista elegida en una tarjeta con estilo para X y otras apps sociales, con plantillas y comentario opcional."),
@@ -1545,7 +1538,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Oddziały", "Archiwa angielskie, japońskie, francuskie, rosyjskie, koreańskie, hiszpańskie i polskie", "Zmiana oddziału przełącza ekran Start, wyszukiwanie, listy, docelowe strony artykułów i język aplikacji, dzięki czemu każde archiwum zachowuje własny kontekst."),
                 ("Katalogi", "Czytelne trasy archiwum, zanim poznasz numer", "Przeglądaj raporty SCP, Opowieści, Kanony, serie kanonów, GoI, Joke SCP, SCP-EX, kolekcje, nowe artykuły, poradniki i powiązane listy. Indeks Biblioteki dzieli się na cztery sekcje: strumienie artykułów, kanony i kolekcje, oceny i odkrywanie oraz poradniki i materiały."),
                 ("Listy", "Filtr nieprzeczytanych i widok najwyżej ocenianych", "Każdy katalog ma filtr „Tylko nieprzeczytane” oraz sortowanie po numerze lub oficjalnej ocenie. Widok „Najwyżej oceniane” gromadzi najlepsze artykuły każdego oddziału."),
-                ("Wyszukiwanie", "Szybkie wyszukiwanie bezpłatne i dokładniejsze filtry Premium", "Otwieraj po numerze SCP, szukaj tytułów i używaj skrótów do tagów oraz Klas Obiektu. Ostatnie wyszukiwania wracają jako przyciski jednego dotknięcia. Premium dodaje dokumenty, notatki, stan czytania, oficjalną ocenę, długość i zapisane wyszukiwania."),
+                ("Wyszukiwanie", "Potężne wyszukiwanie bezpłatne dla wszystkich", "Otwieraj po numerze SCP lub szukaj w tytułach, tagach, Klasach Obiektu, tekście i notatkach. Łącz oddziały i typy dokumentów, a potem filtruj po stanie czytania, oficjalnej ocenie, długości, własnej ocenie i stanie zapisu. Zapisane wyszukiwania i alerty też są bezpłatne."),
                 ("Reader", "Skupiony widok artykułu", "Ustawienia typografii, spokojne motywy, lepszy tryb ciemny, powrót na początek, kopie offline i wierniejsze wyświetlanie stron o specjalnym formatowaniu."),
                 ("Biblioteka", "Osobista półka archiwum", "Historia, stan przeczytania, oceny, zakładki, lista do przeczytania, pozycja przewijania, notatki, foldery i dane kontynuacji pozostają uporządkowane na urządzeniu. Artykuły wracają do ostatniej pozycji, a wpisy z listy „Do przeczytania” są automatycznie zapisywane offline."),
                 ("Udostępnianie", "Udostępniaj jako karty", "Zamień artykuł lub własną listę w stylizowaną kartę do X i innych aplikacji społecznościowych, korzystając z szablonów i opcjonalnego komentarza."),
@@ -1586,7 +1579,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                     [
                         ("Pick a branch", "Choose English, Japanese, French, Russian, Korean, Spanish, or Polish. Home, search, lists, article links, and the app language follow that branch context."),
                         ("Start from directories", "Browse SCP reports, Tales, Canons, Canon series, GoI, Joke SCPs, SCP-EX, collections, recent articles, guides, and related lists without needing the exact article number first. Every catalog adds an \"Unread only\" filter, sort by number or rating, and a \"Top rated\" lens for each branch's highest-rated articles."),
-                        ("Jump when you know the target", "Use free number and title search for quick access. Recent searches reappear as one-tap chips. Premium advanced search adds tags, Object Class, document text, memos, read status, official score, length, and saved conditions."),
+                        ("Jump when you know the target", "Every search tool is free. Open by number, search titles, tags, Object Class, document text, and memos, or combine branch and document filters with reading status, official score, length, ratings, and saved state. Recent and saved searches reappear for quick reuse."),
                     ],
                 ),
                 (
@@ -1600,7 +1593,7 @@ def translated_feature(lang: str) -> dict[str, str]:
             ],
             "guide_items": [
                 ("I want to browse without a specific article in mind", "Start on Home, choose the branch, then open Archive routes such as SCP, SCP-INT, Stories, or Others. The catalog screen lets you move by series and block, with article rows showing titles, Object Class, tags, scores, and thumbnail previews where available."),
-                ("I know the number, title, tag, or Object Class", "Use Search. Number and title lookup are available for normal use, while Premium advanced filters help narrow by document group, branch, tags, official score, length, Object Class, reading state, and memos."),
+                ("I know the number, title, tag, or Object Class", "Use Search. Every filter is free, including document group, branch, tags, official score, length, Object Class, reading state, and memos."),
                 ("I found something I want to keep", "Save it from the reader or Library as a bookmark, read-later item, rating, memo, or folder entry. Those signals make the article visible later from Library instead of relying on memory or browser history."),
                 ("I stopped halfway through a series", "Use Continue reading, Library history, stored scroll position, and read status to return to the same report or track what has already been handled."),
             ],
@@ -1629,7 +1622,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                     [
                         ("支部を選ぶ", "英語、日本語、フランス語、ロシア語、韓国語、スペイン語、ポーランド語を選択できます。ホーム、検索、一覧、記事リンク、アプリ言語がその支部の文脈に揃います。"),
                         ("ディレクトリから始める", "SCP記事、Tales、Canons、Canonシリーズ、GoI、Joke SCP、SCP-EX、コレクション、新着記事、ガイド類を、番号を知らない状態から探せます。各カタログには「未読のみ」フィルタ、番号順・公式評価順の並び替え、各支部の評価上位記事をまとめた「評価の高い記事」レンズを備えます。"),
-                        ("分かっている時は検索へ", "番号やタイトル検索は無料で使えます。最近の検索はワンタップのチップで再利用できます。プレミアムの高度な検索ではタグ、Object Class、本文、メモ、読書状態、公式評価、長さ、保存条件まで絞り込めます。"),
+                        ("分かっている時は検索へ", "検索機能はすべて無料です。番号、タイトル、タグ、Object Class、本文、メモを探し、支部・対象文書・読書状態・公式評価・長さ・好み度・保存状態を組み合わせられます。最近の検索と保存検索もすぐ再利用できます。"),
                     ],
                 ),
                 (
@@ -1643,7 +1636,7 @@ def translated_feature(lang: str) -> dict[str, str]:
             ],
             "guide_items": [
                 ("特定の記事を決めずに探したい", "ホームで支部を選び、SCP、SCP-INT、Stories、Others などの書庫ルートを開きます。カタログ画面ではシリーズや番号ブロックで移動でき、タイトル、Object Class、タグ、スコア、サムネイルを見ながら探せます。"),
-                ("番号、タイトル、タグ、Object Class が分かっている", "検索を使います。番号・タイトル検索は通常利用でき、プレミアムの高度な検索では文書種別、支部、タグ、公式評価、長さ、Object Class、読書状態、メモまで絞り込めます。"),
+                ("番号、タイトル、タグ、Object Class が分かっている", "検索を使います。文書種別、支部、タグ、公式評価、長さ、Object Class、読書状態、メモまで、すべて無料で絞り込めます。"),
                 ("あとで読み返したい記事を見つけた", "リーダーやライブラリからブックマーク、後で読む、評価、メモ、フォルダに保存します。後から記憶やブラウザ履歴に頼らずライブラリで見つけられます。"),
                 ("シリーズを途中で止めた", "続きから読む、ライブラリ履歴、保存済みスクロール位置、読了状態を使うと、同じ報告書や進捗に戻れます。"),
             ],
@@ -1672,7 +1665,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                     [
                         ("Choisir une branche", "Sélectionnez l'anglais, le japonais, le français, le russe, le coréen, l'espagnol ou le polonais. L'accueil, la recherche, les listes, les liens d'articles et la langue de l'app suivent ce contexte."),
                         ("Commencer par les répertoires", "Parcourez SCP, Tales, Canons, séries Canon, GoI, Joke SCP, SCP-EX, collections, articles récents et guides sans connaître le numéro exact. Chaque catalogue ajoute un filtre « Non lus », un tri par numéro ou note, et une loupe « Les mieux notés » pour les articles les mieux notés de chaque branche."),
-                        ("Aller vite quand vous savez quoi chercher", "La recherche par numéro et titre est gratuite. Les recherches récentes réapparaissent en un tap. La recherche avancée Premium ajoute tags, classe d'objet, texte, mémos, état de lecture, score officiel, longueur et critères enregistrés."),
+                        ("Aller vite quand vous savez quoi chercher", "Tous les outils de recherche sont gratuits. Cherchez par numéro, titre, tag, classe d'objet, texte et mémo, puis combinez branche, type de document, état de lecture, score officiel, longueur, note et état sauvegardé. Les recherches récentes et enregistrées sont réutilisables rapidement."),
                     ],
                 ),
                 (
@@ -1686,7 +1679,7 @@ def translated_feature(lang: str) -> dict[str, str]:
             ],
             "guide_items": [
                 ("Je veux explorer sans article précis", "Commencez sur Accueil, choisissez la branche, puis ouvrez des routes comme SCP, SCP-INT, Stories ou Others. Le catalogue permet de naviguer par série et bloc, avec titres, classe d'objet, tags, scores et vignettes si disponibles."),
-                ("Je connais le numéro, le titre, le tag ou la classe", "Utilisez Recherche. Numéro et titre sont disponibles normalement ; les filtres Premium affinent par groupe, branche, tags, score officiel, longueur, classe d'objet, état de lecture et mémos."),
+                ("Je connais le numéro, le titre, le tag ou la classe", "Utilisez Recherche. Tous les filtres sont gratuits : groupe de documents, branche, tags, score officiel, longueur, classe d'objet, état de lecture et mémos."),
                 ("J'ai trouvé quelque chose à garder", "Depuis le lecteur ou la Bibliothèque, ajoutez favori, à lire plus tard, note, mémo ou dossier. Ces signaux rendent l'article visible ensuite sans dépendre de la mémoire ou de l'historique du navigateur."),
                 ("J'ai interrompu une série", "Utilisez Reprise de lecture, historique de Bibliothèque, position de défilement sauvegardée et état de lecture pour revenir au même rapport ou suivre ce qui est déjà traité."),
             ],
@@ -1715,7 +1708,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                     [
                         ("Выберите филиал", "Доступны английский, японский, французский, русский, корейский, испанский и польский. Главная, поиск, списки, ссылки на статьи и язык приложения следуют выбранному контексту."),
                         ("Начинайте с каталогов", "Открывайте SCP, Tales, Canons, серии Canon, GoI, Joke SCP, SCP-EX, коллекции, недавние статьи и руководства без точного номера статьи. В каждом каталоге есть фильтр «Только непрочитанные», сортировка по номеру или рейтингу и линза «С высоким рейтингом» с лучшими статьями каждого филиала."),
-                        ("Переходите к поиску, когда цель известна", "Поиск по номеру и названию доступен бесплатно. Недавние поиски возвращаются одним нажатием. Premium добавляет теги, классы объектов, текст, заметки, статус чтения, официальный рейтинг, длину и сохранённые условия."),
+                        ("Переходите к поиску, когда цель известна", "Все инструменты поиска бесплатны. Ищите по номеру, названию, тегу, классу объекта, тексту и заметкам, сочетайте филиал, тип документа, статус чтения, официальный рейтинг, длину, личную оценку и сохранённое состояние. Недавние и сохранённые поиски легко использовать снова."),
                     ],
                 ),
                 (
@@ -1729,7 +1722,7 @@ def translated_feature(lang: str) -> dict[str, str]:
             ],
             "guide_items": [
                 ("Хочу просматривать без конкретной статьи", "Начните с Главной, выберите филиал и откройте маршруты архива, например SCP, SCP-INT, Stories или Others. Каталог позволяет двигаться по сериям и блокам, видя названия, классы объектов, теги, оценки и миниатюры, если они есть."),
-                ("Я знаю номер, название, тег или класс объекта", "Используйте Поиск. Номер и название доступны обычно, а Premium-фильтры помогают сузить результат по группе документов, филиалу, тегам, официальной оценке, длине, классу объекта, статусу чтения и заметкам."),
+                ("Я знаю номер, название, тег или класс объекта", "Используйте Поиск. Все фильтры бесплатны: группа документов, филиал, теги, официальный рейтинг, длина, класс объекта, статус чтения и заметки."),
                 ("Я нашёл материал, который хочу сохранить", "Сохраните его из ридера или Библиотеки как закладку, «прочитать позже», оценку, заметку или запись в папке. Так статья будет видна позже в Библиотеке без опоры на память или историю браузера."),
                 ("Я остановился на середине серии", "Используйте продолжение чтения, историю Библиотеки, сохранённую позицию прокрутки и статус чтения, чтобы вернуться к тому же отчёту или отслеживать прогресс."),
             ],
@@ -1758,7 +1751,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                     [
                         ("지부 선택", "영어, 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어를 선택할 수 있습니다. 홈, 검색, 목록, 글 링크, 앱 언어가 선택한 지부의 문맥에 맞춰집니다."),
                         ("디렉터리에서 시작", "SCP 글, Tales, Canons, Canon series, GoI, Joke SCP, SCP-EX, 컬렉션, 최근 글, 가이드류를 정확한 번호를 몰라도 탐색할 수 있습니다. 모든 카탈로그에는 '읽지 않음만' 필터, 번호순·평점순 정렬, 각 지부의 평가 상위 기사를 모은 '높은 평가 기사' 렌즈가 있습니다."),
-                        ("목표를 알 때는 검색", "번호와 제목 검색은 무료로 사용할 수 있습니다. 최근 검색은 원탭 칩으로 재사용할 수 있습니다. 프리미엄 고급 검색은 태그, Object Class, 본문, 메모, 읽기 상태, 공식 점수, 길이, 저장 조건까지 좁힐 수 있습니다."),
+                        ("목표를 알 때는 검색", "모든 검색 기능은 무료입니다. 번호, 제목, 태그, Object Class, 본문, 메모를 찾고 지부, 문서 종류, 읽기 상태, 공식 점수, 길이, 개인 평점, 저장 상태를 조합할 수 있습니다. 최근 검색과 저장 검색도 빠르게 다시 사용할 수 있습니다."),
                     ],
                 ),
                 (
@@ -1772,7 +1765,7 @@ def translated_feature(lang: str) -> dict[str, str]:
             ],
             "guide_items": [
                 ("특정 글을 정하지 않고 탐색하고 싶을 때", "홈에서 지부를 선택하고 SCP, SCP-INT, Stories, Others 같은 아카이브 경로를 엽니다. 카탈로그 화면에서는 시리즈와 번호 블록으로 이동하면서 제목, Object Class, 태그, 점수, 썸네일을 보고 찾을 수 있습니다."),
-                ("번호, 제목, 태그, Object Class를 알고 있을 때", "검색을 사용합니다. 번호와 제목 검색은 일반적으로 사용할 수 있고, 프리미엄 고급 필터는 문서 종류, 지부, 태그, 공식 점수, 길이, Object Class, 읽기 상태, 메모까지 좁힙니다."),
+                ("번호, 제목, 태그, Object Class를 알고 있을 때", "검색을 사용합니다. 문서 종류, 지부, 태그, 공식 점수, 길이, Object Class, 읽기 상태, 메모까지 모두 무료로 좁힐 수 있습니다."),
                 ("나중에 다시 읽고 싶은 글을 찾았을 때", "리더나 라이브러리에서 북마크, 나중에 읽기, 평점, 메모, 폴더로 저장합니다. 나중에는 기억이나 브라우저 기록에 의존하지 않고 라이브러리에서 찾을 수 있습니다."),
                 ("시리즈를 중간에 멈췄을 때", "이어 읽기, 라이브러리 기록, 저장된 스크롤 위치, 읽음 상태를 사용해 같은 보고서나 진행 상황으로 돌아갈 수 있습니다."),
             ],
@@ -1801,7 +1794,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                     [
                         ("Elige una rama", "Selecciona inglés, japonés, francés, ruso, coreano, español o polaco. El Inicio, la búsqueda, las listas, los enlaces a artículos y el idioma de la app siguen ese contexto de rama."),
                         ("Empieza por los directorios", "Recorre informes SCP, Tales, Canons, series Canon, GoI, Joke SCP, SCP-EX, colecciones, artículos recientes y guías sin necesitar primero el número exacto. Cada catálogo suma un filtro «Solo no leídos», orden por número o puntuación, y una lente «Mejor valorados» con los artículos mejor puntuados de cada rama."),
-                        ("Salta cuando conoces el objetivo", "La búsqueda por número y título es gratuita. Las búsquedas recientes vuelven con un toque. La búsqueda avanzada Premium añade etiquetas, Clase de Objeto, texto del documento, notas, estado de lectura, puntuación oficial, longitud y condiciones guardadas."),
+                        ("Salta cuando conoces el objetivo", "Todas las herramientas de búsqueda son gratuitas. Busca por número, título, etiqueta, Clase de Objeto, texto y nota, y combina rama, tipo de documento, estado de lectura, puntuación oficial, longitud, valoración y estado guardado. Las búsquedas recientes y guardadas se reutilizan rápidamente."),
                     ],
                 ),
                 (
@@ -1815,7 +1808,7 @@ def translated_feature(lang: str) -> dict[str, str]:
             ],
             "guide_items": [
                 ("Quiero explorar sin un artículo concreto en mente", "Empieza en Inicio, elige la rama y abre rutas de archivo como SCP, SCP-INT, Stories u Others. La pantalla de catálogo permite moverse por series y bloques, con filas que muestran títulos, Clase de Objeto, etiquetas, puntuaciones y miniaturas cuando existen."),
-                ("Conozco el número, el título, la etiqueta o la Clase de Objeto", "Usa Búsqueda. La búsqueda por número y título está disponible en el uso normal, y los filtros avanzados Premium permiten acotar por grupo de documentos, rama, etiquetas, puntuación oficial, longitud, Clase de Objeto, estado de lectura y notas."),
+                ("Conozco el número, el título, la etiqueta o la Clase de Objeto", "Usa Búsqueda. Puedes filtrar gratis por grupo de documentos, rama, etiquetas, puntuación oficial, longitud, Clase de Objeto, estado de lectura y notas."),
                 ("Encontré algo que quiero conservar", "Guárdalo desde el lector o la Biblioteca como marcador, leer más tarde, valoración, nota o entrada de carpeta. Esas señales hacen visible el artículo más adelante desde la Biblioteca, sin depender de la memoria ni del historial del navegador."),
                 ("Dejé una serie a medias", "Usa Continuar leyendo, el historial de la Biblioteca, la posición de desplazamiento guardada y el estado de lectura para volver al mismo informe o repasar lo que ya está atendido."),
             ],
@@ -1844,7 +1837,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                     [
                         ("Wybierz oddział", "Wybierz archiwum angielskie, japońskie, francuskie, rosyjskie, koreańskie, hiszpańskie lub polskie. Start, wyszukiwanie, listy, odnośniki i język aplikacji podążają za wybranym kontekstem."),
                         ("Zacznij od katalogów", "Przeglądaj raporty SCP, Opowieści, Kanony, serie kanonów, GoI, Joke SCP, SCP-EX, kolekcje, nowe artykuły i poradniki bez znajomości dokładnego numeru. Każdy katalog ma filtr „Tylko nieprzeczytane”, sortowanie po numerze lub ocenie oraz widok „Najwyżej oceniane”."),
-                        ("Gdy znasz cel, przejdź do wyszukiwania", "Wyszukiwanie po numerze i tytule jest bezpłatne. Ostatnie wyszukiwania można powtórzyć jednym dotknięciem. Zaawansowane wyszukiwanie Premium dodaje tagi, Klasę Obiektu, tekst dokumentu, notatki, stan czytania, oficjalną ocenę, długość i zapisane warunki."),
+                        ("Gdy znasz cel, przejdź do wyszukiwania", "Wszystkie narzędzia wyszukiwania są bezpłatne. Szukaj po numerze, tytule, tagu, Klasie Obiektu, tekście i notatce, a następnie łącz oddział, typ dokumentu, stan czytania, oficjalną ocenę, długość, własną ocenę i stan zapisu. Ostatnie i zapisane wyszukiwania można szybko ponowić."),
                     ],
                 ),
                 (
@@ -1858,7 +1851,7 @@ def translated_feature(lang: str) -> dict[str, str]:
             ],
             "guide_items": [
                 ("Chcę przeglądać bez konkretnego artykułu", "Na ekranie Start wybierz oddział i otwórz trasę archiwum, np. SCP, SCP-INT, Stories lub Others. W katalogu można poruszać się po seriach i blokach, widząc tytuły, Klasy Obiektu, tagi, oceny i miniatury."),
-                ("Znam numer, tytuł, tag lub Klasę Obiektu", "Użyj Wyszukiwania. Numer i tytuł są dostępne bezpłatnie, a filtry Premium zawężają wyniki według grupy dokumentów, oddziału, tagów, oficjalnej oceny, długości, Klasy Obiektu, stanu czytania i notatek."),
+                ("Znam numer, tytuł, tag lub Klasę Obiektu", "Użyj Wyszukiwania. Wszystkie filtry są bezpłatne: grupa dokumentów, oddział, tagi, oficjalna ocena, długość, Klasa Obiektu, stan czytania i notatki."),
                 ("Znalazłem coś, co chcę zachować", "Zapisz artykuł w Readerze lub Bibliotece jako zakładkę, pozycję do przeczytania, ocenę, notatkę lub element folderu. Dzięki temu później odnajdziesz go bez polegania na pamięci czy historii przeglądarki."),
                 ("Przerwałem serię w połowie", "Użyj Kontynuacji czytania, historii Biblioteki, zapisanej pozycji przewijania i stanu przeczytania, aby wrócić do tego samego raportu lub sprawdzić postęp."),
             ],
@@ -2527,6 +2520,81 @@ for code, answer in BRANCH_SUPPORT_COPY.items():
     SUPPORT_TEXT[code]["faqs"][1] = (question, answer)
 
 SUPPORT_TEXT.update(ADDED_SUPPORT_TEXT)
+
+# Search is intentionally open to every user (`searchFreeForEveryone` defaults to true).
+# Keep the support FAQ aligned with that live entitlement boundary in every locale.
+SEARCH_SUPPORT_COPY = {
+    "en": (
+        "All search features are free, including advanced filters, saved searches, and new-match alerts. Premium adds ad removal, memo editing, higher save limits, offline storage, reading stats, text-to-speech, highlights, and bookmark folders with iCloud sync.",
+        "Saved searches and new-match alerts are free. The app checks catalog data on device after sync and can notify you when new matching entries appear. iOS notification permission is required; notifications are not generated by an operator-run server.",
+    ),
+    "ja": (
+        "高度な絞り込み、保存検索、新着通知を含む検索機能はすべて無料です。プレミアムでは広告非表示、メモ編集、保存上限拡張、オフライン保存、読書統計、読み上げ、ハイライト、iCloud同期対応のブックマークフォルダが利用できます。",
+        "保存検索と新着通知は無料です。アプリはカタログ同期後に端末上で一致を確認し、新しい該当項目がある場合に通知できます。iOSの通知許可が必要で、運営者サーバーから通知を生成する仕組みではありません。",
+    ),
+    "fr": (
+        "Toutes les fonctions de recherche sont gratuites, y compris les filtres avancés, les recherches enregistrées et les alertes. Premium ajoute la suppression des publicités, l’édition des mémos, des limites étendues, le hors ligne, les statistiques, la synthèse vocale, les surlignages et les dossiers synchronisés via iCloud.",
+        "Les recherches enregistrées et les alertes de nouveaux résultats sont gratuites. L’app vérifie le catalogue sur l’appareil après synchronisation et peut notifier les nouvelles entrées. L’autorisation iOS est requise ; les notifications ne viennent pas d’un serveur de l’opérateur.",
+    ),
+    "ru": (
+        "Все функции поиска бесплатны, включая расширенные фильтры, сохранённые поиски и уведомления о новых совпадениях. Premium добавляет скрытие рекламы, редактирование заметок, увеличенные лимиты, офлайн-хранение, статистику, озвучивание, выделения и папки с синхронизацией iCloud.",
+        "Сохранённые поиски и уведомления о новых совпадениях бесплатны. После синхронизации приложение проверяет каталог на устройстве и может сообщать о новых результатах. Требуется разрешение iOS; уведомления не создаются сервером оператора.",
+    ),
+    "ko": (
+        "고급 필터, 저장 검색, 새 결과 알림을 포함한 모든 검색 기능은 무료입니다. 프리미엄은 광고 제거, 메모 편집, 저장 한도 확장, 오프라인 저장, 읽기 통계, 텍스트 음성 변환, 하이라이트, iCloud 동기화 북마크 폴더를 추가합니다.",
+        "저장 검색과 새 결과 알림은 무료입니다. 앱은 카탈로그 동기화 후 기기에서 일치 항목을 확인하고 새 결과가 있으면 알릴 수 있습니다. iOS 알림 권한이 필요하며 운영자 서버가 알림을 생성하지 않습니다.",
+    ),
+    "es": (
+        "Todas las funciones de búsqueda son gratuitas, incluidos los filtros avanzados, las búsquedas guardadas y los avisos de nuevos resultados. Premium añade eliminación de anuncios, edición de notas, límites mayores, almacenamiento sin conexión, estadísticas, lectura en voz alta, resaltados y carpetas con iCloud.",
+        "Las búsquedas guardadas y los avisos de nuevos resultados son gratuitos. La app comprueba el catálogo en el dispositivo tras la sincronización y puede avisar de nuevas coincidencias. Se requiere permiso de iOS; las notificaciones no se generan en un servidor del operador.",
+    ),
+    "pl": (
+        "Wszystkie funkcje wyszukiwania są bezpłatne, w tym zaawansowane filtry, zapisane wyszukiwania i powiadomienia o nowych wynikach. Premium usuwa reklamy i dodaje edycję notatek, wyższe limity, zapis offline, statystyki, syntezę mowy, wyróżnienia oraz foldery z synchronizacją iCloud.",
+        "Zapisane wyszukiwania i powiadomienia o nowych wynikach są bezpłatne. Po synchronizacji aplikacja sprawdza katalog na urządzeniu i może informować o nowych dopasowaniach. Wymagana jest zgoda iOS; powiadomień nie generuje serwer operatora.",
+    ),
+    "cs": (
+        "Všechny funkce hledání jsou zdarma, včetně pokročilých filtrů, uložených hledání a upozornění na nové výsledky. Premium odstraňuje reklamy a přidává úpravu poznámek, vyšší limity, offline kopie, statistiky, předčítání, zvýraznění a složky se synchronizací iCloud.",
+        "Uložená hledání a upozornění na nové výsledky jsou zdarma. Aplikace po synchronizaci kontroluje katalog v zařízení a může oznámit nové shody. Je potřeba oprávnění iOS; oznámení nevytváří server provozovatele.",
+    ),
+    "de": (
+        "Alle Suchfunktionen sind kostenlos, einschließlich erweiterter Filter, gespeicherter Suchen und Hinweise auf neue Treffer. Premium entfernt Werbung und bietet Notizbearbeitung, höhere Grenzen, Offline-Kopien, Statistiken, Sprachausgabe, Markierungen und Ordner mit iCloud-Synchronisierung.",
+        "Gespeicherte Suchen und Hinweise auf neue Treffer sind kostenlos. Die App prüft den Katalog nach der Synchronisierung auf dem Gerät und kann neue Treffer melden. Die iOS-Berechtigung ist erforderlich; die Hinweise stammen nicht von einem Betreiber-Server.",
+    ),
+    "it": (
+        "Tutte le funzioni di ricerca sono gratuite, inclusi filtri avanzati, ricerche salvate e avvisi sui nuovi risultati. Premium rimuove gli annunci e aggiunge modifica delle note, limiti maggiori, copie offline, statistiche, sintesi vocale, evidenziazioni e cartelle sincronizzate con iCloud.",
+        "Le ricerche salvate e gli avvisi sui nuovi risultati sono gratuiti. Dopo la sincronizzazione l’app controlla il catalogo sul dispositivo e può segnalare nuove corrispondenze. Serve l’autorizzazione iOS; le notifiche non provengono da un server del gestore.",
+    ),
+    "pt-BR": (
+        "Todos os recursos de busca são gratuitos, incluindo filtros avançados, buscas salvas e alertas de novos resultados. O Premium remove anúncios e adiciona edição de notas, limites maiores, cópias offline, estatísticas, leitura em voz alta, destaques e pastas com sincronização pelo iCloud.",
+        "Buscas salvas e alertas de novos resultados são gratuitos. Após a sincronização, o app verifica o catálogo no aparelho e pode avisar sobre novas correspondências. É necessária a permissão do iOS; os avisos não vêm de um servidor do operador.",
+    ),
+    "th": (
+        "ฟังก์ชันค้นหาทั้งหมดใช้ฟรี รวมตัวกรองขั้นสูง การค้นหาที่บันทึก และการแจ้งผลใหม่ Premium เพิ่มการซ่อนโฆษณา การแก้ไขบันทึก ขีดจำกัดที่สูงขึ้น สำเนาออฟไลน์ สถิติ อ่านออกเสียง ไฮไลต์ และโฟลเดอร์ที่ซิงค์ผ่าน iCloud",
+        "การค้นหาที่บันทึกและการแจ้งผลใหม่ใช้ฟรี แอปตรวจแค็ตตาล็อกบนอุปกรณ์หลังซิงค์และแจ้งรายการใหม่ได้ ต้องอนุญาตการแจ้งเตือน iOS และไม่ได้สร้างการแจ้งเตือนจากเซิร์ฟเวอร์ของผู้ให้บริการ",
+    ),
+    "vi": (
+        "Mọi tính năng tìm kiếm đều miễn phí, gồm bộ lọc nâng cao, tìm kiếm đã lưu và cảnh báo kết quả mới. Premium thêm ẩn quảng cáo, chỉnh sửa ghi chú, giới hạn cao hơn, bản sao ngoại tuyến, thống kê, đọc thành tiếng, đánh dấu và thư mục đồng bộ iCloud.",
+        "Tìm kiếm đã lưu và cảnh báo kết quả mới đều miễn phí. Sau khi đồng bộ, ứng dụng kiểm tra danh mục trên thiết bị và có thể báo kết quả mới. Cần quyền thông báo iOS; thông báo không được tạo từ máy chủ của đơn vị vận hành.",
+    ),
+    "zh-Hans": (
+        "全部搜索功能均免费，包括高级筛选、已保存搜索和新结果提醒。Premium 提供移除广告、备忘录编辑、更高保存上限、离线副本、阅读统计、文本转语音、高亮和 iCloud 同步文件夹。",
+        "已保存搜索和新结果提醒均免费。应用会在同步后于设备上检查目录，并可提醒新的匹配结果。需要 iOS 通知权限；通知并非由运营者服务器生成。",
+    ),
+    "zh-Hant": (
+        "全部搜尋功能均免費，包括進階篩選、已儲存搜尋與新結果提醒。Premium 提供移除廣告、備忘錄編輯、更高儲存上限、離線副本、閱讀統計、文字轉語音、醒目提示與 iCloud 同步資料夾。",
+        "已儲存搜尋與新結果提醒均免費。應用程式會在同步後於裝置檢查目錄，並可提醒新的符合結果。需要 iOS 通知權限；通知並非由營運者伺服器產生。",
+    ),
+    "tr": (
+        "Gelişmiş filtreler, kayıtlı aramalar ve yeni sonuç bildirimleri dahil tüm arama özellikleri ücretsizdir. Premium reklamları kaldırır; not düzenleme, daha yüksek sınırlar, çevrimdışı kopyalar, istatistikler, sesli okuma, vurgular ve iCloud eşzamanlı klasörler ekler.",
+        "Kayıtlı aramalar ve yeni sonuç bildirimleri ücretsizdir. Uygulama eşzamanlamadan sonra kataloğu cihazda kontrol eder ve yeni eşleşmeleri bildirebilir. iOS izni gerekir; bildirimler işletici sunucusundan üretilmez.",
+    ),
+}
+
+for code, (premium_answer, saved_search_answer) in SEARCH_SUPPORT_COPY.items():
+    premium_question, _ = SUPPORT_TEXT[code]["faqs"][4]
+    saved_search_question, _ = SUPPORT_TEXT[code]["faqs"][7]
+    SUPPORT_TEXT[code]["faqs"][4] = (premium_question, premium_answer)
+    SUPPORT_TEXT[code]["faqs"][7] = (saved_search_question, saved_search_answer)
 
 
 SAFETY_TEXT = {
