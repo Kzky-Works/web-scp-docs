@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="気分や読みたい長さから、日本語で読めるSCP記事とTaleを3件ずつ探せる無料の記事発見ツールです。アプリなしでも公式Wikiで読めます。" />
+  <meta name="description" content="SCP-JP、翻訳SCP、Tales、Canon、GoIを、番号、タイトル、タグ、Object Class、長さ、Wiki評価から検索できます。" />
   <meta name="theme-color" content="#f4f0e6" />
   <title>面白いSCP記事を探す — SCP Docs</title>
   <link rel="icon" href="assets/images/app-icon.png" />
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="SCP Docs" />
   <meta property="og:locale" content="ja_JP" />
   <meta property="og:title" content="面白いSCP記事を探す — SCP Docs" />
-  <meta property="og:description" content="怖い、不思議、短編、長編、世界観。今の気分から日本語で読めるSCP記事を探せます。" />
+  <meta property="og:description" content="SCP-JP、翻訳SCP、Tales、Canon、GoIを、番号、タイトル、タグ、Object Class、長さ、Wiki評価から検索できます。" />
   <meta property="og:url" content="https://scpdocs.link/discover-ja.html" />
   <meta name="twitter:card" content="summary" />
   <link rel="stylesheet" href="assets/styles.css" />
@@ -25,7 +25,7 @@
     <header class="terminal-header">
       <div class="terminal-header-inner">
         <div>
-          <div class="brand-line">Public access / Article discovery</div>
+          <div class="brand-line">SCP記事検索 / JPカタログ</div>
           <h1 class="brand-title">SCP Docs</h1>
         </div>
         <div class="terminal-header-actions">
@@ -45,62 +45,100 @@
     </header>
 
     <main class="main-pad discovery-page">
-      <section class="discovery-hero" aria-labelledby="discovery-title">
-        <p class="section-label">Open catalog / Japanese</p>
-        <h2 id="discovery-title" class="hero-title">次に読む<br /><span class="accent">SCP</span>を探す。</h2>
-        <p class="hero-lede">番号もタイトルも知らなくて大丈夫です。今の気分を選ぶと、日本語で読める公開記事から3件を提案します。アプリを入れていなくても、公式Wikiでそのまま読めます。</p>
-        <div class="discovery-principles" aria-label="このページの特徴">
-          <span>無料</span><span>登録不要</span><span>本文転載なし</span><span>公式Wikiへ直結</span>
+      <section class="discovery-hero search-catalog-hero" aria-labelledby="discovery-title">
+        <p class="section-label">SCP article search / Japanese</p>
+        <h2 id="discovery-title" class="hero-title"><span id="catalog-count">16,000+</span>件から、<br /><span class="accent">次に読む記事</span>を探す。</h2>
+        <p class="hero-lede">SCP-JP、翻訳SCP、SCP-INT、Tales、Canon、GoIなどを横断。番号・タイトル・タグで検索し、文書種別、Object Class、長さ、Wiki評価で絞り込めます。</p>
+        <div class="discovery-principles" aria-label="検索対象">
+          <span>SCP-JP</span><span>翻訳SCP</span><span>Tales</span><span>Canon</span><span>GoI</span>
         </div>
       </section>
 
-      <section class="discovery-console" aria-labelledby="mood-title">
+      <section class="discovery-console search-console" aria-labelledby="search-title">
         <div class="section-heading-row">
           <div>
-            <p class="section-label">Reading mood</p>
-            <h2 id="mood-title" class="section-title-lg">今日は、どんな記事を読みたい？</h2>
+            <p class="section-label">Search catalog</p>
+            <h2 id="search-title" class="section-title-lg">番号・キーワードから探す</h2>
           </div>
-          <span class="archive-stamp" aria-hidden="true">SELECT<br />3 FILES</span>
+          <span class="archive-stamp" aria-hidden="true">FULL<br />CATALOG</span>
         </div>
 
-        <div class="discovery-modes" aria-label="記事の選び方">
-          <button type="button" data-discovery-mode="popular" aria-pressed="true" disabled>まずは人気作</button>
-          <button type="button" data-discovery-mode="short" aria-pressed="false" disabled>短く読みたい</button>
-          <button type="button" data-discovery-mode="long" aria-pressed="false" disabled>じっくり読みたい</button>
-          <button type="button" data-discovery-mode="eerie" aria-pressed="false" disabled>ぞっとしたい</button>
-          <button type="button" data-discovery-mode="strange" aria-pressed="false" disabled>不思議に浸りたい</button>
-          <button type="button" data-discovery-mode="world" aria-pressed="false" disabled>世界観を追いたい</button>
-          <button type="button" data-discovery-mode="hidden" aria-pressed="false" disabled>隠れた記事</button>
-          <button type="button" data-discovery-mode="recent" aria-pressed="false" disabled>最近の記事</button>
-        </div>
-
-        <form id="discovery-search" class="discovery-search" role="search">
-          <label for="discovery-query">候補集をタイトル・番号・タグで探す</label>
-          <div>
-            <input id="discovery-query" type="search" placeholder="例: 反ミーム、scp-173、猫" autocomplete="off" disabled />
-            <button type="submit">絞り込む</button>
+        <form id="catalog-search" class="discovery-search catalog-search" role="search">
+          <label for="catalog-query">番号・キーワード</label>
+          <div class="catalog-query-row">
+            <input id="catalog-query" name="q" type="search" placeholder="番号・キーワード" autocomplete="off" disabled />
+            <button type="submit" disabled>検索</button>
           </div>
+          <div class="catalog-filter-grid">
+            <label>文書種別
+              <select id="filter-kind" disabled>
+                <option value="">すべて</option>
+                <option>SCP-JP</option><option>翻訳SCP</option><option>SCP-INT</option><option>Tale</option>
+                <option>Canon</option><option>GoI</option><option>Joke SCP</option><option>SCP-EX</option>
+                <option>SCP-001提言</option><option>共同制作</option>
+              </select>
+            </label>
+            <label>Object Class
+              <select id="filter-object-class" disabled>
+                <option value="">すべて</option>
+                <option value="safe">Safe</option><option value="euclid">Euclid</option><option value="keter">Keter</option>
+                <option value="thaumiel">Thaumiel</option><option value="neutralized">Neutralized</option>
+                <option value="explained">Explained</option><option value="apollyon">Apollyon</option>
+                <option value="archon">Archon</option><option value="ticonderoga">Ticonderoga</option>
+                <option value="esoteric-class">その他のクラス</option>
+              </select>
+            </label>
+            <label>長さ
+              <select id="filter-length" disabled>
+                <option value="">すべて</option><option value="short">5,000文字未満</option>
+                <option value="medium">5,000〜15,000文字</option><option value="long">15,000文字以上</option>
+              </select>
+            </label>
+            <label>Wiki評価
+              <select id="filter-score" disabled>
+                <option value="">指定なし</option><option value="20">+20以上</option><option value="50">+50以上</option>
+                <option value="100">+100以上</option><option value="300">+300以上</option>
+              </select>
+            </label>
+            <label>並べ替え
+              <select id="filter-sort" disabled>
+                <option value="relevance">関連度順</option><option value="score">Wiki評価順</option>
+                <option value="newest">新しい順</option><option value="shortest">短い順</option><option value="longest">長い順</option>
+              </select>
+            </label>
+          </div>
+          <button id="search-reset" class="search-reset" type="button" disabled>条件をクリア</button>
         </form>
 
-        <div class="discovery-result-bar">
-          <p id="discovery-status" role="status" aria-live="polite">公開カタログを読み込んでいます…</p>
-          <button id="discovery-shuffle" type="button" disabled>別の3件を選ぶ</button>
+        <div class="discovery-modes" aria-label="すぐに探す">
+          <button type="button" data-search-preset="popular" aria-pressed="false" disabled>高評価</button>
+          <button type="button" data-search-preset="short" aria-pressed="false" disabled>短く読める</button>
+          <button type="button" data-search-preset="long" aria-pressed="false" disabled>長編</button>
+          <button type="button" data-search-preset="eerie" aria-pressed="false" disabled>ホラー</button>
+          <button type="button" data-search-preset="strange" aria-pressed="false" disabled>反ミーム・現実改変</button>
+          <button type="button" data-search-preset="world" aria-pressed="false" disabled>Tales・GoI</button>
+          <button type="button" data-search-preset="recent" aria-pressed="false" disabled>新着</button>
         </div>
-        <div id="discovery-results" class="discovery-results"></div>
-        <noscript><p class="card">この記事発見ツールにはJavaScriptが必要です。SCP Docsアプリの「評価の高い記事」や検索からも記事を探せます。</p></noscript>
+
+        <div class="discovery-result-bar">
+          <p id="search-status" role="status" aria-live="polite">記事カタログを読み込んでいます…</p>
+        </div>
+        <div id="search-results" class="search-results-grid"></div>
+        <nav id="search-pagination" class="search-pagination" aria-label="検索結果のページ"></nav>
+        <noscript><p class="card">記事検索にはJavaScriptが必要です。</p></noscript>
       </section>
 
       <section class="discovery-about" aria-labelledby="about-discovery-title">
         <p class="section-label">How it works</p>
-        <h2 id="about-discovery-title" class="section-title-lg">おすすめを押し付けず、入口だけをつくる。</h2>
+        <h2 id="about-discovery-title" class="section-title-lg">カタログから探し、公式記事を読む。</h2>
         <div class="grid-2">
           <div class="card">
-            <h3>選定の手がかり</h3>
-            <p>公開カタログのタイトル、タグ、文字数、Wiki上の評価を使い、気分ごとの候補集からランダムに表示します。閲覧履歴や個人情報は使いません。</p>
+            <h3>検索に使う情報</h3>
+            <p>SCP Docsの公開カタログから、タイトル、番号、タグ、Object Class、文字数、Wiki評価、公開時期を検索用に整えています。記事本文は検索インデックスへ収録しません。</p>
           </div>
           <div class="card">
-            <h3>読み始めたあとは</h3>
-            <p>公式Wikiで読むだけならアプリは不要です。気に入った記事をフォルダ、マーカー、メモ、後で読むで残したくなったときに、SCP Docsを使えます。</p>
+            <h3>iPhone・iPadで開く</h3>
+            <p>iPhoneまたはiPadでは、検索結果からインストール済みのSCP Docsを直接開けます。開けない場合は同じ記事の公式Wikiへ進みます。</p>
           </div>
         </div>
         <p class="ft-muted">表示する評価はSCP-JP Wiki上の投票差分を収集したスナップショットです。最新の本文、著者表示、ライセンス、評価はリンク先の公式ページを確認してください。SCP Docsは非公式のファンプロジェクトです。</p>

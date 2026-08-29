@@ -429,9 +429,9 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "store_main": "Get on the App Store",
     },
     "ja": {
-        "title": "SCP Docs — Foundation Archive Reader for iPhone",
-        "description": "SCP Docs は SCP Wiki と各支部の記事を快適に読むための非公式 iOS リーダーです。支部対応検索、読書状態、共有カード、保存検索、読書統計などに対応します。",
-        "lede": "SCP Docs は、SCP Wiki と各支部サイトの記事をより快適に読むための<strong>非公式ファンメイド iOS リーダー</strong>です。公開されている元ページを、書庫の閲覧、支部別検索、保存、読書記録、読みかけ復帰まで扱えるネイティブな読書ワークスペースにまとめます。",
+        "title": "SCP Docs — SCP記事を探す・読む",
+        "description": "SCP-JP、翻訳SCP、Tales、Canon、GoIをブラウザで検索し、iPhone・iPadではSCP Docsでそのまま読める非公式SCPリーダーです。",
+        "lede": "SCP、Tales、Canon、GoIを、番号・タイトル・タグから検索できます。文書種別、Object Class、長さ、Wiki評価を組み合わせて、次に読む記事を探せます。iPhone・iPadでは検索結果を<strong>SCP Docs</strong>で開けます。",
         "hero_alt": "続きから読む、書庫ルート、検索フィルタを表示した日本語UIのSCP Docsホーム画面",
         "cta_main": "App Store で入手",
         "cta_sub": "iPhone · iOS 17+",
@@ -440,7 +440,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "badges": ["非公式ファンアプリ", "無料 + プレミアム", "13+", "アカウント不要"],
         "stats": [
             ("17", "対応支部"),
-            ("10+", "書庫ルート"),
+            ("16,000+", "検索対象"),
             ("0", "必要なアカウント"),
             ("17+", "対応 iOS"),
         ],
@@ -482,7 +482,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("通信", "カタログ更新、オンライン記事表示、元サイトコンテンツ、広告、購入確認、外部リンクに必要です。"),
             ("アカウント", "アプリで読むだけなら SCP Foundation や Wikidot のアカウントは不要です。"),
         ],
-        "cta_title": "書庫を開く",
+        "cta_title": "SCP Docsで読む",
         "legal_p": "SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。",
         "store_name": "SCP Docs for iPhone",
         "store_note": "iOS 17以降に対応。アプリUIは英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語・簡体字中国語・タイ語・ドイツ語・イタリア語・ポルトガル語・ベトナム語・チェコ語・繁体字中国語・トルコ語・インドネシア語に対応しています。",
@@ -795,7 +795,7 @@ BRANCH_COUNT = "17"
 
 HERO_HEADINGS = {
     "en": "The archive,<br />made <span class=\"accent\">readable.</span>",
-    "ja": "収容記録を、<br /><span class=\"accent\">読む人の手元へ。</span>",
+    "ja": "SCP記事を、<br /><span class=\"accent\">探しやすく、読みやすく。</span>",
     "fr": "Les archives,<br /><span class=\"accent\">enfin lisibles.</span>",
     "ru": "Архив,<br /><span class=\"accent\">который удобно читать.</span>",
     "ko": "아카이브를,<br /><span class=\"accent\">읽는 사람의 손에.</span>",
@@ -827,13 +827,13 @@ FEATURE_SPOTLIGHT_COPY = {
     },
     "ja": {
         "label": "最新の読書ツール",
-        "title": "見つける。印を残す。自分の書庫に育てる。",
+        "title": "検索して読む。気になった記事を整理する。",
         "search_title": "すべて無料の高機能検索",
         "search_body": "検索機能はすべて無料です。入口は「番号・キーワード」の1つだけ。結果を残したまま、支部、対象文書、タグ、Object Class、本文、メモ、読書状態、公式評価、長さ、好み度、保存状態を組み合わせられます。保存検索と新着通知も無料です。",
         "organize_title": "ブックマーク一覧ではなく、ファイルのように使えるフォルダ",
         "organize_body": "プレミアムのフォルダは、ネスト、フォルダ間移動、複数選択、手動並べ替え、ドラッグ＆ドロップ、インライン名称変更、リスト／グリッド切替に対応。構成は自分の iCloud Drive 経由で同期できます。",
-        "highlight_title": "3色のハイライトを、あとから書庫で見返す",
-        "highlight_body": "リーダーで気になった本文を選び、黄色・青・ピンクで保存。書庫のハイライト一覧から元の箇所へ戻れます。標準・クイック・手動の3モードで、精読、素早い記録、意図した範囲だけの保存を使い分けられ、iCloud同期にも対応します。",
+        "highlight_title": "3色のハイライトを、あとから見返す",
+        "highlight_body": "リーダーで気になった本文を選び、黄色・青・ピンクで保存。ライブラリのハイライト一覧から元の箇所へ戻れます。標準・クイック・手動の3モードで、精読、素早い記録、意図した範囲だけの保存を使い分けられ、iCloud同期にも対応します。",
         "search_caption": "検索語と適用中の条件を、ひとつの画面で見失わない",
         "library_caption": "フォルダ、ハイライト、メモ、評価、履歴、保存状態をひとつの書庫へ",
     },
@@ -968,25 +968,6 @@ def capability_showcase(lang: str) -> str:
       </section>"""
 
 
-def discovery_teaser(lang: str) -> str:
-    if lang != "ja":
-        return ""
-    return """      <section class="discovery-teaser" aria-labelledby="discovery-teaser-title">
-        <div>
-          <p class="section-label">Article discovery</p>
-          <h2 id="discovery-teaser-title" class="section-title-lg">アプリを持っていなくても、面白い記事に出会える。</h2>
-          <p class="lede">怖い、不思議、短く読める、世界観に浸れる。気分を選ぶと、日本語で読める公開カタログから3件を提案します。記事は公式Wikiでそのまま読めます。</p>
-        </div>
-        <div class="discovery-teaser-action">
-          <span class="archive-stamp" aria-hidden="true">PUBLIC<br />ACCESS</span>
-          <a class="btn-primary" href="discover-ja.html">
-            <span class="btn-main">面白い記事を探す</span>
-            <span class="btn-sub">無料 · アプリ不要</span>
-          </a>
-        </div>
-      </section>"""
-
-
 def build_index(lang: str) -> dict[str, str]:
     s = INDEX_STRINGS[lang]
     l = LANGS[lang]
@@ -1020,16 +1001,27 @@ def build_index(lang: str) -> dict[str, str]:
         f'            <a class="pill" href="{page_file(p, lang)}">{l.nav[p]}</a>'
         for p in ["features", "privacy", "support", "terms", "rating-safety"]
     )
-    discovery = discovery_teaser(lang)
-    body = f"""
-    <main class="main-pad">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="hero-kicker"><span class="blink">●</span> PERSONAL ARCHIVE ACCESS · <span class="accent">IOS READER</span></p>
-            <h2 id="hero-title" class="hero-title">{HERO_HEADINGS[lang]}</h2>
-            <p class="hero-lede">{s['lede']}</p>
-            <div class="hero-cta">
+    discovery = ""
+    if lang == "ja":
+        hero_actions = """            <form class="hero-catalog-search" action="discover-ja.html" method="get" role="search">
+              <label for="home-catalog-query">SCP記事を検索</label>
+              <div class="hero-catalog-search-row">
+                <input id="home-catalog-query" name="q" type="search" placeholder="番号・キーワード" autocomplete="off" />
+                <button type="submit">検索</button>
+              </div>
+              <div class="hero-search-links" aria-label="すぐに探す">
+                <a href="discover-ja.html?mode=popular">高評価</a><a href="discover-ja.html?mode=short">短く読める</a>
+                <a href="discover-ja.html?kind=Tale">Tales</a><a href="discover-ja.html?kind=Canon">Canon</a>
+                <a href="discover-ja.html?kind=GoI">GoI</a>
+              </div>
+            </form>
+            <div class="hero-secondary-links">
+              <a href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank" rel="noopener noreferrer">App Storeで見る</a>
+              <a href="features-ja.html">アプリの機能を見る</a>
+            </div>"""
+        hero_kicker = "SCP ARTICLES / JP · CATALOG SEARCH"
+    else:
+        hero_actions = f"""            <div class="hero-cta">
               <a class="btn-primary" href="{APP_STORE_URL}" target="_blank" rel="noopener noreferrer">
                 <span class="btn-main">{s['cta_main']}</span>
                 <span class="btn-sub">{s['cta_sub']}</span>
@@ -1038,7 +1030,17 @@ def build_index(lang: str) -> dict[str, str]:
                 <span class="btn-main">{s['cta2_main']}</span>
                 <span class="btn-sub">{s['cta2_sub']}</span>
               </a>
-            </div>
+            </div>"""
+        hero_kicker = "PERSONAL ARCHIVE ACCESS · <span class=\"accent\">IOS READER</span>"
+    body = f"""
+    <main class="main-pad">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="hero-kicker"><span class="blink">●</span> {hero_kicker}</p>
+            <h2 id="hero-title" class="hero-title">{HERO_HEADINGS[lang]}</h2>
+            <p class="hero-lede">{s['lede']}</p>
+{hero_actions}
             <ul class="hero-badges">
 {badges}
             </ul>
@@ -2750,7 +2752,7 @@ def write_pages() -> None:
                 lang,
                 title=index["title"],
                 description=index["description"],
-                brand_line="File: SCP-DOCS-APP / Level 2 clearance",
+                brand_line="SCP記事を探す・読む" if lang == "ja" else "File: SCP-DOCS-APP / Level 2 clearance",
                 h1="SCP Docs",
                 page_title=LANGS[lang].nav["index"],
                 body=index["body"],
