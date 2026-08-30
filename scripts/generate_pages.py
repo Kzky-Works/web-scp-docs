@@ -853,6 +853,7 @@ HERO_HEADINGS = {
     "zh-Hans": "让档案，<br /><span class=\"accent\">真正适合阅读。</span>",
     "zh-Hant": "讓檔案，<br /><span class=\"accent\">真正適合閱讀。</span>",
     "tr": "Arşiv,<br /><span class=\"accent\">okumak için tasarlandı.</span>",
+    "id": "Arsip,<br /><span class=\"accent\">dibuat untuk dibaca.</span>",
 }
 
 FEATURE_SPOTLIGHT_COPY = {
@@ -2715,6 +2716,10 @@ SEARCH_SUPPORT_COPY = {
     "tr": (
         "Gelişmiş filtreler, kayıtlı aramalar ve yeni sonuç bildirimleri dahil tüm arama özellikleri ücretsizdir. Premium reklamları kaldırır; not düzenleme, daha yüksek sınırlar, çevrimdışı kopyalar, istatistikler, sesli okuma, vurgular ve iCloud eşzamanlı klasörler ekler.",
         "Kayıtlı aramalar ve yeni sonuç bildirimleri ücretsizdir. Uygulama eşzamanlamadan sonra kataloğu cihazda kontrol eder ve yeni eşleşmeleri bildirebilir. iOS izni gerekir; bildirimler işletici sunucusundan üretilmez.",
+    ),
+    "id": (
+        "Semua fitur pencarian gratis, termasuk filter lanjutan, pencarian tersimpan, dan notifikasi hasil baru. Premium menghapus iklan serta menambahkan penyuntingan catatan, batas simpan yang lebih tinggi, salinan luring, statistik, pembacaan teks, sorotan, dan folder dengan sinkronisasi iCloud.",
+        "Pencarian tersimpan dan notifikasi hasil baru gratis. Setelah sinkronisasi, aplikasi memeriksa katalog di perangkat dan dapat memberi tahu hasil baru. Izin notifikasi iOS diperlukan; notifikasi tidak dibuat oleh server milik pengelola.",
     ),
 }
 

@@ -215,6 +215,19 @@ READING_LOCALES = {
         "theme_order": ["local", "folklore", "starter", "horror", "short", "scifi", "mind", "tales", "world", "underread"],
         "references": [("SCP Vakfı Türkçe", "https://scpvakfi.wikidot.com/"), ("SCP-TR serisi", "https://scpvakfi.wikidot.com/scp-series-tr"), ("Yüksek oylu sayfalar", "https://scpvakfi.wikidot.com/yueksek-oylu-sayfalar")],
     },
+    "id": {
+        "branch": "id", "number_locale": "id-ID", "language_name": "Bahasa Indonesia",
+        "title": "Pilihan bacaan SCP — SCP Docs", "description": "Pilihan artikel SCP berbahasa Indonesia berdasarkan tema, suasana, dan bentuk tulisan.",
+        "eyebrow": "Rekomendasi SCP / Bahasa Indonesia", "hero": "Temukan bacaan SCP berikutnya.",
+        "lede": "Karya asli SCP-ID, horor, cerita pendek, humor, kisah, dan tulisan terbaru disusun khusus dari katalog berbahasa Indonesia.",
+        "back": "Cari berdasarkan nomor atau kata kunci →", "choose": "Pilih tema", "choose_copy": "Pilih tema untuk melihat daftar artikelnya.",
+        "lists": "DAFTAR", "loading": "Memuat pilihan bacaan…", "error": "Pilihan bacaan tidak dapat dimuat. Coba lagi nanti.",
+        "article_word": "artikel", "source_summary": "Cara artikel dipilih", "source_copy": "Pilihan ini mengacu pada panduan membaca, halaman dengan nilai tertinggi, daftar karya asli, dan katalog SCP Docs terbaru.",
+        "footer": "Pilihan bacaan", "nav_reading": "Pilihan bacaan",
+        "kind_labels": {"native": "SCP-ID", "translation": "SCP terjemahan", "tale": "Kisah", "canon": "Kanon", "goi": "Kelompok dalam Pengawasan", "joke": "SCP jenaka", "recent": "Terbaru"},
+        "theme_order": ["local", "folklore", "tales", "starter", "horror", "funny", "short", "world", "recent", "underread"],
+        "references": [("Halaman dengan nilai tertinggi", "https://scp-id.wikidot.com/top-rated-pages"), ("Panduan untuk membaca", "https://scp-id.wikidot.com/guide-for-reading"), ("Pusat Kisah ID", "https://scp-id.wikidot.com/tale-id-hub")],
+    },
 }
 
 
@@ -264,6 +277,7 @@ LOCALIZED_THEME_TERMS = {
     "zh-Hans": ["从这里开始", "中文原创代表作", "更多中文原创", "恐怖", "短篇", "长篇", "余韵", "记忆与信息", "宇宙与科幻", "故事", "设定与相关组织", "被低估的作品", "幽默", "历史", "民俗", "形式实验", "校园与日常", "近期作品"],
     "zh-Hant": ["從這裡開始", "繁中原創代表作", "更多繁中原創", "恐怖", "短篇", "長篇", "讀後餘韻", "記憶與資訊", "宇宙與科幻", "故事", "設定與相關組織", "較少被看見的作品", "幽默", "歷史", "民俗與在地日常", "形式實驗", "校園與生活", "近期作品"],
     "tr": ["Buradan başla", "Türkçe özgünler", "Daha fazla SCP-TR", "Korku", "Kısa okumalar", "Uzun okumalar", "Duygusal", "Hafıza ve bilgi", "Bilimkurgu", "Hikâyeler", "Kanonlar ve gruplar", "Gözden kaçanlar", "Mizah", "Tarih", "Folklor", "Biçim denemeleri", "Okul ve gündelik hayat", "Yeni"],
+    "id": ["Mulai dari sini", "Karya asli Indonesia", "Lebih banyak karya SCP-ID", "Horor", "Bacaan singkat", "Bacaan panjang", "Menyentuh hati", "Ingatan dan informasi", "Fiksi ilmiah", "Kisah", "Kanon dan kelompok", "Kurang dikenal", "Humor", "Sejarah", "Cerita rakyat dan kepercayaan", "Eksperimen bentuk", "Sekolah dan keseharian", "Terbaru"],
 }
 
 for _locale, _terms in LOCALIZED_THEME_TERMS.items():

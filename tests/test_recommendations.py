@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LOCALES = [
     "en", "ja", "fr", "ru", "ko", "es", "pl", "cs", "de", "it", "pt-br",
-    "th", "vi", "zh-hans", "zh-hant", "tr",
+    "th", "vi", "zh-hans", "zh-hant", "tr", "id",
 ]
 
 

@@ -24,7 +24,7 @@ NATIVE_MANIFEST = {
     "it": "manifest_scp-it.json", "pt": "manifest_scp-pt.json",
     "th": "manifest_scp-th.json", "vn": "manifest_scp-vn.json",
     "cn": "manifest_scp-cn.json", "zh-tr": "manifest_scp-zh-tr.json",
-    "tr": "manifest_scp-tr.json",
+    "tr": "manifest_scp-tr.json", "id": "manifest_scp-id.json",
 }
 
 MANIFEST_KIND = {
