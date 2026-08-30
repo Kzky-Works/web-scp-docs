@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-30",
+  "references": [
+    {
+      "label": "「SCP財団」の歩き方 改",
+      "url": "https://scp-jp.wikidot.com/arukikata-kai"
+    },
+    {
+      "label": "非公式SCP初心者向けリスト",
+      "url": "https://scp-jp.wikidot.com/unofficial-scp-starter-picks"
+    },
+    {
+      "label": "ユーザー選定リスト",
+      "url": "https://scp-jp.wikidot.com/user-curated-lists"
+    },
+    {
+      "label": "評価の高い記事",
+      "url": "https://scp-jp.wikidot.com/top-rated-pages"
+    },
+    {
+      "label": "おすすめの SCP-JP まとめ",
+      "url": "https://kainokikaede.hatenablog.com/entry/2015/03/18/220319"
+    },
+    {
+      "label": "心が切なくなる…涙を誘うおすすめの泣ける感動系SCP3選",
+      "url": "https://moemee.jp/post/14437/"
+    }
+  ],
+  "themes": [
+    {
+      "id": "first-steps",
+      "label": "最初の一歩",
+      "title": "初めて読むなら、この12記事",
+      "description": "仕組みがつかみやすく、SCP報告書の面白さを素直に味わえる入口です。翻訳記事とSCP-JPを織り交ぜました。",
+      "articleIds": [
+        "scp-173",
+        "scp-076",
+        "scp-682",
+        "scp-914",
+        "scp-6287",
+        "scp-006-jp",
+        "scp-100-jp",
+        "scp-120-jp",
+        "scp-2048-jp",
+        "scp-2188-jp",
+        "scp-087",
+        "scp-093"
+      ]
+    },
+    {
+      "id": "horror",
+      "label": "ホラー",
+      "title": "じわじわ怖い、しっかり怖い",
+      "description": "閉じた場所、映像記録、民俗、知覚への干渉。怖さの作り方が異なる記事を集めました。",
+      "articleIds": [
+        "scp-1562",
+        "scp-3633",
+        "scp-6794",
+        "scp-141-jp",
+        "scp-289-jp",
+        "scp-300-jp",
+        "scp-536-jp",
+        "scp-1019-jp",
+        "scp-1816-jp",
+        "scp-2316",
+        "scp-1981",
+        "scp-2718"
+      ]
+    },
+    {
+      "id": "emotional",
+      "label": "心に残る",
+      "title": "読後に余韻が残る記事",
+      "description": "家族、別れ、孤独、誰かを思うこと。怖さとは別の方向から心に残る作品です。",
+      "articleIds": [
+        "scp-348",
+        "scp-1281",
+        "scp-2265",
+        "scp-2295",
+        "scp-4999",
+        "scp-194-jp",
+        "scp-243-jp",
+        "scp-548-jp",
+        "scp-1340-jp",
+        "scp-2040-jp",
+        "scp-544-jp",
+        "scp-147-jp"
+      ]
+    },
+    {
+      "id": "funny-warm",
+      "label": "笑える・楽しい",
+      "title": "肩の力を抜いて読めるSCP",
+      "description": "困ったロボット、ゴリラ戦、ドーナツ税。発想の楽しさや会話の可笑しさが光る記事です。",
+      "articleIds": [
+        "scp-1370",
+        "scp-3092",
+        "scp-4759",
+        "scp-374-jp",
+        "scp-1475-jp",
+        "scp-1570-jp",
+        "scp-999",
+        "scp-1171",
+        "scp-3338",
+        "scp-3375",
+        "scp-3892",
+        "scp-5031"
+      ]
+    },
+    {
+      "id": "long-reads",
+      "label": "読み応え",
+      "title": "時間をとって読みたい長編",
+      "description": "探索記録、長い補遺、大きな物語。休日や夜に腰を据えて読みたい記事を選びました。",
+      "articleIds": [
+        "scp-093",
+        "scp-1730",
+        "scp-5000",
+        "scp-3001",
+        "scp-4000-jp",
+        "scp-3000-jp",
+        "scp-3000",
+        "scp-3999",
+        "scp-2935",
+        "scp-7000",
+        "scp-2911-jp",
+        "scp-2001-jp"
+      ]
+    },
+    {
+      "id": "short-reads",
+      "label": "短く読める",
+      "title": "短いのに、忘れにくい",
+      "description": "数分で読めるものを中心に、ひとつの仕掛けや鮮やかな着地を楽しめる記事を並べました。",
+      "articleIds": [
+        "scp-280-jp",
+        "scp-2000-jp",
+        "scp-040-jp",
+        "scp-173",
+        "scp-161-jp",
+        "scp-240-jp",
+        "scp-1210-jp-j",
+        "scp-8900-ex",
+        "scp-243-jp",
+        "scp-100-jp",
+        "scp-087",
+        "scp-4999"
+      ]
+    },
+    {
+      "id": "mind-bending",
+      "label": "認識・情報",
+      "title": "記憶と認識を揺さぶる記事",
+      "description": "反ミーム、認識災害、情報災害。文書を読む行為そのものが仕掛けになる作品です。",
+      "articleIds": [
+        "scp-055",
+        "scp-040-jp",
+        "scp-471-jp",
+        "scp-2521",
+        "scp-444-jp",
+        "scp-404-jp",
+        "scp-062-jp",
+        "scp-096-jp",
+        "scp-2316",
+        "scp-3519",
+        "scp-2718",
+        "scp-3002"
+      ]
+    },
+    {
+      "id": "time-space",
+      "label": "時間・宇宙・SF",
+      "title": "時間と空間を越えるSCP",
+      "description": "宇宙、過去改変、未来、別の世界。SCPの設定で読むSFとして面白い記事を集めました。",
+      "articleIds": [
+        "scp-1958",
+        "scp-2624",
+        "scp-3200",
+        "scp-4823",
+        "scp-077-jp",
+        "scp-508-jp",
+        "scp-646-jp",
+        "scp-798-jp",
+        "scp-1150-jp",
+        "scp-1910-jp",
+        "scp-1012",
+        "scp-280-jp"
+      ]
+    },
+    {
+      "id": "jp-picks",
+      "label": "SCP-JP選集",
+      "title": "日本支部から選ぶ12記事",
+      "description": "日本の題材や語り口を活かした作品から、個人の推薦リストでも挙げられてきた記事を選びました。",
+      "articleIds": [
+        "scp-085-jp",
+        "scp-240-jp",
+        "scp-502-jp",
+        "scp-251-jp",
+        "scp-496-jp",
+        "scp-132-jp",
+        "scp-587-jp",
+        "scp-079-jp",
+        "scp-171-jp",
+        "scp-219-jp",
+        "scp-565-jp",
+        "scp-147-jp"
+      ]
+    },
+    {
+      "id": "beyond-reports",
+      "label": "報告書の外へ",
+      "title": "Tale・GoI・Canonから読む",
+      "description": "SCP報告書とは違う形式で広がる読み物です。新聞、掲示板、記録、長編の入口を横断します。",
+      "articleIds": [
+        "log-of-anomalous-items-jp",
+        "unnamed-file",
+        "news4pamwac-fox",
+        "taboo",
+        "inspiration-exam",
+        "talk-to-you-jp",
+        "wikipedia-shigastan",
+        "ykamikura-s-proposal",
+        "chuukunn-s-proposal",
+        "early-summer-1998",
+        "document-recovered-from-the-marianas-trench",
+        "1998-911-hub"
+      ]
+    }
+  ]
+}

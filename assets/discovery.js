@@ -167,6 +167,10 @@ if (typeof document !== "undefined") {
     const activeTag = document.querySelector("#active-tag");
     const activeTagName = document.querySelector("#active-tag-name");
     const clearTag = document.querySelector("#clear-tag");
+    const readingThemeList = document.querySelector("#reading-theme-list");
+    const readingListPanel = document.querySelector("#reading-list-panel");
+    const readingListStatus = document.querySelector("#reading-list-status");
+    const readingListReferences = document.querySelector("#reading-list-references");
     const presetButtons = [...document.querySelectorAll("[data-search-preset]")];
     let catalog = [];
     let tags = [];
@@ -187,6 +191,15 @@ if (typeof document !== "undefined") {
       if (!isAppleMobile()) return;
       event.preventDefault();
       SCPDocsSearch.openArticleInApp(article, window.location);
+    }
+
+    function configureArticleLink(link, article) {
+      link.href = isAppleMobile() ? appURL(article) : article.url;
+      if (!isAppleMobile()) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+      }
+      link.addEventListener("click", event => openInstalledApp(event, article));
     }
 
     function formatScore(value) {
@@ -263,13 +276,8 @@ if (typeof document !== "undefined") {
 
       const title = document.createElement("h3");
       const titleLink = document.createElement("a");
-      titleLink.href = isAppleMobile() ? appURL(article) : article.url;
-      if (!isAppleMobile()) {
-        titleLink.target = "_blank";
-        titleLink.rel = "noopener noreferrer";
-      }
       titleLink.textContent = article.title;
-      titleLink.addEventListener("click", event => openInstalledApp(event, article));
+      configureArticleLink(titleLink, article);
       title.append(titleLink);
 
       const tags = document.createElement("div");
@@ -302,6 +310,92 @@ if (typeof document !== "undefined") {
 
       card.append(heading, title, tags, actions);
       return card;
+    }
+
+    function readingListArticle(article, index) {
+      const item = document.createElement("li");
+      item.className = "reading-list-article";
+
+      const number = document.createElement("span");
+      number.className = "reading-list-number";
+      number.textContent = String(index + 1).padStart(2, "0");
+
+      const content = document.createElement("div");
+      const file = document.createElement("p");
+      file.className = "reading-list-file";
+      file.textContent = article.id;
+      const title = document.createElement("h4");
+      const link = document.createElement("a");
+      link.textContent = article.title;
+      configureArticleLink(link, article);
+      title.append(link);
+      const meta = document.createElement("p");
+      meta.className = "reading-list-meta";
+      meta.textContent = detail(article);
+      content.append(file, title, meta);
+
+      item.append(number, content);
+      return item;
+    }
+
+    function renderReadingList(theme, articlesByID) {
+      const resolved = theme.articleIds.map(id => articlesByID.get(id)).filter(Boolean);
+      const header = document.createElement("div");
+      header.className = "reading-list-header";
+      const copy = document.createElement("div");
+      const label = document.createElement("p");
+      label.className = "section-label";
+      label.textContent = theme.label;
+      const title = document.createElement("h3");
+      title.textContent = theme.title;
+      const description = document.createElement("p");
+      description.textContent = theme.description;
+      copy.append(label, title, description);
+      const count = document.createElement("p");
+      count.className = "reading-list-count";
+      count.textContent = `${resolved.length.toLocaleString("ja-JP")}記事`;
+      header.append(copy, count);
+
+      const list = document.createElement("ol");
+      list.className = "reading-list-articles";
+      list.replaceChildren(...resolved.map(readingListArticle));
+      readingListPanel.replaceChildren(header, list);
+
+      for (const button of readingThemeList.querySelectorAll("button[data-reading-theme]")) {
+        const selected = button.dataset.readingTheme === theme.id;
+        button.setAttribute("aria-pressed", String(selected));
+      }
+    }
+
+    function renderRecommendations(payload) {
+      const themes = Array.isArray(payload.themes) ? payload.themes : [];
+      if (themes.length === 0) throw new Error("empty recommendations");
+      const articlesByID = new Map(catalog.map(article => [article.id, article]));
+      const buttons = themes.map(theme => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.readingTheme = theme.id;
+        button.setAttribute("aria-pressed", "false");
+        const label = document.createElement("strong");
+        label.textContent = theme.label;
+        const count = document.createElement("span");
+        count.textContent = `${theme.articleIds.length.toLocaleString("ja-JP")}記事`;
+        button.append(label, count);
+        button.addEventListener("click", () => renderReadingList(theme, articlesByID));
+        return button;
+      });
+      readingThemeList.replaceChildren(...buttons);
+
+      const references = (Array.isArray(payload.references) ? payload.references : []).map(reference => {
+        const link = document.createElement("a");
+        link.href = reference.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = `${reference.label} ↗`;
+        return link;
+      });
+      readingListReferences.replaceChildren(...references);
+      renderReadingList(themes[0], articlesByID);
     }
 
     function pageButton(label, page, disabled = false, current = false) {
@@ -401,9 +495,17 @@ if (typeof document !== "undefined") {
         document.querySelectorAll(".tag-directory input, .tag-directory button").forEach(control => { control.disabled = false; });
         presetButtons.forEach(button => { button.disabled = false; });
         render();
+        try {
+          const recommendationsResponse = await fetch("assets/recommendations-ja.json", { cache: "no-cache" });
+          if (!recommendationsResponse.ok) throw new Error(`HTTP ${recommendationsResponse.status}`);
+          renderRecommendations(await recommendationsResponse.json());
+        } catch (_) {
+          readingListStatus.textContent = "おすすめ記事を読み込めませんでした。時間をおいて再読み込みしてください。";
+        }
       } catch (_) {
         status.textContent = "記事カタログを読み込めませんでした。時間をおいて再読み込みしてください。";
         tagStatus.textContent = "タグ一覧を読み込めませんでした。時間をおいて再読み込みしてください。";
+        readingListStatus.textContent = "おすすめ記事を読み込めませんでした。時間をおいて再読み込みしてください。";
       }
     }
 
