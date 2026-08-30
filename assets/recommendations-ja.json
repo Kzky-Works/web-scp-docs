@@ -31,7 +31,7 @@
     {
       "id": "first-steps",
       "label": "最初の一歩",
-      "title": "初めて読むなら、この12記事",
+      "title": "初めて読むなら、ここから",
       "description": "仕組みがつかみやすく、SCP報告書の面白さを素直に味わえる入口です。翻訳記事とSCP-JPを織り交ぜました。",
       "articleIds": [
         "scp-173",
@@ -45,7 +45,13 @@
         "scp-2048-jp",
         "scp-2188-jp",
         "scp-087",
-        "scp-093"
+        "scp-093",
+        "scp-096",
+        "scp-055",
+        "scp-348",
+        "scp-999",
+        "scp-5031",
+        "scp-3008"
       ]
     },
     {
@@ -65,7 +71,13 @@
         "scp-1816-jp",
         "scp-2316",
         "scp-1981",
-        "scp-2718"
+        "scp-2718",
+        "scp-3005",
+        "scp-3998",
+        "scp-3063",
+        "scp-1733",
+        "scp-2852",
+        "scp-1875"
       ]
     },
     {
@@ -85,7 +97,13 @@
         "scp-1340-jp",
         "scp-2040-jp",
         "scp-544-jp",
-        "scp-147-jp"
+        "scp-147-jp",
+        "scp-1762",
+        "scp-3001",
+        "scp-5031",
+        "scp-6001",
+        "scp-1084-jp",
+        "scp-2624"
       ]
     },
     {
@@ -105,7 +123,13 @@
         "scp-3338",
         "scp-3375",
         "scp-3892",
-        "scp-5031"
+        "scp-5031",
+        "scp-426",
+        "scp-522-jp",
+        "scp-1134-jp",
+        "scp-1210-jp-j",
+        "scp-666-jp-j",
+        "scp-1841-ex"
       ]
     },
     {
@@ -125,7 +149,13 @@
         "scp-2935",
         "scp-7000",
         "scp-2911-jp",
-        "scp-2001-jp"
+        "scp-2001-jp",
+        "scp-2222-jp",
+        "scp-1777-jp",
+        "ykamikura-s-proposal",
+        "unnamed-file",
+        "scp-2041-jp",
+        "quintessence"
       ]
     },
     {
@@ -145,7 +175,13 @@
         "scp-243-jp",
         "scp-100-jp",
         "scp-087",
-        "scp-4999"
+        "scp-4999",
+        "scp-2521",
+        "scp-404-jp",
+        "scp-444-jp",
+        "scp-2144-jp",
+        "scp-3936",
+        "scp-522-jp"
       ]
     },
     {
@@ -165,7 +201,13 @@
         "scp-2316",
         "scp-3519",
         "scp-2718",
-        "scp-3002"
+        "scp-3002",
+        "scp-2140",
+        "scp-3936",
+        "scp-1655-jp",
+        "scp-567-jp",
+        "scp-083-jp",
+        "solvex-s-proposal"
       ]
     },
     {
@@ -185,13 +227,19 @@
         "scp-1150-jp",
         "scp-1910-jp",
         "scp-1012",
-        "scp-280-jp"
+        "scp-280-jp",
+        "scp-2000",
+        "scp-3001",
+        "scp-2040-jp",
+        "scp-009-jp",
+        "meshiochislash-s-proposal",
+        "scp-1730"
       ]
     },
     {
       "id": "jp-picks",
       "label": "SCP-JP選集",
-      "title": "日本支部から選ぶ12記事",
+      "title": "日本支部から選ぶ",
       "description": "日本の題材や語り口を活かした作品から、個人の推薦リストでも挙げられてきた記事を選びました。",
       "articleIds": [
         "scp-085-jp",
@@ -205,7 +253,13 @@
         "scp-171-jp",
         "scp-219-jp",
         "scp-565-jp",
-        "scp-147-jp"
+        "scp-147-jp",
+        "scp-040-jp",
+        "scp-544-jp",
+        "scp-062-jp",
+        "scp-161-jp",
+        "scp-1045-jp",
+        "scp-910-jp"
       ]
     },
     {
@@ -225,7 +279,65 @@
         "chuukunn-s-proposal",
         "early-summer-1998",
         "document-recovered-from-the-marianas-trench",
-        "1998-911-hub"
+        "1998-911-hub",
+        "sinro-soudan",
+        "ykamikura-6",
+        "scp-front-jp",
+        "necos-kitchen",
+        "lecture-of-unusual-lives",
+        "your-turn"
+      ]
+    },
+    {
+      "id": "creatures",
+      "label": "生きもの・共存",
+      "title": "生きものと向き合う",
+      "description": "かわいい、頼もしい、少し困る。人と生きものの距離が印象に残る記事を集めました。",
+      "articleIds": [
+        "scp-999",
+        "scp-5031",
+        "scp-2295",
+        "scp-111",
+        "scp-3466",
+        "scp-3375",
+        "scp-3338",
+        "scp-1371-jp",
+        "scp-1084-jp",
+        "scp-1186-jp",
+        "scp-120-jp",
+        "scp-083-jp",
+        "scp-070-jp",
+        "scp-280-fr",
+        "scp-131",
+        "scp-529",
+        "scp-1762",
+        "scp-1281"
+      ]
+    },
+    {
+      "id": "format-surprises",
+      "label": "形式を楽しむ",
+      "title": "ページの仕掛けに驚く",
+      "description": "文章だけでは終わらない、表示や構成そのものを活かした記事です。初見の体験を大切に選びました。",
+      "articleIds": [
+        "scp-2521",
+        "scp-404-jp",
+        "scp-567-jp",
+        "scp-2144-jp",
+        "scp-325-jp-j",
+        "scp-tcg-jp-j",
+        "scp-001-jp-j",
+        "scp-496-jp",
+        "scp-132-jp",
+        "scp-161-jp",
+        "scp-1045-jp",
+        "scp-426",
+        "scp-2316",
+        "scp-4000",
+        "scp-3999",
+        "scp-3002",
+        "wikipedia-shigastan",
+        "taboo"
       ]
     }
   ]
