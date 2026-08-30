@@ -285,6 +285,16 @@ def nav(page: str, active_lang: str) -> str:
 def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
     lang = LANGS[active_lang]
     if active_lang == "ja":
+        brand = f"""        <div class="site-brand-block">
+          <a class="site-brand" href="index-ja.html" aria-label="SCP Docs ホーム">
+            <img src="assets/images/app-icon-20260725.png" alt="" width="48" height="48" />
+            <span class="site-brand-copy">
+              <span class="site-wordmark"><strong>SCP</strong><span>docs</span></span>
+              <span class="site-brand-tagline">READER / CATALOG</span>
+            </span>
+          </a>
+          <h1 class="visually-hidden">{title}</h1>
+        </div>"""
         language_control = f"""          <details class="language-menu">
             <summary>{lang.switch_label}</summary>
             <div class="language-options" aria-label="{lang.switch_aria}">
@@ -292,16 +302,17 @@ def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
             </div>
           </details>"""
     else:
+        brand = f"""        <div>
+          <div class="brand-line">{brand_line}</div>
+          <h1 class="brand-title">{title}</h1>
+        </div>"""
         language_control = f"""          <div class="language-switch" aria-label="{lang.switch_aria}">
             <span class="language-switch-label">{lang.switch_label}</span>
 {linked_versions(page, active_lang)}
           </div>"""
     return f"""    <header class="terminal-header">
       <div class="terminal-header-inner">
-        <div>
-          <div class="brand-line">{brand_line}</div>
-          <h1 class="brand-title">{title}</h1>
-        </div>
+{brand}
         <div class="terminal-header-actions">
 {language_control}
           <nav class="nav" aria-label="Primary navigation">
@@ -350,6 +361,7 @@ def layout(
     image: bool = False,
 ) -> str:
     lang = LANGS[lang_code]
+    favicon = "assets/images/app-icon-20260725.png" if lang_code == "ja" else f"data:image/svg+xml,{FAVICON_SVG}"
     image_tags = ""
     if image:
         image_url = screenshot_url(lang_code, "home")
@@ -368,7 +380,7 @@ def layout(
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="{escape(description, quote=True)}" />
   <meta name="theme-color" content="#f4f0e6" />
-  <link rel="icon" href="data:image/svg+xml,{FAVICON_SVG}" />
+  <link rel="icon" href="{favicon}" />
   <title>{escape(title)}</title>
   <link rel="canonical" href="{page_url(page, lang_code)}" />
 {head_alternates(page)}
