@@ -33,6 +33,7 @@ const articles = [
 function state(overrides = {}) {
   return {
     query: "",
+    tag: "",
     kind: "",
     objectClass: "",
     length: "",
@@ -67,6 +68,24 @@ test("combines kind, object class, length, score, and preset filters", () => {
     mode: "popular",
   }));
   assert.deepEqual(filtered.map(article => article.id), ["scp-178"]);
+});
+
+test("filters by one exact tag and keeps it in the URL", () => {
+  const filtered = search.filterArticles(articles, state({ tag: "反ミーム" }));
+  assert.deepEqual(filtered.map(article => article.id), ["scp-178-jp"]);
+
+  const restored = search.parseState(search.stateParameters(state({ tag: "反ミーム" })));
+  assert.equal(restored.tag, "反ミーム");
+});
+
+test("builds a normalized tag directory with article counts", () => {
+  const directory = search.tagDirectory([
+    ...articles,
+    { id: "tale", title: "Tale", tags: ["反ミーム", " 視覚 "] },
+  ]);
+  const counts = Object.fromEntries(directory.map(entry => [entry.label, entry.count]));
+  assert.equal(counts["反ミーム"], 2);
+  assert.equal(counts["視覚"], 2);
 });
 
 test("search state round-trips through URL parameters", () => {

@@ -110,6 +110,26 @@
           <button id="search-reset" class="search-reset" type="button" disabled>条件をクリア</button>
         </form>
 
+        <section class="tag-directory" aria-labelledby="tag-directory-title">
+          <div class="tag-directory-heading">
+            <div>
+              <p class="section-label">Tag directory</p>
+              <h3 id="tag-directory-title">タグから探す</h3>
+              <p>タグを選ぶと、そのタグが付いた記事だけに絞り込めます。キーワードやほかの条件との組み合わせも可能です。</p>
+            </div>
+            <label for="tag-filter">タグ名で絞り込む
+              <input id="tag-filter" type="search" placeholder="例：ホラー、反ミーム、財団製" autocomplete="off" disabled />
+            </label>
+          </div>
+          <div id="active-tag" class="active-tag" hidden>
+            <span>選択中：<strong id="active-tag-name"></strong></span>
+            <button id="clear-tag" type="button" disabled>タグを解除</button>
+          </div>
+          <p id="tag-status" class="tag-status" role="status" aria-live="polite">タグ一覧を読み込んでいます…</p>
+          <div id="tag-list" class="tag-directory-list" aria-label="記事タグ一覧"></div>
+          <button id="tag-show-all" class="tag-show-all" type="button" disabled hidden>すべてのタグを見る</button>
+        </section>
+
         <div class="discovery-modes" aria-label="すぐに探す">
           <button type="button" data-search-preset="popular" aria-pressed="false" disabled>高評価</button>
           <button type="button" data-search-preset="short" aria-pressed="false" disabled>短く読める</button>

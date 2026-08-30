@@ -29,6 +29,7 @@ const SCPDocsSearch = (() => {
     };
     return {
       query: String(params.get("q") || ""),
+      tag: String(params.get("tag") || ""),
       kind: String(params.get("kind") || ""),
       objectClass: String(params.get("class") || ""),
       length: String(params.get("length") || ""),
@@ -42,6 +43,7 @@ const SCPDocsSearch = (() => {
   function stateParameters(state) {
     const params = new URLSearchParams();
     if (state.query.trim()) params.set("q", state.query.trim());
+    if (state.tag) params.set("tag", state.tag);
     if (state.kind) params.set("kind", state.kind);
     if (state.objectClass) params.set("class", state.objectClass);
     if (state.length) params.set("length", state.length);
@@ -93,6 +95,7 @@ const SCPDocsSearch = (() => {
     const filtered = articles.filter(article => {
       const haystack = article.searchableText || searchableText(article);
       if (tokens.some(token => !haystack.includes(token))) return false;
+      if (state.tag && !(article.tags || []).some(tag => normalize(tag) === normalize(state.tag))) return false;
       if (state.kind && article.kind !== state.kind) return false;
       if (state.objectClass && article.objectClass !== state.objectClass) return false;
       if (!matchesLength(article, state.length)) return false;
@@ -112,6 +115,21 @@ const SCPDocsSearch = (() => {
     return filtered;
   }
 
+  function tagDirectory(articles) {
+    const counts = new Map();
+    for (const article of articles) {
+      for (const tag of (article.tags || [])) {
+        const label = String(tag || "").trim();
+        if (!label) continue;
+        const key = normalize(label);
+        const entry = counts.get(key) || { label, count: 0 };
+        entry.count += 1;
+        counts.set(key, entry);
+      }
+    }
+    return [...counts.values()];
+  }
+
   return {
     PAGE_SIZE,
     articleAppURL,
@@ -121,6 +139,7 @@ const SCPDocsSearch = (() => {
     parseState,
     searchableText,
     stateParameters,
+    tagDirectory,
   };
 })();
 
@@ -141,8 +160,18 @@ if (typeof document !== "undefined") {
     const status = document.querySelector("#search-status");
     const results = document.querySelector("#search-results");
     const pagination = document.querySelector("#search-pagination");
+    const tagFilter = document.querySelector("#tag-filter");
+    const tagList = document.querySelector("#tag-list");
+    const tagStatus = document.querySelector("#tag-status");
+    const tagShowAll = document.querySelector("#tag-show-all");
+    const activeTag = document.querySelector("#active-tag");
+    const activeTagName = document.querySelector("#active-tag-name");
+    const clearTag = document.querySelector("#clear-tag");
     const presetButtons = [...document.querySelectorAll("[data-search-preset]")];
     let catalog = [];
+    let tags = [];
+    let tagLimit = 48;
+    let showAllTags = false;
     let state = SCPDocsSearch.parseState(new URLSearchParams(window.location.search));
 
     function isAppleMobile() {
@@ -174,12 +203,48 @@ if (typeof document !== "undefined") {
     }
 
     function applyTag(tag) {
-      state.query = tag;
+      state.tag = tag;
       state.mode = "";
       state.page = 1;
-      query.value = tag;
       render(true);
       form.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function renderTags() {
+      if (!tagList) return;
+      const needle = SCPDocsSearch.normalize(tagFilter.value);
+      const filtered = tags.filter(tag => !needle || SCPDocsSearch.normalize(tag.label).includes(needle));
+      const sorted = [...filtered].sort((left, right) => {
+        if (!showAllTags && !needle) return right.count - left.count || left.label.localeCompare(right.label, "ja");
+        return left.label.localeCompare(right.label, "ja");
+      });
+      const visible = sorted.slice(0, tagLimit);
+      const chips = visible.map(tag => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "tag-directory-chip";
+        button.setAttribute("aria-pressed", String(SCPDocsSearch.normalize(tag.label) === SCPDocsSearch.normalize(state.tag)));
+        const label = document.createElement("span");
+        label.textContent = tag.label;
+        const count = document.createElement("span");
+        count.className = "tag-directory-count";
+        count.textContent = tag.count.toLocaleString("ja-JP");
+        button.append(label, count);
+        button.addEventListener("click", () => applyTag(tag.label));
+        return button;
+      });
+      tagList.replaceChildren(...chips);
+      if (filtered.length === 0) {
+        tagStatus.textContent = "一致するタグがありません。";
+      } else if (visible.length < filtered.length) {
+        tagStatus.textContent = `${filtered.length.toLocaleString("ja-JP")}タグ中、${visible.length.toLocaleString("ja-JP")}タグを表示`;
+      } else {
+        tagStatus.textContent = `${filtered.length.toLocaleString("ja-JP")}タグを表示`;
+      }
+      tagShowAll.hidden = visible.length >= filtered.length;
+      tagShowAll.textContent = showAllTags || needle ? "さらに表示" : "すべてのタグを見る";
+      activeTag.hidden = !state.tag;
+      activeTagName.textContent = state.tag;
     }
 
     function articleCard(article) {
@@ -278,6 +343,7 @@ if (typeof document !== "undefined") {
       for (const button of presetButtons) {
         button.setAttribute("aria-pressed", String(button.dataset.searchPreset === state.mode));
       }
+      renderTags();
     }
 
     function updateURL(push) {
@@ -309,6 +375,7 @@ if (typeof document !== "undefined") {
     function readControls() {
       state = {
         query: query.value,
+        tag: state.tag,
         kind: kind.value,
         objectClass: objectClass.value,
         length: length.value,
@@ -329,11 +396,14 @@ if (typeof document !== "undefined") {
           searchableText: SCPDocsSearch.searchableText(article),
         }));
         if (catalog.length === 0) throw new Error("empty catalog");
+        tags = SCPDocsSearch.tagDirectory(catalog);
         form.querySelectorAll("input, select, button").forEach(control => { control.disabled = false; });
+        document.querySelectorAll(".tag-directory input, .tag-directory button").forEach(control => { control.disabled = false; });
         presetButtons.forEach(button => { button.disabled = false; });
         render();
       } catch (_) {
         status.textContent = "記事カタログを読み込めませんでした。時間をおいて再読み込みしてください。";
+        tagStatus.textContent = "タグ一覧を読み込めませんでした。時間をおいて再読み込みしてください。";
       }
     }
 
@@ -357,6 +427,29 @@ if (typeof document !== "undefined") {
     }
     reset.addEventListener("click", () => {
       state = SCPDocsSearch.parseState(new URLSearchParams());
+      tagFilter.value = "";
+      tagLimit = 48;
+      showAllTags = false;
+      render(true);
+    });
+    tagFilter.addEventListener("input", () => {
+      tagLimit = 80;
+      showAllTags = true;
+      renderTags();
+    });
+    tagShowAll.addEventListener("click", () => {
+      if (!showAllTags && !tagFilter.value.trim()) {
+        showAllTags = true;
+        tagLimit = tags.length;
+      } else {
+        showAllTags = true;
+        tagLimit += 80;
+      }
+      renderTags();
+    });
+    clearTag.addEventListener("click", () => {
+      state.tag = "";
+      state.page = 1;
       render(true);
     });
     window.addEventListener("popstate", () => {

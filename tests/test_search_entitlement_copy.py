@@ -40,7 +40,19 @@ class SearchEntitlementCopyTests(unittest.TestCase):
         self.assertIn("検索機能はすべて無料です", index_html)
         self.assertIn("すべて無料の高機能検索", features_html)
         self.assertIn("保存検索と新着通知は無料です", support_html)
+        self.assertIn("各20件", features_html)
+        self.assertIn("各200件", features_html)
+        self.assertIn("各20件", support_html)
+        self.assertIn("各200件", support_html)
         self.assertNotIn("保存検索はプレミアム機能です", support_html)
+
+    def test_japanese_discovery_exposes_a_browsable_tag_directory(self) -> None:
+        discovery_html = (ROOT / "discover-ja.html").read_text(encoding="utf-8")
+
+        self.assertIn('id="tag-filter"', discovery_html)
+        self.assertIn('id="tag-list"', discovery_html)
+        self.assertIn('id="tag-show-all"', discovery_html)
+        self.assertIn("タグから探す", discovery_html)
 
 
 if __name__ == "__main__":
