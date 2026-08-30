@@ -5,32 +5,23 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-JAPANESE_PAGES = [
-    "index-ja.html",
-    "discover-ja.html",
-    "reading-ja.html",
-    "features-ja.html",
-    "support-ja.html",
-    "privacy-ja.html",
-    "terms-ja.html",
-    "rating-safety-ja.html",
+LOCALIZED_INDEX_PAGES = [
+    "index.html", "index-ja.html", "index-fr.html", "index-ru.html", "index-ko.html",
+    "index-es.html", "index-pl.html", "index-cs.html", "index-de.html", "index-it.html",
+    "index-pt-br.html", "index-th.html", "index-vi.html", "index-zh-hans.html",
+    "index-zh-hant.html", "index-tr.html",
 ]
 
 
 class BrandHeaderTests(unittest.TestCase):
-    def test_japanese_pages_use_the_logo_lockup(self):
-        for page in JAPANESE_PAGES:
+    def test_every_language_uses_the_logo_lockup(self):
+        for page in LOCALIZED_INDEX_PAGES:
             with self.subTest(page=page):
                 html = (ROOT / page).read_text(encoding="utf-8")
-                self.assertIn('class="site-brand" href="index-ja.html"', html)
+                self.assertIn('class="site-brand"', html)
                 self.assertIn('src="assets/images/app-icon-20260725.png"', html)
                 self.assertIn('<strong>SCP</strong><span>docs</span>', html)
                 self.assertIn('READER / CATALOG', html)
-
-    def test_other_languages_are_not_changed_before_japanese_approval(self):
-        html = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertNotIn('class="site-brand"', html)
-        self.assertIn('class="brand-title"', html)
 
     def test_web_icon_matches_the_current_app_icon_canon(self):
         data = (ROOT / "assets" / "images" / "app-icon-20260725.png").read_bytes()
@@ -41,10 +32,10 @@ class BrandHeaderTests(unittest.TestCase):
         self.assertEqual(data[:8], b"\x89PNG\r\n\x1a\n")
         self.assertEqual(struct.unpack(">II", data[16:24]), (1024, 1024))
 
-    def test_generator_preserves_the_japanese_logo_and_icon(self):
+    def test_generator_preserves_the_global_logo_and_icon(self):
         source = (ROOT / "scripts" / "generate_pages.py").read_text(encoding="utf-8")
-        self.assertIn('class="site-brand" href="index-ja.html"', source)
-        self.assertIn('"assets/images/app-icon-20260725.png" if lang_code == "ja"', source)
+        self.assertIn('class="site-brand" href="{home}"', source)
+        self.assertIn('favicon = "assets/images/app-icon-20260725.png"', source)
 
 
 if __name__ == "__main__":

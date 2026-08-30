@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="SCP Docs es un lector iOS nativo no oficial para los archivos de SCP Wiki, con directorios por rama, navegación guiada, Biblioteca, búsquedas guardadas, tarjetas para compartir y herramientas Premium." />
   <meta name="theme-color" content="#f4f0e6" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c0e'/%3E%3Ccircle cx='32' cy='34' r='15' fill='none' stroke='%23e13030' stroke-width='5'/%3E%3Crect x='28' y='8' width='8' height='12' fill='%23e13030'/%3E%3Ccircle cx='32' cy='34' r='5' fill='%23e13030'/%3E%3C/svg%3E" />
+  <link rel="icon" href="assets/images/app-icon-20260725.png" />
   <title>SCP Docs — Lector del Archivo de la Fundación para iPhone</title>
   <link rel="canonical" href="https://scpdocs.link/index-es.html" />
   <link rel="alternate" hreflang="en" href="https://scpdocs.link/" />
@@ -59,13 +59,20 @@
   <div class="layout-wide">
     <header class="terminal-header">
       <div class="terminal-header-inner">
-        <div>
-          <div class="brand-line">File: SCP-DOCS-APP / Level 2 clearance</div>
-          <h1 class="brand-title">SCP Docs</h1>
+        <div class="site-brand-block">
+          <a class="site-brand" href="index-es.html" aria-label="SCP Docs">
+            <img src="assets/images/app-icon-20260725.png" alt="" width="48" height="48" />
+            <span class="site-brand-copy">
+              <span class="site-wordmark"><strong>SCP</strong><span>docs</span></span>
+              <span class="site-brand-tagline">READER / CATALOG</span>
+            </span>
+          </a>
+          <h1 class="visually-hidden">SCP Docs</h1>
         </div>
         <div class="terminal-header-actions">
-          <div class="language-switch" aria-label="Selector de idioma">
-            <span class="language-switch-label">Idioma</span>
+          <details class="language-menu">
+            <summary>Idioma</summary>
+            <div class="language-options" aria-label="Selector de idioma">
             <a href="index.html" lang="en">EN</a>
             <a href="index-ja.html" lang="ja">日本語</a>
             <a href="index-fr.html" lang="fr">FR</a>
@@ -82,9 +89,11 @@
             <a href="index-zh-hans.html" lang="zh-Hans">简体中文</a>
             <a href="index-zh-hant.html" lang="zh-Hant">繁體中文</a>
             <a href="index-tr.html" lang="tr">TR</a>
-          </div>
+            </div>
+          </details>
           <nav class="nav" aria-label="Primary navigation">
             <a href="index-es.html" aria-current="page">Inicio</a>
+            <a href="reading-es.html">Colecciones</a>
             <a href="features-es.html">Funciones</a>
             <a href="privacy-es.html">Privacidad</a>
             <a href="support-es.html">Soporte</a>
@@ -135,6 +144,11 @@
       </section>
 
 
+      <section class="home-reading-promo" aria-label="Colecciones">
+        <a class="home-route-entry" href="reading-es.html">
+          <span><strong>Colecciones</strong><small>Selecciones temáticas de obras hispanas y traducciones SCP.</small></span><b>→</b>
+        </a>
+      </section>
 
       <section class="capability-showcase" aria-labelledby="capability-title">
         <div class="section-heading-row">

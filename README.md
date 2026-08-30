@@ -69,7 +69,7 @@
 - 追加9言語では、App Store Connect に必要なトップ・プライバシー・サポートをローカライズする。機能紹介・利用規約・安全方針のナビゲーション先は英語版とする。
 - サイト用の追加言語スクリーンショットは未収録のため、スペイン語・ポーランド語を含む追加言語ページでは英語版 `*-en.png` を流用する。
 - 旧英語 URL の `privacy-en.html` / `terms-en.html` は外部リンク保護用のリダイレクトとしてだけ残す。
-- すべての公開ページの共通ヘッダーに `.language-switch` を置く。トップ・プライバシー・サポートでは全16言語、それ以外では全ページを持つ既存7言語を切り替えられるようにする。
+- すべての公開ページの共通ヘッダーに、現行アプリアイコンと `SCPdocs / READER / CATALOG` のロックアップを置く。言語切替は `.language-menu` にまとめ、トップ・プライバシー・サポート・読書選集では全16言語を切り替えられるようにする。
 
 ## ページ生成
 
@@ -83,6 +83,13 @@ python3 scripts/generate_pages.py
 
 ```bash
 python3 scripts/build_discovery_catalog.py
+```
+
+「テーマで読む」は全16言語に独立ページを持つ。日本語以外の選集データは、隣接する `data-scp-docs/list/*` の各支部カタログから生成し、言語ごとに異なるテーマ順・原創作・翻訳・Tales・Canon・GoI・新着を使う。1テーマは10〜20件に収める。
+
+```bash
+python3 scripts/build_reading_catalogs.py
+python3 scripts/generate_pages.py
 ```
 
 ## 記事共有リンク

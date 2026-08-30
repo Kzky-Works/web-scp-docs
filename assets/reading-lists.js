@@ -24,6 +24,16 @@ if (typeof document !== "undefined") {
     const status = document.querySelector("#reading-list-status");
     const references = document.querySelector("#reading-list-references");
     const total = document.querySelector("#reading-list-total");
+    const page = document.querySelector("[data-reading-locale]");
+    const locale = page?.dataset.readingLocale || "ja";
+    const assetLocale = page?.dataset.readingAssets || locale.toLowerCase();
+    let ui = {
+      number_locale: locale,
+      article_word: locale === "ja" ? "記事" : "articles",
+      character_word: locale === "ja" ? "文字" : "chars",
+      error: "The collections could not be loaded.",
+      kind_labels: {},
+    };
 
     function isAppleMobile() {
       return /iPad|iPhone|iPod/.test(navigator.userAgent)
@@ -47,9 +57,9 @@ if (typeof document !== "undefined") {
 
     function detail(article) {
       const score = Number(article.score || 0);
-      const parts = [article.kind];
+      const parts = [ui.kind_labels[article.kindKey] || article.kind || article.kindKey];
       if (article.objectClass) parts.push(article.objectClass);
-      if (article.characters) parts.push(`${Number(article.characters).toLocaleString("ja-JP")}文字`);
+      if (article.characters) parts.push(`${Number(article.characters).toLocaleString(ui.number_locale)} ${ui.character_word}`);
       parts.push(`Wiki ${score > 0 ? "+" : ""}${score}`);
       return parts.join(" · ");
     }
@@ -95,7 +105,7 @@ if (typeof document !== "undefined") {
       copy.append(label, heading, description);
       const count = document.createElement("p");
       count.className = "reading-list-count";
-      count.textContent = `${resolved.length.toLocaleString("ja-JP")}記事`;
+      count.textContent = `${resolved.length.toLocaleString(ui.number_locale)} ${ui.article_word}`;
       header.append(copy, count);
 
       const list = document.createElement("ol");
@@ -120,13 +130,13 @@ if (typeof document !== "undefined") {
         const label = document.createElement("strong");
         label.textContent = theme.label;
         const count = document.createElement("span");
-        count.textContent = `${theme.articleIds.length.toLocaleString("ja-JP")}記事`;
+        count.textContent = `${theme.articleIds.length.toLocaleString(ui.number_locale)} ${ui.article_word}`;
         button.append(label, count);
         button.addEventListener("click", () => renderTheme(theme, articlesByID));
         return button;
       });
       themeList.replaceChildren(...buttons);
-      if (total) total.textContent = themes.length.toLocaleString("ja-JP");
+      if (total) total.textContent = themes.length.toLocaleString(ui.number_locale);
 
       const sourceLinks = (Array.isArray(payload.references) ? payload.references : []).map(reference => {
         const link = document.createElement("a");
@@ -142,16 +152,20 @@ if (typeof document !== "undefined") {
 
     async function start() {
       try {
-        const [catalogResponse, recommendationsResponse] = await Promise.all([
-          fetch("assets/discovery-ja.json", { cache: "no-cache" }),
-          fetch("assets/recommendations-ja.json", { cache: "no-cache" }),
-        ]);
-        if (!catalogResponse.ok || !recommendationsResponse.ok) throw new Error("reading data unavailable");
-        const catalogPayload = await catalogResponse.json();
+        const recommendationsResponse = await fetch(`assets/recommendations-${assetLocale}.json`, { cache: "no-cache" });
+        if (!recommendationsResponse.ok) throw new Error("reading data unavailable");
         const recommendations = await recommendationsResponse.json();
+        if (recommendations.ui) ui = { ...ui, ...recommendations.ui };
+        if (Array.isArray(recommendations.articles)) {
+          render(recommendations, recommendations.articles);
+          return;
+        }
+        const catalogResponse = await fetch("assets/discovery-ja.json", { cache: "no-cache" });
+        if (!catalogResponse.ok) throw new Error("reading catalog unavailable");
+        const catalogPayload = await catalogResponse.json();
         render(recommendations, Array.isArray(catalogPayload.articles) ? catalogPayload.articles : []);
       } catch (_) {
-        status.textContent = "テーマ別の記事を読み込めませんでした。時間をおいて再読み込みしてください。";
+        status.textContent = ui.error;
       }
     }
 

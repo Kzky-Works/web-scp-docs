@@ -4,6 +4,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+LOCALES = [
+    "en", "ja", "fr", "ru", "ko", "es", "pl", "cs", "de", "it", "pt-br",
+    "th", "vi", "zh-hans", "zh-hant", "tr",
+]
 
 
 class RecommendationListTests(unittest.TestCase):
@@ -59,13 +63,54 @@ class RecommendationListTests(unittest.TestCase):
         discover = (ROOT / "discover-ja.html").read_text(encoding="utf-8")
         home = (ROOT / "index-ja.html").read_text(encoding="utf-8")
         self.assertNotIn('id="reading-theme-list"', discover)
-        self.assertIn('class="reading-entry-link" href="reading-ja.html"', discover)
+        self.assertIn('class="home-route-entry" href="reading-ja.html"', discover)
         self.assertLess(discover.index('href="reading-ja.html"'), discover.index('class="discovery-console search-console"'))
-        self.assertIn('class="home-reading-entry" href="reading-ja.html"', home)
+        self.assertIn('class="home-route-entry" href="reading-ja.html"', home)
+
+    def test_detailed_search_and_theme_reading_have_equal_weight(self):
+        for filename in ["index-ja.html", "discover-ja.html"]:
+            with self.subTest(filename=filename):
+                html = (ROOT / filename).read_text(encoding="utf-8")
+                self.assertEqual(html.count('class="home-route-entry"'), 2)
+                self.assertIn("条件を指定して詳しく探す", html)
+                self.assertIn("テーマで読む", html)
 
     def test_japanese_generator_preserves_the_home_entry(self):
         source = (ROOT / "scripts" / "generate_pages.py").read_text(encoding="utf-8")
-        self.assertIn('class="home-reading-entry" href="reading-ja.html"', source)
+        self.assertIn('class="home-route-entry" href="reading-ja.html"', source)
+
+
+class LocalizedRecommendationListTests(unittest.TestCase):
+    def test_every_locale_has_an_independent_page_and_entry(self):
+        for locale in LOCALES:
+            suffix = "" if locale == "en" else f"-{locale}"
+            reading = ROOT / f"reading{suffix}.html"
+            index = ROOT / ("index.html" if locale == "en" else f"index-{locale}.html")
+            with self.subTest(locale=locale):
+                self.assertTrue(reading.exists())
+                reading_html = reading.read_text(encoding="utf-8")
+                self.assertIn('id="reading-theme-list"', reading_html)
+                self.assertIn(f'data-reading-assets="{locale}"', reading_html)
+                self.assertIn(f'href="reading{suffix}.html"', index.read_text(encoding="utf-8"))
+
+    def test_every_non_japanese_locale_has_ten_curated_themes(self):
+        signatures = set()
+        for locale in [value for value in LOCALES if value != "ja"]:
+            with self.subTest(locale=locale):
+                payload = json.loads((ROOT / "assets" / f"recommendations-{locale}.json").read_text(encoding="utf-8"))
+                themes = payload["themes"]
+                article_ids = {article["id"] for article in payload["articles"]}
+                self.assertEqual(len(themes), 10)
+                self.assertGreaterEqual(len(payload["references"]), 3)
+                for theme in themes:
+                    self.assertGreaterEqual(len(theme["articleIds"]), 10)
+                    self.assertLessEqual(len(theme["articleIds"]), 20)
+                    self.assertEqual(len(theme["articleIds"]), len(set(theme["articleIds"])))
+                    self.assertTrue(set(theme["articleIds"]).issubset(article_ids))
+                    self.assertTrue(theme["label"].strip())
+                    self.assertTrue(theme["description"].strip())
+                signatures.add(tuple(theme["id"] for theme in themes))
+        self.assertGreaterEqual(len(signatures), 10)
 
 
 if __name__ == "__main__":

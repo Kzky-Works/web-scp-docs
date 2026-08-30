@@ -12,6 +12,7 @@ from added_locale_copy import (
     ADDED_PRIVACY_TEXT,
     ADDED_SUPPORT_TEXT,
 )
+from reading_locale_copy import READING_LOCALES
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -193,6 +194,8 @@ ADDED_LOCALIZED_PAGES = {"index", "privacy", "support"}
 
 
 def page_available(page: str, lang_code: str) -> bool:
+    if page == "reading":
+        return True
     return lang_code in FULL_PAGE_LANGS or page in ADDED_LOCALIZED_PAGES
 
 
@@ -258,9 +261,11 @@ def nav(page: str, active_lang: str) -> str:
         index_current = ' aria-current="page"' if page == "index" else ""
         features_current = ' aria-current="page"' if page == "features" else ""
         support_current = ' aria-current="page"' if page == "support" else ""
+        reading_current = ' aria-current="page"' if page == "reading" else ""
         rows = [
             f'            <a href="index-ja.html"{index_current}>ホーム</a>',
             '            <a href="discover-ja.html">記事を探す</a>',
+            f'            <a href="reading-ja.html"{reading_current}>テーマで読む</a>',
             f'            <a href="features-ja.html"{features_current}>アプリの機能</a>',
             f'            <a href="support-ja.html"{support_current}>サポート</a>',
         ]
@@ -273,8 +278,9 @@ def nav(page: str, active_lang: str) -> str:
     for item in PAGE_ORDER:
         current = ' aria-current="page"' if item == page else ""
         rows.append(f'            <a href="{page_file(item, active_lang)}"{current}>{lang.nav[item]}</a>')
-        if active_lang == "ja" and item == "index":
-            rows.append('            <a href="discover-ja.html">記事を探す</a>')
+        if item == "index":
+            reading_current = ' aria-current="page"' if page == "reading" else ""
+            rows.append(f'            <a href="{page_file("reading", active_lang)}"{reading_current}>{READING_LOCALES[active_lang]["nav_reading"]}</a>')
     rows.append(
         '            <a class="nav-store" href="{}" target="_blank"\n'
         '              rel="noopener noreferrer">App Store</a>'.format(APP_STORE_URL)
@@ -284,9 +290,9 @@ def nav(page: str, active_lang: str) -> str:
 
 def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
     lang = LANGS[active_lang]
-    if active_lang == "ja":
-        brand = f"""        <div class="site-brand-block">
-          <a class="site-brand" href="index-ja.html" aria-label="SCP Docs ホーム">
+    home = page_file("index", active_lang)
+    brand = f"""        <div class="site-brand-block">
+          <a class="site-brand" href="{home}" aria-label="SCP Docs">
             <img src="assets/images/app-icon-20260725.png" alt="" width="48" height="48" />
             <span class="site-brand-copy">
               <span class="site-wordmark"><strong>SCP</strong><span>docs</span></span>
@@ -295,21 +301,12 @@ def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
           </a>
           <h1 class="visually-hidden">{title}</h1>
         </div>"""
-        language_control = f"""          <details class="language-menu">
+    language_control = f"""          <details class="language-menu">
             <summary>{lang.switch_label}</summary>
             <div class="language-options" aria-label="{lang.switch_aria}">
 {linked_versions(page, active_lang)}
             </div>
           </details>"""
-    else:
-        brand = f"""        <div>
-          <div class="brand-line">{brand_line}</div>
-          <h1 class="brand-title">{title}</h1>
-        </div>"""
-        language_control = f"""          <div class="language-switch" aria-label="{lang.switch_aria}">
-            <span class="language-switch-label">{lang.switch_label}</span>
-{linked_versions(page, active_lang)}
-          </div>"""
     return f"""    <header class="terminal-header">
       <div class="terminal-header-inner">
 {brand}
@@ -359,9 +356,11 @@ def layout(
     body: str,
     og_type: str = "article",
     image: bool = False,
+    script: str | None = None,
 ) -> str:
     lang = LANGS[lang_code]
-    favicon = "assets/images/app-icon-20260725.png" if lang_code == "ja" else f"data:image/svg+xml,{FAVICON_SVG}"
+    favicon = "assets/images/app-icon-20260725.png"
+    script_tag = f'\n  <script src="{script}" defer></script>' if script else ""
     image_tags = ""
     if image:
         image_url = screenshot_url(lang_code, "home")
@@ -393,7 +392,7 @@ def layout(
   <meta property="og:url" content="{page_url(page, lang_code)}" />{image_tags}
   <meta name="twitter:title" content="{escape(title, quote=True)}" />
   <meta name="twitter:description" content="{escape(description, quote=True)}" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css" />{script_tag}
 </head>
 
 <body>
@@ -1033,8 +1032,8 @@ def build_japanese_index() -> dict[str, str]:
           </div>
         </form>
         <div class="home-search-actions">
-          <a class="home-text-link" href="discover-ja.html">条件を指定して詳しく探す →</a>
-          <a class="home-reading-entry" href="reading-ja.html"><span><strong>テーマで読む</strong><small>ホラー、短編、SFなどから選ぶ</small></span><b>→</b></a>
+          <a class="home-route-entry" href="discover-ja.html"><span><strong>条件を指定して詳しく探す</strong><small>タグ、文書種別、Object Class、長さ、評価で絞り込む</small></span><b>→</b></a>
+          <a class="home-route-entry" href="reading-ja.html"><span><strong>テーマで読む</strong><small>ホラー、短編、SFなどから選ぶ</small></span><b>→</b></a>
         </div>
       </section>
 
@@ -1098,6 +1097,15 @@ def build_japanese_index() -> dict[str, str]:
       </section>
     </main>"""
     return {"title": s["title"], "description": s["description"], "body": body}
+
+
+def reading_home_promo(lang: str) -> str:
+    copy = READING_LOCALES[lang]
+    return f"""      <section class="home-reading-promo" aria-label="{escape(copy['nav_reading'], quote=True)}">
+        <a class="home-route-entry" href="{page_file('reading', lang)}">
+          <span><strong>{copy['nav_reading']}</strong><small>{copy['description']}</small></span><b>→</b>
+        </a>
+      </section>"""
 
 
 def build_index(lang: str) -> dict[str, str]:
@@ -1170,6 +1178,7 @@ def build_index(lang: str) -> dict[str, str]:
       </section>
 
 {discovery}
+{reading_home_promo(lang)}
 
 {capability_showcase(lang)}
 
@@ -1282,6 +1291,8 @@ def build_added_index(lang: str) -> dict[str, str]:
           <div class="hero-stat"><span class="num">17+</span><span class="lbl">iOS</span></div>
         </div>
       </section>
+
+{reading_home_promo(lang)}
 
 {capability_showcase(lang)}
 
@@ -2859,6 +2870,48 @@ def current_support_copy(data: dict[str, object], lang: str) -> dict[str, object
     return current
 
 
+def build_reading_page(lang: str) -> str:
+    copy = READING_LOCALES[lang]
+    home = page_file("index", lang)
+    back_href = "discover-ja.html" if lang == "ja" else home
+    back_label = copy["back"] if lang == "ja" else f"{LANGS[lang].footer_back} →"
+    asset_locale = lang.lower()
+    body = f"""
+    <main class="main-pad reading-page" data-reading-locale="{lang}" data-reading-assets="{asset_locale}">
+      <section class="discovery-hero search-catalog-hero" aria-labelledby="reading-page-title">
+        <p class="section-label">{copy['eyebrow']}</p>
+        <h2 id="reading-page-title" class="hero-title"><span class="accent">{copy['hero']}</span></h2>
+        <p class="hero-lede">{copy['lede']}</p>
+        <a class="home-text-link" href="{back_href}">{back_label}</a>
+      </section>
+
+      <section class="reading-lists" aria-labelledby="reading-lists-title">
+        <div class="reading-lists-intro">
+          <div>
+            <p class="section-label">Theme collections</p>
+            <h2 id="reading-lists-title" class="section-title-lg">{copy['choose']}</h2>
+            <p>{copy['choose_copy']}</p>
+          </div>
+          <span class="archive-stamp" aria-hidden="true"><strong id="reading-list-total">—</strong><br />{copy['lists']}</span>
+        </div>
+        <div id="reading-theme-list" class="reading-theme-list" aria-label="{escape(copy['choose'], quote=True)}"></div>
+        <div id="reading-list-panel" class="reading-list-panel" aria-live="polite">
+          <p id="reading-list-status" class="reading-list-status" role="status">{copy['loading']}</p>
+        </div>
+        <details class="reading-list-sources">
+          <summary>{copy['source_summary']}</summary>
+          <p>{copy['source_copy']}</p>
+          <div id="reading-list-references" class="reading-list-references"></div>
+        </details>
+      </section>
+    </main>"""
+    return layout(
+        "reading", lang, title=copy["title"], description=copy["description"],
+        brand_line="Reading collections", h1="SCP Docs", page_title=copy["footer"],
+        body=body, og_type="website", script="assets/reading-lists.js",
+    )
+
+
 def write_pages() -> None:
     for lang in LANGS:
         index = INDEX[lang]
@@ -2876,6 +2929,10 @@ def write_pages() -> None:
                 image=True,
             ),
             encoding="utf-8",
+        )
+
+        (ROOT / page_file("reading", lang)).write_text(
+            build_reading_page(lang), encoding="utf-8"
         )
 
         if lang in FULL_PAGE_LANGS:
