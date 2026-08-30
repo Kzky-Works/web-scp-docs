@@ -254,6 +254,21 @@ def og_locale_alternates(page: str, active_lang: str) -> str:
 
 def nav(page: str, active_lang: str) -> str:
     lang = LANGS[active_lang]
+    if active_lang == "ja":
+        index_current = ' aria-current="page"' if page == "index" else ""
+        features_current = ' aria-current="page"' if page == "features" else ""
+        support_current = ' aria-current="page"' if page == "support" else ""
+        rows = [
+            f'            <a href="index-ja.html"{index_current}>ホーム</a>',
+            '            <a href="discover-ja.html">記事を探す</a>',
+            f'            <a href="features-ja.html"{features_current}>アプリの機能</a>',
+            f'            <a href="support-ja.html"{support_current}>サポート</a>',
+        ]
+        rows.append(
+            '            <a class="nav-store" href="{}" target="_blank"\n'
+            '              rel="noopener noreferrer">App Store</a>'.format(APP_STORE_URL)
+        )
+        return "\n".join(rows)
     rows = []
     for item in PAGE_ORDER:
         current = ' aria-current="page"' if item == page else ""
@@ -269,6 +284,18 @@ def nav(page: str, active_lang: str) -> str:
 
 def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
     lang = LANGS[active_lang]
+    if active_lang == "ja":
+        language_control = f"""          <details class="language-menu">
+            <summary>{lang.switch_label}</summary>
+            <div class="language-options" aria-label="{lang.switch_aria}">
+{linked_versions(page, active_lang)}
+            </div>
+          </details>"""
+    else:
+        language_control = f"""          <div class="language-switch" aria-label="{lang.switch_aria}">
+            <span class="language-switch-label">{lang.switch_label}</span>
+{linked_versions(page, active_lang)}
+          </div>"""
     return f"""    <header class="terminal-header">
       <div class="terminal-header-inner">
         <div>
@@ -276,10 +303,7 @@ def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
           <h1 class="brand-title">{title}</h1>
         </div>
         <div class="terminal-header-actions">
-          <div class="language-switch" aria-label="{lang.switch_aria}">
-            <span class="language-switch-label">{lang.switch_label}</span>
-{linked_versions(page, active_lang)}
-          </div>
+{language_control}
           <nav class="nav" aria-label="Primary navigation">
 {nav(page, active_lang)}
           </nav>
@@ -290,10 +314,18 @@ def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
 
 def footer(active_lang: str, page_title: str) -> str:
     lang = LANGS[active_lang]
+    legal_links = ""
+    if active_lang == "ja":
+        legal_links = """
+          <div class="footer-site-links">
+          <a href="privacy-ja.html">プライバシー</a>
+          <a href="terms-ja.html">利用規約</a>
+          <a href="rating-safety-ja.html">安全方針</a>
+        </div>"""
     return f"""    <footer class="site-footer">
       <div class="site-footer-inner">
         <div>
-          <strong>SCP Docs</strong> — {page_title}
+          <strong>SCP Docs</strong> — {page_title}{legal_links}
         </div>
         <div>
           {lang.footer_contact}: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br />
@@ -968,7 +1000,94 @@ def capability_showcase(lang: str) -> str:
       </section>"""
 
 
+def build_japanese_index() -> dict[str, str]:
+    s = INDEX_STRINGS["ja"]
+    body = f"""
+    <main class="main-pad home-ja">
+      <section class="hero home-search-hero" aria-labelledby="hero-title">
+        <p class="hero-kicker"><span class="blink">●</span> THIS SITE / SCP ARTICLE SEARCH</p>
+        <h2 id="hero-title" class="hero-title">読みたい<br /><span class="accent">SCP記事を探す。</span></h2>
+        <p class="hero-lede">SCP-JP、翻訳SCP、Tales、Canon、GoIを、番号・タイトル・タグから検索できます。文書種別、Object Class、長さ、Wiki評価を使った絞り込みにも対応しています。</p>
+        <form class="hero-catalog-search" action="discover-ja.html" method="get" role="search">
+          <label for="home-catalog-query">SCP記事を検索</label>
+          <div class="hero-catalog-search-row">
+            <input id="home-catalog-query" name="q" type="search" placeholder="番号・キーワード" autocomplete="off" />
+            <button type="submit">検索</button>
+          </div>
+          <div class="hero-search-links" aria-label="すぐに探す">
+            <a href="discover-ja.html?mode=popular">高評価</a><a href="discover-ja.html?mode=short">短く読める</a>
+            <a href="discover-ja.html?kind=Tale">Tales</a><a href="discover-ja.html?kind=Canon">Canon</a>
+            <a href="discover-ja.html?kind=GoI">GoI</a>
+          </div>
+        </form>
+        <a class="home-text-link" href="discover-ja.html">条件を指定して詳しく探す →</a>
+      </section>
+
+      <section class="home-app-section" aria-labelledby="home-app-title">
+        <div class="home-app-grid">
+          <div class="home-app-copy">
+            <p class="section-label">SCP Docs app</p>
+            <h2 id="home-app-title" class="section-title-lg">見つけた記事を、<br />快適に読み、整理する。</h2>
+            <p class="lede">SCP Docsは、SCP記事を読むためのiPhone・iPad向け非公式アプリです。読みかけの記事へ戻り、気になった記事をライブラリで整理できます。</p>
+            <ul class="home-app-points">
+              <li>検索機能はすべて無料です</li>
+              <li>読書位置、履歴、後で読むを記事ごとに保存</li>
+              <li>プレミアムでフォルダ、3色ハイライト、オフライン保存に対応</li>
+            </ul>
+            <div class="hero-cta">
+              <a class="btn-primary" href="{APP_STORE_URL}" target="_blank" rel="noopener noreferrer">
+                <span class="btn-main">App Storeで見る</span>
+                <span class="btn-sub">iPhone・iPad</span>
+              </a>
+              <a class="btn-ghost" href="features-ja.html">
+                <span class="btn-main">アプリの機能を見る</span>
+                <span class="btn-sub">Screens and details</span>
+              </a>
+            </div>
+          </div>
+          <figure class="home-app-shot">
+            <img src="{screenshot_path('ja', 'home')}" alt="SCP Docsの日本語ホーム画面" loading="lazy" />
+            <figcaption>ホーム、カタログ、続きから読む</figcaption>
+          </figure>
+        </div>
+
+        <div class="home-feature-pair">
+          <article class="home-feature-card">
+            <figure><img src="assets/images/search-current-ja.png" alt="SCP Docsの検索条件画面" loading="lazy" /></figure>
+            <div>
+              <p class="capability-number">SEARCH / FREE</p>
+              <h3>検索はすべて無料</h3>
+              <p>番号・キーワードから始め、支部、文書種別、タグ、Object Class、本文、読書状態などを組み合わせられます。</p>
+            </div>
+          </article>
+          <article class="home-feature-card">
+            <figure><img src="assets/images/library-sections-ja.png" alt="フォルダとハイライトを表示したSCP Docsのライブラリ画面" loading="lazy" /></figure>
+            <div>
+              <p class="capability-number">ORGANIZE / PREMIUM</p>
+              <h3>フォルダとハイライト</h3>
+              <p>プレミアムでは、保存した記事をフォルダで整理し、本文の気になった箇所を3色で残して元の位置へ戻れます。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="home-destinations" aria-labelledby="home-destinations-title">
+        <p class="section-label">Site guide</p>
+        <h2 id="home-destinations-title" class="section-title-lg">目的に合わせて進む</h2>
+        <div class="home-destination-grid">
+          <a href="discover-ja.html"><strong>記事を探す</strong><span>番号・キーワード・条件から検索</span></a>
+          <a href="features-ja.html"><strong>アプリの機能</strong><span>画面と機能、無料・プレミアムの違い</span></a>
+          <a href="support-ja.html"><strong>サポート</strong><span>使い方、動作環境、よくある質問</span></a>
+        </div>
+        <p class="home-project-note">SCP Docsは非公式のファンプロジェクトです。記事本文、著者表示、ライセンス条件は各提供元サイトの表示が優先されます。</p>
+      </section>
+    </main>"""
+    return {"title": s["title"], "description": s["description"], "body": body}
+
+
 def build_index(lang: str) -> dict[str, str]:
+    if lang == "ja":
+        return build_japanese_index()
     s = INDEX_STRINGS[lang]
     l = LANGS[lang]
     badges = "\n".join(f"              <li>{b}</li>" for b in s["badges"])
@@ -1002,26 +1121,7 @@ def build_index(lang: str) -> dict[str, str]:
         for p in ["features", "privacy", "support", "terms", "rating-safety"]
     )
     discovery = ""
-    if lang == "ja":
-        hero_actions = """            <form class="hero-catalog-search" action="discover-ja.html" method="get" role="search">
-              <label for="home-catalog-query">SCP記事を検索</label>
-              <div class="hero-catalog-search-row">
-                <input id="home-catalog-query" name="q" type="search" placeholder="番号・キーワード" autocomplete="off" />
-                <button type="submit">検索</button>
-              </div>
-              <div class="hero-search-links" aria-label="すぐに探す">
-                <a href="discover-ja.html?mode=popular">高評価</a><a href="discover-ja.html?mode=short">短く読める</a>
-                <a href="discover-ja.html?kind=Tale">Tales</a><a href="discover-ja.html?kind=Canon">Canon</a>
-                <a href="discover-ja.html?kind=GoI">GoI</a>
-              </div>
-            </form>
-            <div class="hero-secondary-links">
-              <a href="https://apps.apple.com/jp/app/scp-docs/id6765882660" target="_blank" rel="noopener noreferrer">App Storeで見る</a>
-              <a href="features-ja.html">アプリの機能を見る</a>
-            </div>"""
-        hero_kicker = "SCP ARTICLES / JP · CATALOG SEARCH"
-    else:
-        hero_actions = f"""            <div class="hero-cta">
+    hero_actions = f"""            <div class="hero-cta">
               <a class="btn-primary" href="{APP_STORE_URL}" target="_blank" rel="noopener noreferrer">
                 <span class="btn-main">{s['cta_main']}</span>
                 <span class="btn-sub">{s['cta_sub']}</span>
@@ -1031,7 +1131,7 @@ def build_index(lang: str) -> dict[str, str]:
                 <span class="btn-sub">{s['cta2_sub']}</span>
               </a>
             </div>"""
-        hero_kicker = "PERSONAL ARCHIVE ACCESS · <span class=\"accent\">IOS READER</span>"
+    hero_kicker = "PERSONAL ARCHIVE ACCESS · <span class=\"accent\">IOS READER</span>"
     body = f"""
     <main class="main-pad">
       <section class="hero" aria-labelledby="hero-title">
