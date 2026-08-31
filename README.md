@@ -93,6 +93,18 @@ python3 scripts/build_reading_catalogs.py
 python3 scripts/generate_pages.py
 ```
 
+## アクセス解析
+
+主要ページは既存の GA4 プロパティ `scp-docs` の Web ストリーム（測定 ID `G-5M5Q6SML03`）を使用する。実装は `assets/analytics.js` に集約し、利用者が許可するまで Google タグを読み込まない。
+
+- ページURLから検索条件とフラグメントを除いて計測する。
+- 検索、検索条件、テーマ選択、公式記事、`SCP Docsで開く`、App Storeの各導線をイベントとして区別する。
+- 検索語は80文字までとし、メールアドレス、URL、電話番号に見える入力は送信しない。
+- アプリ内の閲覧履歴、書庫、フォルダ、マーカー、メモはサイト解析へ送信しない。
+- 同意はブラウザのlocalStorageへ保存し、各ページのフッターから変更できる。許可時の解析Cookieは1年以内に期限切れとなる設定にする。
+- プライバシーページは全17言語でサイト解析の取扱いを説明する。
+- GA4側では `theme_id`、`preset`、`filter_name`、`filter_value`、`article_host`、`article_path`、`source_page`、`search_source` をイベントスコープのカスタムディメンションとして登録する。拡張計測は無効のままにし、検索URLの自動ページビューを発生させない。
+
 ## 記事共有リンク
 
 X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載せる。`open/` は端末言語または前回選択した言語に対応する公式支部記事へ振り分ける。iOS ではユーザーが押す `Open in SCP docs` のクリック処理内で `scpdocs://` へ遷移し、公式 Wiki、App Storeの3導線を同じ画面に表示する。ページ読み込み時の自動アプリ起動や自動App Store転送は行わない。

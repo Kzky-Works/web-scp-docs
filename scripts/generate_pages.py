@@ -360,7 +360,7 @@ def layout(
 ) -> str:
     lang = LANGS[lang_code]
     favicon = "assets/images/app-icon-20260725.png"
-    script_tag = f'\n  <script src="{script}" defer></script>' if script else ""
+    page_script_tag = f'\n  <script src="{script}" defer></script>' if script else ""
     image_tags = ""
     if image:
         image_url = screenshot_url(lang_code, "home")
@@ -392,7 +392,8 @@ def layout(
   <meta property="og:url" content="{page_url(page, lang_code)}" />{image_tags}
   <meta name="twitter:title" content="{escape(title, quote=True)}" />
   <meta name="twitter:description" content="{escape(description, quote=True)}" />
-  <link rel="stylesheet" href="assets/styles.css" />{script_tag}
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/analytics.js?v=20260831-1" defer></script>{page_script_tag}
 </head>
 
 <body>
@@ -2292,6 +2293,103 @@ PRIVACY_TEXT["pl"] = {
 }
 
 PRIVACY_TEXT.update(ADDED_PRIVACY_TEXT)
+
+
+ANALYTICS_PRIVACY = {
+    "en": (
+        "Website analytics (Google Analytics)",
+        'This website loads Google Analytics 4, provided by Google LLC, only after you choose “Allow analytics.” It measures page views, approximate country or region, device and browser category, referral source, and interactions such as search, theme selection, article links, opening SCP Docs, and App Store links. Search terms are length-limited, and text resembling an email address, URL, or phone number is not sent. Search parameters are removed from recorded page URLs. Google may receive cookies, online identifiers, and device or usage information. SCP Docs does not send app reading history, Library contents, folders, markers, or memos to website analytics. You can decline analytics or change your choice from the footer. The analytics choice is stored in your browser; if allowed, the analytics cookie is configured to expire within one year. See <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google’s Privacy Policy</a> and <a href="https://support.google.com/analytics/answer/6004245" rel="noopener noreferrer">Google Analytics data safeguards</a>.',
+        "Last updated: August 31, 2026",
+    ),
+    "ja": (
+        "ウェブサイトのアクセス解析（Google Analytics）",
+        '本ウェブサイトは、利用者が「アクセス解析を許可」を選んだ場合に限り、Google LLC が提供する Google Analytics 4 を読み込みます。ページ閲覧、国・地域（概算）、端末・ブラウザの種類、参照元、検索、テーマ選択、記事リンク、SCP Docsで開く操作、App Storeリンクなどの利用状況を計測します。検索語は長さを制限し、メールアドレス、URL、電話番号とみられる入力は送信しません。計測するページURLから検索条件を除外します。GoogleにはCookie、オンライン識別子、端末・利用状況に関する情報が送信される場合があります。アプリ内の閲覧履歴、書庫、フォルダ、マーカー、メモはウェブサイトのアクセス解析へ送信しません。アクセス解析は拒否でき、フッターの「アクセス解析の設定」から選択を変更できます。選択内容はブラウザに保存され、許可した場合の解析Cookieは1年以内に期限が切れる設定です。詳細は <a href="https://policies.google.com/privacy?hl=ja" rel="noopener noreferrer">Googleのプライバシーポリシー</a> および <a href="https://support.google.com/analytics/answer/6004245?hl=ja" rel="noopener noreferrer">Google Analyticsのデータ保護</a> を参照してください。',
+        "最終更新日: 2026年8月31日",
+    ),
+    "fr": (
+        "Analyse du site (Google Analytics)",
+        'Ce site charge Google Analytics 4, fourni par Google LLC, uniquement après votre accord. Il mesure les pages vues, le pays ou la région approximative, le type d’appareil et de navigateur, la provenance et les interactions avec la recherche, les thèmes, les liens d’articles, l’ouverture de SCP Docs et l’App Store. Les termes de recherche sont limités et les saisies ressemblant à une adresse e-mail, une URL ou un numéro de téléphone ne sont pas envoyées; les paramètres de recherche sont retirés des URL mesurées. L’historique de lecture, la Bibliothèque, les dossiers, les marqueurs et les notes de l’App ne sont pas transmis. Vous pouvez refuser ou modifier votre choix dans le pied de page. Le choix est stocké dans le navigateur et le cookie d’analyse autorisé expire au plus tard après un an. Voir la <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Politique de confidentialité de Google</a>.',
+        "Dernière mise à jour : 31 août 2026",
+    ),
+    "ru": (
+        "Аналитика сайта (Google Analytics)",
+        'Этот сайт загружает Google Analytics 4 от Google LLC только после вашего согласия. Измеряются просмотры страниц, приблизительная страна или регион, тип устройства и браузера, источник перехода, поиск, выбор тем, ссылки на статьи, открытие SCP Docs и App Store. Поисковые запросы ограничиваются по длине; данные, похожие на адрес электронной почты, URL или номер телефона, не отправляются, а параметры поиска удаляются из измеряемого URL. История чтения, Библиотека, папки, маркеры и заметки из приложения не передаются. Вы можете отказаться или изменить выбор в нижней части страницы. Выбор хранится в браузере, а разрешённый аналитический cookie действует не более одного года. См. <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Политику конфиденциальности Google</a>.',
+        "Последнее обновление: 31 августа 2026 г.",
+    ),
+    "ko": (
+        "웹사이트 분석(Google Analytics)",
+        '이 웹사이트는 사용자가 동의한 경우에만 Google LLC의 Google Analytics 4를 불러옵니다. 페이지 조회, 대략적인 국가·지역, 기기·브라우저 종류, 유입 경로, 검색, 테마 선택, 문서 링크, SCP Docs 열기 및 App Store 링크 사용을 측정합니다. 검색어는 길이를 제한하며 이메일 주소, URL, 전화번호로 보이는 입력은 전송하지 않고 측정 URL에서 검색 조건을 제거합니다. 앱의 읽기 기록, 라이브러리, 폴더, 마커 및 메모는 전송하지 않습니다. 거부하거나 바닥글에서 선택을 변경할 수 있습니다. 선택은 브라우저에 저장되며 허용된 분석 쿠키는 1년 이내에 만료됩니다. <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 개인정보처리방침</a>을 확인하세요.',
+        "최종 업데이트: 2026년 8월 31일",
+    ),
+    "es": (
+        "Analítica del sitio (Google Analytics)",
+        'Este sitio carga Google Analytics 4, de Google LLC, solo después de que lo permitas. Mide páginas vistas, país o región aproximados, tipo de dispositivo y navegador, procedencia e interacciones con búsquedas, temas, enlaces a artículos, apertura de SCP Docs y App Store. Los términos de búsqueda se limitan y no se envían entradas que parezcan correos electrónicos, URL o teléfonos; los parámetros de búsqueda se eliminan de las URL medidas. No se envían el historial de lectura, la Biblioteca, las carpetas, los marcadores ni las notas de la App. Puedes rechazarlo o cambiar tu elección en el pie de página. La elección se guarda en el navegador y la cookie analítica permitida caduca en un año como máximo. Consulta la <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Política de privacidad de Google</a>.',
+        "Última actualización: 31 de agosto de 2026",
+    ),
+    "pl": (
+        "Analityka witryny (Google Analytics)",
+        'Ta witryna ładuje Google Analytics 4 firmy Google LLC dopiero po wyrażeniu zgody. Mierzone są odsłony, przybliżony kraj lub region, typ urządzenia i przeglądarki, źródło wizyty oraz użycie wyszukiwania, motywów, odnośników do artykułów, otwierania SCP Docs i App Store. Wyszukiwane teksty są skracane; wpisy przypominające adres e-mail, URL lub numer telefonu nie są wysyłane, a parametry wyszukiwania są usuwane z mierzonych adresów. Historia czytania, Biblioteka, foldery, znaczniki i notatki z Aplikacji nie są przekazywane. Zgodę można odrzucić lub zmienić w stopce. Wybór jest zapisany w przeglądarce, a dozwolony plik cookie wygasa najpóźniej po roku. Zobacz <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Politykę prywatności Google</a>.',
+        "Ostatnia aktualizacja: 31 sierpnia 2026 r.",
+    ),
+    "cs": (
+        "Analýza webu (Google Analytics)",
+        'Tento web načte Google Analytics 4 od společnosti Google LLC až po vašem souhlasu. Měří zobrazení stránek, přibližnou zemi či oblast, typ zařízení a prohlížeče, zdroj návštěvy a použití vyhledávání, témat, odkazů na články, otevření SCP Docs a App Store. Hledané výrazy jsou omezeny délkou; údaje připomínající e-mail, URL nebo telefon se neodesílají a parametry vyhledávání se z měřených URL odstraňují. Historie čtení, Knihovna, složky, značky ani poznámky z aplikace se neposílají. Souhlas lze odmítnout nebo změnit v zápatí. Volba se ukládá v prohlížeči a povolený analytický soubor cookie vyprší nejpozději za rok. Viz <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Zásady ochrany soukromí Google</a>.',
+        "Poslední aktualizace: 31. srpna 2026",
+    ),
+    "de": (
+        "Website-Analyse (Google Analytics)",
+        'Diese Website lädt Google Analytics 4 von Google LLC erst nach deiner Zustimmung. Erfasst werden Seitenaufrufe, ungefähres Land oder Region, Geräte- und Browsertyp, Verweisquelle sowie die Nutzung von Suche, Themen, Artikellinks, „In SCP Docs öffnen“ und App-Store-Links. Suchbegriffe werden gekürzt; Eingaben, die wie E-Mail-Adresse, URL oder Telefonnummer aussehen, werden nicht gesendet, und Suchparameter werden aus der erfassten Seiten-URL entfernt. Leseverlauf, Bibliothek, Ordner, Markierungen und Notizen der App werden nicht übertragen. Du kannst ablehnen oder deine Wahl im Footer ändern. Die Wahl wird im Browser gespeichert; ein erlaubtes Analyse-Cookie läuft spätestens nach einem Jahr ab. Siehe <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Datenschutzerklärung von Google</a>.',
+        "Zuletzt aktualisiert: 31. August 2026",
+    ),
+    "id": (
+        "Analitik situs (Google Analytics)",
+        'Situs ini memuat Google Analytics 4 dari Google LLC hanya setelah Anda menyetujuinya. Data yang diukur mencakup tampilan halaman, perkiraan negara atau wilayah, jenis perangkat dan browser, sumber rujukan, serta penggunaan pencarian, tema, tautan artikel, buka di SCP Docs, dan App Store. Istilah pencarian dibatasi panjangnya; input yang menyerupai alamat email, URL, atau nomor telepon tidak dikirim, dan parameter pencarian dihapus dari URL yang diukur. Riwayat baca, Perpustakaan, folder, penanda, dan memo di aplikasi tidak dikirim. Anda dapat menolak atau mengubah pilihan di footer. Pilihan disimpan di browser dan cookie analitik yang diizinkan kedaluwarsa paling lama satu tahun. Lihat <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Kebijakan Privasi Google</a>.',
+        "Terakhir diperbarui: 31 Agustus 2026",
+    ),
+    "it": (
+        "Analisi del sito (Google Analytics)",
+        'Questo sito carica Google Analytics 4 di Google LLC solo dopo il tuo consenso. Misura visualizzazioni, paese o area approssimativa, tipo di dispositivo e browser, provenienza e uso di ricerca, temi, link agli articoli, apertura in SCP Docs e App Store. I termini di ricerca sono limitati; gli input simili a e-mail, URL o numeri di telefono non vengono inviati e i parametri di ricerca sono rimossi dagli URL misurati. Cronologia di lettura, Libreria, cartelle, marcatori e note dell’App non vengono trasmessi. Puoi rifiutare o cambiare scelta nel piè di pagina. La scelta è salvata nel browser e il cookie analitico consentito scade entro un anno. Consulta le <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Norme sulla privacy di Google</a>.',
+        "Ultimo aggiornamento: 31 agosto 2026",
+    ),
+    "pt-BR": (
+        "Análise do site (Google Analytics)",
+        'Este site carrega o Google Analytics 4, do Google LLC, somente após sua permissão. Ele mede visualizações, país ou região aproximados, tipo de dispositivo e navegador, origem da visita e uso da pesquisa, temas, links de artigos, abertura no SCP Docs e App Store. Os termos de busca têm tamanho limitado; entradas semelhantes a e-mail, URL ou telefone não são enviadas, e os parâmetros de pesquisa são removidos das URLs medidas. O histórico de leitura, a Biblioteca, as pastas, os marcadores e as notas do App não são enviados. Você pode recusar ou alterar sua escolha no rodapé. A escolha fica armazenada no navegador e o cookie analítico permitido expira em até um ano. Consulte a <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Política de Privacidade do Google</a>.',
+        "Última atualização: 31 de agosto de 2026",
+    ),
+    "th": (
+        "การวิเคราะห์เว็บไซต์ (Google Analytics)",
+        'เว็บไซต์นี้จะโหลด Google Analytics 4 ของ Google LLC หลังจากที่คุณอนุญาตเท่านั้น โดยวัดการเข้าชมหน้า ประเทศหรือภูมิภาคโดยประมาณ ประเภทอุปกรณ์และเบราว์เซอร์ แหล่งที่มา ตลอดจนการใช้การค้นหา ธีม ลิงก์บทความ การเปิด SCP Docs และ App Store คำค้นจะถูกจำกัดความยาว ข้อความที่คล้ายอีเมล URL หรือหมายเลขโทรศัพท์จะไม่ถูกส่ง และพารามิเตอร์การค้นหาจะถูกลบจาก URL ที่วัด ประวัติการอ่าน คลัง โฟลเดอร์ มาร์กเกอร์ และบันทึกในแอปจะไม่ถูกส่ง คุณปฏิเสธหรือเปลี่ยนตัวเลือกได้จากส่วนท้าย ตัวเลือกจะถูกเก็บในเบราว์เซอร์ และคุกกี้การวิเคราะห์ที่อนุญาตจะหมดอายุภายในหนึ่งปี ดู <a href="https://policies.google.com/privacy" rel="noopener noreferrer">นโยบายความเป็นส่วนตัวของ Google</a>',
+        "อัปเดตล่าสุด: 31 สิงหาคม 2026",
+    ),
+    "tr": (
+        "Site analitiği (Google Analytics)",
+        'Bu site, Google LLC tarafından sağlanan Google Analytics 4’ü yalnızca izninizden sonra yükler. Sayfa görüntülemeleri, yaklaşık ülke veya bölge, cihaz ve tarayıcı türü, yönlendirme kaynağı ile arama, tema, makale bağlantıları, SCP Docs’ta açma ve App Store kullanımı ölçülür. Arama terimleri kısaltılır; e-posta, URL veya telefon numarasına benzeyen girişler gönderilmez ve arama parametreleri ölçülen URL’den çıkarılır. Uygulamadaki okuma geçmişi, Kütüphane, klasörler, işaretler ve notlar gönderilmez. Reddedebilir veya altbilgiden seçiminizi değiştirebilirsiniz. Seçim tarayıcıda saklanır ve izin verilen analiz çerezi en geç bir yıl içinde sona erer. <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Gizlilik Politikası</a>na bakın.',
+        "Son güncelleme: 31 Ağustos 2026",
+    ),
+    "vi": (
+        "Phân tích trang web (Google Analytics)",
+        'Trang web này chỉ tải Google Analytics 4 của Google LLC sau khi bạn đồng ý. Dữ liệu đo lường gồm lượt xem trang, quốc gia hoặc khu vực gần đúng, loại thiết bị và trình duyệt, nguồn truy cập, cùng việc dùng tìm kiếm, chủ đề, liên kết bài viết, mở SCP Docs và App Store. Cụm từ tìm kiếm bị giới hạn độ dài; nội dung giống địa chỉ email, URL hoặc số điện thoại sẽ không được gửi, và tham số tìm kiếm bị loại khỏi URL đo lường. Lịch sử đọc, Thư viện, thư mục, dấu và ghi chú trong ứng dụng không được gửi. Bạn có thể từ chối hoặc đổi lựa chọn ở chân trang. Lựa chọn được lưu trong trình duyệt và cookie phân tích được cho phép sẽ hết hạn trong vòng một năm. Xem <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Chính sách quyền riêng tư của Google</a>.',
+        "Cập nhật lần cuối: 31 tháng 8, 2026",
+    ),
+    "zh-Hans": (
+        "网站分析（Google Analytics）",
+        '本网站仅在您同意后加载 Google LLC 提供的 Google Analytics 4。分析内容包括页面浏览量、大致国家或地区、设备和浏览器类型、访问来源，以及搜索、主题选择、文章链接、在 SCP Docs 中打开和 App Store 链接的使用情况。搜索词会限制长度；类似电子邮件地址、URL 或电话号码的输入不会发送，测量的页面 URL 也会移除搜索参数。应用内的阅读记录、资料库、文件夹、标记和备忘录不会发送。您可以拒绝，并可在页脚更改选择。选择保存在浏览器中，获准使用的分析 Cookie 最迟在一年后过期。请参阅 <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 隐私权政策</a>。',
+        "最后更新：2026年8月31日",
+    ),
+    "zh-Hant": (
+        "網站分析（Google Analytics）",
+        '本網站只會在您同意後載入 Google LLC 提供的 Google Analytics 4。分析內容包括頁面瀏覽量、大致國家或地區、裝置和瀏覽器類型、造訪來源，以及搜尋、主題選擇、文章連結、在 SCP Docs 中開啟與 App Store 連結的使用情況。搜尋詞會限制長度；類似電子郵件地址、URL 或電話號碼的輸入不會傳送，測量的頁面 URL 也會移除搜尋參數。應用程式內的閱讀記錄、資料庫、資料夾、標記和備忘錄不會傳送。您可以拒絕，並可在頁尾變更選擇。選擇儲存在瀏覽器中，獲准使用的分析 Cookie 最遲於一年後到期。請參閱 <a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google 隱私權政策</a>。',
+        "最後更新：2026年8月31日",
+    ),
+}
+
+for code, (section_title, section_text, updated) in ANALYTICS_PRIVACY.items():
+    privacy = PRIVACY_TEXT[code]
+    PRIVACY_TEXT[code] = {
+        **privacy,
+        "updated": updated,
+        "sections": [*privacy["sections"], (section_title, section_text)],
+    }
 
 
 TERMS_TEXT = {

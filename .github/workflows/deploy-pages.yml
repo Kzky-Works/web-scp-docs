@@ -33,7 +33,7 @@ jobs:
           python3 -m unittest discover -s tests -p 'test_*.py'
           node --check open/router.js
           node --check launch/launcher.js
-          node --test tests/router_smoke_test.cjs tests/launcher_smoke_test.cjs
+          node --test tests/*_test.cjs
 
       - name: Assemble static site and route shards
         run: |
