@@ -3,7 +3,7 @@ const concepts = {
     title: "SCP Docs — SCP記事アーカイブ",
     brand: "SCP ARTICLE ARCHIVE",
     code: "SCP ARTICLES / JP",
-    classification: "非公式ファンアプリ",
+    classification: "SCP記事リーダー",
     overline: "SCP記事を探す・読む",
     hero: "SCP記事を、<em>探しやすく、読みやすく。</em>",
     lede: "SCP、Tales、Canon、GoIを、各支部の一覧や検索から探せます。読んだ記事は、履歴やブックマークからあとで開けます。",

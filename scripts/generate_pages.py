@@ -414,14 +414,14 @@ def layout(
 INDEX_STRINGS: dict[str, dict[str, object]] = {
     "en": {
         "title": "SCP Docs — Foundation Archive Reader for iPhone",
-        "description": "SCP Docs is an unofficial native iOS reader for SCP Wiki archives with branch directories, guided archive browsing, Library organization, saved searches, sharing, and premium reading tools.",
-        "lede": "SCP Docs is an <strong>unofficial fan-made iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native archive workspace: browse branch directories, search by number or title, save important files, organize them in your Library, and return to the exact reports you were reading.",
+        "description": "SCP Docs is a native iOS reader for SCP Wiki archives with branch directories, guided archive browsing, Library organization, saved searches, sharing, and premium reading tools.",
+        "lede": "SCP Docs is a <strong>native iOS reader</strong> for SCP Wiki and branch-site articles. It turns public source pages into a native archive workspace: browse branch directories, search by number or title, save important files, organize them in your Library, and return to the exact reports you were reading.",
         "hero_alt": "English SCP Docs home screen with continue reading, archive routes, and search filters",
         "cta_main": "Get on the App Store",
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Explore the features",
         "cta2_sub": "Field guide",
-        "badges": ["Unofficial fan app", "Free + Premium", "Rated 13+", "No account needed"],
+        "badges": ["SCP Wiki reader", "Free + Premium", "Rated 13+", "No account needed"],
         "stats": [
             ("17", "archive branches"),
             ("10+", "directory routes"),
@@ -467,21 +467,21 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("Accounts", "no SCP Foundation or Wikidot account is required for reading in the app."),
         ],
         "cta_title": "Open the archive",
-        "legal_p": "SCP Docs is an <strong>unofficial fan application</strong>. Source articles, author credits, copyright notices, and licensing terms remain governed by the source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.",
+        "legal_p": "Source articles, author credits, copyright notices, and licensing terms remain governed by their source sites. SCP-related works are commonly published under Creative Commons BY-SA 3.0, but each source page is authoritative.",
         "store_name": "SCP Docs for iPhone",
         "store_note": "Built for iOS 17 and later. App UI supports seventeen languages, including English, Japanese, French, Russian, Korean, Spanish, Polish, Chinese, Thai, German, Italian, Portuguese, Vietnamese, Czech, Traditional Chinese, Turkish, and Indonesian.",
         "store_main": "Get on the App Store",
     },
     "ja": {
         "title": "SCP Docs — SCP記事を探す・読む",
-        "description": "SCP-JP、翻訳SCP、Tales、Canon、GoIをブラウザで検索し、iPhone・iPadではSCP Docsでそのまま読める非公式SCPリーダーです。",
+        "description": "SCP-JP、翻訳SCP、Tales、Canon、GoIをブラウザで検索し、iPhone・iPadではSCP Docsでそのまま読めるSCPリーダーです。",
         "lede": "SCP、Tales、Canon、GoIを、番号・タイトル・タグから検索できます。文書種別、Object Class、長さ、Wiki評価を組み合わせて、次に読む記事を探せます。iPhone・iPadでは検索結果を<strong>SCP Docs</strong>で開けます。",
         "hero_alt": "続きから読む、書庫ルート、検索フィルタを表示した日本語UIのSCP Docsホーム画面",
         "cta_main": "App Store で入手",
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "機能を見る",
         "cta2_sub": "Field guide",
-        "badges": ["非公式ファンアプリ", "無料 + プレミアム", "13+", "アカウント不要"],
+        "badges": ["SCP記事リーダー", "無料 + プレミアム", "13+", "アカウント不要"],
         "stats": [
             ("17", "対応支部"),
             ("横断", "カタログ検索"),
@@ -527,21 +527,21 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("アカウント", "アプリで読むだけなら SCP Foundation や Wikidot のアカウントは不要です。"),
         ],
         "cta_title": "SCP Docsで読む",
-        "legal_p": "SCP Docs は<strong>非公式ファンアプリ</strong>です。記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。",
+        "legal_p": "記事本文、著者表示、著作権表示、ライセンス条件は各提供元サイトが正本です。SCP 関連作品は一般に Creative Commons BY-SA 3.0 のもとで公開されていますが、個別ページの表示が優先されます。",
         "store_name": "SCP Docs for iPhone",
         "store_note": "iOS 17以降に対応。アプリUIは英語・日本語・フランス語・ロシア語・韓国語・スペイン語・ポーランド語・簡体字中国語・タイ語・ドイツ語・イタリア語・ポルトガル語・ベトナム語・チェコ語・繁体字中国語・トルコ語・インドネシア語に対応しています。",
         "store_main": "App Store で見る",
     },
     "fr": {
         "title": "SCP Docs — Archive de la Fondation pour iPhone",
-        "description": "SCP Docs est un lecteur iOS non officiel pour les archives SCP Wiki, la recherche par branche, l'état de lecture, les recherches enregistrées, le partage et les outils Premium.",
-        "lede": "SCP Docs est un <strong>lecteur iOS non officiel et fan-made</strong> pour les articles du SCP Wiki et de ses branches. Il transforme les pages publiques en espace de lecture natif pour parcourir les archives, chercher par branche, sauvegarder ce qui compte et reprendre vos rapports en cours.",
+        "description": "SCP Docs est un lecteur iOS pour les archives SCP Wiki, avec recherche par branche, état de lecture, recherches enregistrées, partage et outils Premium.",
+        "lede": "SCP Docs est un <strong>lecteur iOS conçu pour les articles du SCP Wiki et de ses branches</strong>. Il transforme les pages publiques en espace de lecture natif pour parcourir les archives, chercher par branche, sauvegarder ce qui compte et reprendre vos rapports en cours.",
         "hero_alt": "Écran d'accueil SCP Docs en français avec reprise de lecture, routes d'archive et filtres de recherche",
         "cta_main": "Voir sur l'App Store",
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Découvrir les fonctions",
         "cta2_sub": "Field guide",
-        "badges": ["App fan non officielle", "Gratuit + Premium", "13+", "Sans compte"],
+        "badges": ["Lecteur SCP Wiki", "Gratuit + Premium", "13+", "Sans compte"],
         "stats": [
             ("17", "branches d'archives"),
             ("10+", "routes d'archive"),
@@ -587,21 +587,21 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("Comptes", "aucun compte SCP Foundation ou Wikidot n'est requis pour lire dans l'app."),
         ],
         "cta_title": "Ouvrir l'archive",
-        "legal_p": "SCP Docs est une <strong>application fan non officielle</strong>. Les articles sources, crédits d'auteurs, mentions de copyright et conditions de licence restent régis par les sites sources. Les œuvres SCP sont généralement publiées sous Creative Commons BY-SA 3.0, mais chaque page source fait autorité.",
+        "legal_p": "Les articles sources, crédits d'auteurs, mentions de copyright et conditions de licence restent régis par les sites sources. Les œuvres SCP sont généralement publiées sous Creative Commons BY-SA 3.0, mais chaque page source fait autorité.",
         "store_name": "SCP Docs pour iPhone",
         "store_note": "Nécessite iOS 17 ou version ultérieure. L'interface prend en charge dix-sept langues : anglais, japonais, français, russe, coréen, espagnol, polonais, chinois, thaïlandais, allemand, italien, portugais, vietnamien, tchèque, chinois traditionnel, turc et indonésien.",
         "store_main": "Voir sur l'App Store",
     },
     "ru": {
         "title": "SCP Docs — читалка архива Фонда для iPhone",
-        "description": "SCP Docs — неофициальная нативная iOS-читалка архивов SCP Wiki: каталоги филиалов, поиск, Библиотека, сохранённые поиски, публикация карточек и Premium-инструменты.",
-        "lede": "SCP Docs — <strong>неофициальная фанатская iOS-читалка</strong> статей SCP Wiki и филиалов. Она превращает публичные исходные страницы в нативное рабочее пространство архива: просматривайте каталоги филиалов, ищите по номеру или названию, сохраняйте важные файлы, организуйте их в Библиотеке и возвращайтесь к тем самым отчётам, которые читали.",
+        "description": "SCP Docs — нативная iOS-читалка архивов SCP Wiki: каталоги филиалов, поиск, Библиотека, сохранённые поиски, публикация карточек и Premium-инструменты.",
+        "lede": "SCP Docs — <strong>нативная iOS-читалка статей SCP Wiki и филиалов</strong>. Она превращает публичные исходные страницы в нативное рабочее пространство архива: просматривайте каталоги филиалов, ищите по номеру или названию, сохраняйте важные файлы, организуйте их в Библиотеке и возвращайтесь к тем самым отчётам, которые читали.",
         "hero_alt": "Главный экран SCP Docs на русском с продолжением чтения, маршрутами архива и поисковыми фильтрами",
         "cta_main": "Открыть в App Store",
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Смотреть возможности",
         "cta2_sub": "Field guide",
-        "badges": ["Неофициальное фан-приложение", "Бесплатно + Premium", "13+", "Без аккаунта"],
+        "badges": ["Читалка SCP Wiki", "Бесплатно + Premium", "13+", "Без аккаунта"],
         "stats": [
             ("17", "филиалов архива"),
             ("10+", "маршрутов каталога"),
@@ -647,21 +647,21 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("Аккаунты", "для чтения в приложении не нужен аккаунт SCP Foundation или Wikidot."),
         ],
         "cta_title": "Открыть архив",
-        "legal_p": "SCP Docs — <strong>неофициальное фанатское приложение</strong>. Исходные статьи, сведения об авторах, уведомления об авторских правах и условия лицензий регулируются исходными сайтами. Работы SCP обычно публикуются под Creative Commons BY-SA 3.0, но каждая исходная страница является основным источником.",
+        "legal_p": "Исходные статьи, сведения об авторах, уведомления об авторских правах и условия лицензий регулируются исходными сайтами. Работы SCP обычно публикуются под Creative Commons BY-SA 3.0, но каждая исходная страница является основным источником.",
         "store_name": "SCP Docs для iPhone",
         "store_note": "Требуется iOS 17 или новее. Интерфейс поддерживает английский, японский, французский, русский, корейский, испанский, польский, китайский, тайский, немецкий, итальянский, португальский, вьетнамский, чешский, традиционный китайский, турецкий и индонезийский языки.",
         "store_main": "Открыть в App Store",
     },
     "ko": {
         "title": "SCP Docs — iPhone용 재단 아카이브 리더",
-        "description": "SCP Docs는 SCP Wiki 아카이브를 위한 비공식 네이티브 iOS 리더입니다. 지부 디렉터리, 아카이브 탐색, 라이브러리 정리, 저장 검색, 공유, 프리미엄 읽기 도구를 제공합니다.",
-        "lede": "SCP Docs는 SCP Wiki와 지부 사이트의 글을 위한 <strong>비공식 팬 제작 iOS 리더</strong>입니다. 공개된 원본 페이지를 네이티브 아카이브 작업 공간으로 바꿔 줍니다: 지부 디렉터리 탐색, 번호·제목 검색, 중요한 문서 저장, 라이브러리 정리, 그리고 읽던 보고서로 정확히 복귀할 수 있습니다.",
+        "description": "SCP Docs는 SCP Wiki 아카이브를 위한 네이티브 iOS 리더입니다. 지부 디렉터리, 아카이브 탐색, 라이브러리 정리, 저장 검색, 공유, 프리미엄 읽기 도구를 제공합니다.",
+        "lede": "SCP Docs는 SCP Wiki와 지부 사이트의 글을 위한 <strong>네이티브 iOS 리더</strong>입니다. 공개된 원본 페이지를 네이티브 아카이브 작업 공간으로 바꿔 줍니다: 지부 디렉터리 탐색, 번호·제목 검색, 중요한 문서 저장, 라이브러리 정리, 그리고 읽던 보고서로 정확히 복귀할 수 있습니다.",
         "hero_alt": "이어 읽기, 아카이브 경로, 검색 필터가 보이는 한국어 UI의 SCP Docs 홈 화면",
         "cta_main": "App Store에서 받기",
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "기능 살펴보기",
         "cta2_sub": "Field guide",
-        "badges": ["비공식 팬 앱", "무료 + 프리미엄", "13+", "계정 불필요"],
+        "badges": ["SCP Wiki 리더", "무료 + 프리미엄", "13+", "계정 불필요"],
         "stats": [
             ("17", "지원 지부"),
             ("10+", "아카이브 경로"),
@@ -707,21 +707,21 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("계정", "앱에서 읽기만 할 경우 SCP Foundation이나 Wikidot 계정은 필요하지 않습니다."),
         ],
         "cta_title": "아카이브 열기",
-        "legal_p": "SCP Docs는 <strong>비공식 팬 애플리케이션</strong>입니다. 원본 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원본 페이지가 우선합니다.",
+        "legal_p": "원본 글, 저자 표시, 저작권 고지, 라이선스 조건은 각 원본 사이트가 기준입니다. SCP 관련 작품은 일반적으로 Creative Commons BY-SA 3.0으로 공개되지만, 개별 원본 페이지가 우선합니다.",
         "store_name": "iPhone용 SCP Docs",
         "store_note": "iOS 17 이상 지원. 앱 UI는 영어, 일본어, 프랑스어, 러시아어, 한국어, 스페인어, 폴란드어, 중국어, 태국어, 독일어, 이탈리아어, 포르투갈어, 베트남어, 체코어, 번체 중국어, 터키어, 인도네시아어를 지원합니다.",
         "store_main": "App Store에서 보기",
     },
     "es": {
         "title": "SCP Docs — Lector del Archivo de la Fundación para iPhone",
-        "description": "SCP Docs es un lector iOS nativo no oficial para los archivos de SCP Wiki, con directorios por rama, navegación guiada, Biblioteca, búsquedas guardadas, tarjetas para compartir y herramientas Premium.",
-        "lede": "SCP Docs es un <strong>lector iOS no oficial hecho por fans</strong> para los artículos de SCP Wiki y sus ramas. Convierte las páginas públicas de origen en un espacio de lectura nativo: recorre los directorios de cada rama, busca por número o título, guarda los expedientes importantes, organízalos en tu Biblioteca y vuelve exactamente a los informes que estabas leyendo.",
+        "description": "SCP Docs es un lector iOS nativo para los archivos de SCP Wiki, con directorios por rama, navegación guiada, Biblioteca, búsquedas guardadas, tarjetas para compartir y herramientas Premium.",
+        "lede": "SCP Docs es un <strong>lector iOS para los artículos de SCP Wiki y sus ramas</strong>. Convierte las páginas públicas de origen en un espacio de lectura nativo: recorre los directorios de cada rama, busca por número o título, guarda los expedientes importantes, organízalos en tu Biblioteca y vuelve exactamente a los informes que estabas leyendo.",
         "hero_alt": "Pantalla de inicio de SCP Docs con continuar leyendo, rutas de archivo y filtros de búsqueda",
         "cta_main": "Descargar en el App Store",
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Explorar las funciones",
         "cta2_sub": "Field guide",
-        "badges": ["App fan no oficial", "Gratis + Premium", "13+", "Sin cuenta"],
+        "badges": ["Lector de SCP Wiki", "Gratis + Premium", "13+", "Sin cuenta"],
         "stats": [
             ("17", "ramas del archivo"),
             ("10+", "rutas de directorio"),
@@ -767,21 +767,21 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("Cuentas", "no se necesita cuenta de SCP Foundation ni de Wikidot para leer en la app."),
         ],
         "cta_title": "Abrir el archivo",
-        "legal_p": "SCP Docs es una <strong>aplicación fan no oficial</strong>. Los artículos de origen, los créditos de autor, los avisos de copyright y las condiciones de licencia siguen rigiéndose por los sitios de origen. Las obras SCP suelen publicarse bajo Creative Commons BY-SA 3.0, pero cada página de origen es la referencia autorizada.",
+        "legal_p": "Los artículos de origen, los créditos de autor, los avisos de copyright y las condiciones de licencia siguen rigiéndose por los sitios de origen. Las obras SCP suelen publicarse bajo Creative Commons BY-SA 3.0, pero cada página de origen es la referencia autorizada.",
         "store_name": "SCP Docs para iPhone",
         "store_note": "Requiere iOS 17 o posterior. La interfaz está disponible en inglés, japonés, francés, ruso, coreano, español, polaco, chino, tailandés, alemán, italiano, portugués, vietnamita, checo, chino tradicional, turco e indonesio.",
         "store_main": "Ver en el App Store",
     },
     "pl": {
         "title": "SCP Docs — czytnik archiwów Fundacji na iPhone'a",
-        "description": "SCP Docs to nieoficjalny czytnik SCP Wiki na iOS z katalogami oddziałów, wyszukiwaniem, Biblioteką, zapisanymi wyszukiwaniami, udostępnianiem i narzędziami Premium.",
-        "lede": "SCP Docs to <strong>nieoficjalny, fanowski czytnik na iOS</strong> do artykułów SCP Wiki i stron oddziałów. Zmienia publiczne strony źródłowe w natywne miejsce pracy z archiwum: przeglądaj katalogi oddziałów, wyszukuj po numerze lub tytule, zapisuj ważne akta, porządkuj je w Bibliotece i wracaj dokładnie tam, gdzie przerwano czytanie.",
+        "description": "SCP Docs to natywny czytnik SCP Wiki na iOS z katalogami oddziałów, wyszukiwaniem, Biblioteką, zapisanymi wyszukiwaniami, udostępnianiem i narzędziami Premium.",
+        "lede": "SCP Docs to <strong>natywny czytnik na iOS</strong> do artykułów SCP Wiki i stron oddziałów. Zmienia publiczne strony źródłowe w natywne miejsce pracy z archiwum: przeglądaj katalogi oddziałów, wyszukuj po numerze lub tytule, zapisuj ważne akta, porządkuj je w Bibliotece i wracaj dokładnie tam, gdzie przerwano czytanie.",
         "hero_alt": "Ekran główny SCP Docs z kontynuacją czytania, trasami archiwum i filtrami wyszukiwania",
         "cta_main": "Pobierz w App Store",
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Poznaj funkcje",
         "cta2_sub": "Przewodnik",
-        "badges": ["Nieoficjalna aplikacja fanowska", "Bezpłatna + Premium", "Od 13 lat", "Bez konta"],
+        "badges": ["Czytnik SCP Wiki", "Bezpłatna + Premium", "Od 13 lat", "Bez konta"],
         "stats": [
             ("17", "oddziałów archiwum"),
             ("10+", "tras katalogów"),
@@ -827,7 +827,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
             ("Konta", "do czytania w aplikacji nie jest wymagane konto SCP Foundation ani Wikidot."),
         ],
         "cta_title": "Otwórz archiwum",
-        "legal_p": "SCP Docs jest <strong>nieoficjalną aplikacją fanowską</strong>. Artykuły źródłowe, autorstwo, informacje o prawach autorskich i warunki licencji podlegają stronom źródłowym. Utwory SCP są zwykle publikowane na licencji Creative Commons BY-SA 3.0, ale rozstrzygająca jest każda strona źródłowa.",
+        "legal_p": "Artykuły źródłowe, autorstwo, informacje o prawach autorskich i warunki licencji podlegają stronom źródłowym. Utwory SCP są zwykle publikowane na licencji Creative Commons BY-SA 3.0, ale rozstrzygająca jest każda strona źródłowa.",
         "store_name": "SCP Docs na iPhone'a",
         "store_note": "Wymaga iOS 17 lub nowszego. Interfejs obsługuje angielski, japoński, francuski, rosyjski, koreański, hiszpański, polski, chiński, tajski, niemiecki, włoski, portugalski, wietnamski, czeski, tradycyjny chiński, turecki i indonezyjski.",
         "store_main": "Pobierz w App Store",
@@ -1044,7 +1044,7 @@ def build_japanese_index() -> dict[str, str]:
           <div class="home-app-copy">
             <p class="section-label">SCP Docs app</p>
             <h2 id="home-app-title" class="section-title-lg">見つけた記事を、<br />快適に読み、整理する。</h2>
-            <p class="lede">SCP Docsは、SCP記事を読むためのiPhone・iPad向け非公式アプリです。読みかけの記事へ戻り、気になった記事をライブラリで整理できます。</p>
+            <p class="lede">SCP Docsは、SCP記事を探して読むためのiPhone・iPad向けアプリです。読みかけの記事へ戻り、気になった記事をライブラリで整理できます。</p>
             <ul class="home-app-points">
               <li>検索機能はすべて無料です</li>
               <li>お気に入り・後で読むは無料で各20件、プレミアムで各200件まで保存</li>
@@ -1095,7 +1095,7 @@ def build_japanese_index() -> dict[str, str]:
           <a href="features-ja.html"><strong>アプリの機能</strong><span>画面と機能、無料・プレミアムの違い</span></a>
           <a href="support-ja.html"><strong>サポート</strong><span>使い方、動作環境、よくある質問</span></a>
         </div>
-        <p class="home-project-note">SCP Docsは非公式のファンプロジェクトです。記事本文、著者表示、ライセンス条件は各提供元サイトの表示が優先されます。</p>
+        <p class="home-project-note">SCP Docsは記事の検索と読書状態の整理を支援します。記事本文、著者表示、ライセンス条件は各提供元サイトの表示が優先されます。</p>
       </section>
     </main>"""
     return {"title": s["title"], "description": s["description"], "body": body}
@@ -1555,7 +1555,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Premium", "Stats, speech, and offline reading", "Reading stats, text-to-speech that now follows each article's own language instead of the app language, memo editing, expanded save limits, ad removal, and offline storage support longer reading sessions."),
                 ("Sync", "iCloud-backed personal organization", "When available, reading state, memos, saved searches, and bookmark folders sync through your own iCloud Drive. Saved searches can notify you about new matches on device."),
             ],
-            "SCP Docs is not an official SCP Foundation or Wikidot app. Source pages, author credits, and license notices on each source site remain authoritative.",
+            "Source pages, author credits, and license notices on each source site remain authoritative.",
             "Home (light)",
             "Home (dark)",
         ),
@@ -1575,7 +1575,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Premium", "統計、読み上げ、オフライン", "お気に入り・後で読むを各200件まで保存できます。読書統計、記事自体の言語に対応した読み上げ、メモ編集、広告非表示、オフライン保存も利用できます。"),
                 ("Sync", "iCloudで個人の整理を同期", "利用可能な場合、読書状態、メモ、保存検索、ブックマークフォルダを自分の iCloud Drive 経由で同期できます。保存検索は新着一致を端末上で通知できます。"),
             ],
-            "SCP Docs は SCP Foundation や Wikidot の公式アプリではありません。元ページ、著者表示、ライセンス表記は各提供元サイトが正本です。",
+            "元ページ、著者表示、ライセンス表記は各提供元サイトが正本です。",
             "ホーム（ライト）",
             "ホーム（ダーク）",
         ),
@@ -1595,7 +1595,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Premium", "Statistiques, lecture audio et hors ligne", "Statistiques de lecture, synthèse vocale qui suit désormais la langue de chaque article plutôt que celle de l'app, édition des mémos, limites étendues, suppression des publicités et stockage hors ligne."),
                 ("Sync", "Organisation personnelle via iCloud", "Lorsque disponible, état de lecture, mémos, recherches enregistrées et dossiers de favoris se synchronisent via votre iCloud Drive. Les recherches enregistrées peuvent notifier les nouveaux résultats sur l'appareil."),
             ],
-            "SCP Docs n'est pas une app officielle de la SCP Foundation ou de Wikidot. Les pages sources, crédits d'auteurs et licences des sites sources font autorité.",
+            "Les pages sources, crédits d'auteurs et licences des sites sources font autorité.",
             "Accueil en mode clair",
             "Accueil en mode sombre",
         ),
@@ -1615,7 +1615,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Premium", "Статистика, озвучивание и офлайн", "Статистика чтения, синтез речи, который теперь следует языку статьи, а не языку приложения, редактирование заметок, расширенные лимиты, скрытие рекламы и офлайн-хранение."),
                 ("Sync", "Личная организация через iCloud", "Когда доступно, состояние чтения, заметки, сохранённые поиски и папки закладок синхронизируются через ваш iCloud Drive. Сохранённые поиски могут уведомлять о новых совпадениях на устройстве."),
             ],
-            "SCP Docs не является официальным приложением SCP Foundation или Wikidot. Исходные страницы, сведения об авторах и лицензии на исходных сайтах остаются основным источником.",
+            "Исходные страницы, сведения об авторах и лицензии на исходных сайтах остаются основным источником.",
             "Главная в светлой теме",
             "Главная в тёмной теме",
         ),
@@ -1635,7 +1635,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Premium", "통계, 음성 읽기, 오프라인", "읽기 통계, 앱 언어가 아닌 글 자체의 언어를 따르는 텍스트 음성 변환, 메모 편집, 저장 한도 확장, 광고 제거, 오프라인 저장을 제공합니다."),
                 ("Sync", "iCloud 기반 개인 정리", "사용 가능한 경우 읽기 상태, 메모, 저장 검색, 북마크 폴더가 사용자의 iCloud Drive를 통해 동기화됩니다. 저장 검색은 새 일치 항목을 기기 알림으로 알려 줄 수 있습니다."),
             ],
-            "SCP Docs는 SCP Foundation 또는 Wikidot의 공식 앱이 아닙니다. 원본 페이지, 저자 표시, 라이선스 고지는 각 원본 사이트가 기준입니다.",
+            "원본 페이지, 저자 표시, 라이선스 고지는 각 원본 사이트가 기준입니다.",
             "라이트 모드 홈",
             "다크 모드 홈",
         ),
@@ -1655,7 +1655,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Premium", "Estadísticas, voz y lectura sin conexión", "Estadísticas de lectura, lectura en voz alta que ahora sigue el idioma de cada artículo en lugar del idioma de la app, edición de notas, límites ampliados, sin anuncios y almacenamiento sin conexión para sesiones de lectura largas."),
                 ("Sync", "Organización personal respaldada por iCloud", "Cuando está disponible, el estado de lectura, las notas, las búsquedas guardadas y las carpetas de marcadores se sincronizan a través de tu propio iCloud Drive. Las búsquedas guardadas pueden avisarte de nuevas coincidencias en el dispositivo."),
             ],
-            "SCP Docs no es una app oficial de la SCP Foundation ni de Wikidot. Las páginas de origen, los créditos de autor y los avisos de licencia de cada sitio de origen son la referencia autorizada.",
+            "Las páginas de origen, los créditos de autor y los avisos de licencia de cada sitio de origen son la referencia autorizada.",
             "Inicio (claro)",
             "Inicio (oscuro)",
         ),
@@ -1675,7 +1675,7 @@ def translated_feature(lang: str) -> dict[str, str]:
                 ("Premium", "Statystyki, synteza mowy i tryb offline", "Statystyki czytania, synteza mowy zgodna z językiem artykułu, edycja notatek, wyższe limity, brak reklam i zapis offline wspierają dłuższe sesje czytania."),
                 ("Synchronizacja", "Osobista organizacja przez iCloud", "Gdy funkcja jest dostępna, stan czytania, notatki, zapisane wyszukiwania i foldery zakładek synchronizują się przez własny iCloud Drive. Zapisane wyszukiwania mogą powiadamiać na urządzeniu o nowych wynikach."),
             ],
-            "SCP Docs nie jest oficjalną aplikacją SCP Foundation ani Wikidot. Rozstrzygające pozostają strony źródłowe, informacje o autorach i licencjach.",
+            "Rozstrzygające pozostają strony źródłowe, informacje o autorach i licencjach.",
             "Start (tryb jasny)",
             "Start (tryb ciemny)",
         ),
@@ -2395,12 +2395,12 @@ for code, (section_title, section_text, updated) in ANALYTICS_PRIVACY.items():
 TERMS_TEXT = {
     "en": {
         "title": "Terms of Use — SCP Docs",
-        "description": "SCP Docs Terms of Use covering unofficial status, source content licensing, Premium subscriptions, rewarded unlocks, third-party services, and disclaimers.",
+        "description": "SCP Docs Terms of Use covering source content licensing, Premium subscriptions, rewarded unlocks, third-party services, and disclaimers.",
         "heading": "Terms of Use",
-        "updated": "Last updated: June 24, 2026",
+        "updated": "Last updated: September 15, 2026",
         "sections": [
             ("1. Scope and acceptance", "These Terms of Use (the “Terms”) govern your use of the mobile application “SCP Docs” (the “App”). By downloading or using the App, you agree to be bound by these Terms."),
-            ("2. Nature of the service", "The App is not an official application provided or endorsed by the SCP Foundation, Wikidot, Inc., or any official operator of referenced content. It is unofficial, fan-made software. References to names or fictional universes are for convenience only and do not imply partnership, endorsement, or agency."),
+            ("2. Nature of the service", "The App provides tools for browsing and reading public creative works published on SCP Wiki and related source sites. References to names or fictional universes identify the works being accessed. Source attribution, copyright notices, and applicable license terms are provided by the referenced source pages."),
             ("3. Content and licensing", 'Much of the text and imagery accessible through the App is published by individual contributors under licenses such as Creative Commons Attribution-ShareAlike 3.0 Unported (<strong>CC BY-SA 3.0</strong>). The full <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">license text</a> is available from Creative Commons. If you reproduce, redistribute, or modify articles or other materials, you must comply with the applicable license and each source site\'s rules. The App itself is not the licensor of third-party content.'),
             ("4. App features and personal data", "The App provides archive browsing, branch-aware search, reading state, bookmarks, read-later, ratings, memos, share cards, saved searches, reading stats, text-to-speech, offline snapshots, and related reader tools. Data handling is described in the Privacy Policy."),
             ("5. Purchases, subscriptions, and rewarded unlocks", "Premium features may be provided through auto-renewing subscriptions, other in-app purchases, or temporary rewarded-ad unlocks where available. Apple Inc. handles subscription purchase processing, billing, cancellation, refunds, and related matters through the App Store. A rewarded ad unlock, when offered, grants only temporary access and does not replace a subscription. Feature availability and limits may change with App updates or App Store review requirements."),
@@ -2421,12 +2421,12 @@ def make_terms(lang: str) -> dict[str, str]:
     data = {
         "ja": (
             "利用規約 — SCP Docs",
-            "SCP Docs の利用規約。非公式性、元コンテンツのライセンス、プレミアム購読、リワード解放、第三者サービス、免責事項を説明します。",
+            "SCP Docs の利用規約。元コンテンツのライセンス、プレミアム購読、リワード解放、第三者サービス、免責事項を説明します。",
             "利用規約",
-            "最終更新日: 2026年6月24日",
+            "最終更新日: 2026年9月15日",
             [
                 ("1. 適用範囲と同意", "本利用規約（以下「本規約」）は、モバイルアプリ「SCP Docs」（以下「本アプリ」）の利用に適用されます。本アプリをダウンロードまたは利用することで、本規約に同意したものとみなされます。"),
-                ("2. サービスの性質", "本アプリは、SCP Foundation、Wikidot, Inc.、または参照されるコンテンツの公式運営者が提供・承認する公式アプリではありません。非公式のファンメイドソフトウェアです。名称や架空世界への言及は便宜上のものであり、提携、承認、代理関係を意味しません。"),
+                ("2. サービスの性質", "本アプリは、SCP Wikiと各提供元サイトで公開される創作作品を閲覧・読書するためのツールを提供します。名称や架空世界への言及は、アクセス対象の作品を識別するために使用します。出典、著者表示、著作権表示、適用されるライセンス条件は、参照先の各ページで確認できます。"),
                 ("3. コンテンツとライセンス", '本アプリを通じてアクセスできる多くのテキストや画像は、Creative Commons Attribution-ShareAlike 3.0 Unported（<strong>CC BY-SA 3.0</strong>）等のライセンスの下で各投稿者により公開されています。<a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">ライセンス全文</a>は Creative Commons にて確認できます。記事や素材を転載、再配布、改変する場合は、該当ライセンスと各提供元サイトの規則に従う必要があります。本アプリ自体は第三者コンテンツの許諾主体ではありません。'),
                 ("4. アプリ機能と個人データ", "本アプリは、書庫閲覧、支部対応検索、読書状態、ブックマーク、後で読む、評価、メモ、共有カード、保存検索、読書統計、読み上げ、オフライン保存などの読書ツールを提供します。データの取扱いはプライバシーポリシーに記載します。"),
                 ("5. 購入、購読、リワード解放", "プレミアム機能は、自動更新購読、その他のアプリ内購入、または利用可能な場合のリワード広告による一時解放として提供されることがあります。購読の購入処理、請求、キャンセル、返金等は Apple Inc. が App Store を通じて取り扱います。リワード広告による解放は一時的なアクセスであり、購読の代替ではありません。機能の内容や上限は、アプリ更新や App Store 審査要件により変更される場合があります。"),
@@ -2440,12 +2440,12 @@ def make_terms(lang: str) -> dict[str, str]:
         ),
         "fr": (
             "Conditions d'utilisation — SCP Docs",
-            "Conditions d'utilisation de SCP Docs : statut non officiel, licences des contenus sources, abonnements Premium, déverrouillages récompensés, services tiers et exclusions.",
+            "Conditions d'utilisation de SCP Docs : licences des contenus sources, abonnements Premium, déverrouillages récompensés, services tiers et exclusions.",
             "Conditions d'utilisation",
-            "Dernière mise à jour : 24 juin 2026",
+            "Dernière mise à jour : 15 septembre 2026",
             [
                 ("1. Portée et acceptation", "Ces Conditions régissent votre utilisation de l'application mobile « SCP Docs » (l'« App »). En téléchargeant ou utilisant l'App, vous acceptez ces Conditions."),
-                ("2. Nature du service", "L'App n'est pas une application officielle fournie ou approuvée par la SCP Foundation, Wikidot, Inc. ou un opérateur officiel des contenus référencés. Il s'agit d'un logiciel fan non officiel. Les noms et univers fictifs sont cités par commodité et n'impliquent aucun partenariat, soutien ou mandat."),
+                ("2. Nature du service", "L'App fournit des outils pour parcourir et lire les œuvres créatives publiques publiées sur le SCP Wiki et les sites sources associés. Les noms et univers fictifs identifient les œuvres consultées. Les sources, auteurs, mentions de copyright et licences applicables sont indiqués sur les pages sources."),
                 ("3. Contenu et licences", "Une grande partie des textes et images accessibles via l'App est publiée par des contributeurs sous des licences comme Creative Commons Attribution-ShareAlike 3.0 Unported (<strong>CC BY-SA 3.0</strong>). Le <a href=\"https://creativecommons.org/licenses/by-sa/3.0/\" rel=\"noopener noreferrer\">texte complet de la licence</a> est disponible chez Creative Commons. Toute reproduction, redistribution ou modification doit respecter la licence applicable et les règles du site source. L'App elle-même n'est pas le concédant des contenus tiers."),
                 ("4. Fonctions de l'App et données personnelles", "L'App propose navigation d'archives, recherche par branche, état de lecture, favoris, à lire plus tard, notes, mémos, cartes de partage, recherches enregistrées, statistiques, synthèse vocale, instantanés hors ligne et outils associés. Le traitement des données est décrit dans la Politique de confidentialité."),
                 ("5. Achats, abonnements et déverrouillages récompensés", "Les fonctions Premium peuvent être fournies par abonnement renouvelable, autre achat intégré ou déverrouillage temporaire via publicité récompensée lorsque disponible. Apple Inc. traite les achats, facturation, annulations, remboursements et sujets liés via l'App Store. Un déverrouillage récompensé donne seulement un accès temporaire et ne remplace pas un abonnement. Les fonctions et limites peuvent changer avec les mises à jour ou exigences de revue App Store."),
@@ -2459,12 +2459,12 @@ def make_terms(lang: str) -> dict[str, str]:
         ),
         "ru": (
             "Условия использования — SCP Docs",
-            "Условия использования SCP Docs: неофициальный статус, лицензии исходного контента, Premium-подписки, временные рекламные разблокировки, сторонние сервисы и отказ от гарантий.",
+            "Условия использования SCP Docs: лицензии исходного контента, Premium-подписки, временные рекламные разблокировки, сторонние сервисы и отказ от гарантий.",
             "Условия использования",
-            "Последнее обновление: 24 июня 2026 г.",
+            "Последнее обновление: 15 сентября 2026 г.",
             [
                 ("1. Область и согласие", "Эти Условия регулируют использование мобильного приложения «SCP Docs» («Приложение»). Скачивая или используя Приложение, вы соглашаетесь соблюдать эти Условия."),
-                ("2. Характер сервиса", "Приложение не является официальным приложением SCP Foundation, Wikidot, Inc. или официальных операторов упомянутого контента. Это неофициальное фанатское ПО. Упоминание названий и вымышленных миров сделано для удобства и не означает партнёрства, одобрения или представительства."),
+                ("2. Характер сервиса", "Приложение предоставляет инструменты для просмотра и чтения общедоступных творческих работ, опубликованных в SCP Wiki и на связанных исходных сайтах. Названия и вымышленные миры используются для обозначения открываемых произведений. Источник, авторство, уведомления об авторских правах и применимые лицензии указаны на исходных страницах."),
                 ("3. Контент и лицензии", 'Многие тексты и изображения, доступные через Приложение, опубликованы авторами по лицензиям вроде Creative Commons Attribution-ShareAlike 3.0 Unported (<strong>CC BY-SA 3.0</strong>). Полный <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">текст лицензии</a> доступен у Creative Commons. При воспроизведении, распространении или изменении материалов необходимо соблюдать применимую лицензию и правила исходного сайта. Само Приложение не является лицензиаром стороннего контента.'),
                 ("4. Функции и персональные данные", "Приложение предоставляет просмотр архивов, поиск по филиалам, состояние чтения, закладки, «прочитать позже», оценки, заметки, карточки для публикации, сохранённые поиски, статистику чтения, синтез речи, офлайн-снимки и связанные инструменты. Обработка данных описана в Политике конфиденциальности."),
                 ("5. Покупки, подписки и рекламные разблокировки", "Premium-функции могут предоставляться через автопродлеваемые подписки, другие встроенные покупки или временные разблокировки за рекламный просмотр, если они доступны. Apple Inc. обрабатывает покупки, оплату, отмену, возвраты и связанные вопросы через App Store. Рекламная разблокировка даёт только временный доступ и не заменяет подписку. Доступность функций и лимиты могут меняться с обновлениями или требованиями проверки App Store."),
@@ -2478,12 +2478,12 @@ def make_terms(lang: str) -> dict[str, str]:
         ),
         "ko": (
             "이용약관 — SCP Docs",
-            "SCP Docs 이용약관: 비공식 상태, 원본 콘텐츠 라이선스, 프리미엄 구독, 리워드 임시 해제, 제3자 서비스, 면책 사항.",
+            "SCP Docs 이용약관: 원본 콘텐츠 라이선스, 프리미엄 구독, 리워드 임시 해제, 제3자 서비스, 면책 사항.",
             "이용약관",
-            "최종 업데이트: 2026년 6월 24일",
+            "최종 업데이트: 2026년 9월 15일",
             [
                 ("1. 적용 범위 및 동의", "본 이용약관(이하 “약관”)은 모바일 애플리케이션 “SCP Docs”(이하 “앱”)의 사용에 적용됩니다. 앱을 다운로드하거나 사용하는 경우 본 약관에 동의한 것으로 간주됩니다."),
-                ("2. 서비스의 성격", "앱은 SCP Foundation, Wikidot, Inc. 또는 참조되는 콘텐츠의 공식 운영자가 제공하거나 승인한 공식 앱이 아닙니다. 비공식 팬 제작 소프트웨어입니다. 명칭과 가상 세계에 대한 언급은 편의를 위한 것이며 제휴, 승인, 대리 관계를 의미하지 않습니다."),
+                ("2. 서비스의 성격", "앱은 SCP Wiki와 관련 원본 사이트에 공개된 창작 작품을 탐색하고 읽는 도구를 제공합니다. 명칭과 가상 세계는 열람하는 작품을 식별하기 위해 사용합니다. 출처, 저자, 저작권 고지 및 적용 라이선스는 참조하는 원본 페이지에서 확인할 수 있습니다."),
                 ("3. 콘텐츠와 라이선스", '앱을 통해 접근할 수 있는 많은 텍스트와 이미지는 각 기여자가 Creative Commons Attribution-ShareAlike 3.0 Unported(<strong>CC BY-SA 3.0</strong>) 등의 라이선스로 공개한 것입니다. 전체 <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">라이선스 문서</a>는 Creative Commons에서 확인할 수 있습니다. 글이나 자료를 복제, 재배포, 수정하는 경우 적용 라이선스와 각 원본 사이트의 규칙을 따라야 합니다. 앱 자체는 제3자 콘텐츠의 라이선스 제공자가 아닙니다.'),
                 ("4. 앱 기능과 개인 데이터", "앱은 아카이브 탐색, 지부별 검색, 읽기 상태, 북마크, 나중에 읽기, 평가, 메모, 공유 카드, 저장 검색, 읽기 통계, 텍스트 음성 변환, 오프라인 스냅샷 및 관련 리더 도구를 제공합니다. 데이터 처리는 개인정보 처리방침에 설명되어 있습니다."),
                 ("5. 구매, 구독, 리워드 해제", "프리미엄 기능은 자동 갱신 구독, 기타 앱 내 구매 또는 제공되는 경우 리워드 광고를 통한 임시 해제로 제공될 수 있습니다. Apple Inc.는 App Store를 통해 구독 구매 처리, 청구, 취소, 환불 및 관련 사항을 처리합니다. 리워드 광고 해제는 일시적 접근이며 구독을 대체하지 않습니다. 기능 제공 여부와 한도는 앱 업데이트 또는 App Store 심사 요구에 따라 변경될 수 있습니다."),
@@ -2497,12 +2497,12 @@ def make_terms(lang: str) -> dict[str, str]:
         ),
         "es": (
             "Términos de uso — SCP Docs",
-            "Términos de uso de SCP Docs: estado no oficial, licencias del contenido de origen, suscripciones Premium, desbloqueos con recompensa, servicios de terceros y exenciones de responsabilidad.",
+            "Términos de uso de SCP Docs: licencias del contenido de origen, suscripciones Premium, desbloqueos con recompensa, servicios de terceros y exenciones de responsabilidad.",
             "Términos de uso",
-            "Última actualización: 24 de junio de 2026",
+            "Última actualización: 15 de septiembre de 2026",
             [
                 ("1. Alcance y aceptación", "Estos Términos de uso (los «Términos») rigen tu uso de la aplicación móvil «SCP Docs» (la «App»). Al descargar o usar la App, aceptas quedar vinculado por estos Términos."),
-                ("2. Naturaleza del servicio", "La App no es una aplicación oficial proporcionada o respaldada por la SCP Foundation, Wikidot, Inc. ni ningún operador oficial del contenido referenciado. Es software no oficial hecho por fans. Las referencias a nombres o universos de ficción son solo por comodidad y no implican asociación, respaldo ni representación."),
+                ("2. Naturaleza del servicio", "La App ofrece herramientas para explorar y leer obras creativas públicas publicadas en SCP Wiki y los sitios de origen relacionados. Los nombres y universos ficticios identifican las obras consultadas. Las fuentes, autorías, avisos de copyright y licencias aplicables se indican en las páginas de origen."),
                 ("3. Contenido y licencias", 'Gran parte del texto y las imágenes accesibles a través de la App se publica por colaboradores individuales bajo licencias como Creative Commons Attribution-ShareAlike 3.0 Unported (<strong>CC BY-SA 3.0</strong>). El <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">texto completo de la licencia</a> está disponible en Creative Commons. Si reproduces, redistribuyes o modificas artículos u otros materiales, debes cumplir la licencia aplicable y las reglas de cada sitio de origen. La App en sí no es el licenciante del contenido de terceros.'),
                 ("4. Funciones de la App y datos personales", "La App ofrece navegación por archivos, búsqueda por rama, estado de lectura, marcadores, leer más tarde, valoraciones, notas, tarjetas para compartir, búsquedas guardadas, estadísticas de lectura, lectura en voz alta, instantáneas sin conexión y herramientas de lectura relacionadas. El tratamiento de datos se describe en la Política de privacidad."),
                 ("5. Compras, suscripciones y desbloqueos con recompensa", "Las funciones Premium pueden ofrecerse mediante suscripciones con renovación automática, otras compras dentro de la app o desbloqueos temporales por anuncios con recompensa cuando estén disponibles. Apple Inc. gestiona el procesamiento de compras de suscripciones, la facturación, la cancelación, los reembolsos y asuntos relacionados a través del App Store. Un desbloqueo por anuncio con recompensa, cuando se ofrece, solo otorga acceso temporal y no sustituye a una suscripción. La disponibilidad de funciones y los límites pueden cambiar con las actualizaciones de la App o los requisitos de revisión del App Store."),
@@ -2525,12 +2525,12 @@ for code in ["ja", "fr", "ru", "ko", "es"]:
 
 TERMS_TEXT["pl"] = {
     "title": "Warunki użytkowania — SCP Docs",
-    "description": "Warunki użytkowania SCP Docs dotyczące nieoficjalnego charakteru, licencji treści źródłowych, subskrypcji Premium, odblokowań za reklamy, usług zewnętrznych i wyłączeń odpowiedzialności.",
+    "description": "Warunki użytkowania SCP Docs dotyczące licencji treści źródłowych, subskrypcji Premium, odblokowań za reklamy, usług zewnętrznych i wyłączeń odpowiedzialności.",
     "heading": "Warunki użytkowania",
-    "updated": "Ostatnia aktualizacja: 14 lipca 2026 r.",
+    "updated": "Ostatnia aktualizacja: 15 września 2026 r.",
     "sections": [
         ("1. Zakres i akceptacja", "Niniejsze Warunki użytkowania („Warunki”) regulują korzystanie z aplikacji mobilnej „SCP Docs” („Aplikacja”). Pobierając lub używając Aplikacji, użytkownik zgadza się przestrzegać niniejszych Warunków."),
-        ("2. Charakter usługi", "Aplikacja nie jest oficjalną aplikacją dostarczaną ani zatwierdzoną przez SCP Foundation, Wikidot, Inc. ani oficjalnych operatorów treści, do których się odwołuje. Jest nieoficjalnym oprogramowaniem tworzonym przez fanów. Odwołania do nazw lub fikcyjnych uniwersów służą wyłącznie wygodzie i nie oznaczają partnerstwa, poparcia ani przedstawicielstwa."),
+        ("2. Charakter usługi", "Aplikacja udostępnia narzędzia do przeglądania i czytania publicznych utworów publikowanych w SCP Wiki oraz powiązanych witrynach źródłowych. Nazwy i fikcyjne uniwersa identyfikują otwierane utwory. Źródło, autorstwo, informacje o prawach autorskich i właściwe licencje są podane na stronach źródłowych."),
         ("3. Treści i licencje", 'Znaczna część tekstów i obrazów dostępnych przez Aplikację jest publikowana przez poszczególnych twórców na licencjach takich jak Creative Commons Attribution-ShareAlike 3.0 Unported (<strong>CC BY-SA 3.0</strong>). Pełny <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="noopener noreferrer">tekst licencji</a> jest dostępny w Creative Commons. Powielanie, rozpowszechnianie lub modyfikowanie artykułów i innych materiałów wymaga przestrzegania właściwej licencji oraz zasad strony źródłowej. Sama Aplikacja nie jest licencjodawcą treści podmiotów trzecich.'),
         ("4. Funkcje Aplikacji i dane osobowe", "Aplikacja oferuje przeglądanie archiwów, wyszukiwanie zależne od oddziału, stan czytania, zakładki, listę do przeczytania, oceny, notatki, karty udostępniania, zapisane wyszukiwania, statystyki czytania, syntezę mowy, kopie offline i powiązane narzędzia. Sposób przetwarzania danych opisuje Polityka prywatności."),
         ("5. Zakupy, subskrypcje i odblokowania za reklamę", "Funkcje Premium mogą być udostępniane w ramach automatycznie odnawianych subskrypcji, innych zakupów w aplikacji lub tymczasowego dostępu za reklamę z nagrodą, gdy jest on dostępny. Apple Inc. obsługuje zakup subskrypcji, rozliczenia, anulowanie, zwroty i sprawy powiązane za pośrednictwem App Store. Odblokowanie za reklamę daje wyłącznie dostęp tymczasowy i nie zastępuje subskrypcji. Dostępność funkcji i limity mogą zmieniać się wraz z aktualizacjami Aplikacji lub wymogami weryfikacji App Store."),
@@ -2833,10 +2833,10 @@ SAFETY_TEXT = {
         "title": "Rating & Safety Policy — SCP Docs",
         "description": "SCP Docs Rating & Safety Policy explaining App Store 13+ suitability, fictional horror themes, reader guidance, and source-site responsibility.",
         "heading": "Rating & Safety Policy",
-        "updated": "Last updated: June 24, 2026",
+        "updated": "Last updated: September 15, 2026",
         "sections": [
             ("1. Purpose of this page", "This page provides additional information about age suitability and content safety for the mobile application “SCP Docs” (the “App”). The App is treated as appropriate for an App Store 13+ rating."),
-            ("2. Nature of the app", "The App is an unofficial browsing and reading client for public creative works from the online community commonly known as the SCP Foundation. It is not provided or endorsed by the SCP Foundation, Wikidot, Inc., or official operators of referenced content."),
+            ("2. Nature of the app", "The App provides browsing and reading tools for public creative works published by the online community commonly known as the SCP Foundation. Source pages provide the applicable authorship, copyright, warning, and license information."),
             ("3. Expected content", "SCP-related works may include text-based horror, suspense, anomalous entities, fictional containment procedures, warning-style prose, tragic themes, implied violence, blood references, disturbing topics, and occasional images provided by source sites. Most content is fiction and is not intended to encourage real-world dangerous behavior."),
             ("4. Reader guidance", "The App is intended for readers aged 13 and older. Readers who are sensitive to horror or unsettling fiction, and minors using the App, should choose what they read with care. Article tags, warnings, source-site rules, and parental guidance may be relevant."),
             ("5. App controls and limits", "SCP Docs provides reader settings and navigation tools, but it does not rewrite or age-rate each source article. Parents and guardians may use iOS Screen Time, age restrictions, and content controls to manage a child's browsing environment."),
@@ -2850,11 +2850,11 @@ def make_safety(lang: str) -> dict[str, object]:
     if lang == "en":
         return SAFETY_TEXT["en"]
     data = {
-        "ja": ("Rating & Safety Policy — SCP Docs", "SCP Docs の Rating & Safety Policy。App Store 13+ 相当、フィクションとしてのホラー表現、読者向け注意、元サイト責任を説明します。", "Rating & Safety Policy", "最終更新日: 2026年6月24日", [("1. このページの目的", "このページは、モバイルアプリ「SCP Docs」（以下「本アプリ」）の年齢適合性とコンテンツ安全性について補足するものです。本アプリは App Store 13+ 相当として扱われます。"), ("2. アプリの性質", "本アプリは、SCP Foundation として知られるオンライン創作コミュニティの公開作品を閲覧・読書するための非公式クライアントです。SCP Foundation、Wikidot, Inc.、または参照コンテンツの公式運営者が提供・承認するものではありません。"), ("3. 想定されるコンテンツ", "SCP 関連作品には、テキスト中心のホラー、サスペンス、異常存在、架空の収容手順、警告風の文章、悲劇的テーマ、暗示的暴力、血液への言及、不穏な題材、元サイト由来の画像が含まれる場合があります。多くはフィクションであり、現実の危険行為を促すものではありません。"), ("4. 読者への案内", "本アプリは 13 歳以上の読者を想定しています。ホラーや不穏なフィクションに敏感な方、未成年者が利用する場合は、読む記事を慎重に選んでください。記事タグ、警告、元サイトの規則、保護者の助言が参考になります。"), ("5. アプリ側の制御と限界", "SCP Docs はリーダー設定やナビゲーションを提供しますが、各元記事を改変したり個別に年齢評価したりするものではありません。保護者は iOS のスクリーンタイム、年齢制限、コンテンツ制限を利用して閲覧環境を管理できます。"), ("6. 連絡先", f'年齢適合性や本ページに関する質問は <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> または <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a> までご連絡ください。')]),
-        "fr": ("Politique de classification et de sécurité — SCP Docs", "Politique de classification et de sécurité de SCP Docs : App Store 13+, thèmes d'horreur fictionnels, conseils aux lecteurs et responsabilité des sites sources.", "Politique de classification et de sécurité", "Dernière mise à jour : 24 juin 2026", [("1. Objet de cette page", "Cette page fournit des informations supplémentaires sur l'âge conseillé et la sécurité des contenus de l'application mobile « SCP Docs » (l'« App »). L'App est traitée comme appropriée pour une classification App Store 13+."), ("2. Nature de l'App", "L'App est un client non officiel de navigation et lecture pour des œuvres créatives publiques de la communauté en ligne connue comme SCP Foundation. Elle n'est pas fournie ni approuvée par la SCP Foundation, Wikidot, Inc. ou les opérateurs officiels des contenus référencés."), ("3. Contenu attendu", "Les œuvres SCP peuvent inclure horreur textuelle, suspense, entités anormales, procédures de confinement fictionnelles, prose d'avertissement, thèmes tragiques, violence implicite, références au sang, sujets dérangeants et parfois images des sites sources. La plupart du contenu est fictionnel et ne vise pas à encourager des comportements dangereux réels."), ("4. Conseils aux lecteurs", "L'App s'adresse aux lecteurs de 13 ans et plus. Les personnes sensibles à l'horreur ou à la fiction troublante, ainsi que les mineurs, doivent choisir leurs lectures avec prudence. Tags, avertissements, règles des sites sources et supervision parentale peuvent être pertinents."), ("5. Contrôles et limites", "SCP Docs fournit des réglages de lecture et des outils de navigation, mais ne réécrit pas et ne classe pas par âge chaque article source. Parents et responsables peuvent utiliser Temps d'écran iOS, restrictions d'âge et contrôles de contenu."), ("6. Contact", f"Questions sur l'âge conseillé ou cette page : <a href=\"mailto:{CONTACT_EMAIL}\">{CONTACT_EMAIL}</a> ou <a href=\"{X_URL}\" target=\"_blank\" rel=\"noopener noreferrer\">X: @SCPdocs</a>.")]),
-        "ru": ("Политика рейтинга и безопасности — SCP Docs", "Политика рейтинга и безопасности SCP Docs: App Store 13+, вымышленные хоррор-темы, рекомендации читателям и ответственность исходных сайтов.", "Политика рейтинга и безопасности", "Последнее обновление: 24 июня 2026 г.", [("1. Назначение страницы", "Эта страница содержит дополнительную информацию о возрастной пригодности и безопасности контента мобильного приложения «SCP Docs» («Приложение»). Приложение рассматривается как подходящее для рейтинга App Store 13+."), ("2. Характер приложения", "Приложение является неофициальным клиентом для просмотра и чтения публичных творческих работ онлайн-сообщества, известного как SCP Foundation. Оно не предоставлено и не одобрено SCP Foundation, Wikidot, Inc. или официальными операторами упомянутого контента."), ("3. Ожидаемый контент", "Материалы SCP могут включать текстовый хоррор, саспенс, аномальные сущности, вымышленные процедуры содержания, предупреждающий стиль, трагические темы, подразумеваемое насилие, упоминания крови, тревожные темы и иногда изображения с исходных сайтов. Большинство материалов является вымыслом и не предназначено для поощрения опасного поведения в реальности."), ("4. Рекомендации читателям", "Приложение предназначено для читателей 13 лет и старше. Читателям, чувствительным к хоррору или тревожной художественной прозе, а также несовершеннолетним, следует внимательно выбирать материалы. Теги, предупреждения, правила исходных сайтов и родительский контроль могут быть важны."), ("5. Контроли и ограничения", "SCP Docs предоставляет настройки чтения и навигацию, но не переписывает и не присваивает возрастной рейтинг каждой исходной статье. Родители и опекуны могут использовать Экранное время iOS, возрастные ограничения и контент-фильтры."), ("6. Контакт", f'Вопросы о возрастной пригодности или этой странице: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> или <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
-        "ko": ("등급 및 안전 정책 — SCP Docs", "SCP Docs 등급 및 안전 정책: App Store 13+ 적합성, 픽션 호러 주제, 독자 안내, 원본 사이트 책임에 대한 설명.", "등급 및 안전 정책", "최종 업데이트: 2026년 6월 24일", [("1. 이 페이지의 목적", "이 페이지는 모바일 애플리케이션 “SCP Docs”(이하 “앱”)의 연령 적합성과 콘텐츠 안전성에 대한 추가 정보를 제공합니다. 앱은 App Store 13+ 등급에 적합한 것으로 취급됩니다."), ("2. 앱의 성격", "앱은 SCP Foundation으로 알려진 온라인 창작 커뮤니티의 공개 작품을 탐색하고 읽기 위한 비공식 클라이언트입니다. SCP Foundation, Wikidot, Inc. 또는 참조 콘텐츠의 공식 운영자가 제공하거나 승인한 것이 아닙니다."), ("3. 예상되는 콘텐츠", "SCP 관련 작품에는 텍스트 기반 호러, 서스펜스, 변칙 존재, 가상의 격리 절차, 경고문 형식, 비극적 주제, 암시적 폭력, 피에 대한 언급, 불편할 수 있는 소재, 원본 사이트의 이미지가 포함될 수 있습니다. 대부분은 픽션이며 현실의 위험한 행동을 장려하려는 것이 아닙니다."), ("4. 독자 안내", "앱은 13세 이상 독자를 대상으로 합니다. 호러나 불안한 픽션에 민감한 독자와 미성년자는 읽을 글을 신중히 선택해야 합니다. 글 태그, 경고, 원본 사이트 규칙, 보호자 지도가 도움이 될 수 있습니다."), ("5. 앱의 제어와 한계", "SCP Docs는 리더 설정과 탐색 도구를 제공하지만 각 원본 글을 다시 쓰거나 개별적으로 연령 등급을 매기지는 않습니다. 보호자는 iOS 스크린 타임, 연령 제한, 콘텐츠 제어를 사용해 자녀의 탐색 환경을 관리할 수 있습니다."), ("6. 문의", f'연령 적합성 또는 이 페이지에 관한 문의는 <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> 또는 <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>로 보내 주세요.')]),
-        "es": ("Política de clasificación y seguridad — SCP Docs", "Política de clasificación y seguridad de SCP Docs: idoneidad 13+ del App Store, temas de terror de ficción, orientación para lectores y responsabilidad de los sitios de origen.", "Política de clasificación y seguridad", "Última actualización: 24 de junio de 2026", [("1. Objeto de esta página", "Esta página ofrece información adicional sobre la idoneidad por edad y la seguridad del contenido de la aplicación móvil «SCP Docs» (la «App»). La App se considera apropiada para una clasificación 13+ del App Store."), ("2. Naturaleza de la app", "La App es un cliente no oficial de navegación y lectura para obras creativas públicas de la comunidad en línea conocida como SCP Foundation. No la proporcionan ni la respaldan la SCP Foundation, Wikidot, Inc. ni los operadores oficiales del contenido referenciado."), ("3. Contenido esperado", "Las obras relacionadas con SCP pueden incluir terror en formato de texto, suspenso, entidades anómalas, procedimientos de contención ficticios, prosa de advertencia, temas trágicos, violencia implícita, referencias a sangre, temas perturbadores e imágenes ocasionales proporcionadas por los sitios de origen. La mayor parte del contenido es ficción y no pretende fomentar conductas peligrosas en el mundo real."), ("4. Orientación para lectores", "La App está destinada a lectores de 13 años o más. Los lectores sensibles al terror o a la ficción inquietante, y los menores que usen la App, deben elegir sus lecturas con cuidado. Las etiquetas de los artículos, las advertencias, las reglas de los sitios de origen y la orientación parental pueden ser relevantes."), ("5. Controles y límites de la app", "SCP Docs ofrece ajustes de lectura y herramientas de navegación, pero no reescribe ni clasifica por edad cada artículo de origen. Los padres y tutores pueden usar Tiempo de uso de iOS, las restricciones de edad y los controles de contenido para gestionar el entorno de navegación de un menor."), ("6. Contacto", f'Las preguntas sobre la idoneidad por edad o esta página pueden enviarse a <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> o <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
+        "ja": ("Rating & Safety Policy — SCP Docs", "SCP Docs の Rating & Safety Policy。App Store 13+ 相当、フィクションとしてのホラー表現、読者向け注意、元サイト責任を説明します。", "Rating & Safety Policy", "最終更新日: 2026年9月15日", [("1. このページの目的", "このページは、モバイルアプリ「SCP Docs」（以下「本アプリ」）の年齢適合性とコンテンツ安全性について補足するものです。本アプリは App Store 13+ 相当として扱われます。"), ("2. アプリの性質", "本アプリは、SCP Foundationとして知られるオンライン創作コミュニティの公開作品を閲覧・読書するためのツールを提供します。著者表示、著作権表示、警告、ライセンス情報は参照先の各ページで確認できます。"), ("3. 想定されるコンテンツ", "SCP 関連作品には、テキスト中心のホラー、サスペンス、異常存在、架空の収容手順、警告風の文章、悲劇的テーマ、暗示的暴力、血液への言及、不穏な題材、元サイト由来の画像が含まれる場合があります。多くはフィクションであり、現実の危険行為を促すものではありません。"), ("4. 読者への案内", "本アプリは 13 歳以上の読者を想定しています。ホラーや不穏なフィクションに敏感な方、未成年者が利用する場合は、読む記事を慎重に選んでください。記事タグ、警告、元サイトの規則、保護者の助言が参考になります。"), ("5. アプリ側の制御と限界", "SCP Docs はリーダー設定やナビゲーションを提供しますが、各元記事を改変したり個別に年齢評価したりするものではありません。保護者は iOS のスクリーンタイム、年齢制限、コンテンツ制限を利用して閲覧環境を管理できます。"), ("6. 連絡先", f'年齢適合性や本ページに関する質問は <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> または <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a> までご連絡ください。')]),
+        "fr": ("Politique de classification et de sécurité — SCP Docs", "Politique de classification et de sécurité de SCP Docs : App Store 13+, thèmes d'horreur fictionnels, conseils aux lecteurs et responsabilité des sites sources.", "Politique de classification et de sécurité", "Dernière mise à jour : 15 septembre 2026", [("1. Objet de cette page", "Cette page fournit des informations supplémentaires sur l'âge conseillé et la sécurité des contenus de l'application mobile « SCP Docs » (l'« App »). L'App est traitée comme appropriée pour une classification App Store 13+."), ("2. Nature de l'App", "L'App fournit des outils de navigation et de lecture pour les œuvres créatives publiques de la communauté en ligne connue comme SCP Foundation. Les pages sources indiquent les auteurs, le copyright, les avertissements et les licences applicables."), ("3. Contenu attendu", "Les œuvres SCP peuvent inclure horreur textuelle, suspense, entités anormales, procédures de confinement fictionnelles, prose d'avertissement, thèmes tragiques, violence implicite, références au sang, sujets dérangeants et parfois images des sites sources. La plupart du contenu est fictionnel et ne vise pas à encourager des comportements dangereux réels."), ("4. Conseils aux lecteurs", "L'App s'adresse aux lecteurs de 13 ans et plus. Les personnes sensibles à l'horreur ou à la fiction troublante, ainsi que les mineurs, doivent choisir leurs lectures avec prudence. Tags, avertissements, règles des sites sources et supervision parentale peuvent être pertinents."), ("5. Contrôles et limites", "SCP Docs fournit des réglages de lecture et des outils de navigation, mais ne réécrit pas et ne classe pas par âge chaque article source. Parents et responsables peuvent utiliser Temps d'écran iOS, restrictions d'âge et contrôles de contenu."), ("6. Contact", f"Questions sur l'âge conseillé ou cette page : <a href=\"mailto:{CONTACT_EMAIL}\">{CONTACT_EMAIL}</a> ou <a href=\"{X_URL}\" target=\"_blank\" rel=\"noopener noreferrer\">X: @SCPdocs</a>.")]),
+        "ru": ("Политика рейтинга и безопасности — SCP Docs", "Политика рейтинга и безопасности SCP Docs: App Store 13+, вымышленные хоррор-темы, рекомендации читателям и ответственность исходных сайтов.", "Политика рейтинга и безопасности", "Последнее обновление: 15 сентября 2026 г.", [("1. Назначение страницы", "Эта страница содержит дополнительную информацию о возрастной пригодности и безопасности контента мобильного приложения «SCP Docs» («Приложение»). Приложение рассматривается как подходящее для рейтинга App Store 13+."), ("2. Характер приложения", "Приложение предоставляет инструменты для просмотра и чтения общедоступных творческих работ онлайн-сообщества, известного как SCP Foundation. На исходных страницах указаны авторство, уведомления об авторских правах, предупреждения и применимые лицензии."), ("3. Ожидаемый контент", "Материалы SCP могут включать текстовый хоррор, саспенс, аномальные сущности, вымышленные процедуры содержания, предупреждающий стиль, трагические темы, подразумеваемое насилие, упоминания крови, тревожные темы и иногда изображения с исходных сайтов. Большинство материалов является вымыслом и не предназначено для поощрения опасного поведения в реальности."), ("4. Рекомендации читателям", "Приложение предназначено для читателей 13 лет и старше. Читателям, чувствительным к хоррору или тревожной художественной прозе, а также несовершеннолетним, следует внимательно выбирать материалы. Теги, предупреждения, правила исходных сайтов и родительский контроль могут быть важны."), ("5. Контроли и ограничения", "SCP Docs предоставляет настройки чтения и навигацию, но не переписывает и не присваивает возрастной рейтинг каждой исходной статье. Родители и опекуны могут использовать Экранное время iOS, возрастные ограничения и контент-фильтры."), ("6. Контакт", f'Вопросы о возрастной пригодности или этой странице: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> или <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
+        "ko": ("등급 및 안전 정책 — SCP Docs", "SCP Docs 등급 및 안전 정책: App Store 13+ 적합성, 픽션 호러 주제, 독자 안내, 원본 사이트 책임에 대한 설명.", "등급 및 안전 정책", "최종 업데이트: 2026년 9월 15일", [("1. 이 페이지의 목적", "이 페이지는 모바일 애플리케이션 “SCP Docs”(이하 “앱”)의 연령 적합성과 콘텐츠 안전성에 대한 추가 정보를 제공합니다. 앱은 App Store 13+ 등급에 적합한 것으로 취급됩니다."), ("2. 앱의 성격", "앱은 SCP Foundation으로 알려진 온라인 창작 커뮤니티의 공개 작품을 탐색하고 읽는 도구를 제공합니다. 저자 표시, 저작권 고지, 경고 및 적용 라이선스는 참조하는 원본 페이지에서 확인할 수 있습니다."), ("3. 예상되는 콘텐츠", "SCP 관련 작품에는 텍스트 기반 호러, 서스펜스, 변칙 존재, 가상의 격리 절차, 경고문 형식, 비극적 주제, 암시적 폭력, 피에 대한 언급, 불편할 수 있는 소재, 원본 사이트의 이미지가 포함될 수 있습니다. 대부분은 픽션이며 현실의 위험한 행동을 장려하려는 것이 아닙니다."), ("4. 독자 안내", "앱은 13세 이상 독자를 대상으로 합니다. 호러나 불안한 픽션에 민감한 독자와 미성년자는 읽을 글을 신중히 선택해야 합니다. 글 태그, 경고, 원본 사이트 규칙, 보호자 지도가 도움이 될 수 있습니다."), ("5. 앱의 제어와 한계", "SCP Docs는 리더 설정과 탐색 도구를 제공하지만 각 원본 글을 다시 쓰거나 개별적으로 연령 등급을 매기지는 않습니다. 보호자는 iOS 스크린 타임, 연령 제한, 콘텐츠 제어를 사용해 자녀의 탐색 환경을 관리할 수 있습니다."), ("6. 문의", f'연령 적합성 또는 이 페이지에 관한 문의는 <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> 또는 <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>로 보내 주세요.')]),
+        "es": ("Política de clasificación y seguridad — SCP Docs", "Política de clasificación y seguridad de SCP Docs: idoneidad 13+ del App Store, temas de terror de ficción, orientación para lectores y responsabilidad de los sitios de origen.", "Política de clasificación y seguridad", "Última actualización: 15 de septiembre de 2026", [("1. Objeto de esta página", "Esta página ofrece información adicional sobre la idoneidad por edad y la seguridad del contenido de la aplicación móvil «SCP Docs» (la «App»). La App se considera apropiada para una clasificación 13+ del App Store."), ("2. Naturaleza de la app", "La App ofrece herramientas para explorar y leer obras creativas públicas de la comunidad en línea conocida como SCP Foundation. Las páginas de origen indican autoría, avisos de copyright, advertencias y licencias aplicables."), ("3. Contenido esperado", "Las obras relacionadas con SCP pueden incluir terror en formato de texto, suspenso, entidades anómalas, procedimientos de contención ficticios, prosa de advertencia, temas trágicos, violencia implícita, referencias a sangre, temas perturbadores e imágenes ocasionales proporcionadas por los sitios de origen. La mayor parte del contenido es ficción y no pretende fomentar conductas peligrosas en el mundo real."), ("4. Orientación para lectores", "La App está destinada a lectores de 13 años o más. Los lectores sensibles al terror o a la ficción inquietante, y los menores que usen la App, deben elegir sus lecturas con cuidado. Las etiquetas de los artículos, las advertencias, las reglas de los sitios de origen y la orientación parental pueden ser relevantes."), ("5. Controles y límites de la app", "SCP Docs ofrece ajustes de lectura y herramientas de navegación, pero no reescribe ni clasifica por edad cada artículo de origen. Los padres y tutores pueden usar Tiempo de uso de iOS, las restricciones de edad y los controles de contenido para gestionar el entorno de navegación de un menor."), ("6. Contacto", f'Las preguntas sobre la idoneidad por edad o esta página pueden enviarse a <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> o <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
     }
     title, description, heading, updated, sections = data[lang]
     return {"title": title, "description": description, "heading": heading, "updated": updated, "sections": sections}
@@ -2868,10 +2868,10 @@ SAFETY_TEXT["pl"] = {
     "title": "Zasady klasyfikacji wiekowej i bezpieczeństwa — SCP Docs",
     "description": "Zasady klasyfikacji i bezpieczeństwa SCP Docs: odpowiedniość dla kategorii 13+ w App Store, fikcyjne motywy grozy, wskazówki dla czytelników i odpowiedzialność stron źródłowych.",
     "heading": "Zasady klasyfikacji wiekowej i bezpieczeństwa",
-    "updated": "Ostatnia aktualizacja: 14 lipca 2026 r.",
+    "updated": "Ostatnia aktualizacja: 15 września 2026 r.",
     "sections": [
         ("1. Cel tej strony", "Ta strona zawiera dodatkowe informacje o odpowiedniości wiekowej i bezpieczeństwie treści w aplikacji mobilnej „SCP Docs” („Aplikacja”). Aplikacja jest traktowana jako odpowiednia dla kategorii 13+ w App Store."),
-        ("2. Charakter Aplikacji", "Aplikacja jest nieoficjalnym klientem do przeglądania i czytania publicznych utworów społeczności internetowej znanej jako SCP Foundation. Nie jest dostarczana ani zatwierdzona przez SCP Foundation, Wikidot, Inc. ani oficjalnych operatorów treści, do których się odwołuje."),
+        ("2. Charakter Aplikacji", "Aplikacja udostępnia narzędzia do przeglądania i czytania publicznych utworów społeczności internetowej znanej jako SCP Foundation. Strony źródłowe zawierają informacje o autorach, prawach autorskich, ostrzeżeniach i właściwych licencjach."),
         ("3. Spodziewane treści", "Utwory związane z SCP mogą zawierać grozę tekstową, napięcie, anomalne byty, fikcyjne procedury przechowywania, teksty w formie ostrzeżeń, tragiczne motywy, sugerowaną przemoc, wzmianki o krwi, niepokojące tematy i sporadyczne obrazy ze stron źródłowych. Większość treści jest fikcyjna i nie ma zachęcać do niebezpiecznych zachowań w świecie rzeczywistym."),
         ("4. Wskazówki dla czytelników", "Aplikacja jest przeznaczona dla czytelników w wieku co najmniej 13 lat. Osoby wrażliwe na grozę lub niepokojącą fikcję oraz małoletni korzystający z Aplikacji powinni ostrożnie dobierać lektury. Znaczenie mogą mieć tagi artykułów, ostrzeżenia, zasady stron źródłowych i nadzór rodzicielski."),
         ("5. Kontrole i ograniczenia Aplikacji", "SCP Docs oferuje ustawienia Readera i narzędzia nawigacyjne, ale nie zmienia ani nie klasyfikuje wiekowo każdego artykułu źródłowego. Rodzice i opiekunowie mogą używać funkcji Czas przed ekranem w iOS, ograniczeń wiekowych i kontroli treści do zarządzania środowiskiem przeglądania dziecka."),

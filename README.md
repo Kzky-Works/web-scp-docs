@@ -38,7 +38,7 @@
 | 追加10言語のトップ | `.../index-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant,tr,id}.html` | 5.0.0以降の追加言語の Marketing URL |
 | 追加10言語のプライバシー | `.../privacy-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant,tr,id}.html` | 5.0.0以降の追加言語の Privacy Policy URL |
 | 追加10言語のサポート | `.../support-{cs,de,it,pt-br,th,vi,zh-hans,zh-hant,tr,id}.html` | 5.0.0以降の追加言語の Support URL |
-| 利用規約（英語・既定） | `.../terms.html` | 非公式性・CC・免責など |
+| 利用規約（英語・既定） | `.../terms.html` | 元コンテンツのライセンス・CC・免責など |
 | 利用規約（日本語） | `.../terms-ja.html` | 日本語版利用規約 |
 | 利用規約（フランス語） | `.../terms-fr.html` | フランス語版利用規約 |
 | 利用規約（ロシア語） | `.../terms-ru.html` | ロシア語版利用規約 |
