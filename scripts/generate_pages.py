@@ -293,7 +293,7 @@ def header(page: str, active_lang: str, brand_line: str, title: str) -> str:
     home = page_file("index", active_lang)
     brand = f"""        <div class="site-brand-block">
           <a class="site-brand" href="{home}" aria-label="SCP Docs">
-            <img src="assets/images/app-icon-20260725.png" alt="" width="48" height="48" />
+            <img src="assets/images/app-icon-6.0.0.png" alt="" width="48" height="48" />
             <span class="site-brand-copy">
               <span class="site-wordmark"><strong>SCP</strong><span>docs</span></span>
               <span class="site-brand-tagline">READER / CATALOG</span>
@@ -359,7 +359,7 @@ def layout(
     script: str | None = None,
 ) -> str:
     lang = LANGS[lang_code]
-    favicon = "assets/images/app-icon-20260725.png"
+    favicon = "assets/images/app-icon-6.0.0.png"
     page_script_tag = f'\n  <script src="{script}" defer></script>' if script else ""
     image_tags = ""
     if image:
