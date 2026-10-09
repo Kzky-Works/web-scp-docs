@@ -108,7 +108,7 @@
 
 
     <article class="prose layout" style="padding-top:8px;">
-      <p class="ft-muted" style="margin-top:0;"><a href="privacy.html" hreflang="en">EN</a> · <a href="privacy-fr.html" hreflang="fr">FR</a> · <a href="privacy-ru.html" hreflang="ru">RU</a> · <a href="privacy-ko.html" hreflang="ko">한국어</a> · <a href="privacy-es.html" hreflang="es">ES</a> · <a href="privacy-pl.html" hreflang="pl">PL</a> · <a href="privacy-cs.html" hreflang="cs">Čeština</a> · <a href="privacy-de.html" hreflang="de">DE</a> · <a href="privacy-it.html" hreflang="it">IT</a> · <a href="privacy-pt-br.html" hreflang="pt-BR">PT-BR</a> · <a href="privacy-th.html" hreflang="th">ไทย</a> · <a href="privacy-vi.html" hreflang="vi">Tiếng Việt</a> · <a href="privacy-zh-hans.html" hreflang="zh-Hans">简体中文</a> · <a href="privacy-zh-hant.html" hreflang="zh-Hant">繁體中文</a> · <a href="privacy-tr.html" hreflang="tr">TR</a> · <a href="privacy-id.html" hreflang="id">Bahasa Indonesia</a> · 最終更新日: 2026年8月31日</p>
+      <p class="ft-muted" style="margin-top:0;"><a href="privacy.html" hreflang="en">EN</a> · <a href="privacy-fr.html" hreflang="fr">FR</a> · <a href="privacy-ru.html" hreflang="ru">RU</a> · <a href="privacy-ko.html" hreflang="ko">한국어</a> · <a href="privacy-es.html" hreflang="es">ES</a> · <a href="privacy-pl.html" hreflang="pl">PL</a> · <a href="privacy-cs.html" hreflang="cs">Čeština</a> · <a href="privacy-de.html" hreflang="de">DE</a> · <a href="privacy-it.html" hreflang="it">IT</a> · <a href="privacy-pt-br.html" hreflang="pt-BR">PT-BR</a> · <a href="privacy-th.html" hreflang="th">ไทย</a> · <a href="privacy-vi.html" hreflang="vi">Tiếng Việt</a> · <a href="privacy-zh-hans.html" hreflang="zh-Hans">简体中文</a> · <a href="privacy-zh-hant.html" hreflang="zh-Hant">繁體中文</a> · <a href="privacy-tr.html" hreflang="tr">TR</a> · <a href="privacy-id.html" hreflang="id">Bahasa Indonesia</a> · 最終更新日: 2026年10月9日</p>
       <section>
         <h2>1. はじめに</h2>
         <p>本プライバシーポリシーは、モバイルアプリ「SCP Docs」（以下「本アプリ」）における情報の取扱いを説明するものです。本アプリを利用する前に本ポリシーをご確認ください。同意できない場合は、本アプリを利用しないでください。</p>
@@ -140,6 +140,14 @@
       <section>
         <h2>8. 第三者サイト</h2>
         <p>本アプリを通じてアクセスする多くのコンテンツは第三者が運営するウェブサイト上にあります。ログ、Cookie、解析スクリプト、サイト規則、プライバシーポリシーは各運営者のものが適用されます。本アプリ運営者は、第三者サイトでの情報取扱いを管理しません。</p>
+      </section>
+      <section id="external-integrations">
+        <h2>8a. 任意の外部連携と共有</h2>
+        <p>送信する記事情報・メモ・ハイライトを利用者が選択し、送信操作を確認します。選択した方法に応じて、他のアプリへの受け渡し、コピー、ファイル保存、またはNotion・OneNote・Obsidian・Discord等の登録済み保存先への送信を行います。NotebookLMは直接同期APIではなく、共有・コピー・ファイルによる手動の受け渡しを使用します。接続や保存先の登録だけで読書記録を送信することはありません。送信先での保存・利用には各サービスの規約、プライバシーポリシー、保存規則が適用されます。</p>
+        <p>Notion認証には本アプリ運営者が管理するCloudflare Workers上のHTTPS relayを使用します。relayは認証コード交換とtoken更新を行い、記事本文・メモ・ハイライトを受信せず、Notionページを作成・追記しません。保存先の検索・検証・送信はアプリからprovider APIへ直接行います。OneNoteはPKCEを伴うMicrosoftの認証を使用します。</p>
+        <p>Notion relayはOAuth token応答全体を一時保存します。access token・refresh tokenに加え、workspace・接続の識別子を含み、Notionが返す認証利用者の識別子・氏名・メールアドレス等のアカウント情報が含まれる場合があります。これらは認証処理のために取り扱い、利用者への連絡・広告・トラッキングには利用しません。認証試行は3分で期限切れとなり、交換済み応答は一回限りの受け渡し用ticketとして最大90秒保持し、受け渡し成功または期限切れ時にlive storageから削除します。token更新の要求・応答はrelayで永続化しません。relayのコードは要求本文・認証コード・proof・ticket・token応答・秘密情報をログ出力しません。</p>
+        <p>live storageからの削除は、すべての復旧層からの即時消去を意味しません。CloudflareのSQLite-backed Durable Objectsは、保存した認証応答を含め、最大30日前のデータベース状態への復旧機能を提供します。Cloudflare自体のインフラ上の情報取扱いも適用されます。<a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer">Cloudflareのプライバシーポリシー</a>と<a href="https://developers.cloudflare.com/durable-objects/api/sqlite-storage-api/" rel="noopener noreferrer">SQLite復旧の説明</a>を参照してください。</p>
+        <p>Notion・OneNoteの資格情報とDiscord webhookの秘密情報は端末のKeychainに保存します。アプリ内でNotion・OneNoteを切断すると、そのサービスの端末内資格情報を削除しますが、送信済み情報の削除やprovider側の認証取消は行いません。必要に応じて送信先サービスで保存済み情報を管理・削除し、アクセスを取り消してください。接続設定と端末内の送信結果は選択した操作のために使用し、接続しただけで自動的な背景同期は行いません。</p>
       </section>
       <section>
         <h2>9. 第三者提供と法令上の開示</h2>
