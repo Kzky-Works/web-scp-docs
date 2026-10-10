@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-30",
+  "updatedAt": "2026-10-10",
   "references": [
     {
       "label": "「SCP財団」の歩き方 改",
@@ -28,6 +28,96 @@
     }
   ],
   "themes": [
+    {
+      "id": "food-and-drink",
+      "label": "食べもの・飲みもの",
+      "title": "食卓から始まる異常、10の報告書",
+      "description": "水筒、土、自販機、菓子、ピザ、野菜、食器。身近な食と飲みものを入口に、収容手順と実験記録の違いを読み比べる選集です。日本語で読める英語原作の翻訳10件を、既存選集と重複しない順に並べました。暴力・身体損傷の描写を含む作品があります。",
+      "articleIds": [
+        "scp-109",
+        "scp-124",
+        "scp-261",
+        "scp-294",
+        "scp-330",
+        "scp-458",
+        "scp-504",
+        "scp-807",
+        "scp-871",
+        "scp-1689"
+      ],
+      "articleNotes": {
+        "scp-109": {
+          "reason": "まずは身近な水筒から。水の扱いと試験記録に注目して読める一本。",
+          "author": "Proxtown",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-109",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-124": {
+          "reason": "食材を育てる土の報告書。投入物と結果を並べた実験記録を読み比べたい。",
+          "author": "Unknown Author",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-124",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-261": {
+          "reason": "自販機の購入ログを楽しむ入口。商品と調査手順の取り合わせに注目。",
+          "author": "Dr Gears",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-261",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-294": {
+          "reason": "注文を書く自販機。入力と実験記録を追って読むのに向いた一本。",
+          "author": "Arcibi",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-294",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-330": {
+          "reason": "菓子のボウルに添えられた短い注意書き。収容文書のルールを味わう一本。",
+          "author": "Dr Kondraki",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-330",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-458": {
+          "reason": "ピザボックスを扱う報告書。身近な好みを調査する語り口を楽しみたい。",
+          "author": "Palhinuk",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-458",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-504": {
+          "reason": "トマトと発話を扱う実験記録。会話の調子と記録形式を読み比べたい。",
+          "author": "BlastYoBoots",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-504",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-807": {
+          "reason": "食器を入口に食の変化を記録する一本。食品ごとの記述に注目。",
+          "author": "DrClef",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-807",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-871": {
+          "reason": "ケーキを管理する収容手順から読む一本。日常的な食品と管理の対比に注目。",
+          "author": "Seibai",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-871",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        },
+        "scp-1689": {
+          "reason": "食材の袋から広がる調査の入口。探査記録へのリンクも続けて読める。",
+          "author": "llama66613",
+          "originalUrl": "https://scp-wiki.wikidot.com/scp-1689",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+        }
+      }
+    },
     {
       "id": "first-steps",
       "label": "最初の一歩",

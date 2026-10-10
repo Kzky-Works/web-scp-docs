@@ -77,7 +77,7 @@
 主要 HTML は `scripts/generate_pages.py` で生成する。全言語の `hreflang`、Open Graph locale、右上の言語切替、本文の機能説明を同時に更新するため、本文や言語行列を変えるときはスクリプトを更新してから再生成する。
 
 ```bash
-python3 scripts/generate_pages.py
+python3 scripts/generate_pages.py --product-only
 ```
 
 日本語の「記事を探す」は、隣接する公開データリポジトリの JP カタログから軽量スナップショットを生成する。本文は含めず、タイトル、公式URL、タグ、文字数、Wiki評価だけを利用する。
@@ -90,7 +90,7 @@ python3 scripts/build_discovery_catalog.py
 
 ```bash
 python3 scripts/build_reading_catalogs.py
-python3 scripts/generate_pages.py
+python3 scripts/generate_pages.py --product-only
 ```
 
 ## アクセス解析
@@ -119,7 +119,7 @@ X などには `https://scpdocs.link/open/?id=...&source=...` を 1 本だけ載
 
 ```bash
 # 変更後
-python3 scripts/generate_pages.py
+python3 scripts/generate_pages.py --product-only
 git add -A
 git status
 git commit -m "docs: ..."
@@ -155,3 +155,9 @@ GitHub **Settings → Pages → Build and deployment → Source**: **GitHub Acti
 ## 連絡先の変更
 
 `scpdocs_admin@proton.me` または `@SCPdocs` を変えるときは、各 HTML のフッターと `support.html` を置換後、`git push`。
+
+## 6.0.2 紹介文と編集選書（2026-10-10）
+
+公開紹介文は `scripts/released_product_copy.{py,json}` に集約する。17 UI/サイト言語と19地域別ASC文面を区別し、開発中の6.1.0機械翻訳を公開機能へ加えない。`--product-only` は独立して更新されたprivacy/termsを保持する。共有の説明は5内容項目、プレビュー、4共有方法、カード・投稿編集入口を扱う。無料保存上限はお気に入り20／後で読む100、Premiumに購読上限なし（安全上限各10,000）。
+
+日本語の編集選書は `assets/recommendations-ja.json` を直接更新して既存readingページへ公開する。新テーマ「食べもの・飲みもの」は10件、既存テーマとの作品重複0。任意の `articleNotes` はネタバレを避けた推薦理由・確認済み原作者・原作URL・本文ライセンスを表示する。カタログや本文の大量再収集は不要。他言語の自動選書や毎朝Spotlightとは別運用。正規の既存main push→Pagesを利用する。

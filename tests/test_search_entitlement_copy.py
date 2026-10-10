@@ -2,58 +2,42 @@ import sys
 import unittest
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-
-import generate_pages  # noqa: E402
+import generate_pages
+from released_product_copy import COPY
 
 
 class SearchEntitlementCopyTests(unittest.TestCase):
-    def test_support_copy_uses_free_search_entitlement_in_every_locale(self) -> None:
-        self.assertEqual(
-            set(generate_pages.SEARCH_SUPPORT_COPY),
-            set(generate_pages.LANGS),
-        )
-        for code, (premium_answer, saved_search_answer) in generate_pages.SEARCH_SUPPORT_COPY.items():
-            with self.subTest(locale=code):
-                self.assertEqual(
-                    generate_pages.SUPPORT_TEXT[code]["faqs"][4][1],
-                    premium_answer,
-                )
-                self.assertEqual(
-                    generate_pages.SUPPORT_TEXT[code]["faqs"][7][1],
-                    saved_search_answer,
-                )
+    def test_every_product_locale_has_released_entitlements(self):
+        self.assertEqual(set(COPY), set(generate_pages.LANGS))
+        for code, values in COPY.items():
+            for kind in ("index", "support"):
+                page = ROOT / generate_pages.page_file(kind, code)
+                html = page.read_text()
+                with self.subTest(locale=code, kind=kind):
+                    self.assertIn(values[1].replace("&", "&amp;"), html)
+                    self.assertIn(values[2].replace("&", "&amp;"), html)
 
-    def test_full_locale_comparison_marks_search_free(self) -> None:
-        for code, comparison in generate_pages.FEATURE_CMP.items():
-            with self.subTest(locale=code):
-                self.assertEqual(comparison["rows"][0][1:], ("yes", "yes"))
-                self.assertEqual(comparison["rows"][6][1:], ("yes", "yes"))
+    def test_japanese_pages_state_the_released_boundary(self):
+        for filename in ("index-ja.html", "features-ja.html", "support-ja.html"):
+            html = (ROOT / filename).read_text()
+            with self.subTest(page=filename):
+                self.assertIn("お気に入りは20件、後で読むは100件", html)
+                self.assertIn("購読上限はありません", html)
+                self.assertIn("10,000", html)
+                self.assertIn("メモ検索・自分の記録での絞り込み", html)
+                self.assertNotIn("各200件", html)
+                self.assertNotIn("検索機能はすべて無料", html)
+                self.assertNotIn("NotebookLM", html)
+                self.assertNotIn("機械翻訳", html)
 
-    def test_japanese_pages_state_the_current_boundary(self) -> None:
-        index_html = (ROOT / "index-ja.html").read_text(encoding="utf-8")
-        features_html = (ROOT / "features-ja.html").read_text(encoding="utf-8")
-        support_html = (ROOT / "support-ja.html").read_text(encoding="utf-8")
+    def test_share_content_and_methods_are_named(self):
+        html = (ROOT / "features-ja.html").read_text()
+        for text in ("6.0.2", "記事URL・タイトル・本文・メモ・ハイライト", "標準の共有", "コピー", "ファイル保存", "登録済みの共有先", "次回も設定を保持"):
+            self.assertIn(text, html)
 
-        self.assertIn("検索機能はすべて無料です", index_html)
-        self.assertIn("すべて無料の高機能検索", features_html)
-        self.assertIn("保存検索と新着通知は無料です", support_html)
-        self.assertIn("各20件", features_html)
-        self.assertIn("各200件", features_html)
-        self.assertIn("各20件", support_html)
-        self.assertIn("各200件", support_html)
-        self.assertNotIn("保存検索はプレミアム機能です", support_html)
-
-    def test_japanese_discovery_exposes_a_browsable_tag_directory(self) -> None:
-        discovery_html = (ROOT / "discover-ja.html").read_text(encoding="utf-8")
-
-        self.assertIn('id="tag-filter"', discovery_html)
-        self.assertIn('id="tag-list"', discovery_html)
-        self.assertIn('id="tag-show-all"', discovery_html)
-        self.assertIn("タグから探す", discovery_html)
-
-
-if __name__ == "__main__":
-    unittest.main()
+    def test_japanese_discovery_keeps_tag_directory(self):
+        html = (ROOT / "discover-ja.html").read_text()
+        for text in ('id="tag-filter"', 'id="tag-list"', 'id="tag-show-all"', "タグから探す"):
+            self.assertIn(text, html)

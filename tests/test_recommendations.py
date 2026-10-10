@@ -44,6 +44,18 @@ class RecommendationListTests(unittest.TestCase):
                     self.assertTrue(article["url"].startswith("https://"))
                     self.assertTrue(article["openUrl"].startswith("open/?"))
 
+    def test_new_food_theme_has_reviewed_nonduplicated_articles(self):
+        theme = next(t for t in self.recommendations["themes"] if t["id"] == "food-and-drink")
+        existing = {i for t in self.recommendations["themes"] if t["id"] != theme["id"] for i in t["articleIds"]}
+        self.assertEqual(len(theme["articleIds"]), 10)
+        self.assertFalse(existing.intersection(theme["articleIds"]))
+        for article_id in theme["articleIds"]:
+            note = theme["articleNotes"][article_id]
+            self.assertTrue(note["reason"])
+            self.assertTrue(note["author"])
+            self.assertEqual(note["originalUrl"], f"https://scp-wiki.wikidot.com/{article_id}")
+            self.assertEqual(note["license"], "CC BY-SA 3.0")
+
     def test_recommendation_sources_are_named_https_links(self):
         references = self.recommendations["references"]
         self.assertGreaterEqual(len(references), 3)

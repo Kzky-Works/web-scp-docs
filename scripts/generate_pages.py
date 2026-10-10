@@ -421,7 +421,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Explore the features",
         "cta2_sub": "Field guide",
-        "badges": ["SCP Wiki reader", "Free + Premium", "Rated 13+", "No account needed"],
+        "badges": ["SCP Wiki reader", "Free + Premium", "Rated 16+", "No account needed"],
         "stats": [
             ("17", "archive branches"),
             ("10+", "directory routes"),
@@ -481,7 +481,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "機能を見る",
         "cta2_sub": "Field guide",
-        "badges": ["SCP記事リーダー", "無料 + プレミアム", "13+", "アカウント不要"],
+        "badges": ["SCP記事リーダー", "無料 + プレミアム", "16+", "アカウント不要"],
         "stats": [
             ("17", "対応支部"),
             ("横断", "カタログ検索"),
@@ -541,7 +541,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Découvrir les fonctions",
         "cta2_sub": "Field guide",
-        "badges": ["Lecteur SCP Wiki", "Gratuit + Premium", "13+", "Sans compte"],
+        "badges": ["Lecteur SCP Wiki", "Gratuit + Premium", "16+", "Sans compte"],
         "stats": [
             ("17", "branches d'archives"),
             ("10+", "routes d'archive"),
@@ -601,7 +601,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Смотреть возможности",
         "cta2_sub": "Field guide",
-        "badges": ["Читалка SCP Wiki", "Бесплатно + Premium", "13+", "Без аккаунта"],
+        "badges": ["Читалка SCP Wiki", "Бесплатно + Premium", "16+", "Без аккаунта"],
         "stats": [
             ("17", "филиалов архива"),
             ("10+", "маршрутов каталога"),
@@ -661,7 +661,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "기능 살펴보기",
         "cta2_sub": "Field guide",
-        "badges": ["SCP Wiki 리더", "무료 + 프리미엄", "13+", "계정 불필요"],
+        "badges": ["SCP Wiki 리더", "무료 + 프리미엄", "16+", "계정 불필요"],
         "stats": [
             ("17", "지원 지부"),
             ("10+", "아카이브 경로"),
@@ -721,7 +721,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Explorar las funciones",
         "cta2_sub": "Field guide",
-        "badges": ["Lector de SCP Wiki", "Gratis + Premium", "13+", "Sin cuenta"],
+        "badges": ["Lector de SCP Wiki", "Gratis + Premium", "16+", "Sin cuenta"],
         "stats": [
             ("17", "ramas del archivo"),
             ("10+", "rutas de directorio"),
@@ -781,7 +781,7 @@ INDEX_STRINGS: dict[str, dict[str, object]] = {
         "cta_sub": "iPhone · iOS 17+",
         "cta2_main": "Poznaj funkcje",
         "cta2_sub": "Przewodnik",
-        "badges": ["Czytnik SCP Wiki", "Bezpłatna + Premium", "Od 13 lat", "Bez konta"],
+        "badges": ["Czytnik SCP Wiki", "Bezpłatna + Premium", "Od 16 lat", "Bez konta"],
         "stats": [
             ("17", "oddziałów archiwum"),
             ("10+", "tras katalogów"),
@@ -2831,14 +2831,14 @@ for code, (premium_answer, saved_search_answer) in SEARCH_SUPPORT_COPY.items():
 SAFETY_TEXT = {
     "en": {
         "title": "Rating & Safety Policy — SCP Docs",
-        "description": "SCP Docs Rating & Safety Policy explaining App Store 13+ suitability, fictional horror themes, reader guidance, and source-site responsibility.",
+        "description": "SCP Docs Rating & Safety Policy explaining App Store 16+ suitability, fictional horror themes, reader guidance, and source-site responsibility.",
         "heading": "Rating & Safety Policy",
         "updated": "Last updated: September 15, 2026",
         "sections": [
-            ("1. Purpose of this page", "This page provides additional information about age suitability and content safety for the mobile application “SCP Docs” (the “App”). The App is treated as appropriate for an App Store 13+ rating."),
+            ("1. Purpose of this page", "This page provides additional information about age suitability and content safety for the mobile application “SCP Docs” (the “App”). The App is treated as appropriate for an App Store 16+ rating."),
             ("2. Nature of the app", "The App provides browsing and reading tools for public creative works published by the online community commonly known as the SCP Foundation. Source pages provide the applicable authorship, copyright, warning, and license information."),
             ("3. Expected content", "SCP-related works may include text-based horror, suspense, anomalous entities, fictional containment procedures, warning-style prose, tragic themes, implied violence, blood references, disturbing topics, and occasional images provided by source sites. Most content is fiction and is not intended to encourage real-world dangerous behavior."),
-            ("4. Reader guidance", "The App is intended for readers aged 13 and older. Readers who are sensitive to horror or unsettling fiction, and minors using the App, should choose what they read with care. Article tags, warnings, source-site rules, and parental guidance may be relevant."),
+            ("4. Reader guidance", "The App is intended for readers aged 16 and older. Readers who are sensitive to horror or unsettling fiction, and minors using the App, should choose what they read with care. Article tags, warnings, source-site rules, and parental guidance may be relevant."),
             ("5. App controls and limits", "SCP Docs provides reader settings and navigation tools, but it does not rewrite or age-rate each source article. Parents and guardians may use iOS Screen Time, age restrictions, and content controls to manage a child's browsing environment."),
             ("6. Contact", f'Questions about age suitability or this page can be sent to <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> or <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.'),
         ],
@@ -2850,11 +2850,11 @@ def make_safety(lang: str) -> dict[str, object]:
     if lang == "en":
         return SAFETY_TEXT["en"]
     data = {
-        "ja": ("Rating & Safety Policy — SCP Docs", "SCP Docs の Rating & Safety Policy。App Store 13+ 相当、フィクションとしてのホラー表現、読者向け注意、元サイト責任を説明します。", "Rating & Safety Policy", "最終更新日: 2026年9月15日", [("1. このページの目的", "このページは、モバイルアプリ「SCP Docs」（以下「本アプリ」）の年齢適合性とコンテンツ安全性について補足するものです。本アプリは App Store 13+ 相当として扱われます。"), ("2. アプリの性質", "本アプリは、SCP Foundationとして知られるオンライン創作コミュニティの公開作品を閲覧・読書するためのツールを提供します。著者表示、著作権表示、警告、ライセンス情報は参照先の各ページで確認できます。"), ("3. 想定されるコンテンツ", "SCP 関連作品には、テキスト中心のホラー、サスペンス、異常存在、架空の収容手順、警告風の文章、悲劇的テーマ、暗示的暴力、血液への言及、不穏な題材、元サイト由来の画像が含まれる場合があります。多くはフィクションであり、現実の危険行為を促すものではありません。"), ("4. 読者への案内", "本アプリは 13 歳以上の読者を想定しています。ホラーや不穏なフィクションに敏感な方、未成年者が利用する場合は、読む記事を慎重に選んでください。記事タグ、警告、元サイトの規則、保護者の助言が参考になります。"), ("5. アプリ側の制御と限界", "SCP Docs はリーダー設定やナビゲーションを提供しますが、各元記事を改変したり個別に年齢評価したりするものではありません。保護者は iOS のスクリーンタイム、年齢制限、コンテンツ制限を利用して閲覧環境を管理できます。"), ("6. 連絡先", f'年齢適合性や本ページに関する質問は <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> または <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a> までご連絡ください。')]),
-        "fr": ("Politique de classification et de sécurité — SCP Docs", "Politique de classification et de sécurité de SCP Docs : App Store 13+, thèmes d'horreur fictionnels, conseils aux lecteurs et responsabilité des sites sources.", "Politique de classification et de sécurité", "Dernière mise à jour : 15 septembre 2026", [("1. Objet de cette page", "Cette page fournit des informations supplémentaires sur l'âge conseillé et la sécurité des contenus de l'application mobile « SCP Docs » (l'« App »). L'App est traitée comme appropriée pour une classification App Store 13+."), ("2. Nature de l'App", "L'App fournit des outils de navigation et de lecture pour les œuvres créatives publiques de la communauté en ligne connue comme SCP Foundation. Les pages sources indiquent les auteurs, le copyright, les avertissements et les licences applicables."), ("3. Contenu attendu", "Les œuvres SCP peuvent inclure horreur textuelle, suspense, entités anormales, procédures de confinement fictionnelles, prose d'avertissement, thèmes tragiques, violence implicite, références au sang, sujets dérangeants et parfois images des sites sources. La plupart du contenu est fictionnel et ne vise pas à encourager des comportements dangereux réels."), ("4. Conseils aux lecteurs", "L'App s'adresse aux lecteurs de 13 ans et plus. Les personnes sensibles à l'horreur ou à la fiction troublante, ainsi que les mineurs, doivent choisir leurs lectures avec prudence. Tags, avertissements, règles des sites sources et supervision parentale peuvent être pertinents."), ("5. Contrôles et limites", "SCP Docs fournit des réglages de lecture et des outils de navigation, mais ne réécrit pas et ne classe pas par âge chaque article source. Parents et responsables peuvent utiliser Temps d'écran iOS, restrictions d'âge et contrôles de contenu."), ("6. Contact", f"Questions sur l'âge conseillé ou cette page : <a href=\"mailto:{CONTACT_EMAIL}\">{CONTACT_EMAIL}</a> ou <a href=\"{X_URL}\" target=\"_blank\" rel=\"noopener noreferrer\">X: @SCPdocs</a>.")]),
-        "ru": ("Политика рейтинга и безопасности — SCP Docs", "Политика рейтинга и безопасности SCP Docs: App Store 13+, вымышленные хоррор-темы, рекомендации читателям и ответственность исходных сайтов.", "Политика рейтинга и безопасности", "Последнее обновление: 15 сентября 2026 г.", [("1. Назначение страницы", "Эта страница содержит дополнительную информацию о возрастной пригодности и безопасности контента мобильного приложения «SCP Docs» («Приложение»). Приложение рассматривается как подходящее для рейтинга App Store 13+."), ("2. Характер приложения", "Приложение предоставляет инструменты для просмотра и чтения общедоступных творческих работ онлайн-сообщества, известного как SCP Foundation. На исходных страницах указаны авторство, уведомления об авторских правах, предупреждения и применимые лицензии."), ("3. Ожидаемый контент", "Материалы SCP могут включать текстовый хоррор, саспенс, аномальные сущности, вымышленные процедуры содержания, предупреждающий стиль, трагические темы, подразумеваемое насилие, упоминания крови, тревожные темы и иногда изображения с исходных сайтов. Большинство материалов является вымыслом и не предназначено для поощрения опасного поведения в реальности."), ("4. Рекомендации читателям", "Приложение предназначено для читателей 13 лет и старше. Читателям, чувствительным к хоррору или тревожной художественной прозе, а также несовершеннолетним, следует внимательно выбирать материалы. Теги, предупреждения, правила исходных сайтов и родительский контроль могут быть важны."), ("5. Контроли и ограничения", "SCP Docs предоставляет настройки чтения и навигацию, но не переписывает и не присваивает возрастной рейтинг каждой исходной статье. Родители и опекуны могут использовать Экранное время iOS, возрастные ограничения и контент-фильтры."), ("6. Контакт", f'Вопросы о возрастной пригодности или этой странице: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> или <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
-        "ko": ("등급 및 안전 정책 — SCP Docs", "SCP Docs 등급 및 안전 정책: App Store 13+ 적합성, 픽션 호러 주제, 독자 안내, 원본 사이트 책임에 대한 설명.", "등급 및 안전 정책", "최종 업데이트: 2026년 9월 15일", [("1. 이 페이지의 목적", "이 페이지는 모바일 애플리케이션 “SCP Docs”(이하 “앱”)의 연령 적합성과 콘텐츠 안전성에 대한 추가 정보를 제공합니다. 앱은 App Store 13+ 등급에 적합한 것으로 취급됩니다."), ("2. 앱의 성격", "앱은 SCP Foundation으로 알려진 온라인 창작 커뮤니티의 공개 작품을 탐색하고 읽는 도구를 제공합니다. 저자 표시, 저작권 고지, 경고 및 적용 라이선스는 참조하는 원본 페이지에서 확인할 수 있습니다."), ("3. 예상되는 콘텐츠", "SCP 관련 작품에는 텍스트 기반 호러, 서스펜스, 변칙 존재, 가상의 격리 절차, 경고문 형식, 비극적 주제, 암시적 폭력, 피에 대한 언급, 불편할 수 있는 소재, 원본 사이트의 이미지가 포함될 수 있습니다. 대부분은 픽션이며 현실의 위험한 행동을 장려하려는 것이 아닙니다."), ("4. 독자 안내", "앱은 13세 이상 독자를 대상으로 합니다. 호러나 불안한 픽션에 민감한 독자와 미성년자는 읽을 글을 신중히 선택해야 합니다. 글 태그, 경고, 원본 사이트 규칙, 보호자 지도가 도움이 될 수 있습니다."), ("5. 앱의 제어와 한계", "SCP Docs는 리더 설정과 탐색 도구를 제공하지만 각 원본 글을 다시 쓰거나 개별적으로 연령 등급을 매기지는 않습니다. 보호자는 iOS 스크린 타임, 연령 제한, 콘텐츠 제어를 사용해 자녀의 탐색 환경을 관리할 수 있습니다."), ("6. 문의", f'연령 적합성 또는 이 페이지에 관한 문의는 <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> 또는 <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>로 보내 주세요.')]),
-        "es": ("Política de clasificación y seguridad — SCP Docs", "Política de clasificación y seguridad de SCP Docs: idoneidad 13+ del App Store, temas de terror de ficción, orientación para lectores y responsabilidad de los sitios de origen.", "Política de clasificación y seguridad", "Última actualización: 15 de septiembre de 2026", [("1. Objeto de esta página", "Esta página ofrece información adicional sobre la idoneidad por edad y la seguridad del contenido de la aplicación móvil «SCP Docs» (la «App»). La App se considera apropiada para una clasificación 13+ del App Store."), ("2. Naturaleza de la app", "La App ofrece herramientas para explorar y leer obras creativas públicas de la comunidad en línea conocida como SCP Foundation. Las páginas de origen indican autoría, avisos de copyright, advertencias y licencias aplicables."), ("3. Contenido esperado", "Las obras relacionadas con SCP pueden incluir terror en formato de texto, suspenso, entidades anómalas, procedimientos de contención ficticios, prosa de advertencia, temas trágicos, violencia implícita, referencias a sangre, temas perturbadores e imágenes ocasionales proporcionadas por los sitios de origen. La mayor parte del contenido es ficción y no pretende fomentar conductas peligrosas en el mundo real."), ("4. Orientación para lectores", "La App está destinada a lectores de 13 años o más. Los lectores sensibles al terror o a la ficción inquietante, y los menores que usen la App, deben elegir sus lecturas con cuidado. Las etiquetas de los artículos, las advertencias, las reglas de los sitios de origen y la orientación parental pueden ser relevantes."), ("5. Controles y límites de la app", "SCP Docs ofrece ajustes de lectura y herramientas de navegación, pero no reescribe ni clasifica por edad cada artículo de origen. Los padres y tutores pueden usar Tiempo de uso de iOS, las restricciones de edad y los controles de contenido para gestionar el entorno de navegación de un menor."), ("6. Contacto", f'Las preguntas sobre la idoneidad por edad o esta página pueden enviarse a <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> o <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
+        "ja": ("Rating & Safety Policy — SCP Docs", "SCP Docs の Rating & Safety Policy。App Store 16+ 相当、フィクションとしてのホラー表現、読者向け注意、元サイト責任を説明します。", "Rating & Safety Policy", "最終更新日: 2026年9月15日", [("1. このページの目的", "このページは、モバイルアプリ「SCP Docs」（以下「本アプリ」）の年齢適合性とコンテンツ安全性について補足するものです。本アプリは App Store 16+ 相当として扱われます。"), ("2. アプリの性質", "本アプリは、SCP Foundationとして知られるオンライン創作コミュニティの公開作品を閲覧・読書するためのツールを提供します。著者表示、著作権表示、警告、ライセンス情報は参照先の各ページで確認できます。"), ("3. 想定されるコンテンツ", "SCP 関連作品には、テキスト中心のホラー、サスペンス、異常存在、架空の収容手順、警告風の文章、悲劇的テーマ、暗示的暴力、血液への言及、不穏な題材、元サイト由来の画像が含まれる場合があります。多くはフィクションであり、現実の危険行為を促すものではありません。"), ("4. 読者への案内", "本アプリは 16 歳以上の読者を想定しています。ホラーや不穏なフィクションに敏感な方、未成年者が利用する場合は、読む記事を慎重に選んでください。記事タグ、警告、元サイトの規則、保護者の助言が参考になります。"), ("5. アプリ側の制御と限界", "SCP Docs はリーダー設定やナビゲーションを提供しますが、各元記事を改変したり個別に年齢評価したりするものではありません。保護者は iOS のスクリーンタイム、年齢制限、コンテンツ制限を利用して閲覧環境を管理できます。"), ("6. 連絡先", f'年齢適合性や本ページに関する質問は <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> または <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a> までご連絡ください。')]),
+        "fr": ("Politique de classification et de sécurité — SCP Docs", "Politique de classification et de sécurité de SCP Docs : App Store 16+, thèmes d'horreur fictionnels, conseils aux lecteurs et responsabilité des sites sources.", "Politique de classification et de sécurité", "Dernière mise à jour : 15 septembre 2026", [("1. Objet de cette page", "Cette page fournit des informations supplémentaires sur l'âge conseillé et la sécurité des contenus de l'application mobile « SCP Docs » (l'« App »). L'App est traitée comme appropriée pour une classification App Store 16+."), ("2. Nature de l'App", "L'App fournit des outils de navigation et de lecture pour les œuvres créatives publiques de la communauté en ligne connue comme SCP Foundation. Les pages sources indiquent les auteurs, le copyright, les avertissements et les licences applicables."), ("3. Contenu attendu", "Les œuvres SCP peuvent inclure horreur textuelle, suspense, entités anormales, procédures de confinement fictionnelles, prose d'avertissement, thèmes tragiques, violence implicite, références au sang, sujets dérangeants et parfois images des sites sources. La plupart du contenu est fictionnel et ne vise pas à encourager des comportements dangereux réels."), ("4. Conseils aux lecteurs", "L'App s'adresse aux lecteurs de 16 ans et plus. Les personnes sensibles à l'horreur ou à la fiction troublante, ainsi que les mineurs, doivent choisir leurs lectures avec prudence. Tags, avertissements, règles des sites sources et supervision parentale peuvent être pertinents."), ("5. Contrôles et limites", "SCP Docs fournit des réglages de lecture et des outils de navigation, mais ne réécrit pas et ne classe pas par âge chaque article source. Parents et responsables peuvent utiliser Temps d'écran iOS, restrictions d'âge et contrôles de contenu."), ("6. Contact", f"Questions sur l'âge conseillé ou cette page : <a href=\"mailto:{CONTACT_EMAIL}\">{CONTACT_EMAIL}</a> ou <a href=\"{X_URL}\" target=\"_blank\" rel=\"noopener noreferrer\">X: @SCPdocs</a>.")]),
+        "ru": ("Политика рейтинга и безопасности — SCP Docs", "Политика рейтинга и безопасности SCP Docs: App Store 16+, вымышленные хоррор-темы, рекомендации читателям и ответственность исходных сайтов.", "Политика рейтинга и безопасности", "Последнее обновление: 15 сентября 2026 г.", [("1. Назначение страницы", "Эта страница содержит дополнительную информацию о возрастной пригодности и безопасности контента мобильного приложения «SCP Docs» («Приложение»). Приложение рассматривается как подходящее для рейтинга App Store 16+."), ("2. Характер приложения", "Приложение предоставляет инструменты для просмотра и чтения общедоступных творческих работ онлайн-сообщества, известного как SCP Foundation. На исходных страницах указаны авторство, уведомления об авторских правах, предупреждения и применимые лицензии."), ("3. Ожидаемый контент", "Материалы SCP могут включать текстовый хоррор, саспенс, аномальные сущности, вымышленные процедуры содержания, предупреждающий стиль, трагические темы, подразумеваемое насилие, упоминания крови, тревожные темы и иногда изображения с исходных сайтов. Большинство материалов является вымыслом и не предназначено для поощрения опасного поведения в реальности."), ("4. Рекомендации читателям", "Приложение предназначено для читателей 16 лет и старше. Читателям, чувствительным к хоррору или тревожной художественной прозе, а также несовершеннолетним, следует внимательно выбирать материалы. Теги, предупреждения, правила исходных сайтов и родительский контроль могут быть важны."), ("5. Контроли и ограничения", "SCP Docs предоставляет настройки чтения и навигацию, но не переписывает и не присваивает возрастной рейтинг каждой исходной статье. Родители и опекуны могут использовать Экранное время iOS, возрастные ограничения и контент-фильтры."), ("6. Контакт", f'Вопросы о возрастной пригодности или этой странице: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> или <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
+        "ko": ("등급 및 안전 정책 — SCP Docs", "SCP Docs 등급 및 안전 정책: App Store 16+ 적합성, 픽션 호러 주제, 독자 안내, 원본 사이트 책임에 대한 설명.", "등급 및 안전 정책", "최종 업데이트: 2026년 9월 15일", [("1. 이 페이지의 목적", "이 페이지는 모바일 애플리케이션 “SCP Docs”(이하 “앱”)의 연령 적합성과 콘텐츠 안전성에 대한 추가 정보를 제공합니다. 앱은 App Store 16+ 등급에 적합한 것으로 취급됩니다."), ("2. 앱의 성격", "앱은 SCP Foundation으로 알려진 온라인 창작 커뮤니티의 공개 작품을 탐색하고 읽는 도구를 제공합니다. 저자 표시, 저작권 고지, 경고 및 적용 라이선스는 참조하는 원본 페이지에서 확인할 수 있습니다."), ("3. 예상되는 콘텐츠", "SCP 관련 작품에는 텍스트 기반 호러, 서스펜스, 변칙 존재, 가상의 격리 절차, 경고문 형식, 비극적 주제, 암시적 폭력, 피에 대한 언급, 불편할 수 있는 소재, 원본 사이트의 이미지가 포함될 수 있습니다. 대부분은 픽션이며 현실의 위험한 행동을 장려하려는 것이 아닙니다."), ("4. 독자 안내", "앱은 16세 이상 독자를 대상으로 합니다. 호러나 불안한 픽션에 민감한 독자와 미성년자는 읽을 글을 신중히 선택해야 합니다. 글 태그, 경고, 원본 사이트 규칙, 보호자 지도가 도움이 될 수 있습니다."), ("5. 앱의 제어와 한계", "SCP Docs는 리더 설정과 탐색 도구를 제공하지만 각 원본 글을 다시 쓰거나 개별적으로 연령 등급을 매기지는 않습니다. 보호자는 iOS 스크린 타임, 연령 제한, 콘텐츠 제어를 사용해 자녀의 탐색 환경을 관리할 수 있습니다."), ("6. 문의", f'연령 적합성 또는 이 페이지에 관한 문의는 <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> 또는 <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>로 보내 주세요.')]),
+        "es": ("Política de clasificación y seguridad — SCP Docs", "Política de clasificación y seguridad de SCP Docs: idoneidad 16+ del App Store, temas de terror de ficción, orientación para lectores y responsabilidad de los sitios de origen.", "Política de clasificación y seguridad", "Última actualización: 15 de septiembre de 2026", [("1. Objeto de esta página", "Esta página ofrece información adicional sobre la idoneidad por edad y la seguridad del contenido de la aplicación móvil «SCP Docs» (la «App»). La App se considera apropiada para una clasificación 16+ del App Store."), ("2. Naturaleza de la app", "La App ofrece herramientas para explorar y leer obras creativas públicas de la comunidad en línea conocida como SCP Foundation. Las páginas de origen indican autoría, avisos de copyright, advertencias y licencias aplicables."), ("3. Contenido esperado", "Las obras relacionadas con SCP pueden incluir terror en formato de texto, suspenso, entidades anómalas, procedimientos de contención ficticios, prosa de advertencia, temas trágicos, violencia implícita, referencias a sangre, temas perturbadores e imágenes ocasionales proporcionadas por los sitios de origen. La mayor parte del contenido es ficción y no pretende fomentar conductas peligrosas en el mundo real."), ("4. Orientación para lectores", "La App está destinada a lectores de 16 años o más. Los lectores sensibles al terror o a la ficción inquietante, y los menores que usen la App, deben elegir sus lecturas con cuidado. Las etiquetas de los artículos, las advertencias, las reglas de los sitios de origen y la orientación parental pueden ser relevantes."), ("5. Controles y límites de la app", "SCP Docs ofrece ajustes de lectura y herramientas de navegación, pero no reescribe ni clasifica por edad cada artículo de origen. Los padres y tutores pueden usar Tiempo de uso de iOS, las restricciones de edad y los controles de contenido para gestionar el entorno de navegación de un menor."), ("6. Contacto", f'Las preguntas sobre la idoneidad por edad o esta página pueden enviarse a <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> o <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.')]),
     }
     title, description, heading, updated, sections = data[lang]
     return {"title": title, "description": description, "heading": heading, "updated": updated, "sections": sections}
@@ -2866,14 +2866,14 @@ for code in ["ja", "fr", "ru", "ko", "es"]:
 
 SAFETY_TEXT["pl"] = {
     "title": "Zasady klasyfikacji wiekowej i bezpieczeństwa — SCP Docs",
-    "description": "Zasady klasyfikacji i bezpieczeństwa SCP Docs: odpowiedniość dla kategorii 13+ w App Store, fikcyjne motywy grozy, wskazówki dla czytelników i odpowiedzialność stron źródłowych.",
+    "description": "Zasady klasyfikacji i bezpieczeństwa SCP Docs: odpowiedniość dla kategorii 16+ w App Store, fikcyjne motywy grozy, wskazówki dla czytelników i odpowiedzialność stron źródłowych.",
     "heading": "Zasady klasyfikacji wiekowej i bezpieczeństwa",
     "updated": "Ostatnia aktualizacja: 15 września 2026 r.",
     "sections": [
-        ("1. Cel tej strony", "Ta strona zawiera dodatkowe informacje o odpowiedniości wiekowej i bezpieczeństwie treści w aplikacji mobilnej „SCP Docs” („Aplikacja”). Aplikacja jest traktowana jako odpowiednia dla kategorii 13+ w App Store."),
+        ("1. Cel tej strony", "Ta strona zawiera dodatkowe informacje o odpowiedniości wiekowej i bezpieczeństwie treści w aplikacji mobilnej „SCP Docs” („Aplikacja”). Aplikacja jest traktowana jako odpowiednia dla kategorii 16+ w App Store."),
         ("2. Charakter Aplikacji", "Aplikacja udostępnia narzędzia do przeglądania i czytania publicznych utworów społeczności internetowej znanej jako SCP Foundation. Strony źródłowe zawierają informacje o autorach, prawach autorskich, ostrzeżeniach i właściwych licencjach."),
         ("3. Spodziewane treści", "Utwory związane z SCP mogą zawierać grozę tekstową, napięcie, anomalne byty, fikcyjne procedury przechowywania, teksty w formie ostrzeżeń, tragiczne motywy, sugerowaną przemoc, wzmianki o krwi, niepokojące tematy i sporadyczne obrazy ze stron źródłowych. Większość treści jest fikcyjna i nie ma zachęcać do niebezpiecznych zachowań w świecie rzeczywistym."),
-        ("4. Wskazówki dla czytelników", "Aplikacja jest przeznaczona dla czytelników w wieku co najmniej 13 lat. Osoby wrażliwe na grozę lub niepokojącą fikcję oraz małoletni korzystający z Aplikacji powinni ostrożnie dobierać lektury. Znaczenie mogą mieć tagi artykułów, ostrzeżenia, zasady stron źródłowych i nadzór rodzicielski."),
+        ("4. Wskazówki dla czytelników", "Aplikacja jest przeznaczona dla czytelników w wieku co najmniej 16 lat. Osoby wrażliwe na grozę lub niepokojącą fikcję oraz małoletni korzystający z Aplikacji powinni ostrożnie dobierać lektury. Znaczenie mogą mieć tagi artykułów, ostrzeżenia, zasady stron źródłowych i nadzór rodzicielski."),
         ("5. Kontrole i ograniczenia Aplikacji", "SCP Docs oferuje ustawienia Readera i narzędzia nawigacyjne, ale nie zmienia ani nie klasyfikuje wiekowo każdego artykułu źródłowego. Rodzice i opiekunowie mogą używać funkcji Czas przed ekranem w iOS, ograniczeń wiekowych i kontroli treści do zarządzania środowiskiem przeglądania dziecka."),
         ("6. Kontakt", f'Pytania o odpowiedniość wiekową lub tę stronę można wysłać na <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a> lub przez <a href="{X_URL}" target="_blank" rel="noopener noreferrer">X: @SCPdocs</a>.'),
     ],
@@ -3016,6 +3016,12 @@ def build_reading_page(lang: str) -> str:
 
 
 def write_pages() -> None:
+    import sys
+    preserved = {
+        path: path.read_bytes()
+        for pattern in ("privacy*.html", "terms*.html")
+        for path in ROOT.glob(pattern)
+    } if "--product-only" in sys.argv else {}
     for lang in LANGS:
         index = INDEX[lang]
         (ROOT / page_file("index", lang)).write_text(
@@ -3147,6 +3153,14 @@ def write_pages() -> None:
             encoding="utf-8",
         )
 
+    for path, content in preserved.items():
+        if path.read_bytes() != content:
+            path.write_bytes(content)
+
+
+from released_product_copy import install as install_released_product_copy
+
+install_released_product_copy(globals())
 
 if __name__ == "__main__":
     write_pages()

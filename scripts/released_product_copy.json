@@ -1,0 +1,138 @@
+{
+  "en": [
+    "Find and read SCP articles",
+    "Number, title, tag, Object Class, length and Wiki score searches are free. History, ratings, reminders, widgets and the observation summary, activity log and reading backlog are free. Favorites: 20; read later: 100.",
+    "Premium removes ads and unlocks highlights, memo editing, text-to-speech, offline saving, folders, memo and personal-record searches, saved searches and new-match alerts, plus detailed observation analysis. Favorites and read-later have no subscription quota (10,000-item safety limit per list). Monthly and yearly plans are available.",
+    "Share from one screen",
+    "Choose URLs, titles, article text, memos and highlights separately; your choices are kept for next time. Preview before sharing, copying, saving a file or sending to a registered destination. Open the card/post editor from the same screen. Article text is available from the current ready article in the reader; it is not fetched in bulk from Library lists.",
+    "Read each archive in its own language. The app and site support 17 languages; Store metadata has additional regional variants. Source pages, credits and licenses remain authoritative."
+  ],
+  "ja": [
+    "SCP記事を探して読む",
+    "番号・タイトル・タグ・Object Class・長さ・Wiki評価で探す検索は無料です。履歴、好み度、読書リマインド、ウィジェット、観測記録のサマリー・活動ログ・積読も無料。お気に入りは20件、後で読むは100件まで保存できます。",
+    "プレミアムは広告非表示、ハイライト・メモ作成、読み上げ、オフライン保存、フォルダ、メモ検索・自分の記録での絞り込み、保存検索・新着通知、観測記録の詳しい分析に対応。お気に入り・後で読むの購読上限はありません（各一覧の安全上限10,000件）。月額・年額から選べます。",
+    "ひとつの画面から共有",
+    "記事URL・タイトル・本文・メモ・ハイライトを個別に選択し、次回も設定を保持できます。プレビューを確認して、標準の共有、コピー、ファイル保存、登録済みの共有先への保存を実行します。同じ画面からカード・投稿の編集にも進めます。本文はリーダーで表示準備が整った現在の1記事から取得し、書庫の複数記事を自動取得しません。",
+    "記事は各支部の言語で読みます。アプリUIとサイトは17言語に対応し、ストアの地域別表示とは区別します。記事本文・著者表示・ライセンスは提供元サイトが正本です。"
+  ],
+  "fr": [
+    "Trouver et lire des articles SCP",
+    "La recherche par numéro, titre, tags, classe, longueur et score Wiki est gratuite, comme l’historique, les notes, rappels, widgets et le résumé, journal d’activité et lectures en attente. Favoris : 20 ; à lire : 100.",
+    "Premium supprime les publicités : surlignages, mémos, lecture vocale, hors ligne, dossiers, recherche dans vos mémos et données, recherches enregistrées et alertes, analyses détaillées. Pas de quota d’abonnement pour les favoris et lectures en attente (limite de sécurité de 10 000 par liste). Abonnements mensuel et annuel.",
+    "Partager sur un seul écran",
+    "Choisissez séparément URL, titre, texte, mémos et surlignages ; les choix sont conservés. Vérifiez l’aperçu avant de partager, copier, enregistrer un fichier ou utiliser une destination configurée. L’éditeur de carte est accessible sur cet écran. Le texte provient de l’article affiché dans le lecteur, sans récupération groupée depuis la Bibliothèque.",
+    "Les articles restent dans la langue de leur branche. Application et site : 17 langues. Les sources, crédits et licences font autorité."
+  ],
+  "ru": [
+    "Найти и читать статьи SCP",
+    "Поиск по номеру, заголовку, тегам, классу, длине и оценке Wiki бесплатен. История, оценки, напоминания, виджеты, сводка наблюдений, журнал активности и список непрочитанного бесплатны. Избранное: 20; прочитать позже: 100.",
+    "Premium убирает рекламу и открывает выделения, заметки, озвучивание, офлайн, папки, поиск по заметкам и своим записям, сохранённые поиски и уведомления, подробный анализ. Без лимита подписки на избранное и список на потом (безопасный предел 10 000 на список). Месячная и годовая подписка.",
+    "Отправка на одном экране",
+    "Отдельно выберите URL, заголовок, текст, заметки и выделения; выбор сохраняется. Проверьте предпросмотр перед отправкой, копированием, сохранением файла или в зарегистрированное место. Здесь же доступен редактор карточек. Текст берётся из текущей готовой статьи в читалке, без массовой загрузки из Библиотеки.",
+    "Статьи читаются на языке филиала. Приложение и сайт: 17 языков. Источники, авторство и лицензии определяются исходными страницами."
+  ],
+  "ko": [
+    "SCP 문서를 찾고 읽기",
+    "번호·제목·태그·등급·길이·Wiki 평가 검색은 무료입니다. 기록, 평가, 알림, 위젯, 관측 기록 요약·활동 로그·읽기 대기도 무료입니다. 즐겨찾기 20개, 나중에 읽기 100개.",
+    "프리미엄은 광고 제거, 하이라이트·메모 작성, 음성 읽기, 오프라인, 폴더, 메모·개인 기록 검색, 저장 검색·새 결과 알림, 상세 분석을 제공합니다. 즐겨찾기와 나중에 읽기의 구독 한도 없음(목록별 안전 한도 10,000개). 월간·연간 구독.",
+    "한 화면에서 공유",
+    "URL·제목·본문·메모·하이라이트를 각각 선택하고 설정을 유지합니다. 미리보기 후 공유, 복사, 파일 저장, 등록된 대상으로 저장합니다. 카드 편집도 여기서 엽니다. 본문은 리더에 표시된 현재 문서에서 가져오며 서고에서 일괄 수집하지 않습니다.",
+    "각 지부 언어로 읽습니다. 앱과 사이트는 17개 언어를 지원합니다. 출처의 저자·라이선스 표시가 기준입니다."
+  ],
+  "es": [
+    "Buscar y leer artículos SCP",
+    "Buscar por número, título, etiquetas, clase, longitud y puntuación Wiki es gratis. Historial, valoraciones, recordatorios, widgets, resumen de observación, actividad y pendientes también. Favoritos: 20; leer después: 100.",
+    "Premium elimina anuncios y añade destacados, notas, lectura en voz alta, sin conexión, carpetas, búsqueda en notas y registros propios, búsquedas guardadas y alertas, análisis detallado. Sin cuota de suscripción para favoritos y pendientes (límite de seguridad de 10 000 por lista). Plan mensual y anual.",
+    "Compartir desde una pantalla",
+    "Selecciona URL, título, texto, notas y destacados por separado; se conserva la selección. Revisa la vista previa para compartir, copiar, guardar archivos o enviar a destinos registrados. El editor de tarjetas está aquí. El texto procede del artículo actual del lector; no se descarga en lote desde Biblioteca.",
+    "Los artículos se leen en el idioma de cada rama. App y sitio: 17 idiomas. Las fuentes, autoría y licencias originales son la referencia."
+  ],
+  "pl": [
+    "Znajduj i czytaj artykuły SCP",
+    "Wyszukiwanie numeru, tytułu, tagów, klasy, długości i oceny Wiki jest darmowe. Historia, oceny, przypomnienia, widżety, podsumowanie obserwacji, aktywność i zaległe lektury także. Ulubione: 20; na później: 100.",
+    "Premium usuwa reklamy i dodaje wyróżnienia, notatki, odczyt głosowy, offline, foldery, wyszukiwanie własnych notatek i zapisów, zapisane wyszukiwania i alerty, szczegółowe analizy. Bez limitu subskrypcji dla ulubionych i lektur na później (limit bezpieczeństwa 10 000 na listę). Plan miesięczny i roczny.",
+    "Udostępnianie na jednym ekranie",
+    "Wybierz osobno URL, tytuł, tekst, notatki i wyróżnienia; wybór zostaje zapisany. Sprawdź podgląd przed udostępnieniem, kopiowaniem, zapisem pliku lub do skonfigurowanego celu. Tutaj otworzysz edytor karty. Tekst pochodzi z bieżącego artykułu w czytniku, bez pobierania wielu tekstów z Biblioteki.",
+    "Artykuły są w języku oddziału. Aplikacja i witryna: 17 języków. Źródła, autorstwo i licencje są rozstrzygające."
+  ],
+  "cs": [
+    "Najít a číst články SCP",
+    "Hledání čísla, názvu, tagů, třídy, délky a skóre Wiki je zdarma. Historie, hodnocení, připomínky, widgety a souhrn, aktivita a čekající četba také. Oblíbené: 20; na později: 100.",
+    "Premium: bez reklam, zvýraznění, poznámky, předčítání, offline, složky, hledání ve vlastních záznamech, uložená hledání a upozornění, podrobné analýzy. Bez předplatitelského limitu uložených článků (bezpečnostní limit 10 000 na seznam). Měsíčně nebo ročně.",
+    "6.0.2",
+    "Při sdílení můžete zvlášť vybrat URL článku, název, text, poznámky a zvýraznění. Volby se zachovají pro příště. Sdílení, kopírování, ukládání souborů a ukládání do registrovaných cílů jsou na jedné obrazovce s vylepšeným náhledem a přístupem k příspěvkům s kartou.",
+    "Články jsou v jazyce příslušné pobočky. Aplikace i web mají 17 jazyků. Původní zdroje, autorství a licence mají přednost."
+  ],
+  "de": [
+    "SCP-Artikel finden und lesen",
+    "Suche nach Nummer, Titel, Tags, Klasse, Länge und Wiki-Bewertung ist kostenlos. Verlauf, Bewertungen, Erinnerungen, Widgets, Beobachtungsübersicht, Aktivität und Lesestapel auch. Favoriten: 20; später lesen: 100.",
+    "Premium: werbefrei, Markierungen, Notizen, Vorlesen, offline, Ordner, Suche in eigenen Notizen und Einträgen, gespeicherte Suchen und Hinweise, Detailanalysen. Keine Abo-Quote für gespeicherte Artikel (Sicherheitsgrenze 10.000 pro Liste). Monats- und Jahresabo.",
+    "6.0.2",
+    "Artikel-URLs, Titel, Text, Notizen und Markierungen lassen sich beim Teilen einzeln auswählen. Ihre Auswahl bleibt für das nächste Mal erhalten. Teilen, Kopieren, Dateien speichern und in registrierten Zielen speichern sind auf einem Bildschirm vereint, mit verbesserten Vorschauen und Zugang zu Kartenbeiträgen.",
+    "Artikel bleiben in der Sprache ihres Zweigs. App und Website bieten 17 Sprachen. Originalquellen, Urheberangaben und Lizenzen sind maßgeblich."
+  ],
+  "it": [
+    "Trovare e leggere articoli SCP",
+    "Ricerca per numero, titolo, tag, classe, lunghezza e voto Wiki gratuita. Anche cronologia, valutazioni, promemoria, widget, riepilogo, attività e letture in attesa. Preferiti: 20; da leggere: 100.",
+    "Premium: niente pubblicità, evidenziazioni, note, lettura vocale, offline, cartelle, ricerca nei propri appunti e registri, ricerche salvate e avvisi, analisi dettagliate. Nessuna quota di abbonamento per articoli salvati (limite di sicurezza di 10.000 per lista). Mensile o annuale.",
+    "6.0.2",
+    "Seleziona separatamente URL, titoli, testo, note ed evidenziazioni quando condividi articoli. Le scelte vengono conservate per la prossima volta. Condivisione, copia, salvataggio di file e salvataggio nelle destinazioni registrate sono riuniti in un’unica schermata, con anteprime migliorate e accesso ai post con scheda.",
+    "Gli articoli restano nella lingua della propria branca. App e sito hanno 17 lingue. Fonti, crediti e licenze originali sono il riferimento."
+  ],
+  "pt-BR": [
+    "Encontrar e ler artigos SCP",
+    "Busca por número, título, tags, classe, tamanho e avaliação Wiki grátis. Histórico, avaliações, lembretes, widgets, resumo, atividade e leituras pendentes também. Favoritos: 20; ler depois: 100.",
+    "Premium: sem anúncios, destaques, notas, leitura em voz alta, offline, pastas, busca nos próprios registros, buscas salvas e alertas, análises detalhadas. Sem cota da assinatura para artigos salvos (limite de segurança de 10.000 por lista). Plano mensal ou anual.",
+    "6.0.2",
+    "Escolha separadamente URLs, títulos, texto, notas e destaques ao compartilhar artigos. Suas escolhas são mantidas para a próxima vez. Compartilhamento, cópia, salvamento de arquivos e salvamento em destinos cadastrados estão reunidos em uma tela, com prévias aprimoradas e acesso às publicações em cartão.",
+    "Os artigos permanecem no idioma de cada filial. App e site têm 17 idiomas. Fontes, créditos e licenças originais são a referência."
+  ],
+  "zh-Hans": [
+    "查找并阅读SCP文章",
+    "编号、标题、标签、等级、长度和Wiki评分搜索免费。历史、个人评分、提醒、小组件、观测记录摘要、活动日志和待读也免费。收藏20篇，稍后阅读100篇。",
+    "Premium：去广告、高亮与笔记、朗读、离线、文件夹、笔记与个人记录搜索、保存搜索与新结果提醒、详细分析。收藏与稍后阅读无订阅配额（每列表安全上限10,000篇）。月度或年度订阅。",
+    "6.0.2",
+    "分享时可分别选择文章网址、标题、正文、笔记和高亮内容，并保留设置供下次使用。 将分享、复制、保存文件及保存到已注册目标整合到同一界面，改进了预览和卡片帖子的入口。",
+    "文章保留各分部的语言。应用界面和网站支持17种语言。原始页面、作者与许可信息为准。"
+  ],
+  "zh-Hant": [
+    "尋找並閱讀SCP文章",
+    "編號、標題、標籤、等級、長度與Wiki評分搜尋免費。歷史、個人評分、提醒、小工具、觀測記錄摘要、活動日誌與待讀也免費。收藏20篇，稍後閱讀100篇。",
+    "Premium：去廣告、醒目提示與筆記、朗讀、離線、資料夾、筆記與個人記錄搜尋、儲存搜尋與新結果提醒、詳細分析。收藏與稍後閱讀無訂閱配額（每列表安全上限10,000篇）。月度或年度訂閱。",
+    "6.0.2",
+    "分享時可分別選擇文章網址、標題、內文、筆記及螢光標記，並保留設定供下次使用。 將分享、複製、儲存檔案及儲存到已登錄目的地整合於同一畫面，改善了預覽與卡片貼文的入口。",
+    "文章保留各分部的語言。應用程式介面和網站支援17種語言。原始頁面、作者與授權資訊為準。"
+  ],
+  "vi": [
+    "Tìm và đọc bài SCP",
+    "Tìm số, tiêu đề, thẻ, lớp, độ dài và điểm Wiki miễn phí. Lịch sử, đánh giá, nhắc đọc, tiện ích, tóm tắt, hoạt động và bài chờ đọc cũng vậy. Yêu thích: 20; đọc sau: 100.",
+    "Premium: bỏ quảng cáo, tô sáng, ghi chú, đọc thành tiếng, ngoại tuyến, thư mục, tìm trong ghi chú và bản ghi cá nhân, lưu tìm kiếm và báo kết quả mới, phân tích chi tiết. Không có hạn ngạch đăng ký cho bài đã lưu (giới hạn an toàn 10.000 mỗi danh sách). Gói tháng hoặc năm.",
+    "6.0.2",
+    "Chọn riêng URL bài viết, tiêu đề, nội dung, ghi chú và đoạn tô sáng khi chia sẻ. Lựa chọn được lưu cho lần sau. Chia sẻ, sao chép, lưu tệp và lưu vào các đích đã đăng ký được gộp trên một màn hình, với bản xem trước và lối vào bài đăng dạng thẻ được cải thiện.",
+    "Bài viết giữ ngôn ngữ của chi nhánh. Ứng dụng và trang web có 17 ngôn ngữ. Nguồn, tác giả và giấy phép gốc là căn cứ."
+  ],
+  "id": [
+    "Cari dan baca artikel SCP",
+    "Pencarian nomor, judul, tag, kelas, panjang dan skor Wiki gratis. Riwayat, penilaian, pengingat, widget, ringkasan, aktivitas dan bacaan tertunda juga gratis. Favorit: 20; baca nanti: 100.",
+    "Premium: tanpa iklan, sorotan, catatan, baca bersuara, luring, folder, pencarian catatan dan rekaman pribadi, pencarian tersimpan dan pemberitahuan, analisis rinci. Tanpa kuota langganan untuk artikel tersimpan (batas aman 10.000 per daftar). Paket bulanan atau tahunan.",
+    "6.0.2",
+    "Pilih URL artikel, judul, teks, catatan, dan sorotan secara terpisah saat berbagi. Pilihan Anda disimpan untuk penggunaan berikutnya. Berbagi, menyalin, menyimpan berkas, dan menyimpan ke tujuan terdaftar kini berada di satu layar, dengan pratinjau dan akses ke postingan kartu yang lebih baik.",
+    "Artikel tetap dalam bahasa cabangnya. Aplikasi dan situs mendukung 17 bahasa. Sumber, kredit penulis dan lisensi asli menjadi acuan."
+  ],
+  "th": [
+    "ค้นหาและอ่านบทความ SCP",
+    "ค้นหาหมายเลข ชื่อ แท็ก ชั้น ความยาวและคะแนน Wiki ฟรี ประวัติ คะแนน เตือนอ่าน วิดเจ็ต สรุป บันทึกกิจกรรมและบทความรออ่านก็ฟรี รายการโปรด 20 บทความ อ่านภายหลัง 100 บทความ",
+    "Premium: ไม่มีโฆษณา ไฮไลต์ โน้ต อ่านออกเสียง ออฟไลน์ โฟลเดอร์ ค้นหาโน้ตและบันทึกส่วนตัว ค้นหาที่บันทึกและแจ้งผลใหม่ วิเคราะห์ละเอียด ไม่มีโควตาตามสมาชิกสำหรับบทความที่บันทึก (จำกัดเพื่อความปลอดภัย 10,000 ต่อรายการ) รายเดือนหรือรายปี",
+    "6.0.2",
+    "เลือก URL บทความ ชื่อเรื่อง เนื้อหา โน้ต และข้อความไฮไลต์แยกกันได้เมื่อแชร์ และเก็บตัวเลือกไว้สำหรับครั้งต่อไป รวมการแชร์ คัดลอก บันทึกไฟล์ และบันทึกไปยังปลายทางที่ลงทะเบียนไว้ในหน้าจอเดียว พร้อมปรับปรุงตัวอย่างและทางเข้าโพสต์แบบการ์ด",
+    "บทความใช้ภาษาของสาขาต้นฉบับ แอปและเว็บไซต์รองรับ 17 ภาษา แหล่งที่มา ผู้เขียน และใบอนุญาตในหน้าต้นฉบับเป็นข้อมูลอ้างอิงหลัก"
+  ],
+  "tr": [
+    "SCP makalelerini bul ve oku",
+    "Numara, başlık, etiket, sınıf, uzunluk ve Wiki puanı araması ücretsizdir. Geçmiş, puanlar, hatırlatıcılar, araç takımları, özet, etkinlik ve bekleyen okumalar da ücretsizdir. Favoriler: 20; sonra oku: 100.",
+    "Premium: reklamsız, vurgular, notlar, sesli okuma, çevrimdışı, klasörler, kişisel not ve kayıt araması, kayıtlı aramalar ve bildirimler, ayrıntılı analiz. Kaydedilen makalelerde abonelik kotası yok (liste başına 10.000 güvenlik sınırı). Aylık ve yıllık planlar.",
+    "6.0.2",
+    "Paylaşırken makale URL’si, başlık, metin, notlar ve vurguları ayrı ayrı seçebilirsiniz. Seçimleriniz bir sonraki kullanım için korunur. Paylaşma, kopyalama, dosya kaydetme ve kayıtlı hedeflere kaydetme tek ekranda birleştirildi; önizlemeler ve kart gönderilerine erişim iyileştirildi.",
+    "Makaleler kendi şubelerinin dilinde kalır. Uygulama ve site 17 dili destekler. Özgün kaynak, yazar ve lisans bilgileri esastır."
+  ]
+}

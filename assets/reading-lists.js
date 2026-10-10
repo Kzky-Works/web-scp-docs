@@ -64,7 +64,7 @@ if (typeof document !== "undefined") {
       return parts.join(" · ");
     }
 
-    function articleRow(article, index) {
+    function articleRow(article, index, notes) {
       const item = document.createElement("li");
       item.className = "reading-list-article";
 
@@ -85,6 +85,22 @@ if (typeof document !== "undefined") {
       meta.className = "reading-list-meta";
       meta.textContent = detail(article);
       content.append(file, heading, meta);
+      if (notes) {
+        const reason = document.createElement("p");
+        reason.textContent = notes.reason;
+        const credit = document.createElement("p");
+        credit.className = "reading-list-meta";
+        const original = document.createElement("a");
+        original.href = notes.originalUrl;
+        original.target = "_blank";
+        original.rel = "noopener noreferrer";
+        original.textContent = `原作: ${notes.author}`;
+        const license = document.createElement("a");
+        license.href = notes.licenseUrl;
+        license.textContent = notes.license;
+        credit.append(original, " · ", license);
+        content.append(reason, credit);
+      }
 
       item.append(number, content);
       return item;
@@ -110,7 +126,7 @@ if (typeof document !== "undefined") {
 
       const list = document.createElement("ol");
       list.className = "reading-list-articles";
-      list.replaceChildren(...resolved.map(articleRow));
+      list.replaceChildren(...resolved.map((article, index) => articleRow(article, index, theme.articleNotes?.[article.id])));
       panel.replaceChildren(header, list);
 
       for (const button of themeList.querySelectorAll("button[data-reading-theme]")) {
