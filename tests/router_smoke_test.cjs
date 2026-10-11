@@ -18,8 +18,9 @@ async function runRouter({ search, languages = ["en-US"], route = null, ios = fa
       childElementCount: 0,
       listeners: {},
       addEventListener(name, callback) { this.listeners[name] = callback; },
-      replaceChildren() { this.childElementCount = 0; },
-      append() { this.childElementCount += 1; }
+      children: [],
+      replaceChildren() { this.childElementCount = 0; this.children = []; },
+      append(child) { this.childElementCount += 1; this.children.push(child); }
     });
   }
 
@@ -186,4 +187,51 @@ test("rejects an official fallback that does not match the route id", async () =
 
   assert.equal(result.location.replaced, null);
   assert.equal(result.elements.get("#status").textContent, "Unable to open this link");
+});
+
+const additionalVersions = {
+  EN: "https://scp-wiki.wikidot.com/scp-173",
+  JP: "https://scp-jp.wikidot.com/scp-173",
+  IT: "https://fondazionescp.wikidot.com/scp-173",
+  PT: "https://scp-pt-br.wikidot.com/scp-173",
+  VN: "https://scp-vn.wikidot.com/scp-173",
+  CS: "https://scp-cs.wikidot.com/scp-173",
+  CN: "https://scp-wiki-cn.wikidot.com/scp-173",
+  "ZH-TR": "https://scp-zh-tr.wikidot.com/scp-173",
+  TR: "https://scpvakfi.wikidot.com/scp-173",
+  ID: "https://scp-id.wikidot.com/scp-173"
+};
+test("keeps all supplied official versions and selects each added locale without crossing Chinese identities", async () => {
+  for (const [locale, code] of [["en-US", "EN"], ["ja-JP", "JP"], ["it-IT", "IT"],
+    ["pt-BR", "PT"], ["vi-VN", "VN"], ["cs-CZ", "CS"], ["zh-CN", "CN"],
+    ["zh-Hant", "ZH-TR"], ["zh-TW", "ZH-TR"], ["tr-TR", "TR"], ["id-ID", "ID"]]) {
+    const result = await runRouter({search: "?id=a3ecd8849da128f3d092c004", languages: [locale],
+      route: {sourceURL: additionalVersions.EN, original: {language: "EN", url: additionalVersions.EN},
+        versions: additionalVersions}});
+    assert.equal(result.elements.get("#open-web").href, additionalVersions[code], locale);
+    const links = result.elements.get("#language-links").children;
+    assert.equal(links.length, Object.keys(additionalVersions).length);
+    assert.equal(links.find(link => link.textContent === "PT/BR").href, additionalVersions.PT);
+    assert.equal(links.find(link => link.textContent === "CN").href, additionalVersions.CN);
+    assert.equal(links.find(link => link.textContent === "ZH-TR").href, additionalVersions["ZH-TR"]);
+  }
+});
+test("retains compatibility with legacy PT/BR route keys", async () => {
+  const result = await runRouter({search: "?id=a3ecd8849da128f3d092c004", languages: ["pt-BR"],
+    route: {sourceURL: additionalVersions.EN, versions: {"PT/BR": additionalVersions.PT}}});
+  assert.equal(result.elements.get("#open-web").href, additionalVersions.PT);
+});
+test("renders the five supplied SCP-020-IT versions and selects the Italian original", async () => {
+  const sourceURL = "https://scp-int.wikidot.com/scp-020-it";
+  const originalURL = "https://fondazionescp.wikidot.com/scp-020-it";
+  const versions = {EN: sourceURL, IT: originalURL,
+    ES: "https://lafundacionscp.wikidot.com/scp-020-it",
+    FR: "https://fondationscp.wikidot.com/scp-020-it",
+    CN: "https://scp-wiki-cn.wikidot.com/scp-020-it"};
+  const result = await runRouter({search: "?id=036e1e5b862dad3c8600d9f4", languages: ["it-IT"],
+    route: {sourceURL, original: {language: "IT", url: originalURL}, versions}});
+  assert.equal(result.elements.get("#open-web").href, originalURL);
+  const links = result.elements.get("#language-links").children;
+  assert.equal(links.length, 5);
+  assert.equal(links.find(link => link.textContent === "IT").href, originalURL);
 });

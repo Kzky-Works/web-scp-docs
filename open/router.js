@@ -4,14 +4,17 @@
   const ROUTE_ID = /^[0-9a-f]{24}$/;
   const LANGUAGE_MAP = {
     en: "EN", es: "ES", fr: "FR", ja: "JP", ko: "KO",
-    pl: "PL", ru: "RU", zh: "CN", th: "TH", de: "DE"
+    pl: "PL", ru: "RU", zh: "CN", th: "TH", de: "DE",
+    it: "IT", pt: "PT", vi: "VN", cs: "CS", tr: "TR", id: "ID"
   };
-  const LANGUAGE_ORDER = ["EN", "ES", "FR", "JP", "KO", "PL", "RU", "CN", "TH", "DE"];
+  const LANGUAGE_ORDER = ["EN", "ES", "FR", "JP", "KO", "PL", "RU", "CN", "TH", "DE", "IT", "PT", "VN", "CS", "ZH-TR", "TR", "ID"];
   const ALLOWED_HOSTS = new Set([
     "scp-wiki.wikidot.com", "scp-int.wikidot.com", "lafundacionscp.wikidot.com",
     "fondationscp.wikidot.com", "scp-jp.wikidot.com", "scpko.wikidot.com",
     "scp-pl.wikidot.com", "scpfoundation.net", "scp-ru.wikidot.com",
-    "scp-wiki-cn.wikidot.com", "scp-th.wikidot.com", "scp-wiki-de.wikidot.com"
+    "scp-wiki-cn.wikidot.com", "scp-th.wikidot.com", "scp-wiki-de.wikidot.com",
+    "fondazionescp.wikidot.com", "scp-pt-br.wikidot.com", "scp-vn.wikidot.com",
+    "scp-cs.wikidot.com", "scp-zh-tr.wikidot.com", "scpvakfi.wikidot.com", "scp-id.wikidot.com"
   ]);
 
   const status = document.querySelector("#status");
@@ -49,11 +52,18 @@
     return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("").slice(0, 24);
   }
 
+  function languageCode(tag) {
+    const normalized = String(tag || "").toLowerCase().replace(/_/g, "-");
+    if (normalized.startsWith("zh-hant") || /^zh-(tw|hk|mo)(-|$)/.test(normalized)) return "ZH-TR";
+    return LANGUAGE_MAP[normalized.split("-")[0]] || null;
+  }
+
   function preferredLanguage(versions) {
-    const remembered = localStorage.getItem("scpdocs.preferredArticleLanguage");
+    const stored = localStorage.getItem("scpdocs.preferredArticleLanguage");
+    const remembered = stored === "PT/BR" ? "PT" : stored;
     if (remembered && versions[remembered]) return remembered;
     for (const tag of navigator.languages || [navigator.language]) {
-      const code = LANGUAGE_MAP[String(tag || "").toLowerCase().split("-")[0]];
+      const code = languageCode(tag);
       if (code && versions[code]) return code;
     }
     return null;
@@ -62,11 +72,11 @@
   function renderLanguages(versions) {
     languageLinks.replaceChildren();
     for (const language of LANGUAGE_ORDER) {
-      const target = safeURL(versions[language]);
+      const target = safeURL(versions[language] || (language === "PT" ? versions["PT/BR"] : null));
       if (!target) continue;
       const link = document.createElement("a");
       link.href = target;
-      link.textContent = language;
+      link.textContent = language === "PT" ? "PT/BR" : language;
       link.hreflang = language.toLowerCase();
       link.addEventListener("click", () => localStorage.setItem("scpdocs.preferredArticleLanguage", language));
       languageLinks.append(link);
@@ -125,7 +135,8 @@
       route = null;
     }
 
-    const versions = route?.versions || {};
+    const versions = { ...(route?.versions || {}) };
+    if (!versions.PT && versions["PT/BR"]) versions.PT = versions["PT/BR"];
     const selected = preferredLanguage(versions);
     const destination = safeURL(versions[selected])
       || safeURL(route?.original?.url)

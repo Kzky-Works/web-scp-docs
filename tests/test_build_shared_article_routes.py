@@ -20,7 +20,7 @@ class SharedArticleRouteTests(unittest.TestCase):
             "a3ecd8849da128f3d092c004",
         )
 
-    def test_builds_ten_language_route_and_rejects_unknown_hosts(self) -> None:
+    def test_builds_all_supported_language_route_and_rejects_unknown_hosts(self) -> None:
         payload = {
             "entries": [
                 {
@@ -39,6 +39,13 @@ class SharedArticleRouteTests(unittest.TestCase):
                             "CN": "https://scp-wiki-cn.wikidot.com/scp-173",
                             "TH": "https://scp-th.wikidot.com/scp-173",
                             "DE": "https://scp-wiki-de.wikidot.com/scp-173",
+                            "IT": "https://fondazionescp.wikidot.com/scp-173",
+                            "PT": "https://scp-pt-br.wikidot.com/scp-173",
+                            "VN": "https://scp-vn.wikidot.com/scp-173",
+                            "CS": "https://scp-cs.wikidot.com/scp-173",
+                            "ZH-TR": "https://scp-zh-tr.wikidot.com/scp-173",
+                            "TR": "https://scpvakfi.wikidot.com/scp-173",
+                            "ID": "https://scp-id.wikidot.com/scp-173",
                             "EVIL": "https://evil.example/scp-173",
                         }.items()
                     ],
@@ -52,6 +59,34 @@ class SharedArticleRouteTests(unittest.TestCase):
         self.assertEqual(list(route["versions"]), list(subject.ALLOWED_LANGUAGES))
         self.assertEqual(route["versions"]["TH"], "http://scp-th.wikidot.com/scp-173")
         self.assertNotIn("EVIL", route["versions"])
+
+    def test_italian_original_and_existing_route_id_are_preserved(self) -> None:
+        source = "https://scp-int.wikidot.com/scp-020-it"
+        original = "https://fondazionescp.wikidot.com/scp-020-it"
+        route = subject.build_routes({"entries": [{"sourceURL": source,
+            "original": {"language": "IT", "url": original},
+            "versions": [{"language": "EN", "url": source}, {"language": "IT", "url": original}]
+        }]})["036e1e5b862dad3c8600d9f4"]
+        self.assertEqual(route["original"], {"language": "IT", "url": original})
+        self.assertEqual(route["versions"]["IT"], original)
+
+    def test_missing_original_is_not_replaced_and_versions_are_not_invented(self) -> None:
+        source = "https://scp-int.wikidot.com/scp-020-it"
+        for original in ({}, {"language": "IT", "url": "https://evil.example/scp-020-it"}):
+            route = subject.build_routes({"entries": [{"sourceURL": source,
+                "original": original, "versions": []}]})[subject.route_id(source)]
+            self.assertEqual(route["original"]["url"], "")
+            self.assertEqual(route["versions"], {})
+
+    def test_portuguese_alias_and_chinese_identity_are_separate(self) -> None:
+        source = "https://scp-wiki.wikidot.com/scp-173"
+        route = subject.build_routes({"entries": [{"sourceURL": source,
+            "versions": [{"language": "PT/BR", "url": "https://scp-pt-br.wikidot.com/scp-173"},
+                         {"language": "ZH-TR", "url": "https://scp-zh-tr.wikidot.com/scp-173"}]
+        }]})[subject.route_id(source)]
+        self.assertIn("PT", route["versions"])
+        self.assertIn("ZH-TR", route["versions"])
+        self.assertNotIn("CN", route["versions"])
 
     def test_writes_hash_prefix_shards(self) -> None:
         routes = {

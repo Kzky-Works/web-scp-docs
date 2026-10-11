@@ -12,7 +12,7 @@ from urllib.parse import urlparse
 
 SCHEMA_VERSION = 1
 ROUTE_ID_HEX_LENGTH = 24
-ALLOWED_LANGUAGES = ("EN", "ES", "FR", "JP", "KO", "PL", "RU", "CN", "TH", "DE")
+ALLOWED_LANGUAGES = ("EN", "ES", "FR", "JP", "KO", "PL", "RU", "CN", "TH", "DE", "IT", "PT", "VN", "CS", "ZH-TR", "TR", "ID")
 ALLOWED_HOSTS = {
     "scp-wiki.wikidot.com",
     "scp-int.wikidot.com",
@@ -26,7 +26,14 @@ ALLOWED_HOSTS = {
     "scp-wiki-cn.wikidot.com",
     "scp-th.wikidot.com",
     "scp-wiki-de.wikidot.com",
+    "fondazionescp.wikidot.com", "scp-pt-br.wikidot.com", "scp-vn.wikidot.com",
+    "scp-cs.wikidot.com", "scp-zh-tr.wikidot.com", "scpvakfi.wikidot.com", "scp-id.wikidot.com",
 }
+
+
+def normalize_language(raw: Any) -> str:
+    value = str(raw or "").strip().upper()
+    return {"PT/BR": "PT", "PT-BR": "PT", "ZH-TW": "ZH-TR"}.get(value, value)
 
 
 def normalize_url(raw: Any) -> str:
@@ -65,15 +72,14 @@ def build_routes(payload: dict[str, Any]) -> dict[str, dict[str, Any]]:
         for raw_version in raw_entry.get("versions") or []:
             if not isinstance(raw_version, dict):
                 continue
-            language = str(raw_version.get("language") or "").upper()
+            language = normalize_language(raw_version.get("language"))
             url = normalize_url(raw_version.get("url"))
             if language in ALLOWED_LANGUAGES and url:
                 versions[language] = url
 
         raw_original = raw_entry.get("original") if isinstance(raw_entry.get("original"), dict) else {}
-        original_language = str(raw_original.get("language") or "EN").upper()
-        original_url = normalize_url(raw_original.get("url")) or source_url
-        versions.setdefault("EN", source_url)
+        original_language = normalize_language(raw_original.get("language"))
+        original_url = normalize_url(raw_original.get("url"))
         route = {
             "sourceURL": source_url,
             "original": {"language": original_language, "url": original_url},
