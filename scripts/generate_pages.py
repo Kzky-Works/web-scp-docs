@@ -20,6 +20,8 @@ BASE_URL = "https://scpdocs.link"
 APP_STORE_URL = "https://apps.apple.com/jp/app/scp-docs/id6765882660"
 CONTACT_EMAIL = "scpdocs_admin@proton.me"
 X_URL = "https://x.com/SCPdocs"
+COPYRIGHT_HOLDER = "NutsWorks"
+COPYRIGHT_YEAR = 2026
 
 # Minimal "containment marker" favicon, URL-encoded inline SVG.
 FAVICON_SVG = (
@@ -338,7 +340,8 @@ def footer(active_lang: str, page_title: str) -> str:
         <div>
           {lang.footer_contact}: <a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a><br />
           X: <a href="{X_URL}" target="_blank" rel="noopener noreferrer">@SCPdocs</a><br />
-          <span class="ft-muted"><a href="{page_file("index", active_lang)}">{lang.footer_back}</a></span>
+          <span class="ft-muted"><a href="{page_file("index", active_lang)}">{lang.footer_back}</a></span><br />
+          <span class="ft-muted">&copy; {COPYRIGHT_YEAR} {COPYRIGHT_HOLDER}</span>
         </div>
       </div>
     </footer>"""
