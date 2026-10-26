@@ -35,3 +35,78 @@ test("keeps ordinary SCP searches but drops likely personal contact data", () =>
 test("limits recorded search terms", () => {
   assert.equal(analytics.safeSearchTerm("a".repeat(120)).length, 80);
 });
+
+// All contact values are synthetic; nothing is transmitted by this VM fixture.
+for (const [name, prefixLength, contact] of [
+  ["email", 70, "reader@example.com"],
+  ["URL", 77, "https://example.com/article"],
+  ["telephone", 75, "090-1234-5678"],
+  ["full-width email", 70, "ｒｅａｄｅｒ＠ｅｘａｍｐｌｅ．ｃｏｍ"],
+]) {
+  test(`drops ${name} when the 80-character boundary would split it`, () => {
+    const input = "あ".repeat(prefixLength) + " " + contact;
+    assert.equal(analytics.safeSearchTerm(input), "");
+  });
+}
+
+test("drops contact data beyond the measured 80-code-unit prefix", () => {
+  assert.equal(analytics.safeSearchTerm("あ".repeat(300) + " reader@example.com"), "");
+});
+
+test("omits normalized analytics inputs above 4096 code units", () => {
+  assert.equal(analytics.safeSearchTerm("a".repeat(4097)), "");
+  assert.equal(analytics.safeSearchTerm("a".repeat(4096)), "a".repeat(80));
+});
+
+function submitSyntheticSearch(query, { granted = true, formID = "catalog-search" } = {}) {
+  const listeners = {};
+  const scripts = [];
+  const window = {
+    location: { href: "https://scpdocs.link/discover-ja.html", pathname: "/discover-ja.html", hostname: "scpdocs.link" },
+    localStorage: { getItem: () => granted ? "granted" : "denied" },
+  };
+  const document = {
+    documentElement: { lang: "ja" },
+    title: "Synthetic page",
+    querySelector: () => null,
+    addEventListener: (type, callback) => { listeners[type] = callback; },
+    head: { append: script => scripts.push(script) },
+    createElement: () => ({ listeners: {}, addEventListener(type, callback) { this.listeners[type] = callback; } }),
+  };
+  const form = { id: formID };
+  vm.runInNewContext(source, {
+    URL, window, document,
+    FormData: class { get() { return query; } },
+  });
+  listeners.DOMContentLoaded();
+  if (granted) {
+    // Fake script completion only; no browser, sockets, or Google request exists.
+    scripts[0].listeners.load();
+  }
+  listeners.submit({ target: { closest: () => form } });
+  const events = (window.dataLayer || []).filter(args => args[0] === "event" && args[1] === "search");
+  return { events, scripts };
+}
+
+test("production submit handler omits a split email from both search forms", () => {
+  for (const formID of ["catalog-search", "home-search"]) {
+    const { events } = submitSyntheticSearch("あ".repeat(70) + " reader@example.com", { formID });
+    assert.equal(events.length, 1);
+    assert.equal(Object.hasOwn(events[0][2], "search_term"), false);
+    assert.equal(events[0][2].search_has_term, false);
+    assert.equal(events[0][2].search_source, formID === "catalog-search" ? "catalog" : "home");
+  }
+});
+
+test("production submit handler retains bounded ordinary search terms", () => {
+  const { events } = submitSyntheticSearch("a".repeat(120));
+  assert.equal(events.length, 1);
+  assert.equal(events[0][2].search_term, "a".repeat(80));
+  assert.equal(events[0][2].search_has_term, true);
+});
+
+test("production submit handler records nothing after denied consent initializes", () => {
+  const { events, scripts } = submitSyntheticSearch("scp-173", { granted: false });
+  assert.equal(events.length, 0);
+  assert.equal(scripts.length, 0);
+});

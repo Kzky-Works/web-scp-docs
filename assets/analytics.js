@@ -4,6 +4,7 @@ const SCPDocsAnalyticsCore = (() => {
   const MEASUREMENT_ID = "G-5M5Q6SML03";
   const CONSENT_KEY = "scpdocs.analytics-consent";
   const MAX_VALUE_LENGTH = 80;
+  const MAX_SEARCH_INPUT_LENGTH = 4096;
   const SENSITIVE_INPUT = /(?:https?:\/\/|www\.|[\w.+-]+@[\w.-]+\.[a-z]{2,}|(?:\+?\d[\d\s().-]{7,}\d))/iu;
 
   function cleanValue(value, limit = MAX_VALUE_LENGTH) {
@@ -11,9 +12,10 @@ const SCPDocsAnalyticsCore = (() => {
   }
 
   function safeSearchTerm(value) {
-    const term = cleanValue(value);
-    if (!term || SENSITIVE_INPUT.test(term)) return "";
-    return term;
+    // Check before truncating: the output boundary can hide part of a contact value.
+    const term = cleanValue(value, MAX_SEARCH_INPUT_LENGTH + 1);
+    if (!term || term.length > MAX_SEARCH_INPUT_LENGTH || SENSITIVE_INPUT.test(term)) return "";
+    return term.slice(0, MAX_VALUE_LENGTH);
   }
 
   function analyticsPageURL(value) {
